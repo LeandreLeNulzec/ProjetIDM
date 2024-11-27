@@ -19,7 +19,7 @@
         eType="#//Algorithme"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entrée" eSuperTypes="#//E_S">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paramètre"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paramètre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sortie" eSuperTypes="#//E_S"/>
 </ecore:EPackage>
