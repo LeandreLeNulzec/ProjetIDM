@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="table" nsURI="http://table" nsPrefix="table">
+  <eClassifiers xsi:type="ecore:EClass" name="Table">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="tableSansNom"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonnes" lowerBound="1"
+        upperBound="-1" eType="#//Colonne" eOpposite="#//Colonne/table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="idColonne" lowerBound="1"
+        eType="#//Colonne"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ColonnesElementsType">
+    <eLiterals name="String"/>
+    <eLiterals name="Int" value="1"/>
+    <eLiterals name="Float" value="2"/>
+    <eLiterals name="Bool" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Colonne">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="colonneSansnom"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"
+        eOpposite="#//Table/colonnes"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ElementType" lowerBound="1"
+        eType="#//ColonnesElementsType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contraintes" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColonneProvient" eSuperTypes="#//Colonne">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonneOrigine" lowerBound="1"
+        eType="#//Colonne"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColonneDerivee" eSuperTypes="#//Colonne">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="algorithme" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonnesEntree" upperBound="-1"
+        eType="#//Colonne"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Contrainte">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parametre" lowerBound="1"
+        eType="#//ColonnesElementsType"/>
+  </eClassifiers>
+</ecore:EPackage>
