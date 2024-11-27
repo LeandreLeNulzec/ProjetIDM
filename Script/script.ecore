@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Script">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Script" nsURI="http://Script" nsPrefix="Script">
   <eClassifiers xsi:type="ecore:EClass" name="Script"/>
-  <eClassifiers xsi:type="ecore:EClass" name="E/S">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="E/StoS" eType="#//Script"/>
+  <eClassifiers xsi:type="ecore:EClass" name="E_S">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="E_StoS" eType="#//Script"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entree" eSuperTypes="#//E%2FS"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Sortie" eSuperTypes="#//E%2FS"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Entree" eSuperTypes="#//E_S"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sortie" eSuperTypes="#//E_S"/>
   <eClassifiers xsi:type="ecore:EClass" name="Bloc_Binaire">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="val1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="val2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
