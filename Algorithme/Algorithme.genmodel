@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Algorithme/src" modelPluginID="Algorithme" modelName="Algorithme"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="17.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Algorithme.ecore</foreignModel>
+  <genPackages prefix="Algorithme" disposableProviderFactory="true" ecorePackage="Algorithme.ecore#/">
+    <genClasses ecoreClass="Algorithme.ecore#//Algorithme"/>
+    <genClasses ecoreClass="Algorithme.ecore#//Ressources">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Algorithme.ecore#//Ressources/RtoA"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Algorithme.ecore#//Ressources/RtoE_S"/>
+    </genClasses>
+    <genClasses ecoreClass="Algorithme.ecore#//Programme"/>
+    <genClasses ecoreClass="Algorithme.ecore#//Fichier"/>
+    <genClasses ecoreClass="Algorithme.ecore#//Guidance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Algorithme.ecore#//Guidance/elements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Algorithme.ecore#//Guidance/texte"/>
+    </genClasses>
+    <genClasses ecoreClass="Algorithme.ecore#//E_S">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Algorithme.ecore#//E_S/E_StoA"/>
+    </genClasses>
+    <genClasses ecoreClass="Algorithme.ecore#//Entrée">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Algorithme.ecore#//Entrée/paramètre"/>
+    </genClasses>
+    <genClasses ecoreClass="Algorithme.ecore#//Sortie"/>
+  </genPackages>
+</genmodel:GenModel>

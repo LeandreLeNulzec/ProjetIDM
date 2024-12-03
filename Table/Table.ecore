@@ -22,7 +22,8 @@
         eOpposite="#//Table/colonnes"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ElementType" lowerBound="1"
         eType="#//ColonnesElementsType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contraintes" upperBound="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contraintes" upperBound="-1"
+        eType="#//Contrainte"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColonneProvient" eSuperTypes="#//Colonne">
     <eStructuralFeatures xsi:type="ecore:EReference" name="colonneOrigine" lowerBound="1"
@@ -30,7 +31,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColonneDerivee" eSuperTypes="#//Colonne">
     <eStructuralFeatures xsi:type="ecore:EReference" name="algorithme" lowerBound="1"
-        eType="ecore:EClass ../Algorithme/algorithme.ecore#//Algorithme"/>
+        eType="ecore:EClass ../Algorithme/Algorithme.ecore#//Algorithme"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="colonnesEntree" upperBound="-1"
         eType="#//Colonne"/>
   </eClassifiers>
