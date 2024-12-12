@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Script/src" modelPluginID="Script" modelName="Script"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="17.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>script.ecore</foreignModel>
+  <genPackages prefix="Script" disposableProviderFactory="true" ecorePackage="script.ecore#/">
+    <genClasses ecoreClass="script.ecore#//Script"/>
+    <genClasses ecoreClass="script.ecore#//E_S">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//E_S/E_StoBU"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//E_S/E_StoBB"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//E_S/E_StoBF"/>
+    </genClasses>
+    <genClasses ecoreClass="script.ecore#//Entree">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Entree/arg"/>
+    </genClasses>
+    <genClasses ecoreClass="script.ecore#//Sortie">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Sortie/res"/>
+    </genClasses>
+    <genClasses ecoreClass="script.ecore#//Bloc_Binaire">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//Bloc_Binaire/BBtoS"/>
+    </genClasses>
+    <genClasses ecoreClass="script.ecore#//Bloc_Unaire">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//Bloc_Unaire/BUtoS"/>
+    </genClasses>
+    <genClasses ecoreClass="script.ecore#//Bloc_Fonction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//Bloc_Fonction/BFtoS"/>
+    </genClasses>
+    <genClasses ecoreClass="script.ecore#//Addition"/>
+    <genClasses ecoreClass="script.ecore#//Multiplication"/>
+    <genClasses ecoreClass="script.ecore#//Division"/>
+    <genClasses ecoreClass="script.ecore#//Min"/>
+    <genClasses ecoreClass="script.ecore#//Max"/>
+    <genClasses ecoreClass="script.ecore#//Oppose"/>
+    <genClasses ecoreClass="script.ecore#//Inverse"/>
+    <genClasses ecoreClass="script.ecore#//Sin"/>
+    <genClasses ecoreClass="script.ecore#//Cos"/>
+    <genClasses ecoreClass="script.ecore#//Racine"/>
+    <genClasses ecoreClass="script.ecore#//Expo"/>
+    <genClasses ecoreClass="script.ecore#//Constante">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Constante/val"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//Constante/CtoS"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
