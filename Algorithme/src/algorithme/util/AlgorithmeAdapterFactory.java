@@ -76,28 +76,40 @@ public class AlgorithmeAdapterFactory extends AdapterFactoryImpl {
 				return createRessourcesAdapter();
 			}
 			@Override
-			public Adapter caseProgramme(Programme object) {
-				return createProgrammeAdapter();
-			}
-			@Override
-			public Adapter caseFichier(Fichier object) {
-				return createFichierAdapter();
+			public Adapter caseScript(Script object) {
+				return createScriptAdapter();
 			}
 			@Override
 			public Adapter caseGuidance(Guidance object) {
 				return createGuidanceAdapter();
 			}
 			@Override
-			public Adapter caseE_S(E_S object) {
-				return createE_SAdapter();
+			public Adapter casePort(Port object) {
+				return createPortAdapter();
 			}
 			@Override
-			public Adapter caseEntrée(Entrée object) {
-				return createEntréeAdapter();
+			public Adapter caseEntree(Entree object) {
+				return createEntreeAdapter();
 			}
 			@Override
 			public Adapter caseSortie(Sortie object) {
 				return createSortieAdapter();
+			}
+			@Override
+			public Adapter caseArgument(Argument object) {
+				return createArgumentAdapter();
+			}
+			@Override
+			public Adapter casePortEntree(PortEntree object) {
+				return createPortEntreeAdapter();
+			}
+			@Override
+			public Adapter casePortSortie(PortSortie object) {
+				return createPortSortieAdapter();
+			}
+			@Override
+			public Adapter caseAlgorithmeElements(AlgorithmeElements object) {
+				return createAlgorithmeElementsAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -148,30 +160,16 @@ public class AlgorithmeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link algorithme.Programme <em>Programme</em>}'.
+	 * Creates a new adapter for an object of class '{@link algorithme.Script <em>Script</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see algorithme.Programme
+	 * @see algorithme.Script
 	 * @generated
 	 */
-	public Adapter createProgrammeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link algorithme.Fichier <em>Fichier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see algorithme.Fichier
-	 * @generated
-	 */
-	public Adapter createFichierAdapter() {
+	public Adapter createScriptAdapter() {
 		return null;
 	}
 
@@ -190,30 +188,30 @@ public class AlgorithmeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link algorithme.E_S <em>ES</em>}'.
+	 * Creates a new adapter for an object of class '{@link algorithme.Port <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see algorithme.E_S
+	 * @see algorithme.Port
 	 * @generated
 	 */
-	public Adapter createE_SAdapter() {
+	public Adapter createPortAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link algorithme.Entrée <em>Entrée</em>}'.
+	 * Creates a new adapter for an object of class '{@link algorithme.Entree <em>Entree</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see algorithme.Entrée
+	 * @see algorithme.Entree
 	 * @generated
 	 */
-	public Adapter createEntréeAdapter() {
+	public Adapter createEntreeAdapter() {
 		return null;
 	}
 
@@ -228,6 +226,62 @@ public class AlgorithmeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSortieAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link algorithme.Argument <em>Argument</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see algorithme.Argument
+	 * @generated
+	 */
+	public Adapter createArgumentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link algorithme.PortEntree <em>Port Entree</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see algorithme.PortEntree
+	 * @generated
+	 */
+	public Adapter createPortEntreeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link algorithme.PortSortie <em>Port Sortie</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see algorithme.PortSortie
+	 * @generated
+	 */
+	public Adapter createPortSortieAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link algorithme.AlgorithmeElements <em>Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see algorithme.AlgorithmeElements
+	 * @generated
+	 */
+	public Adapter createAlgorithmeElementsAdapter() {
 		return null;
 	}
 

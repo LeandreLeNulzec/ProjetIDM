@@ -1,10 +1,6 @@
 /**
  */
-package algorithme.impl;
-
-import algorithme.Algorithme;
-import algorithme.AlgorithmePackage;
-import algorithme.E_S;
+package script.impl;
 
 import java.util.Collection;
 
@@ -16,36 +12,40 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import script.Bloc_Fonction;
+import script.ScriptElements;
+import script.ScriptPackage;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>ES</b></em>'.
+ * An implementation of the model object '<em><b>Bloc Fonction</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link algorithme.impl.E_SImpl#getE_StoA <em>ESto A</em>}</li>
+ *   <li>{@link script.impl.Bloc_FonctionImpl#getBFtoS <em>BFto S</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class E_SImpl extends MinimalEObjectImpl.Container implements E_S {
+public class Bloc_FonctionImpl extends MinimalEObjectImpl.Container implements Bloc_Fonction {
 	/**
-	 * The cached value of the '{@link #getE_StoA() <em>ESto A</em>}' reference list.
+	 * The cached value of the '{@link #getBFtoS() <em>BFto S</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getE_StoA()
+	 * @see #getBFtoS()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Algorithme> e_StoA;
+	protected EList<ScriptElements> bFtoS;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected E_SImpl() {
+	protected Bloc_FonctionImpl() {
 		super();
 	}
 
@@ -56,7 +56,7 @@ public class E_SImpl extends MinimalEObjectImpl.Container implements E_S {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AlgorithmePackage.Literals.ES;
+		return ScriptPackage.Literals.BLOC_FONCTION;
 	}
 
 	/**
@@ -65,11 +65,11 @@ public class E_SImpl extends MinimalEObjectImpl.Container implements E_S {
 	 * @generated
 	 */
 	@Override
-	public EList<Algorithme> getE_StoA() {
-		if (e_StoA == null) {
-			e_StoA = new EObjectResolvingEList<Algorithme>(Algorithme.class, this, AlgorithmePackage.ES__ESTO_A);
+	public EList<ScriptElements> getBFtoS() {
+		if (bFtoS == null) {
+			bFtoS = new EObjectResolvingEList<ScriptElements>(ScriptElements.class, this, ScriptPackage.BLOC_FONCTION__BFTO_S);
 		}
-		return e_StoA;
+		return bFtoS;
 	}
 
 	/**
@@ -80,8 +80,8 @@ public class E_SImpl extends MinimalEObjectImpl.Container implements E_S {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AlgorithmePackage.ES__ESTO_A:
-				return getE_StoA();
+			case ScriptPackage.BLOC_FONCTION__BFTO_S:
+				return getBFtoS();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -95,9 +95,9 @@ public class E_SImpl extends MinimalEObjectImpl.Container implements E_S {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AlgorithmePackage.ES__ESTO_A:
-				getE_StoA().clear();
-				getE_StoA().addAll((Collection<? extends Algorithme>)newValue);
+			case ScriptPackage.BLOC_FONCTION__BFTO_S:
+				getBFtoS().clear();
+				getBFtoS().addAll((Collection<? extends ScriptElements>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -111,8 +111,8 @@ public class E_SImpl extends MinimalEObjectImpl.Container implements E_S {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.ES__ESTO_A:
-				getE_StoA().clear();
+			case ScriptPackage.BLOC_FONCTION__BFTO_S:
+				getBFtoS().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -126,10 +126,10 @@ public class E_SImpl extends MinimalEObjectImpl.Container implements E_S {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.ES__ESTO_A:
-				return e_StoA != null && !e_StoA.isEmpty();
+			case ScriptPackage.BLOC_FONCTION__BFTO_S:
+				return bFtoS != null && !bFtoS.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //E_SImpl
+} //Bloc_FonctionImpl

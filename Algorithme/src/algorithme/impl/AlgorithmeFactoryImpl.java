@@ -5,6 +5,7 @@ package algorithme.impl;
 import algorithme.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -58,14 +59,43 @@ public class AlgorithmeFactoryImpl extends EFactoryImpl implements AlgorithmeFac
 		switch (eClass.getClassifierID()) {
 			case AlgorithmePackage.ALGORITHME: return createAlgorithme();
 			case AlgorithmePackage.RESSOURCES: return createRessources();
-			case AlgorithmePackage.PROGRAMME: return createProgramme();
-			case AlgorithmePackage.FICHIER: return createFichier();
+			case AlgorithmePackage.SCRIPT: return createScript();
 			case AlgorithmePackage.GUIDANCE: return createGuidance();
-			case AlgorithmePackage.ES: return createE_S();
-			case AlgorithmePackage.ENTRÉE: return createEntrée();
 			case AlgorithmePackage.SORTIE: return createSortie();
+			case AlgorithmePackage.ARGUMENT: return createArgument();
+			case AlgorithmePackage.PORT_ENTREE: return createPortEntree();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case AlgorithmePackage.CALCULS:
+				return createCalculsFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case AlgorithmePackage.CALCULS:
+				return convertCalculsToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -97,20 +127,9 @@ public class AlgorithmeFactoryImpl extends EFactoryImpl implements AlgorithmeFac
 	 * @generated
 	 */
 	@Override
-	public Programme createProgramme() {
-		ProgrammeImpl programme = new ProgrammeImpl();
-		return programme;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Fichier createFichier() {
-		FichierImpl fichier = new FichierImpl();
-		return fichier;
+	public Script createScript() {
+		ScriptImpl script = new ScriptImpl();
+		return script;
 	}
 
 	/**
@@ -130,31 +149,49 @@ public class AlgorithmeFactoryImpl extends EFactoryImpl implements AlgorithmeFac
 	 * @generated
 	 */
 	@Override
-	public E_S createE_S() {
-		E_SImpl e_S = new E_SImpl();
-		return e_S;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Entrée createEntrée() {
-		EntréeImpl entrée = new EntréeImpl();
-		return entrée;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Sortie createSortie() {
 		SortieImpl sortie = new SortieImpl();
 		return sortie;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Argument createArgument() {
+		ArgumentImpl argument = new ArgumentImpl();
+		return argument;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PortEntree createPortEntree() {
+		PortEntreeImpl portEntree = new PortEntreeImpl();
+		return portEntree;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Object createCalculsFromString(EDataType eDataType, String initialValue) {
+		return super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCalculsToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

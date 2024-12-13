@@ -1,26 +1,26 @@
 /**
  */
-package algorithme.impl;
-
-import algorithme.AlgorithmePackage;
-import algorithme.Fichier;
+package script.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import script.Multiplication;
+import script.ScriptPackage;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Fichier</b></em>'.
+ * An implementation of the model object '<em><b>Multiplication</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class FichierImpl extends RessourcesImpl implements Fichier {
+public class MultiplicationImpl extends Bloc_BinaireImpl implements Multiplication {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FichierImpl() {
+	protected MultiplicationImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class FichierImpl extends RessourcesImpl implements Fichier {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AlgorithmePackage.Literals.FICHIER;
+		return ScriptPackage.Literals.MULTIPLICATION;
 	}
 
-} //FichierImpl
+} //MultiplicationImpl

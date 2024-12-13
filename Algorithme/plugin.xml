@@ -14,4 +14,12 @@
             genModel="Algorithme.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Algorithme -->
+      <package
+            uri="http://script"
+            class="script.ScriptPackage"
+            genModel="Algorithme.genmodel"/>
+   </extension>
+
 </plugin>

@@ -3,7 +3,7 @@
 package algorithme.impl;
 
 import algorithme.AlgorithmePackage;
-import algorithme.Entrée;
+import algorithme.Argument;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,44 +13,44 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Entrée</b></em>'.
+ * An implementation of the model object '<em><b>Argument</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link algorithme.impl.EntréeImpl#getParamètre <em>Paramètre</em>}</li>
+ *   <li>{@link algorithme.impl.ArgumentImpl#getNom <em>Nom</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EntréeImpl extends E_SImpl implements Entrée {
+public class ArgumentImpl extends EntreeImpl implements Argument {
 	/**
-	 * The default value of the '{@link #getParamètre() <em>Paramètre</em>}' attribute.
+	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParamètre()
+	 * @see #getNom()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PARAMÈTRE_EDEFAULT = null;
+	protected static final String NOM_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getParamètre() <em>Paramètre</em>}' attribute.
+	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParamètre()
+	 * @see #getNom()
 	 * @generated
 	 * @ordered
 	 */
-	protected String paramètre = PARAMÈTRE_EDEFAULT;
+	protected String nom = NOM_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EntréeImpl() {
+	protected ArgumentImpl() {
 		super();
 	}
 
@@ -61,7 +61,7 @@ public class EntréeImpl extends E_SImpl implements Entrée {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AlgorithmePackage.Literals.ENTRÉE;
+		return AlgorithmePackage.Literals.ARGUMENT;
 	}
 
 	/**
@@ -70,8 +70,8 @@ public class EntréeImpl extends E_SImpl implements Entrée {
 	 * @generated
 	 */
 	@Override
-	public String getParamètre() {
-		return paramètre;
+	public String getNom() {
+		return nom;
 	}
 
 	/**
@@ -80,11 +80,11 @@ public class EntréeImpl extends E_SImpl implements Entrée {
 	 * @generated
 	 */
 	@Override
-	public void setParamètre(String newParamètre) {
-		String oldParamètre = paramètre;
-		paramètre = newParamètre;
+	public void setNom(String newNom) {
+		String oldNom = nom;
+		nom = newNom;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.ENTRÉE__PARAMÈTRE, oldParamètre, paramètre));
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.ARGUMENT__NOM, oldNom, nom));
 	}
 
 	/**
@@ -95,8 +95,8 @@ public class EntréeImpl extends E_SImpl implements Entrée {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AlgorithmePackage.ENTRÉE__PARAMÈTRE:
-				return getParamètre();
+			case AlgorithmePackage.ARGUMENT__NOM:
+				return getNom();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -109,8 +109,8 @@ public class EntréeImpl extends E_SImpl implements Entrée {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AlgorithmePackage.ENTRÉE__PARAMÈTRE:
-				setParamètre((String)newValue);
+			case AlgorithmePackage.ARGUMENT__NOM:
+				setNom((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -124,8 +124,8 @@ public class EntréeImpl extends E_SImpl implements Entrée {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.ENTRÉE__PARAMÈTRE:
-				setParamètre(PARAMÈTRE_EDEFAULT);
+			case AlgorithmePackage.ARGUMENT__NOM:
+				setNom(NOM_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -139,8 +139,8 @@ public class EntréeImpl extends E_SImpl implements Entrée {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.ENTRÉE__PARAMÈTRE:
-				return PARAMÈTRE_EDEFAULT == null ? paramètre != null : !PARAMÈTRE_EDEFAULT.equals(paramètre);
+			case AlgorithmePackage.ARGUMENT__NOM:
+				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -155,10 +155,10 @@ public class EntréeImpl extends E_SImpl implements Entrée {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (paramètre: ");
-		result.append(paramètre);
+		result.append(" (nom: ");
+		result.append(nom);
 		result.append(')');
 		return result.toString();
 	}
 
-} //EntréeImpl
+} //ArgumentImpl

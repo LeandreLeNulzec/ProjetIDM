@@ -2,7 +2,7 @@
  */
 package algorithme.impl;
 
-import algorithme.Algorithme;
+import algorithme.AlgorithmeElements;
 import algorithme.AlgorithmePackage;
 import algorithme.Guidance;
 
@@ -26,23 +26,13 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link algorithme.impl.GuidanceImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link algorithme.impl.GuidanceImpl#getTexte <em>Texte</em>}</li>
+ *   <li>{@link algorithme.impl.GuidanceImpl#getGtoAE <em>Gto AE</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GuidanceImpl extends AlgorithmeImpl implements Guidance {
-	/**
-	 * The cached value of the '{@link #getElements() <em>Elements</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getElements()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Algorithme> elements;
-
+public class GuidanceImpl extends AlgorithmeElementsImpl implements Guidance {
 	/**
 	 * The default value of the '{@link #getTexte() <em>Texte</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,6 +54,16 @@ public class GuidanceImpl extends AlgorithmeImpl implements Guidance {
 	protected String texte = TEXTE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getGtoAE() <em>Gto AE</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGtoAE()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AlgorithmeElements> gtoAE;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -80,19 +80,6 @@ public class GuidanceImpl extends AlgorithmeImpl implements Guidance {
 	@Override
 	protected EClass eStaticClass() {
 		return AlgorithmePackage.Literals.GUIDANCE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Algorithme> getElements() {
-		if (elements == null) {
-			elements = new EObjectResolvingEList<Algorithme>(Algorithme.class, this, AlgorithmePackage.GUIDANCE__ELEMENTS);
-		}
-		return elements;
 	}
 
 	/**
@@ -124,12 +111,25 @@ public class GuidanceImpl extends AlgorithmeImpl implements Guidance {
 	 * @generated
 	 */
 	@Override
+	public EList<AlgorithmeElements> getGtoAE() {
+		if (gtoAE == null) {
+			gtoAE = new EObjectResolvingEList<AlgorithmeElements>(AlgorithmeElements.class, this, AlgorithmePackage.GUIDANCE__GTO_AE);
+		}
+		return gtoAE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AlgorithmePackage.GUIDANCE__ELEMENTS:
-				return getElements();
 			case AlgorithmePackage.GUIDANCE__TEXTE:
 				return getTexte();
+			case AlgorithmePackage.GUIDANCE__GTO_AE:
+				return getGtoAE();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -143,12 +143,12 @@ public class GuidanceImpl extends AlgorithmeImpl implements Guidance {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AlgorithmePackage.GUIDANCE__ELEMENTS:
-				getElements().clear();
-				getElements().addAll((Collection<? extends Algorithme>)newValue);
-				return;
 			case AlgorithmePackage.GUIDANCE__TEXTE:
 				setTexte((String)newValue);
+				return;
+			case AlgorithmePackage.GUIDANCE__GTO_AE:
+				getGtoAE().clear();
+				getGtoAE().addAll((Collection<? extends AlgorithmeElements>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -162,11 +162,11 @@ public class GuidanceImpl extends AlgorithmeImpl implements Guidance {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.GUIDANCE__ELEMENTS:
-				getElements().clear();
-				return;
 			case AlgorithmePackage.GUIDANCE__TEXTE:
 				setTexte(TEXTE_EDEFAULT);
+				return;
+			case AlgorithmePackage.GUIDANCE__GTO_AE:
+				getGtoAE().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -180,10 +180,10 @@ public class GuidanceImpl extends AlgorithmeImpl implements Guidance {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.GUIDANCE__ELEMENTS:
-				return elements != null && !elements.isEmpty();
 			case AlgorithmePackage.GUIDANCE__TEXTE:
 				return TEXTE_EDEFAULT == null ? texte != null : !TEXTE_EDEFAULT.equals(texte);
+			case AlgorithmePackage.GUIDANCE__GTO_AE:
+				return gtoAE != null && !gtoAE.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

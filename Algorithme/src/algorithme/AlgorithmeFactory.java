@@ -40,22 +40,13 @@ public interface AlgorithmeFactory extends EFactory {
 	Ressources createRessources();
 
 	/**
-	 * Returns a new object of class '<em>Programme</em>'.
+	 * Returns a new object of class '<em>Script</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Programme</em>'.
+	 * @return a new object of class '<em>Script</em>'.
 	 * @generated
 	 */
-	Programme createProgramme();
-
-	/**
-	 * Returns a new object of class '<em>Fichier</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fichier</em>'.
-	 * @generated
-	 */
-	Fichier createFichier();
+	Script createScript();
 
 	/**
 	 * Returns a new object of class '<em>Guidance</em>'.
@@ -67,24 +58,6 @@ public interface AlgorithmeFactory extends EFactory {
 	Guidance createGuidance();
 
 	/**
-	 * Returns a new object of class '<em>ES</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>ES</em>'.
-	 * @generated
-	 */
-	E_S createE_S();
-
-	/**
-	 * Returns a new object of class '<em>Entrée</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entrée</em>'.
-	 * @generated
-	 */
-	Entrée createEntrée();
-
-	/**
 	 * Returns a new object of class '<em>Sortie</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,6 +65,24 @@ public interface AlgorithmeFactory extends EFactory {
 	 * @generated
 	 */
 	Sortie createSortie();
+
+	/**
+	 * Returns a new object of class '<em>Argument</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Argument</em>'.
+	 * @generated
+	 */
+	Argument createArgument();
+
+	/**
+	 * Returns a new object of class '<em>Port Entree</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Port Entree</em>'.
+	 * @generated
+	 */
+	PortEntree createPortEntree();
 
 	/**
 	 * Returns the package supported by this factory.

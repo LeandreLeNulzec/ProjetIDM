@@ -13,27 +13,15 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link algorithme.Guidance#getElements <em>Elements</em>}</li>
  *   <li>{@link algorithme.Guidance#getTexte <em>Texte</em>}</li>
+ *   <li>{@link algorithme.Guidance#getGtoAE <em>Gto AE</em>}</li>
  * </ul>
  *
  * @see algorithme.AlgorithmePackage#getGuidance()
  * @model
  * @generated
  */
-public interface Guidance extends Algorithme {
-	/**
-	 * Returns the value of the '<em><b>Elements</b></em>' reference list.
-	 * The list contents are of type {@link algorithme.Algorithme}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Elements</em>' reference list.
-	 * @see algorithme.AlgorithmePackage#getGuidance_Elements()
-	 * @model
-	 * @generated
-	 */
-	EList<Algorithme> getElements();
-
+public interface Guidance extends AlgorithmeElements {
 	/**
 	 * Returns the value of the '<em><b>Texte</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -55,5 +43,17 @@ public interface Guidance extends Algorithme {
 	 * @generated
 	 */
 	void setTexte(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Gto AE</b></em>' reference list.
+	 * The list contents are of type {@link algorithme.AlgorithmeElements}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Gto AE</em>' reference list.
+	 * @see algorithme.AlgorithmePackage#getGuidance_GtoAE()
+	 * @model
+	 * @generated
+	 */
+	EList<AlgorithmeElements> getGtoAE();
 
 } // Guidance

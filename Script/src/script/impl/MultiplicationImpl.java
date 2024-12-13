@@ -1,26 +1,26 @@
 /**
  */
-package algorithme.impl;
-
-import algorithme.AlgorithmePackage;
-import algorithme.Programme;
+package script.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import script.Multiplication;
+import script.ScriptPackage;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Programme</b></em>'.
+ * An implementation of the model object '<em><b>Multiplication</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ProgrammeImpl extends RessourcesImpl implements Programme {
+public class MultiplicationImpl extends Bloc_BinaireImpl implements Multiplication {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProgrammeImpl() {
+	protected MultiplicationImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class ProgrammeImpl extends RessourcesImpl implements Programme {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AlgorithmePackage.Literals.PROGRAMME;
+		return ScriptPackage.Literals.MULTIPLICATION;
 	}
 
-} //ProgrammeImpl
+} //MultiplicationImpl

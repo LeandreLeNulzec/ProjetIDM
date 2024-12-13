@@ -12,12 +12,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="chemin" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeRes" eType="#//Calculs"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RtoC" eType="#//Calcul"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RtoScr" eType="#//Script"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Calcul">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="calculElement" eType="#//Calculs"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CtoS" lowerBound="1" eType="#//Sortie"
-        containment="true" eOpposite="#//Sortie/StoC"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Script">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ScrtoS" lowerBound="1"
+        eType="#//Sortie" containment="true" eOpposite="#//Sortie/StoScr"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ScrtoSE" upperBound="-1"
+        eType="ecore:EClass script.ecore#//ScriptElements"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Guidance" eSuperTypes="#//AlgorithmeElements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="texte" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -29,31 +30,30 @@
         eOpposite="#//Ressources/RtoP"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entrée" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Entree" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
         defaultValueLiteral="0.0"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="portSortie" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EtoS" eType="#//Sortie"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="PortSortieS" eType="ecore:EClass script.ecore#//PortSortie"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sortie">
     <eStructuralFeatures xsi:type="ecore:EReference" name="StoPS" lowerBound="1" eType="#//PortSortie"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="StoC" eType="#//Calcul"
-        eOpposite="#//Calcul/CtoS"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="portEntree"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="StoScr" eType="#//Script"
+        eOpposite="#//Script/ScrtoS"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="StoE" lowerBound="1" upperBound="-1"
-        eType="#//Entrée"/>
+        eType="#//Entree"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="PortEntreeS" eType="ecore:EClass script.ecore#//PortEntree"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//Entrée">
+  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//Entree">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Calculs" instanceTypeName="calcul"/>
   <eClassifiers xsi:type="ecore:EClass" name="PortEntree" eSuperTypes="#//Port">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="PEtoE" lowerBound="1" eType="#//Entrée"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="PEtoE" lowerBound="1" eType="#//Entree"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="PStoArg" eType="#//Argument"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PortSortie" eSuperTypes="#//Port">
+  <eClassifiers xsi:type="ecore:EClass" name="PortSortie" abstract="true" eSuperTypes="#//Port">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"
         defaultValueLiteral="0.0"/>
   </eClassifiers>
