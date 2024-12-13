@@ -4,9 +4,6 @@ package algorithme.tests;
 
 import algorithme.AlgorithmeFactory;
 import algorithme.Ressources;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RessourcesTest extends TestCase {
-
-	/**
-	 * The fixture for this Ressources test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Ressources fixture = null;
+public class RessourcesTest extends AlgorithmeElementsTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class RessourcesTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Ressources test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Ressources fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Ressources test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Ressources getFixture() {
-		return fixture;
+		return (Ressources)fixture;
 	}
 
 	/**

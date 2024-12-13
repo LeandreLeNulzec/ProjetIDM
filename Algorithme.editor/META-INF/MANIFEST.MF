@@ -9,7 +9,8 @@ Bundle-Activator: algorithme.presentation.AlgorithmeEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: algorithme.presentation
+Export-Package: algorithme.presentation,
+ script.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  Algorithme.edit;visibility:=reexport,

@@ -13,7 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GuidanceTest extends AlgorithmeTest {
+public class GuidanceTest extends AlgorithmeElementsTest {
 
 	/**
 	 * <!-- begin-user-doc -->

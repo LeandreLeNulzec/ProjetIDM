@@ -118,49 +118,26 @@ public class AlgorithmeItemProviderAdapterFactory extends AlgorithmeAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link algorithme.Programme} instances.
+	 * This keeps track of the one adapter used for all {@link algorithme.Script} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProgrammeItemProvider programmeItemProvider;
+	protected ScriptItemProvider scriptItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link algorithme.Programme}.
+	 * This creates an adapter for a {@link algorithme.Script}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createProgrammeAdapter() {
-		if (programmeItemProvider == null) {
-			programmeItemProvider = new ProgrammeItemProvider(this);
+	public Adapter createScriptAdapter() {
+		if (scriptItemProvider == null) {
+			scriptItemProvider = new ScriptItemProvider(this);
 		}
 
-		return programmeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link algorithme.Fichier} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FichierItemProvider fichierItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link algorithme.Fichier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFichierAdapter() {
-		if (fichierItemProvider == null) {
-			fichierItemProvider = new FichierItemProvider(this);
-		}
-
-		return fichierItemProvider;
+		return scriptItemProvider;
 	}
 
 	/**
@@ -187,52 +164,6 @@ public class AlgorithmeItemProviderAdapterFactory extends AlgorithmeAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link algorithme.E_S} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected E_SItemProvider e_SItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link algorithme.E_S}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createE_SAdapter() {
-		if (e_SItemProvider == null) {
-			e_SItemProvider = new E_SItemProvider(this);
-		}
-
-		return e_SItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link algorithme.Entrée} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EntréeItemProvider entréeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link algorithme.Entrée}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEntréeAdapter() {
-		if (entréeItemProvider == null) {
-			entréeItemProvider = new EntréeItemProvider(this);
-		}
-
-		return entréeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link algorithme.Sortie} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -253,6 +184,52 @@ public class AlgorithmeItemProviderAdapterFactory extends AlgorithmeAdapterFacto
 		}
 
 		return sortieItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link algorithme.Argument} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ArgumentItemProvider argumentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link algorithme.Argument}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createArgumentAdapter() {
+		if (argumentItemProvider == null) {
+			argumentItemProvider = new ArgumentItemProvider(this);
+		}
+
+		return argumentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link algorithme.PortEntree} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PortEntreeItemProvider portEntreeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link algorithme.PortEntree}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPortEntreeAdapter() {
+		if (portEntreeItemProvider == null) {
+			portEntreeItemProvider = new PortEntreeItemProvider(this);
+		}
+
+		return portEntreeItemProvider;
 	}
 
 	/**
@@ -362,12 +339,11 @@ public class AlgorithmeItemProviderAdapterFactory extends AlgorithmeAdapterFacto
 	public void dispose() {
 		if (algorithmeItemProvider != null) algorithmeItemProvider.dispose();
 		if (ressourcesItemProvider != null) ressourcesItemProvider.dispose();
-		if (programmeItemProvider != null) programmeItemProvider.dispose();
-		if (fichierItemProvider != null) fichierItemProvider.dispose();
+		if (scriptItemProvider != null) scriptItemProvider.dispose();
 		if (guidanceItemProvider != null) guidanceItemProvider.dispose();
-		if (e_SItemProvider != null) e_SItemProvider.dispose();
-		if (entréeItemProvider != null) entréeItemProvider.dispose();
 		if (sortieItemProvider != null) sortieItemProvider.dispose();
+		if (argumentItemProvider != null) argumentItemProvider.dispose();
+		if (portEntreeItemProvider != null) portEntreeItemProvider.dispose();
 	}
 
 }

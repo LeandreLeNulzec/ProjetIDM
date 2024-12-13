@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GuidanceItemProvider extends AlgorithmeItemProvider {
+public class GuidanceItemProvider extends AlgorithmeElementsItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,32 +45,10 @@ public class GuidanceItemProvider extends AlgorithmeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addElementsPropertyDescriptor(object);
 			addTextePropertyDescriptor(object);
+			addGtoAEPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Elements feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addElementsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Guidance_elements_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Guidance_elements_feature", "_UI_Guidance_type"),
-				 AlgorithmePackage.Literals.GUIDANCE__ELEMENTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -96,6 +74,28 @@ public class GuidanceItemProvider extends AlgorithmeItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Gto AE feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGtoAEPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Guidance_GtoAE_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Guidance_GtoAE_feature", "_UI_Guidance_type"),
+				 AlgorithmePackage.Literals.GUIDANCE__GTO_AE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Guidance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,7 +114,7 @@ public class GuidanceItemProvider extends AlgorithmeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Guidance)object).getTexte();
+		String label = ((Guidance)object).getNom();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Guidance_type") :
 			getString("_UI_Guidance_type") + " " + label;
