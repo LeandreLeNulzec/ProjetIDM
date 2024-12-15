@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import script.Constante;
 import script.ScriptPackage;
+import script.Type;
 
 /**
  * This is the item provider adapter for a {@link script.Constante} object.
@@ -83,7 +84,7 @@ public class ConstanteItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -129,8 +130,11 @@ public class ConstanteItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Constante constante = (Constante)object;
-		return getString("_UI_Constante_type") + " " + constante.getVal();
+		Type labelValue = ((Constante)object).getVal();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Constante_type") :
+			getString("_UI_Constante_type") + " " + label;
 	}
 
 
