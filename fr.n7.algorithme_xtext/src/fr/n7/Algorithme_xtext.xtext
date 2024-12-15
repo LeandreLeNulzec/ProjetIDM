@@ -1,0 +1,22 @@
+grammar fr.n7.Algorithme_xtext with org.eclipse.xtext.common.Terminals
+
+generate algorithme_xtext "http://www.n7.fr/Algorithme_xtext"
+
+Algorithme : 'AEtoA' name = ID '{'
+	AtoAE += AlgorithmeElements*
+	'}';
+	
+AlgorithmeElements: Ressources | Guidance;
+
+Ressources : 'Ressources :' chemin=ID 'de type' typeRes=Calculs;
+
+Guidance : 'com' texte = STRING;
+
+Calculs : (ID)+;
+
+Entree : 'Port entrée' nom=ID 'associé à' valeur = ID;
+
+Sortie : ID;
+
+Script : (ID)+;
+
