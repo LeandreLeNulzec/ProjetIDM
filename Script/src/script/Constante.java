@@ -26,25 +26,28 @@ import org.eclipse.emf.ecore.EObject;
 public interface Constante extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Val</b></em>' attribute.
+	 * The literals are from the enumeration {@link script.Type}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Val</em>' attribute.
-	 * @see #setVal(float)
+	 * @see script.Type
+	 * @see #setVal(Type)
 	 * @see script.ScriptPackage#getConstante_Val()
-	 * @model
+	 * @model dataType="script.Type"
 	 * @generated
 	 */
-	float getVal();
+	Type getVal();
 
 	/**
 	 * Sets the value of the '{@link script.Constante#getVal <em>Val</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Val</em>' attribute.
+	 * @see script.Type
 	 * @see #getVal()
 	 * @generated
 	 */
-	void setVal(float value);
+	void setVal(Type value);
 
 	/**
 	 * Returns the value of the '<em><b>Cto S</b></em>' reference list.

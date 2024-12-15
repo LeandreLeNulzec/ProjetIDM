@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 import script.ScriptPackage;
 import script.Sortie;
+import script.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +36,7 @@ public class SortieImpl extends PortSortieImpl implements Sortie {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Float> res;
+	protected EList<Type> res;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,9 +63,9 @@ public class SortieImpl extends PortSortieImpl implements Sortie {
 	 * @generated
 	 */
 	@Override
-	public EList<Float> getRes() {
+	public EList<Type> getRes() {
 		if (res == null) {
-			res = new EDataTypeUniqueEList<Float>(Float.class, this, ScriptPackage.SORTIE__RES);
+			res = new EDataTypeUniqueEList<Type>(Type.class, this, ScriptPackage.SORTIE__RES);
 		}
 		return res;
 	}
@@ -94,7 +95,7 @@ public class SortieImpl extends PortSortieImpl implements Sortie {
 		switch (featureID) {
 			case ScriptPackage.SORTIE__RES:
 				getRes().clear();
-				getRes().addAll((Collection<? extends Float>)newValue);
+				getRes().addAll((Collection<? extends Type>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -20,10 +20,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="PStoBF" eType="#//Bloc_Fonction"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entree" eSuperTypes="#//PortEntree">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg" upperBound="-1" eType="#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sortie" eSuperTypes="#//PortSortie">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="res" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="res" upperBound="-1" eType="#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Bloc_Binaire">
     <eStructuralFeatures xsi:type="ecore:EReference" name="BBtoS" upperBound="-1"
@@ -49,7 +49,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="Racine" eSuperTypes="#//Bloc_Fonction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Expo" eSuperTypes="#//Bloc_Fonction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Constante">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CtoS" upperBound="-1" eType="#//Script"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Type" instanceTypeName="Var">
+    <eLiterals name="INT"/>
+    <eLiterals name="FLOAT" value="1"/>
+    <eLiterals name="BOOL" value="2"/>
+    <eLiterals name="STRING" value="3"/>
   </eClassifiers>
 </ecore:EPackage>
