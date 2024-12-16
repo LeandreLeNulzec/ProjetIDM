@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import script.Constante;
 import script.Script;
 import script.ScriptPackage;
+import script.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,16 +36,6 @@ import script.ScriptPackage;
  */
 public class ConstanteImpl extends MinimalEObjectImpl.Container implements Constante {
 	/**
-	 * The default value of the '{@link #getVal() <em>Val</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVal()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final float VAL_EDEFAULT = 0.0F;
-
-	/**
 	 * The cached value of the '{@link #getVal() <em>Val</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -52,7 +43,7 @@ public class ConstanteImpl extends MinimalEObjectImpl.Container implements Const
 	 * @generated
 	 * @ordered
 	 */
-	protected float val = VAL_EDEFAULT;
+	protected Type val;
 
 	/**
 	 * The cached value of the '{@link #getCtoS() <em>Cto S</em>}' reference list.
@@ -89,7 +80,7 @@ public class ConstanteImpl extends MinimalEObjectImpl.Container implements Const
 	 * @generated
 	 */
 	@Override
-	public float getVal() {
+	public Type getVal() {
 		return val;
 	}
 
@@ -99,9 +90,9 @@ public class ConstanteImpl extends MinimalEObjectImpl.Container implements Const
 	 * @generated
 	 */
 	@Override
-	public void setVal(float newVal) {
-		float oldVal = val;
-		val = newVal;
+	public void setVal(Type newVal) {
+		Type oldVal = val;
+		val = newVal == null ? null : newVal;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.CONSTANTE__VAL, oldVal, val));
 	}
@@ -145,7 +136,7 @@ public class ConstanteImpl extends MinimalEObjectImpl.Container implements Const
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ScriptPackage.CONSTANTE__VAL:
-				setVal((Float)newValue);
+				setVal(newValue);
 				return;
 			case ScriptPackage.CONSTANTE__CTO_S:
 				getCtoS().clear();
@@ -164,7 +155,7 @@ public class ConstanteImpl extends MinimalEObjectImpl.Container implements Const
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ScriptPackage.CONSTANTE__VAL:
-				setVal(VAL_EDEFAULT);
+				setVal((Type)null);
 				return;
 			case ScriptPackage.CONSTANTE__CTO_S:
 				getCtoS().clear();
@@ -182,7 +173,7 @@ public class ConstanteImpl extends MinimalEObjectImpl.Container implements Const
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ScriptPackage.CONSTANTE__VAL:
-				return val != VAL_EDEFAULT;
+				return val != null;
 			case ScriptPackage.CONSTANTE__CTO_S:
 				return ctoS != null && !ctoS.isEmpty();
 		}

@@ -4,6 +4,7 @@ package script;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -943,6 +944,17 @@ public interface ScriptPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link script.Type <em>Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see script.Type
+	 * @see script.impl.ScriptPackageImpl#getType()
+	 * @generated
+	 */
+	int TYPE = 21;
+
+
+	/**
 	 * Returns the meta object for class '{@link script.Script <em>Script</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1318,6 +1330,16 @@ public interface ScriptPackage extends EPackage {
 	EReference getConstante_CtoS();
 
 	/**
+	 * Returns the meta object for enum '{@link script.Type <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Type</em>'.
+	 * @see script.Type
+	 * @generated
+	 */
+	EEnum getType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1669,6 +1691,16 @@ public interface ScriptPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONSTANTE__CTO_S = eINSTANCE.getConstante_CtoS();
+
+		/**
+		 * The meta object literal for the '{@link script.Type <em>Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see script.Type
+		 * @see script.impl.ScriptPackageImpl#getType()
+		 * @generated
+		 */
+		EEnum TYPE = eINSTANCE.getType();
 
 	}
 

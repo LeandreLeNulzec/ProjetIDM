@@ -23,14 +23,16 @@ import org.eclipse.emf.common.util.EList;
 public interface Entree extends PortEntree {
 	/**
 	 * Returns the value of the '<em><b>Arg</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Float}.
+	 * The list contents are of type {@link script.Type}.
+	 * The literals are from the enumeration {@link script.Type}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Arg</em>' attribute list.
+	 * @see script.Type
 	 * @see script.ScriptPackage#getEntree_Arg()
-	 * @model
+	 * @model dataType="script.Type"
 	 * @generated
 	 */
-	EList<Float> getArg();
+	EList<Type> getArg();
 
 } // Entree

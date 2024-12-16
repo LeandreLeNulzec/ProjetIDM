@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 import script.Entree;
 import script.ScriptPackage;
+import script.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +36,7 @@ public class EntreeImpl extends PortEntreeImpl implements Entree {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Float> arg;
+	protected EList<Type> arg;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,9 +63,9 @@ public class EntreeImpl extends PortEntreeImpl implements Entree {
 	 * @generated
 	 */
 	@Override
-	public EList<Float> getArg() {
+	public EList<Type> getArg() {
 		if (arg == null) {
-			arg = new EDataTypeUniqueEList<Float>(Float.class, this, ScriptPackage.ENTREE__ARG);
+			arg = new EDataTypeUniqueEList<Type>(Type.class, this, ScriptPackage.ENTREE__ARG);
 		}
 		return arg;
 	}
@@ -94,7 +95,7 @@ public class EntreeImpl extends PortEntreeImpl implements Entree {
 		switch (featureID) {
 			case ScriptPackage.ENTREE__ARG:
 				getArg().clear();
-				getArg().addAll((Collection<? extends Float>)newValue);
+				getArg().addAll((Collection<? extends Type>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -4,6 +4,7 @@ package script.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -32,6 +33,7 @@ import script.ScriptFactory;
 import script.ScriptPackage;
 import script.Sin;
 import script.Sortie;
+import script.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -186,6 +188,13 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	private EClass constanteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -613,6 +622,16 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getType() {
+		return typeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ScriptFactory getScriptFactory() {
 		return (ScriptFactory)getEFactoryInstance();
 	}
@@ -692,6 +711,9 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 		constanteEClass = createEClass(CONSTANTE);
 		createEAttribute(constanteEClass, CONSTANTE__VAL);
 		createEReference(constanteEClass, CONSTANTE__CTO_S);
+
+		// Create enums
+		typeEEnum = createEEnum(TYPE);
 	}
 
 	/**
@@ -755,10 +777,10 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 		initEReference(getPortSortie_PStoBF(), this.getBloc_Fonction(), null, "PStoBF", null, 0, 1, PortSortie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entreeEClass, Entree.class, "Entree", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEntree_Arg(), ecorePackage.getEFloat(), "arg", null, 0, -1, Entree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntree_Arg(), this.getType(), "arg", null, 0, -1, Entree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sortieEClass, Sortie.class, "Sortie", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSortie_Res(), ecorePackage.getEFloat(), "res", null, 0, -1, Sortie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSortie_Res(), this.getType(), "res", null, 0, -1, Sortie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bloc_BinaireEClass, Bloc_Binaire.class, "Bloc_Binaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBloc_Binaire_BBtoS(), this.getScriptElements(), null, "BBtoS", null, 0, -1, Bloc_Binaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -792,8 +814,15 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 		initEClass(expoEClass, Expo.class, "Expo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(constanteEClass, Constante.class, "Constante", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConstante_Val(), ecorePackage.getEFloat(), "val", null, 0, 1, Constante.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConstante_Val(), this.getType(), "val", null, 0, 1, Constante.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConstante_CtoS(), this.getScript(), null, "CtoS", null, 0, -1, Constante.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(typeEEnum, Type.class, "Type");
+		addEEnumLiteral(typeEEnum, Type.INT);
+		addEEnumLiteral(typeEEnum, Type.FLOAT);
+		addEEnumLiteral(typeEEnum, Type.BOOL);
+		addEEnumLiteral(typeEEnum, Type.STRING);
 
 		// Create resource
 		createResource(eNS_URI);

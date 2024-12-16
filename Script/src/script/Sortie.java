@@ -23,14 +23,16 @@ import org.eclipse.emf.common.util.EList;
 public interface Sortie extends PortSortie {
 	/**
 	 * Returns the value of the '<em><b>Res</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Float}.
+	 * The list contents are of type {@link script.Type}.
+	 * The literals are from the enumeration {@link script.Type}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Res</em>' attribute list.
+	 * @see script.Type
 	 * @see script.ScriptPackage#getSortie_Res()
-	 * @model
+	 * @model dataType="script.Type"
 	 * @generated
 	 */
-	EList<Float> getRes();
+	EList<Type> getRes();
 
 } // Sortie
