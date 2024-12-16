@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import script.Division;
+
 /**
  * This is the item provider adapter for a {@link script.Division} object.
  * <!-- begin-user-doc -->
@@ -62,7 +64,10 @@ public class DivisionItemProvider extends Bloc_BinaireItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Division_type");
+		String label = ((Division)object).getNom();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Division_type") :
+			getString("_UI_Division_type") + " " + label;
 	}
 
 

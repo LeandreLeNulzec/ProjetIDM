@@ -7,12 +7,10 @@ import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import script.Entree;
+import script.Port;
 import script.ScriptPackage;
-import script.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,22 +20,21 @@ import script.Type;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link script.impl.EntreeImpl#getArg <em>Arg</em>}</li>
+ *   <li>{@link script.impl.EntreeImpl#getEntrees <em>Entrees</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EntreeImpl extends PortEntreeImpl implements Entree {
+public class EntreeImpl extends ScriptElementsImpl implements Entree {
 	/**
-	 * The cached value of the '{@link #getArg() <em>Arg</em>}' attribute list.
+	 * The cached value of the '{@link #getEntrees() <em>Entrees</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getArg()
+	 * @see #getEntrees()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Type> arg;
-
+	protected EList<Port> entrees;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -63,11 +60,11 @@ public class EntreeImpl extends PortEntreeImpl implements Entree {
 	 * @generated
 	 */
 	@Override
-	public EList<Type> getArg() {
-		if (arg == null) {
-			arg = new EDataTypeUniqueEList<Type>(Type.class, this, ScriptPackage.ENTREE__ARG);
+	public EList<Port> getEntrees() {
+		if (entrees == null) {
+			entrees = new EObjectResolvingEList<Port>(Port.class, this, ScriptPackage.ENTREE__ENTREES);
 		}
-		return arg;
+		return entrees;
 	}
 
 	/**
@@ -78,8 +75,8 @@ public class EntreeImpl extends PortEntreeImpl implements Entree {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScriptPackage.ENTREE__ARG:
-				return getArg();
+			case ScriptPackage.ENTREE__ENTREES:
+				return getEntrees();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -93,9 +90,9 @@ public class EntreeImpl extends PortEntreeImpl implements Entree {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScriptPackage.ENTREE__ARG:
-				getArg().clear();
-				getArg().addAll((Collection<? extends Type>)newValue);
+			case ScriptPackage.ENTREE__ENTREES:
+				getEntrees().clear();
+				getEntrees().addAll((Collection<? extends Port>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -109,8 +106,8 @@ public class EntreeImpl extends PortEntreeImpl implements Entree {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.ENTREE__ARG:
-				getArg().clear();
+			case ScriptPackage.ENTREE__ENTREES:
+				getEntrees().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -124,26 +121,10 @@ public class EntreeImpl extends PortEntreeImpl implements Entree {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.ENTREE__ARG:
-				return arg != null && !arg.isEmpty();
+			case ScriptPackage.ENTREE__ENTREES:
+				return entrees != null && !entrees.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (arg: ");
-		result.append(arg);
-		result.append(')');
-		return result.toString();
 	}
 
 } //EntreeImpl

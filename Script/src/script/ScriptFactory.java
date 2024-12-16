@@ -31,22 +31,13 @@ public interface ScriptFactory extends EFactory {
 	Script createScript();
 
 	/**
-	 * Returns a new object of class '<em>Port Entree</em>'.
+	 * Returns a new object of class '<em>Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Port Entree</em>'.
+	 * @return a new object of class '<em>Port</em>'.
 	 * @generated
 	 */
-	PortEntree createPortEntree();
-
-	/**
-	 * Returns a new object of class '<em>Port Sortie</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Port Sortie</em>'.
-	 * @generated
-	 */
-	PortSortie createPortSortie();
+	Port createPort();
 
 	/**
 	 * Returns a new object of class '<em>Entree</em>'.
@@ -65,33 +56,6 @@ public interface ScriptFactory extends EFactory {
 	 * @generated
 	 */
 	Sortie createSortie();
-
-	/**
-	 * Returns a new object of class '<em>Bloc Binaire</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bloc Binaire</em>'.
-	 * @generated
-	 */
-	Bloc_Binaire createBloc_Binaire();
-
-	/**
-	 * Returns a new object of class '<em>Bloc Unaire</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bloc Unaire</em>'.
-	 * @generated
-	 */
-	Bloc_Unaire createBloc_Unaire();
-
-	/**
-	 * Returns a new object of class '<em>Bloc Fonction</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bloc Fonction</em>'.
-	 * @generated
-	 */
-	Bloc_Fonction createBloc_Fonction();
 
 	/**
 	 * Returns a new object of class '<em>Addition</em>'.

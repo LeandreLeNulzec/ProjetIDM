@@ -13,5 +13,5 @@ package script;
  * @model
  * @generated
  */
-public interface Min extends Bloc_Binaire {
+public interface Min extends Bloc_Fonction {
 } // Min

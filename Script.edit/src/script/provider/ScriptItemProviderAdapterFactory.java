@@ -95,49 +95,26 @@ public class ScriptItemProviderAdapterFactory extends ScriptAdapterFactory imple
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link script.PortEntree} instances.
+	 * This keeps track of the one adapter used for all {@link script.Port} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PortEntreeItemProvider portEntreeItemProvider;
+	protected PortItemProvider portItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link script.PortEntree}.
+	 * This creates an adapter for a {@link script.Port}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPortEntreeAdapter() {
-		if (portEntreeItemProvider == null) {
-			portEntreeItemProvider = new PortEntreeItemProvider(this);
+	public Adapter createPortAdapter() {
+		if (portItemProvider == null) {
+			portItemProvider = new PortItemProvider(this);
 		}
 
-		return portEntreeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link script.PortSortie} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PortSortieItemProvider portSortieItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link script.PortSortie}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPortSortieAdapter() {
-		if (portSortieItemProvider == null) {
-			portSortieItemProvider = new PortSortieItemProvider(this);
-		}
-
-		return portSortieItemProvider;
+		return portItemProvider;
 	}
 
 	/**
@@ -184,75 +161,6 @@ public class ScriptItemProviderAdapterFactory extends ScriptAdapterFactory imple
 		}
 
 		return sortieItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link script.Bloc_Binaire} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Bloc_BinaireItemProvider bloc_BinaireItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link script.Bloc_Binaire}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBloc_BinaireAdapter() {
-		if (bloc_BinaireItemProvider == null) {
-			bloc_BinaireItemProvider = new Bloc_BinaireItemProvider(this);
-		}
-
-		return bloc_BinaireItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link script.Bloc_Unaire} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Bloc_UnaireItemProvider bloc_UnaireItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link script.Bloc_Unaire}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBloc_UnaireAdapter() {
-		if (bloc_UnaireItemProvider == null) {
-			bloc_UnaireItemProvider = new Bloc_UnaireItemProvider(this);
-		}
-
-		return bloc_UnaireItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link script.Bloc_Fonction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Bloc_FonctionItemProvider bloc_FonctionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link script.Bloc_Fonction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBloc_FonctionAdapter() {
-		if (bloc_FonctionItemProvider == null) {
-			bloc_FonctionItemProvider = new Bloc_FonctionItemProvider(this);
-		}
-
-		return bloc_FonctionItemProvider;
 	}
 
 	/**
@@ -325,52 +233,6 @@ public class ScriptItemProviderAdapterFactory extends ScriptAdapterFactory imple
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link script.Min} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MinItemProvider minItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link script.Min}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMinAdapter() {
-		if (minItemProvider == null) {
-			minItemProvider = new MinItemProvider(this);
-		}
-
-		return minItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link script.Max} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MaxItemProvider maxItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link script.Max}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMaxAdapter() {
-		if (maxItemProvider == null) {
-			maxItemProvider = new MaxItemProvider(this);
-		}
-
-		return maxItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link script.Oppose} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -414,6 +276,52 @@ public class ScriptItemProviderAdapterFactory extends ScriptAdapterFactory imple
 		}
 
 		return inverseItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link script.Min} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MinItemProvider minItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link script.Min}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMinAdapter() {
+		if (minItemProvider == null) {
+			minItemProvider = new MinItemProvider(this);
+		}
+
+		return minItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link script.Max} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MaxItemProvider maxItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link script.Max}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMaxAdapter() {
+		if (maxItemProvider == null) {
+			maxItemProvider = new MaxItemProvider(this);
+		}
+
+		return maxItemProvider;
 	}
 
 	/**
@@ -637,20 +545,16 @@ public class ScriptItemProviderAdapterFactory extends ScriptAdapterFactory imple
 	@Override
 	public void dispose() {
 		if (scriptItemProvider != null) scriptItemProvider.dispose();
-		if (portEntreeItemProvider != null) portEntreeItemProvider.dispose();
-		if (portSortieItemProvider != null) portSortieItemProvider.dispose();
+		if (portItemProvider != null) portItemProvider.dispose();
 		if (entreeItemProvider != null) entreeItemProvider.dispose();
 		if (sortieItemProvider != null) sortieItemProvider.dispose();
-		if (bloc_BinaireItemProvider != null) bloc_BinaireItemProvider.dispose();
-		if (bloc_UnaireItemProvider != null) bloc_UnaireItemProvider.dispose();
-		if (bloc_FonctionItemProvider != null) bloc_FonctionItemProvider.dispose();
 		if (additionItemProvider != null) additionItemProvider.dispose();
 		if (multiplicationItemProvider != null) multiplicationItemProvider.dispose();
 		if (divisionItemProvider != null) divisionItemProvider.dispose();
-		if (minItemProvider != null) minItemProvider.dispose();
-		if (maxItemProvider != null) maxItemProvider.dispose();
 		if (opposeItemProvider != null) opposeItemProvider.dispose();
 		if (inverseItemProvider != null) inverseItemProvider.dispose();
+		if (minItemProvider != null) minItemProvider.dispose();
+		if (maxItemProvider != null) maxItemProvider.dispose();
 		if (sinItemProvider != null) sinItemProvider.dispose();
 		if (cosItemProvider != null) cosItemProvider.dispose();
 		if (racineItemProvider != null) racineItemProvider.dispose();

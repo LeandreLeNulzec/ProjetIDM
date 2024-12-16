@@ -13,7 +13,7 @@ import script.ScriptFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MinTest extends Bloc_BinaireTest {
+public class MinTest extends Bloc_FonctionTest {
 
 	/**
 	 * <!-- begin-user-doc -->

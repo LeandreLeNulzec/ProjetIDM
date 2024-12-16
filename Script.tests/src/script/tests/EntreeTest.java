@@ -13,7 +13,7 @@ import script.ScriptFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntreeTest extends PortEntreeTest {
+public class EntreeTest extends ScriptElementsTest {
 
 	/**
 	 * <!-- begin-user-doc -->

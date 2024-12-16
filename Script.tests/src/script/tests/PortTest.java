@@ -6,24 +6,24 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
-import script.PortSortie;
+import script.Port;
 import script.ScriptFactory;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Port Sortie</b></em>'.
+ * A test case for the model object '<em><b>Port</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class PortSortieTest extends TestCase {
+public class PortTest extends TestCase {
 
 	/**
-	 * The fixture for this Port Sortie test case.
+	 * The fixture for this Port test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PortSortie fixture = null;
+	protected Port fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +31,36 @@ public class PortSortieTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(PortSortieTest.class);
+		TestRunner.run(PortTest.class);
 	}
 
 	/**
-	 * Constructs a new Port Sortie test case with the given name.
+	 * Constructs a new Port test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortSortieTest(String name) {
+	public PortTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Port Sortie test case.
+	 * Sets the fixture for this Port test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(PortSortie fixture) {
+	protected void setFixture(Port fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Port Sortie test case.
+	 * Returns the fixture for this Port test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PortSortie getFixture() {
+	protected Port getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +72,7 @@ public class PortSortieTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ScriptFactory.eINSTANCE.createPortSortie());
+		setFixture(ScriptFactory.eINSTANCE.createPort());
 	}
 
 	/**
@@ -86,4 +86,4 @@ public class PortSortieTest extends TestCase {
 		setFixture(null);
 	}
 
-} //PortSortieTest
+} //PortTest

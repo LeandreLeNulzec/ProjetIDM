@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import script.Addition;
+
 /**
  * This is the item provider adapter for a {@link script.Addition} object.
  * <!-- begin-user-doc -->
@@ -62,7 +64,10 @@ public class AdditionItemProvider extends Bloc_BinaireItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Addition_type");
+		String label = ((Addition)object).getNom();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Addition_type") :
+			getString("_UI_Addition_type") + " " + label;
 	}
 
 

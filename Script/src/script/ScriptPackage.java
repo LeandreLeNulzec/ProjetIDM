@@ -68,13 +68,22 @@ public interface ScriptPackage extends EPackage {
 	int SCRIPT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Sto SE</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT__STO_SE = 0;
+	int SCRIPT__SCRIPT_ELEMENTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCRIPT__NOM = 1;
 
 	/**
 	 * The number of structural features of the '<em>Script</em>' class.
@@ -83,7 +92,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT_FEATURE_COUNT = 1;
+	int SCRIPT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Script</em>' class.
@@ -105,22 +114,31 @@ public interface ScriptPackage extends EPackage {
 	int SCRIPT_ELEMENTS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Sto SE</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT_ELEMENTS__STO_SE = SCRIPT__STO_SE;
+	int SCRIPT_ELEMENTS__SCRIPT_ELEMENTS = SCRIPT__SCRIPT_ELEMENTS;
 
 	/**
-	 * The feature id for the '<em><b>SEtos</b></em>' container reference.
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT_ELEMENTS__SETOS = SCRIPT_FEATURE_COUNT + 0;
+	int SCRIPT_ELEMENTS__NOM = SCRIPT__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCRIPT_ELEMENTS__SCRIPT = SCRIPT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Elements</em>' class.
@@ -141,114 +159,41 @@ public interface ScriptPackage extends EPackage {
 	int SCRIPT_ELEMENTS_OPERATION_COUNT = SCRIPT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link script.impl.PortEntreeImpl <em>Port Entree</em>}' class.
+	 * The meta object id for the '{@link script.impl.PortImpl <em>Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see script.impl.PortEntreeImpl
-	 * @see script.impl.ScriptPackageImpl#getPortEntree()
+	 * @see script.impl.PortImpl
+	 * @see script.impl.ScriptPackageImpl#getPort()
 	 * @generated
 	 */
-	int PORT_ENTREE = 2;
+	int PORT = 2;
 
 	/**
-	 * The feature id for the '<em><b>PEto BU</b></em>' reference.
+	 * The feature id for the '<em><b>Valeur</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_ENTREE__PETO_BU = 0;
+	int PORT__VALEUR = 0;
 
 	/**
-	 * The feature id for the '<em><b>PEto BB</b></em>' reference.
+	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_ENTREE__PETO_BB = 1;
+	int PORT_FEATURE_COUNT = 1;
 
 	/**
-	 * The feature id for the '<em><b>PEto BF</b></em>' reference.
+	 * The number of operations of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_ENTREE__PETO_BF = 2;
-
-	/**
-	 * The number of structural features of the '<em>Port Entree</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_ENTREE_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Port Entree</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_ENTREE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link script.impl.PortSortieImpl <em>Port Sortie</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see script.impl.PortSortieImpl
-	 * @see script.impl.ScriptPackageImpl#getPortSortie()
-	 * @generated
-	 */
-	int PORT_SORTIE = 3;
-
-	/**
-	 * The feature id for the '<em><b>PSto BU</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_SORTIE__PSTO_BU = 0;
-
-	/**
-	 * The feature id for the '<em><b>PSto BB</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_SORTIE__PSTO_BB = 1;
-
-	/**
-	 * The feature id for the '<em><b>PSto BF</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_SORTIE__PSTO_BF = 2;
-
-	/**
-	 * The number of structural features of the '<em>Port Sortie</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_SORTIE_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Port Sortie</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_SORTIE_OPERATION_COUNT = 0;
+	int PORT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link script.impl.EntreeImpl <em>Entree</em>}' class.
@@ -258,43 +203,43 @@ public interface ScriptPackage extends EPackage {
 	 * @see script.impl.ScriptPackageImpl#getEntree()
 	 * @generated
 	 */
-	int ENTREE = 4;
+	int ENTREE = 3;
 
 	/**
-	 * The feature id for the '<em><b>PEto BU</b></em>' reference.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTREE__PETO_BU = PORT_ENTREE__PETO_BU;
+	int ENTREE__SCRIPT_ELEMENTS = SCRIPT_ELEMENTS__SCRIPT_ELEMENTS;
 
 	/**
-	 * The feature id for the '<em><b>PEto BB</b></em>' reference.
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTREE__PETO_BB = PORT_ENTREE__PETO_BB;
+	int ENTREE__NOM = SCRIPT_ELEMENTS__NOM;
 
 	/**
-	 * The feature id for the '<em><b>PEto BF</b></em>' reference.
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTREE__PETO_BF = PORT_ENTREE__PETO_BF;
+	int ENTREE__SCRIPT = SCRIPT_ELEMENTS__SCRIPT;
 
 	/**
-	 * The feature id for the '<em><b>Arg</b></em>' attribute list.
+	 * The feature id for the '<em><b>Entrees</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTREE__ARG = PORT_ENTREE_FEATURE_COUNT + 0;
+	int ENTREE__ENTREES = SCRIPT_ELEMENTS_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Entree</em>' class.
@@ -303,7 +248,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTREE_FEATURE_COUNT = PORT_ENTREE_FEATURE_COUNT + 1;
+	int ENTREE_FEATURE_COUNT = SCRIPT_ELEMENTS_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Entree</em>' class.
@@ -312,7 +257,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTREE_OPERATION_COUNT = PORT_ENTREE_OPERATION_COUNT + 0;
+	int ENTREE_OPERATION_COUNT = SCRIPT_ELEMENTS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link script.impl.SortieImpl <em>Sortie</em>}' class.
@@ -322,43 +267,43 @@ public interface ScriptPackage extends EPackage {
 	 * @see script.impl.ScriptPackageImpl#getSortie()
 	 * @generated
 	 */
-	int SORTIE = 5;
+	int SORTIE = 4;
 
 	/**
-	 * The feature id for the '<em><b>PSto BU</b></em>' reference.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTIE__PSTO_BU = PORT_SORTIE__PSTO_BU;
+	int SORTIE__SCRIPT_ELEMENTS = SCRIPT_ELEMENTS__SCRIPT_ELEMENTS;
 
 	/**
-	 * The feature id for the '<em><b>PSto BB</b></em>' reference.
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTIE__PSTO_BB = PORT_SORTIE__PSTO_BB;
+	int SORTIE__NOM = SCRIPT_ELEMENTS__NOM;
 
 	/**
-	 * The feature id for the '<em><b>PSto BF</b></em>' reference.
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTIE__PSTO_BF = PORT_SORTIE__PSTO_BF;
+	int SORTIE__SCRIPT = SCRIPT_ELEMENTS__SCRIPT;
 
 	/**
-	 * The feature id for the '<em><b>Res</b></em>' attribute list.
+	 * The feature id for the '<em><b>Sorties</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTIE__RES = PORT_SORTIE_FEATURE_COUNT + 0;
+	int SORTIE__SORTIES = SCRIPT_ELEMENTS_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Sortie</em>' class.
@@ -367,7 +312,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTIE_FEATURE_COUNT = PORT_SORTIE_FEATURE_COUNT + 1;
+	int SORTIE_FEATURE_COUNT = SCRIPT_ELEMENTS_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Sortie</em>' class.
@@ -376,7 +321,71 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTIE_OPERATION_COUNT = PORT_SORTIE_OPERATION_COUNT + 0;
+	int SORTIE_OPERATION_COUNT = SCRIPT_ELEMENTS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link script.impl.BlocImpl <em>Bloc</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see script.impl.BlocImpl
+	 * @see script.impl.ScriptPackageImpl#getBloc()
+	 * @generated
+	 */
+	int BLOC = 5;
+
+	/**
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC__SCRIPT_ELEMENTS = SCRIPT_ELEMENTS__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC__NOM = SCRIPT_ELEMENTS__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC__SCRIPT = SCRIPT_ELEMENTS__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC__SORTIE = SCRIPT_ELEMENTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Bloc</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_FEATURE_COUNT = SCRIPT_ELEMENTS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Bloc</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_OPERATION_COUNT = SCRIPT_ELEMENTS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link script.impl.Bloc_BinaireImpl <em>Bloc Binaire</em>}' class.
@@ -389,13 +398,49 @@ public interface ScriptPackage extends EPackage {
 	int BLOC_BINAIRE = 6;
 
 	/**
-	 * The feature id for the '<em><b>BBto S</b></em>' reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLOC_BINAIRE__BBTO_S = 0;
+	int BLOC_BINAIRE__SCRIPT_ELEMENTS = BLOC__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_BINAIRE__NOM = BLOC__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_BINAIRE__SCRIPT = BLOC__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_BINAIRE__SORTIE = BLOC__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_BINAIRE__ENTREES = BLOC_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Bloc Binaire</em>' class.
@@ -404,7 +449,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOC_BINAIRE_FEATURE_COUNT = 1;
+	int BLOC_BINAIRE_FEATURE_COUNT = BLOC_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Bloc Binaire</em>' class.
@@ -413,7 +458,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOC_BINAIRE_OPERATION_COUNT = 0;
+	int BLOC_BINAIRE_OPERATION_COUNT = BLOC_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link script.impl.Bloc_UnaireImpl <em>Bloc Unaire</em>}' class.
@@ -426,13 +471,49 @@ public interface ScriptPackage extends EPackage {
 	int BLOC_UNAIRE = 7;
 
 	/**
-	 * The feature id for the '<em><b>BUto S</b></em>' reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLOC_UNAIRE__BUTO_S = 0;
+	int BLOC_UNAIRE__SCRIPT_ELEMENTS = BLOC__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_UNAIRE__NOM = BLOC__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_UNAIRE__SCRIPT = BLOC__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_UNAIRE__SORTIE = BLOC__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_UNAIRE__ENTREES = BLOC_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Bloc Unaire</em>' class.
@@ -441,7 +522,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOC_UNAIRE_FEATURE_COUNT = 1;
+	int BLOC_UNAIRE_FEATURE_COUNT = BLOC_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Bloc Unaire</em>' class.
@@ -450,7 +531,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOC_UNAIRE_OPERATION_COUNT = 0;
+	int BLOC_UNAIRE_OPERATION_COUNT = BLOC_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link script.impl.Bloc_FonctionImpl <em>Bloc Fonction</em>}' class.
@@ -463,13 +544,49 @@ public interface ScriptPackage extends EPackage {
 	int BLOC_FONCTION = 8;
 
 	/**
-	 * The feature id for the '<em><b>BFto S</b></em>' reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLOC_FONCTION__BFTO_S = 0;
+	int BLOC_FONCTION__SCRIPT_ELEMENTS = BLOC__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_FONCTION__NOM = BLOC__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_FONCTION__SCRIPT = BLOC__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_FONCTION__SORTIE = BLOC__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOC_FONCTION__ENTREES = BLOC_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Bloc Fonction</em>' class.
@@ -478,7 +595,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOC_FONCTION_FEATURE_COUNT = 1;
+	int BLOC_FONCTION_FEATURE_COUNT = BLOC_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Bloc Fonction</em>' class.
@@ -487,7 +604,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOC_FONCTION_OPERATION_COUNT = 0;
+	int BLOC_FONCTION_OPERATION_COUNT = BLOC_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link script.impl.AdditionImpl <em>Addition</em>}' class.
@@ -500,13 +617,49 @@ public interface ScriptPackage extends EPackage {
 	int ADDITION = 9;
 
 	/**
-	 * The feature id for the '<em><b>BBto S</b></em>' reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADDITION__BBTO_S = BLOC_BINAIRE__BBTO_S;
+	int ADDITION__SCRIPT_ELEMENTS = BLOC_BINAIRE__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDITION__NOM = BLOC_BINAIRE__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDITION__SCRIPT = BLOC_BINAIRE__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDITION__SORTIE = BLOC_BINAIRE__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDITION__ENTREES = BLOC_BINAIRE__ENTREES;
 
 	/**
 	 * The number of structural features of the '<em>Addition</em>' class.
@@ -537,13 +690,49 @@ public interface ScriptPackage extends EPackage {
 	int MULTIPLICATION = 10;
 
 	/**
-	 * The feature id for the '<em><b>BBto S</b></em>' reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTIPLICATION__BBTO_S = BLOC_BINAIRE__BBTO_S;
+	int MULTIPLICATION__SCRIPT_ELEMENTS = BLOC_BINAIRE__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICATION__NOM = BLOC_BINAIRE__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICATION__SCRIPT = BLOC_BINAIRE__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICATION__SORTIE = BLOC_BINAIRE__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICATION__ENTREES = BLOC_BINAIRE__ENTREES;
 
 	/**
 	 * The number of structural features of the '<em>Multiplication</em>' class.
@@ -574,13 +763,49 @@ public interface ScriptPackage extends EPackage {
 	int DIVISION = 11;
 
 	/**
-	 * The feature id for the '<em><b>BBto S</b></em>' reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIVISION__BBTO_S = BLOC_BINAIRE__BBTO_S;
+	int DIVISION__SCRIPT_ELEMENTS = BLOC_BINAIRE__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIVISION__NOM = BLOC_BINAIRE__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIVISION__SCRIPT = BLOC_BINAIRE__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIVISION__SORTIE = BLOC_BINAIRE__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIVISION__ENTREES = BLOC_BINAIRE__ENTREES;
 
 	/**
 	 * The number of structural features of the '<em>Division</em>' class.
@@ -608,34 +833,7 @@ public interface ScriptPackage extends EPackage {
 	 * @see script.impl.ScriptPackageImpl#getMin()
 	 * @generated
 	 */
-	int MIN = 12;
-
-	/**
-	 * The feature id for the '<em><b>BBto S</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIN__BBTO_S = BLOC_BINAIRE__BBTO_S;
-
-	/**
-	 * The number of structural features of the '<em>Min</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIN_FEATURE_COUNT = BLOC_BINAIRE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Min</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIN_OPERATION_COUNT = BLOC_BINAIRE_OPERATION_COUNT + 0;
+	int MIN = 14;
 
 	/**
 	 * The meta object id for the '{@link script.impl.MaxImpl <em>Max</em>}' class.
@@ -645,34 +843,7 @@ public interface ScriptPackage extends EPackage {
 	 * @see script.impl.ScriptPackageImpl#getMax()
 	 * @generated
 	 */
-	int MAX = 13;
-
-	/**
-	 * The feature id for the '<em><b>BBto S</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAX__BBTO_S = BLOC_BINAIRE__BBTO_S;
-
-	/**
-	 * The number of structural features of the '<em>Max</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAX_FEATURE_COUNT = BLOC_BINAIRE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Max</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAX_OPERATION_COUNT = BLOC_BINAIRE_OPERATION_COUNT + 0;
+	int MAX = 15;
 
 	/**
 	 * The meta object id for the '{@link script.impl.OpposeImpl <em>Oppose</em>}' class.
@@ -682,16 +853,52 @@ public interface ScriptPackage extends EPackage {
 	 * @see script.impl.ScriptPackageImpl#getOppose()
 	 * @generated
 	 */
-	int OPPOSE = 14;
+	int OPPOSE = 12;
 
 	/**
-	 * The feature id for the '<em><b>BUto S</b></em>' reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPPOSE__BUTO_S = BLOC_UNAIRE__BUTO_S;
+	int OPPOSE__SCRIPT_ELEMENTS = BLOC_UNAIRE__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPPOSE__NOM = BLOC_UNAIRE__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPPOSE__SCRIPT = BLOC_UNAIRE__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPPOSE__SORTIE = BLOC_UNAIRE__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPPOSE__ENTREES = BLOC_UNAIRE__ENTREES;
 
 	/**
 	 * The number of structural features of the '<em>Oppose</em>' class.
@@ -719,16 +926,52 @@ public interface ScriptPackage extends EPackage {
 	 * @see script.impl.ScriptPackageImpl#getInverse()
 	 * @generated
 	 */
-	int INVERSE = 15;
+	int INVERSE = 13;
 
 	/**
-	 * The feature id for the '<em><b>BUto S</b></em>' reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVERSE__BUTO_S = BLOC_UNAIRE__BUTO_S;
+	int INVERSE__SCRIPT_ELEMENTS = BLOC_UNAIRE__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVERSE__NOM = BLOC_UNAIRE__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVERSE__SCRIPT = BLOC_UNAIRE__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVERSE__SORTIE = BLOC_UNAIRE__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVERSE__ENTREES = BLOC_UNAIRE__ENTREES;
 
 	/**
 	 * The number of structural features of the '<em>Inverse</em>' class.
@@ -749,6 +992,132 @@ public interface ScriptPackage extends EPackage {
 	int INVERSE_OPERATION_COUNT = BLOC_UNAIRE_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIN__SCRIPT_ELEMENTS = BLOC_FONCTION__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIN__NOM = BLOC_FONCTION__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIN__SCRIPT = BLOC_FONCTION__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIN__SORTIE = BLOC_FONCTION__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIN__ENTREES = BLOC_FONCTION__ENTREES;
+
+	/**
+	 * The number of structural features of the '<em>Min</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIN_FEATURE_COUNT = BLOC_FONCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Min</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIN_OPERATION_COUNT = BLOC_FONCTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX__SCRIPT_ELEMENTS = BLOC_FONCTION__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX__NOM = BLOC_FONCTION__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX__SCRIPT = BLOC_FONCTION__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX__SORTIE = BLOC_FONCTION__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX__ENTREES = BLOC_FONCTION__ENTREES;
+
+	/**
+	 * The number of structural features of the '<em>Max</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_FEATURE_COUNT = BLOC_FONCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Max</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_OPERATION_COUNT = BLOC_FONCTION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link script.impl.SinImpl <em>Sin</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -759,13 +1128,49 @@ public interface ScriptPackage extends EPackage {
 	int SIN = 16;
 
 	/**
-	 * The feature id for the '<em><b>BFto S</b></em>' reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIN__BFTO_S = BLOC_FONCTION__BFTO_S;
+	int SIN__SCRIPT_ELEMENTS = BLOC_FONCTION__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIN__NOM = BLOC_FONCTION__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIN__SCRIPT = BLOC_FONCTION__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIN__SORTIE = BLOC_FONCTION__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIN__ENTREES = BLOC_FONCTION__ENTREES;
 
 	/**
 	 * The number of structural features of the '<em>Sin</em>' class.
@@ -796,13 +1201,49 @@ public interface ScriptPackage extends EPackage {
 	int COS = 17;
 
 	/**
-	 * The feature id for the '<em><b>BFto S</b></em>' reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COS__BFTO_S = BLOC_FONCTION__BFTO_S;
+	int COS__SCRIPT_ELEMENTS = BLOC_FONCTION__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COS__NOM = BLOC_FONCTION__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COS__SCRIPT = BLOC_FONCTION__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COS__SORTIE = BLOC_FONCTION__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COS__ENTREES = BLOC_FONCTION__ENTREES;
 
 	/**
 	 * The number of structural features of the '<em>Cos</em>' class.
@@ -833,13 +1274,49 @@ public interface ScriptPackage extends EPackage {
 	int RACINE = 18;
 
 	/**
-	 * The feature id for the '<em><b>BFto S</b></em>' reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RACINE__BFTO_S = BLOC_FONCTION__BFTO_S;
+	int RACINE__SCRIPT_ELEMENTS = BLOC_FONCTION__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RACINE__NOM = BLOC_FONCTION__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RACINE__SCRIPT = BLOC_FONCTION__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RACINE__SORTIE = BLOC_FONCTION__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RACINE__ENTREES = BLOC_FONCTION__ENTREES;
 
 	/**
 	 * The number of structural features of the '<em>Racine</em>' class.
@@ -870,13 +1347,49 @@ public interface ScriptPackage extends EPackage {
 	int EXPO = 19;
 
 	/**
-	 * The feature id for the '<em><b>BFto S</b></em>' reference list.
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPO__BFTO_S = BLOC_FONCTION__BFTO_S;
+	int EXPO__SCRIPT_ELEMENTS = BLOC_FONCTION__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPO__NOM = BLOC_FONCTION__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPO__SCRIPT = BLOC_FONCTION__SCRIPT;
+
+	/**
+	 * The feature id for the '<em><b>Sortie</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPO__SORTIE = BLOC_FONCTION__SORTIE;
+
+	/**
+	 * The feature id for the '<em><b>Entrees</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPO__ENTREES = BLOC_FONCTION__ENTREES;
 
 	/**
 	 * The number of structural features of the '<em>Expo</em>' class.
@@ -907,22 +1420,40 @@ public interface ScriptPackage extends EPackage {
 	int CONSTANTE = 20;
 
 	/**
+	 * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANTE__SCRIPT_ELEMENTS = SCRIPT_ELEMENTS__SCRIPT_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANTE__NOM = SCRIPT_ELEMENTS__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Script</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANTE__SCRIPT = SCRIPT_ELEMENTS__SCRIPT;
+
+	/**
 	 * The feature id for the '<em><b>Val</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTANTE__VAL = 0;
-
-	/**
-	 * The feature id for the '<em><b>Cto S</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTANTE__CTO_S = 1;
+	int CONSTANTE__VAL = SCRIPT_ELEMENTS_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Constante</em>' class.
@@ -931,7 +1462,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTANTE_FEATURE_COUNT = 2;
+	int CONSTANTE_FEATURE_COUNT = SCRIPT_ELEMENTS_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Constante</em>' class.
@@ -940,7 +1471,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTANTE_OPERATION_COUNT = 0;
+	int CONSTANTE_OPERATION_COUNT = SCRIPT_ELEMENTS_OPERATION_COUNT + 0;
 
 
 	/**
@@ -965,15 +1496,26 @@ public interface ScriptPackage extends EPackage {
 	EClass getScript();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link script.Script#getStoSE <em>Sto SE</em>}'.
+	 * Returns the meta object for the containment reference list '{@link script.Script#getScriptElements <em>Script Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Sto SE</em>'.
-	 * @see script.Script#getStoSE()
+	 * @return the meta object for the containment reference list '<em>Script Elements</em>'.
+	 * @see script.Script#getScriptElements()
 	 * @see #getScript()
 	 * @generated
 	 */
-	EReference getScript_StoSE();
+	EReference getScript_ScriptElements();
+
+	/**
+	 * Returns the meta object for the attribute '{@link script.Script#getNom <em>Nom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nom</em>'.
+	 * @see script.Script#getNom()
+	 * @see #getScript()
+	 * @generated
+	 */
+	EAttribute getScript_Nom();
 
 	/**
 	 * Returns the meta object for class '{@link script.ScriptElements <em>Elements</em>}'.
@@ -986,101 +1528,36 @@ public interface ScriptPackage extends EPackage {
 	EClass getScriptElements();
 
 	/**
-	 * Returns the meta object for the container reference '{@link script.ScriptElements#getSEtos <em>SEtos</em>}'.
+	 * Returns the meta object for the container reference '{@link script.ScriptElements#getScript <em>Script</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>SEtos</em>'.
-	 * @see script.ScriptElements#getSEtos()
+	 * @return the meta object for the container reference '<em>Script</em>'.
+	 * @see script.ScriptElements#getScript()
 	 * @see #getScriptElements()
 	 * @generated
 	 */
-	EReference getScriptElements_SEtos();
+	EReference getScriptElements_Script();
 
 	/**
-	 * Returns the meta object for class '{@link script.PortEntree <em>Port Entree</em>}'.
+	 * Returns the meta object for class '{@link script.Port <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Port Entree</em>'.
-	 * @see script.PortEntree
+	 * @return the meta object for class '<em>Port</em>'.
+	 * @see script.Port
 	 * @generated
 	 */
-	EClass getPortEntree();
+	EClass getPort();
 
 	/**
-	 * Returns the meta object for the reference '{@link script.PortEntree#getPEtoBU <em>PEto BU</em>}'.
+	 * Returns the meta object for the attribute '{@link script.Port#getValeur <em>Valeur</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>PEto BU</em>'.
-	 * @see script.PortEntree#getPEtoBU()
-	 * @see #getPortEntree()
+	 * @return the meta object for the attribute '<em>Valeur</em>'.
+	 * @see script.Port#getValeur()
+	 * @see #getPort()
 	 * @generated
 	 */
-	EReference getPortEntree_PEtoBU();
-
-	/**
-	 * Returns the meta object for the reference '{@link script.PortEntree#getPEtoBB <em>PEto BB</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>PEto BB</em>'.
-	 * @see script.PortEntree#getPEtoBB()
-	 * @see #getPortEntree()
-	 * @generated
-	 */
-	EReference getPortEntree_PEtoBB();
-
-	/**
-	 * Returns the meta object for the reference '{@link script.PortEntree#getPEtoBF <em>PEto BF</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>PEto BF</em>'.
-	 * @see script.PortEntree#getPEtoBF()
-	 * @see #getPortEntree()
-	 * @generated
-	 */
-	EReference getPortEntree_PEtoBF();
-
-	/**
-	 * Returns the meta object for class '{@link script.PortSortie <em>Port Sortie</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Port Sortie</em>'.
-	 * @see script.PortSortie
-	 * @generated
-	 */
-	EClass getPortSortie();
-
-	/**
-	 * Returns the meta object for the reference '{@link script.PortSortie#getPStoBU <em>PSto BU</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>PSto BU</em>'.
-	 * @see script.PortSortie#getPStoBU()
-	 * @see #getPortSortie()
-	 * @generated
-	 */
-	EReference getPortSortie_PStoBU();
-
-	/**
-	 * Returns the meta object for the reference '{@link script.PortSortie#getPStoBB <em>PSto BB</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>PSto BB</em>'.
-	 * @see script.PortSortie#getPStoBB()
-	 * @see #getPortSortie()
-	 * @generated
-	 */
-	EReference getPortSortie_PStoBB();
-
-	/**
-	 * Returns the meta object for the reference '{@link script.PortSortie#getPStoBF <em>PSto BF</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>PSto BF</em>'.
-	 * @see script.PortSortie#getPStoBF()
-	 * @see #getPortSortie()
-	 * @generated
-	 */
-	EReference getPortSortie_PStoBF();
+	EAttribute getPort_Valeur();
 
 	/**
 	 * Returns the meta object for class '{@link script.Entree <em>Entree</em>}'.
@@ -1093,15 +1570,15 @@ public interface ScriptPackage extends EPackage {
 	EClass getEntree();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link script.Entree#getArg <em>Arg</em>}'.
+	 * Returns the meta object for the reference list '{@link script.Entree#getEntrees <em>Entrees</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Arg</em>'.
-	 * @see script.Entree#getArg()
+	 * @return the meta object for the reference list '<em>Entrees</em>'.
+	 * @see script.Entree#getEntrees()
 	 * @see #getEntree()
 	 * @generated
 	 */
-	EAttribute getEntree_Arg();
+	EReference getEntree_Entrees();
 
 	/**
 	 * Returns the meta object for class '{@link script.Sortie <em>Sortie</em>}'.
@@ -1114,15 +1591,36 @@ public interface ScriptPackage extends EPackage {
 	EClass getSortie();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link script.Sortie#getRes <em>Res</em>}'.
+	 * Returns the meta object for the reference list '{@link script.Sortie#getSorties <em>Sorties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Res</em>'.
-	 * @see script.Sortie#getRes()
+	 * @return the meta object for the reference list '<em>Sorties</em>'.
+	 * @see script.Sortie#getSorties()
 	 * @see #getSortie()
 	 * @generated
 	 */
-	EAttribute getSortie_Res();
+	EReference getSortie_Sorties();
+
+	/**
+	 * Returns the meta object for class '{@link script.Bloc <em>Bloc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bloc</em>'.
+	 * @see script.Bloc
+	 * @generated
+	 */
+	EClass getBloc();
+
+	/**
+	 * Returns the meta object for the reference '{@link script.Bloc#getSortie <em>Sortie</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sortie</em>'.
+	 * @see script.Bloc#getSortie()
+	 * @see #getBloc()
+	 * @generated
+	 */
+	EReference getBloc_Sortie();
 
 	/**
 	 * Returns the meta object for class '{@link script.Bloc_Binaire <em>Bloc Binaire</em>}'.
@@ -1135,15 +1633,15 @@ public interface ScriptPackage extends EPackage {
 	EClass getBloc_Binaire();
 
 	/**
-	 * Returns the meta object for the reference list '{@link script.Bloc_Binaire#getBBtoS <em>BBto S</em>}'.
+	 * Returns the meta object for the reference list '{@link script.Bloc_Binaire#getEntrees <em>Entrees</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>BBto S</em>'.
-	 * @see script.Bloc_Binaire#getBBtoS()
+	 * @return the meta object for the reference list '<em>Entrees</em>'.
+	 * @see script.Bloc_Binaire#getEntrees()
 	 * @see #getBloc_Binaire()
 	 * @generated
 	 */
-	EReference getBloc_Binaire_BBtoS();
+	EReference getBloc_Binaire_Entrees();
 
 	/**
 	 * Returns the meta object for class '{@link script.Bloc_Unaire <em>Bloc Unaire</em>}'.
@@ -1156,15 +1654,15 @@ public interface ScriptPackage extends EPackage {
 	EClass getBloc_Unaire();
 
 	/**
-	 * Returns the meta object for the reference list '{@link script.Bloc_Unaire#getBUtoS <em>BUto S</em>}'.
+	 * Returns the meta object for the reference '{@link script.Bloc_Unaire#getEntrees <em>Entrees</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>BUto S</em>'.
-	 * @see script.Bloc_Unaire#getBUtoS()
+	 * @return the meta object for the reference '<em>Entrees</em>'.
+	 * @see script.Bloc_Unaire#getEntrees()
 	 * @see #getBloc_Unaire()
 	 * @generated
 	 */
-	EReference getBloc_Unaire_BUtoS();
+	EReference getBloc_Unaire_Entrees();
 
 	/**
 	 * Returns the meta object for class '{@link script.Bloc_Fonction <em>Bloc Fonction</em>}'.
@@ -1177,15 +1675,15 @@ public interface ScriptPackage extends EPackage {
 	EClass getBloc_Fonction();
 
 	/**
-	 * Returns the meta object for the reference list '{@link script.Bloc_Fonction#getBFtoS <em>BFto S</em>}'.
+	 * Returns the meta object for the reference list '{@link script.Bloc_Fonction#getEntrees <em>Entrees</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>BFto S</em>'.
-	 * @see script.Bloc_Fonction#getBFtoS()
+	 * @return the meta object for the reference list '<em>Entrees</em>'.
+	 * @see script.Bloc_Fonction#getEntrees()
 	 * @see #getBloc_Fonction()
 	 * @generated
 	 */
-	EReference getBloc_Fonction_BFtoS();
+	EReference getBloc_Fonction_Entrees();
 
 	/**
 	 * Returns the meta object for class '{@link script.Addition <em>Addition</em>}'.
@@ -1319,17 +1817,6 @@ public interface ScriptPackage extends EPackage {
 	EAttribute getConstante_Val();
 
 	/**
-	 * Returns the meta object for the reference list '{@link script.Constante#getCtoS <em>Cto S</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Cto S</em>'.
-	 * @see script.Constante#getCtoS()
-	 * @see #getConstante()
-	 * @generated
-	 */
-	EReference getConstante_CtoS();
-
-	/**
 	 * Returns the meta object for enum '{@link script.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1373,12 +1860,20 @@ public interface ScriptPackage extends EPackage {
 		EClass SCRIPT = eINSTANCE.getScript();
 
 		/**
-		 * The meta object literal for the '<em><b>Sto SE</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Script Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCRIPT__STO_SE = eINSTANCE.getScript_StoSE();
+		EReference SCRIPT__SCRIPT_ELEMENTS = eINSTANCE.getScript_ScriptElements();
+
+		/**
+		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCRIPT__NOM = eINSTANCE.getScript_Nom();
 
 		/**
 		 * The meta object literal for the '{@link script.impl.ScriptElementsImpl <em>Elements</em>}' class.
@@ -1391,80 +1886,30 @@ public interface ScriptPackage extends EPackage {
 		EClass SCRIPT_ELEMENTS = eINSTANCE.getScriptElements();
 
 		/**
-		 * The meta object literal for the '<em><b>SEtos</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Script</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCRIPT_ELEMENTS__SETOS = eINSTANCE.getScriptElements_SEtos();
+		EReference SCRIPT_ELEMENTS__SCRIPT = eINSTANCE.getScriptElements_Script();
 
 		/**
-		 * The meta object literal for the '{@link script.impl.PortEntreeImpl <em>Port Entree</em>}' class.
+		 * The meta object literal for the '{@link script.impl.PortImpl <em>Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see script.impl.PortEntreeImpl
-		 * @see script.impl.ScriptPackageImpl#getPortEntree()
+		 * @see script.impl.PortImpl
+		 * @see script.impl.ScriptPackageImpl#getPort()
 		 * @generated
 		 */
-		EClass PORT_ENTREE = eINSTANCE.getPortEntree();
+		EClass PORT = eINSTANCE.getPort();
 
 		/**
-		 * The meta object literal for the '<em><b>PEto BU</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Valeur</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PORT_ENTREE__PETO_BU = eINSTANCE.getPortEntree_PEtoBU();
-
-		/**
-		 * The meta object literal for the '<em><b>PEto BB</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_ENTREE__PETO_BB = eINSTANCE.getPortEntree_PEtoBB();
-
-		/**
-		 * The meta object literal for the '<em><b>PEto BF</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_ENTREE__PETO_BF = eINSTANCE.getPortEntree_PEtoBF();
-
-		/**
-		 * The meta object literal for the '{@link script.impl.PortSortieImpl <em>Port Sortie</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see script.impl.PortSortieImpl
-		 * @see script.impl.ScriptPackageImpl#getPortSortie()
-		 * @generated
-		 */
-		EClass PORT_SORTIE = eINSTANCE.getPortSortie();
-
-		/**
-		 * The meta object literal for the '<em><b>PSto BU</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_SORTIE__PSTO_BU = eINSTANCE.getPortSortie_PStoBU();
-
-		/**
-		 * The meta object literal for the '<em><b>PSto BB</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_SORTIE__PSTO_BB = eINSTANCE.getPortSortie_PStoBB();
-
-		/**
-		 * The meta object literal for the '<em><b>PSto BF</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_SORTIE__PSTO_BF = eINSTANCE.getPortSortie_PStoBF();
+		EAttribute PORT__VALEUR = eINSTANCE.getPort_Valeur();
 
 		/**
 		 * The meta object literal for the '{@link script.impl.EntreeImpl <em>Entree</em>}' class.
@@ -1477,12 +1922,12 @@ public interface ScriptPackage extends EPackage {
 		EClass ENTREE = eINSTANCE.getEntree();
 
 		/**
-		 * The meta object literal for the '<em><b>Arg</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Entrees</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTREE__ARG = eINSTANCE.getEntree_Arg();
+		EReference ENTREE__ENTREES = eINSTANCE.getEntree_Entrees();
 
 		/**
 		 * The meta object literal for the '{@link script.impl.SortieImpl <em>Sortie</em>}' class.
@@ -1495,12 +1940,30 @@ public interface ScriptPackage extends EPackage {
 		EClass SORTIE = eINSTANCE.getSortie();
 
 		/**
-		 * The meta object literal for the '<em><b>Res</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Sorties</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SORTIE__RES = eINSTANCE.getSortie_Res();
+		EReference SORTIE__SORTIES = eINSTANCE.getSortie_Sorties();
+
+		/**
+		 * The meta object literal for the '{@link script.impl.BlocImpl <em>Bloc</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see script.impl.BlocImpl
+		 * @see script.impl.ScriptPackageImpl#getBloc()
+		 * @generated
+		 */
+		EClass BLOC = eINSTANCE.getBloc();
+
+		/**
+		 * The meta object literal for the '<em><b>Sortie</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BLOC__SORTIE = eINSTANCE.getBloc_Sortie();
 
 		/**
 		 * The meta object literal for the '{@link script.impl.Bloc_BinaireImpl <em>Bloc Binaire</em>}' class.
@@ -1513,12 +1976,12 @@ public interface ScriptPackage extends EPackage {
 		EClass BLOC_BINAIRE = eINSTANCE.getBloc_Binaire();
 
 		/**
-		 * The meta object literal for the '<em><b>BBto S</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Entrees</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BLOC_BINAIRE__BBTO_S = eINSTANCE.getBloc_Binaire_BBtoS();
+		EReference BLOC_BINAIRE__ENTREES = eINSTANCE.getBloc_Binaire_Entrees();
 
 		/**
 		 * The meta object literal for the '{@link script.impl.Bloc_UnaireImpl <em>Bloc Unaire</em>}' class.
@@ -1531,12 +1994,12 @@ public interface ScriptPackage extends EPackage {
 		EClass BLOC_UNAIRE = eINSTANCE.getBloc_Unaire();
 
 		/**
-		 * The meta object literal for the '<em><b>BUto S</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Entrees</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BLOC_UNAIRE__BUTO_S = eINSTANCE.getBloc_Unaire_BUtoS();
+		EReference BLOC_UNAIRE__ENTREES = eINSTANCE.getBloc_Unaire_Entrees();
 
 		/**
 		 * The meta object literal for the '{@link script.impl.Bloc_FonctionImpl <em>Bloc Fonction</em>}' class.
@@ -1549,12 +2012,12 @@ public interface ScriptPackage extends EPackage {
 		EClass BLOC_FONCTION = eINSTANCE.getBloc_Fonction();
 
 		/**
-		 * The meta object literal for the '<em><b>BFto S</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Entrees</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BLOC_FONCTION__BFTO_S = eINSTANCE.getBloc_Fonction_BFtoS();
+		EReference BLOC_FONCTION__ENTREES = eINSTANCE.getBloc_Fonction_Entrees();
 
 		/**
 		 * The meta object literal for the '{@link script.impl.AdditionImpl <em>Addition</em>}' class.
@@ -1683,14 +2146,6 @@ public interface ScriptPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONSTANTE__VAL = eINSTANCE.getConstante_Val();
-
-		/**
-		 * The meta object literal for the '<em><b>Cto S</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONSTANTE__CTO_S = eINSTANCE.getConstante_CtoS();
 
 		/**
 		 * The meta object literal for the '{@link script.Type <em>Type</em>}' enum.

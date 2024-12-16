@@ -19,16 +19,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Type implements Enumerator {
 	/**
-	 * The '<em><b>INT</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #INT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	INT(0, "INT", "INT"),
-
-	/**
 	 * The '<em><b>FLOAT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -36,7 +26,15 @@ public enum Type implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FLOAT(1, "FLOAT", "FLOAT"),
+	FLOAT(0, "FLOAT", "FLOAT"), /**
+	 * The '<em><b>INT</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #INT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	INT(1, "INT", "INT"),
 
 	/**
 	 * The '<em><b>BOOL</b></em>' literal object.
@@ -59,17 +57,6 @@ public enum Type implements Enumerator {
 	STRING(3, "STRING", "STRING");
 
 	/**
-	 * The '<em><b>INT</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #INT
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int INT_VALUE = 0;
-
-	/**
 	 * The '<em><b>FLOAT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78,7 +65,18 @@ public enum Type implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int FLOAT_VALUE = 1;
+	public static final int FLOAT_VALUE = 0;
+
+	/**
+	 * The '<em><b>INT</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #INT
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int INT_VALUE = 1;
 
 	/**
 	 * The '<em><b>BOOL</b></em>' literal value.
@@ -110,8 +108,8 @@ public enum Type implements Enumerator {
 	 */
 	private static final Type[] VALUES_ARRAY =
 		new Type[] {
-			INT,
 			FLOAT,
+			INT,
 			BOOL,
 			STRING,
 		};
@@ -170,8 +168,8 @@ public enum Type implements Enumerator {
 	 */
 	public static Type get(int value) {
 		switch (value) {
-			case INT_VALUE: return INT;
 			case FLOAT_VALUE: return FLOAT;
+			case INT_VALUE: return INT;
 			case BOOL_VALUE: return BOOL;
 			case STRING_VALUE: return STRING;
 		}

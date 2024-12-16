@@ -2,8 +2,6 @@
  */
 package script.tests;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import script.Constante;
@@ -15,15 +13,7 @@ import script.ScriptFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConstanteTest extends TestCase {
-
-	/**
-	 * The fixture for this Constante test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Constante fixture = null;
+public class ConstanteTest extends ScriptElementsTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +35,14 @@ public class ConstanteTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Constante test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Constante fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Constante test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Constante getFixture() {
-		return fixture;
+		return (Constante)fixture;
 	}
 
 	/**

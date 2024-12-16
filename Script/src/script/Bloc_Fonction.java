@@ -4,8 +4,6 @@ package script;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Bloc Fonction</b></em>'.
@@ -15,24 +13,24 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link script.Bloc_Fonction#getBFtoS <em>BFto S</em>}</li>
+ *   <li>{@link script.Bloc_Fonction#getEntrees <em>Entrees</em>}</li>
  * </ul>
  *
  * @see script.ScriptPackage#getBloc_Fonction()
- * @model
+ * @model abstract="true"
  * @generated
  */
-public interface Bloc_Fonction extends EObject {
+public interface Bloc_Fonction extends Bloc {
 	/**
-	 * Returns the value of the '<em><b>BFto S</b></em>' reference list.
-	 * The list contents are of type {@link script.ScriptElements}.
+	 * Returns the value of the '<em><b>Entrees</b></em>' reference list.
+	 * The list contents are of type {@link script.Port}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>BFto S</em>' reference list.
-	 * @see script.ScriptPackage#getBloc_Fonction_BFtoS()
-	 * @model
+	 * @return the value of the '<em>Entrees</em>' reference list.
+	 * @see script.ScriptPackage#getBloc_Fonction_Entrees()
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<ScriptElements> getBFtoS();
+	EList<Port> getEntrees();
 
 } // Bloc_Fonction

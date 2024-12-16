@@ -13,5 +13,5 @@ package script;
  * @model
  * @generated
  */
-public interface Max extends Bloc_Binaire {
+public interface Max extends Bloc_Fonction {
 } // Max

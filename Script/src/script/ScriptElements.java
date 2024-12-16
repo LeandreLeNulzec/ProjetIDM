@@ -12,7 +12,7 @@ package script;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link script.ScriptElements#getSEtos <em>SEtos</em>}</li>
+ *   <li>{@link script.ScriptElements#getScript <em>Script</em>}</li>
  * </ul>
  *
  * @see script.ScriptPackage#getScriptElements()
@@ -21,27 +21,27 @@ package script;
  */
 public interface ScriptElements extends Script {
 	/**
-	 * Returns the value of the '<em><b>SEtos</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link script.Script#getStoSE <em>Sto SE</em>}'.
+	 * Returns the value of the '<em><b>Script</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link script.Script#getScriptElements <em>Script Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>SEtos</em>' container reference.
-	 * @see #setSEtos(Script)
-	 * @see script.ScriptPackage#getScriptElements_SEtos()
-	 * @see script.Script#getStoSE
-	 * @model opposite="StoSE" transient="false"
+	 * @return the value of the '<em>Script</em>' container reference.
+	 * @see #setScript(Script)
+	 * @see script.ScriptPackage#getScriptElements_Script()
+	 * @see script.Script#getScriptElements
+	 * @model opposite="scriptElements" transient="false"
 	 * @generated
 	 */
-	Script getSEtos();
+	Script getScript();
 
 	/**
-	 * Sets the value of the '{@link script.ScriptElements#getSEtos <em>SEtos</em>}' container reference.
+	 * Sets the value of the '{@link script.ScriptElements#getScript <em>Script</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>SEtos</em>' container reference.
-	 * @see #getSEtos()
+	 * @param value the new value of the '<em>Script</em>' container reference.
+	 * @see #getScript()
 	 * @generated
 	 */
-	void setSEtos(Script value);
+	void setScript(Script value);
 
 } // ScriptElements

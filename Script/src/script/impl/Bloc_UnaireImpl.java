@@ -2,18 +2,13 @@
  */
 package script.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import script.Bloc_Unaire;
-import script.ScriptElements;
+import script.Port;
 import script.ScriptPackage;
 
 /**
@@ -24,22 +19,21 @@ import script.ScriptPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link script.impl.Bloc_UnaireImpl#getBUtoS <em>BUto S</em>}</li>
+ *   <li>{@link script.impl.Bloc_UnaireImpl#getEntrees <em>Entrees</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class Bloc_UnaireImpl extends MinimalEObjectImpl.Container implements Bloc_Unaire {
+public abstract class Bloc_UnaireImpl extends BlocImpl implements Bloc_Unaire {
 	/**
-	 * The cached value of the '{@link #getBUtoS() <em>BUto S</em>}' reference list.
+	 * The cached value of the '{@link #getEntrees() <em>Entrees</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBUtoS()
+	 * @see #getEntrees()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ScriptElements> bUtoS;
-
+	protected Port entrees;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,11 +59,38 @@ public class Bloc_UnaireImpl extends MinimalEObjectImpl.Container implements Blo
 	 * @generated
 	 */
 	@Override
-	public EList<ScriptElements> getBUtoS() {
-		if (bUtoS == null) {
-			bUtoS = new EObjectResolvingEList<ScriptElements>(ScriptElements.class, this, ScriptPackage.BLOC_UNAIRE__BUTO_S);
+	public Port getEntrees() {
+		if (entrees != null && entrees.eIsProxy()) {
+			InternalEObject oldEntrees = (InternalEObject)entrees;
+			entrees = (Port)eResolveProxy(oldEntrees);
+			if (entrees != oldEntrees) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScriptPackage.BLOC_UNAIRE__ENTREES, oldEntrees, entrees));
+			}
 		}
-		return bUtoS;
+		return entrees;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Port basicGetEntrees() {
+		return entrees;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEntrees(Port newEntrees) {
+		Port oldEntrees = entrees;
+		entrees = newEntrees;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.BLOC_UNAIRE__ENTREES, oldEntrees, entrees));
 	}
 
 	/**
@@ -80,8 +101,9 @@ public class Bloc_UnaireImpl extends MinimalEObjectImpl.Container implements Blo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScriptPackage.BLOC_UNAIRE__BUTO_S:
-				return getBUtoS();
+			case ScriptPackage.BLOC_UNAIRE__ENTREES:
+				if (resolve) return getEntrees();
+				return basicGetEntrees();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -95,9 +117,8 @@ public class Bloc_UnaireImpl extends MinimalEObjectImpl.Container implements Blo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScriptPackage.BLOC_UNAIRE__BUTO_S:
-				getBUtoS().clear();
-				getBUtoS().addAll((Collection<? extends ScriptElements>)newValue);
+			case ScriptPackage.BLOC_UNAIRE__ENTREES:
+				setEntrees((Port)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -111,8 +132,8 @@ public class Bloc_UnaireImpl extends MinimalEObjectImpl.Container implements Blo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.BLOC_UNAIRE__BUTO_S:
-				getBUtoS().clear();
+			case ScriptPackage.BLOC_UNAIRE__ENTREES:
+				setEntrees((Port)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -126,8 +147,8 @@ public class Bloc_UnaireImpl extends MinimalEObjectImpl.Container implements Blo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.BLOC_UNAIRE__BUTO_S:
-				return bUtoS != null && !bUtoS.isEmpty();
+			case ScriptPackage.BLOC_UNAIRE__ENTREES:
+				return entrees != null;
 		}
 		return super.eIsSet(featureID);
 	}

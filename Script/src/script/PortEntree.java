@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link script.PortEntree#getPEtoBU <em>PEto BU</em>}</li>
  *   <li>{@link script.PortEntree#getPEtoBB <em>PEto BB</em>}</li>
  *   <li>{@link script.PortEntree#getPEtoBF <em>PEto BF</em>}</li>
+ *   <li>{@link script.PortEntree#getNbEntrees <em>Nb Entrees</em>}</li>
  * </ul>
  *
  * @see script.ScriptPackage#getPortEntree()
@@ -88,5 +89,27 @@ public interface PortEntree extends EObject {
 	 * @generated
 	 */
 	void setPEtoBF(Bloc_Fonction value);
+
+	/**
+	 * Returns the value of the '<em><b>Nb Entrees</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nb Entrees</em>' attribute.
+	 * @see #setNbEntrees(int)
+	 * @see script.ScriptPackage#getPortEntree_NbEntrees()
+	 * @model
+	 * @generated
+	 */
+	int getNbEntrees();
+
+	/**
+	 * Sets the value of the '{@link script.PortEntree#getNbEntrees <em>Nb Entrees</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Nb Entrees</em>' attribute.
+	 * @see #getNbEntrees()
+	 * @generated
+	 */
+	void setNbEntrees(int value);
 
 } // PortEntree

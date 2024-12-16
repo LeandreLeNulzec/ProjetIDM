@@ -14,7 +14,7 @@ import script.ScriptPackage;
  *
  * @generated
  */
-public class MaxImpl extends Bloc_BinaireImpl implements Max {
+public class MaxImpl extends Bloc_FonctionImpl implements Max {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

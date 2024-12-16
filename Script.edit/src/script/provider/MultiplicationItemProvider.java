@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import script.Multiplication;
+
 /**
  * This is the item provider adapter for a {@link script.Multiplication} object.
  * <!-- begin-user-doc -->
@@ -62,7 +64,10 @@ public class MultiplicationItemProvider extends Bloc_BinaireItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Multiplication_type");
+		String label = ((Multiplication)object).getNom();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Multiplication_type") :
+			getString("_UI_Multiplication_type") + " " + label;
 	}
 
 

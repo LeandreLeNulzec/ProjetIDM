@@ -13,16 +13,19 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import script.Script;
+import script.ScriptFactory;
 import script.ScriptPackage;
 
 /**
@@ -60,8 +63,31 @@ public class ScriptItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNomPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Nom feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNomPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Script_nom_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Script_nom_feature", "_UI_Script_type"),
+				 ScriptPackage.Literals.SCRIPT__NOM,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -76,7 +102,7 @@ public class ScriptItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ScriptPackage.Literals.SCRIPT__STO_SE);
+			childrenFeatures.add(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -113,7 +139,10 @@ public class ScriptItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Script_type");
+		String label = ((Script)object).getNom();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Script_type") :
+			getString("_UI_Script_type") + " " + label;
 	}
 
 
@@ -129,7 +158,10 @@ public class ScriptItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Script.class)) {
-			case ScriptPackage.SCRIPT__STO_SE:
+			case ScriptPackage.SCRIPT__NOM:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case ScriptPackage.SCRIPT__SCRIPT_ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -146,6 +178,76 @@ public class ScriptItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createEntree()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createSortie()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createAddition()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createMultiplication()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createDivision()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createOppose()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createInverse()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createMin()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createMax()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createSin()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createCos()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createRacine()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createExpo()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScriptPackage.Literals.SCRIPT__SCRIPT_ELEMENTS,
+				 ScriptFactory.eINSTANCE.createConstante()));
 	}
 
 	/**

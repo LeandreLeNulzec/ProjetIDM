@@ -14,7 +14,7 @@ import script.ScriptPackage;
  *
  * @generated
  */
-public class MinImpl extends Bloc_BinaireImpl implements Min {
+public class MinImpl extends Bloc_FonctionImpl implements Min {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

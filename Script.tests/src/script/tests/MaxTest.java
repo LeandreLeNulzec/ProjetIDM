@@ -13,7 +13,7 @@ import script.ScriptFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MaxTest extends Bloc_BinaireTest {
+public class MaxTest extends Bloc_FonctionTest {
 
 	/**
 	 * <!-- begin-user-doc -->

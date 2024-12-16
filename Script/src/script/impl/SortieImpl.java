@@ -7,12 +7,10 @@ import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import script.Port;
 import script.ScriptPackage;
 import script.Sortie;
-import script.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,22 +20,21 @@ import script.Type;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link script.impl.SortieImpl#getRes <em>Res</em>}</li>
+ *   <li>{@link script.impl.SortieImpl#getSorties <em>Sorties</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SortieImpl extends PortSortieImpl implements Sortie {
+public class SortieImpl extends ScriptElementsImpl implements Sortie {
 	/**
-	 * The cached value of the '{@link #getRes() <em>Res</em>}' attribute list.
+	 * The cached value of the '{@link #getSorties() <em>Sorties</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRes()
+	 * @see #getSorties()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Type> res;
-
+	protected EList<Port> sorties;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -63,11 +60,11 @@ public class SortieImpl extends PortSortieImpl implements Sortie {
 	 * @generated
 	 */
 	@Override
-	public EList<Type> getRes() {
-		if (res == null) {
-			res = new EDataTypeUniqueEList<Type>(Type.class, this, ScriptPackage.SORTIE__RES);
+	public EList<Port> getSorties() {
+		if (sorties == null) {
+			sorties = new EObjectResolvingEList<Port>(Port.class, this, ScriptPackage.SORTIE__SORTIES);
 		}
-		return res;
+		return sorties;
 	}
 
 	/**
@@ -78,8 +75,8 @@ public class SortieImpl extends PortSortieImpl implements Sortie {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScriptPackage.SORTIE__RES:
-				return getRes();
+			case ScriptPackage.SORTIE__SORTIES:
+				return getSorties();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -93,9 +90,9 @@ public class SortieImpl extends PortSortieImpl implements Sortie {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScriptPackage.SORTIE__RES:
-				getRes().clear();
-				getRes().addAll((Collection<? extends Type>)newValue);
+			case ScriptPackage.SORTIE__SORTIES:
+				getSorties().clear();
+				getSorties().addAll((Collection<? extends Port>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -109,8 +106,8 @@ public class SortieImpl extends PortSortieImpl implements Sortie {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.SORTIE__RES:
-				getRes().clear();
+			case ScriptPackage.SORTIE__SORTIES:
+				getSorties().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -124,26 +121,10 @@ public class SortieImpl extends PortSortieImpl implements Sortie {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.SORTIE__RES:
-				return res != null && !res.isEmpty();
+			case ScriptPackage.SORTIE__SORTIES:
+				return sorties != null && !sorties.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (res: ");
-		result.append(res);
-		result.append(')');
-		return result.toString();
 	}
 
 } //SortieImpl

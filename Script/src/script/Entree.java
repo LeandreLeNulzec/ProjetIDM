@@ -13,26 +13,24 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link script.Entree#getArg <em>Arg</em>}</li>
+ *   <li>{@link script.Entree#getEntrees <em>Entrees</em>}</li>
  * </ul>
  *
  * @see script.ScriptPackage#getEntree()
  * @model
  * @generated
  */
-public interface Entree extends PortEntree {
+public interface Entree extends ScriptElements {
 	/**
-	 * Returns the value of the '<em><b>Arg</b></em>' attribute list.
-	 * The list contents are of type {@link script.Type}.
-	 * The literals are from the enumeration {@link script.Type}.
+	 * Returns the value of the '<em><b>Entrees</b></em>' reference list.
+	 * The list contents are of type {@link script.Port}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Arg</em>' attribute list.
-	 * @see script.Type
-	 * @see script.ScriptPackage#getEntree_Arg()
-	 * @model dataType="script.Type"
+	 * @return the value of the '<em>Entrees</em>' reference list.
+	 * @see script.ScriptPackage#getEntree_Entrees()
+	 * @model
 	 * @generated
 	 */
-	EList<Type> getArg();
+	EList<Port> getEntrees();
 
 } // Entree

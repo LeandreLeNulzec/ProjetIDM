@@ -2,23 +2,12 @@
  */
 package script.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import script.Constante;
-import script.Script;
 import script.ScriptPackage;
-import script.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,12 +18,21 @@ import script.Type;
  * </p>
  * <ul>
  *   <li>{@link script.impl.ConstanteImpl#getVal <em>Val</em>}</li>
- *   <li>{@link script.impl.ConstanteImpl#getCtoS <em>Cto S</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ConstanteImpl extends MinimalEObjectImpl.Container implements Constante {
+public class ConstanteImpl extends ScriptElementsImpl implements Constante {
+	/**
+	 * The default value of the '{@link #getVal() <em>Val</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVal()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float VAL_EDEFAULT = 0.0F;
+
 	/**
 	 * The cached value of the '{@link #getVal() <em>Val</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -43,17 +41,7 @@ public class ConstanteImpl extends MinimalEObjectImpl.Container implements Const
 	 * @generated
 	 * @ordered
 	 */
-	protected Type val;
-
-	/**
-	 * The cached value of the '{@link #getCtoS() <em>Cto S</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCtoS()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Script> ctoS;
+	protected float val = VAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,7 +68,7 @@ public class ConstanteImpl extends MinimalEObjectImpl.Container implements Const
 	 * @generated
 	 */
 	@Override
-	public Type getVal() {
+	public float getVal() {
 		return val;
 	}
 
@@ -90,24 +78,11 @@ public class ConstanteImpl extends MinimalEObjectImpl.Container implements Const
 	 * @generated
 	 */
 	@Override
-	public void setVal(Type newVal) {
-		Type oldVal = val;
-		val = newVal == null ? null : newVal;
+	public void setVal(float newVal) {
+		float oldVal = val;
+		val = newVal;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.CONSTANTE__VAL, oldVal, val));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Script> getCtoS() {
-		if (ctoS == null) {
-			ctoS = new EObjectResolvingEList<Script>(Script.class, this, ScriptPackage.CONSTANTE__CTO_S);
-		}
-		return ctoS;
 	}
 
 	/**
@@ -120,8 +95,6 @@ public class ConstanteImpl extends MinimalEObjectImpl.Container implements Const
 		switch (featureID) {
 			case ScriptPackage.CONSTANTE__VAL:
 				return getVal();
-			case ScriptPackage.CONSTANTE__CTO_S:
-				return getCtoS();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -136,11 +109,7 @@ public class ConstanteImpl extends MinimalEObjectImpl.Container implements Const
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ScriptPackage.CONSTANTE__VAL:
-				setVal(newValue);
-				return;
-			case ScriptPackage.CONSTANTE__CTO_S:
-				getCtoS().clear();
-				getCtoS().addAll((Collection<? extends Script>)newValue);
+				setVal((Float)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -155,10 +124,7 @@ public class ConstanteImpl extends MinimalEObjectImpl.Container implements Const
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ScriptPackage.CONSTANTE__VAL:
-				setVal((Type)null);
-				return;
-			case ScriptPackage.CONSTANTE__CTO_S:
-				getCtoS().clear();
+				setVal(VAL_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -173,9 +139,7 @@ public class ConstanteImpl extends MinimalEObjectImpl.Container implements Const
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ScriptPackage.CONSTANTE__VAL:
-				return val != null;
-			case ScriptPackage.CONSTANTE__CTO_S:
-				return ctoS != null && !ctoS.isEmpty();
+				return val != VAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

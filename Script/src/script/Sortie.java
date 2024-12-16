@@ -13,26 +13,24 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link script.Sortie#getRes <em>Res</em>}</li>
+ *   <li>{@link script.Sortie#getSorties <em>Sorties</em>}</li>
  * </ul>
  *
  * @see script.ScriptPackage#getSortie()
  * @model
  * @generated
  */
-public interface Sortie extends PortSortie {
+public interface Sortie extends ScriptElements {
 	/**
-	 * Returns the value of the '<em><b>Res</b></em>' attribute list.
-	 * The list contents are of type {@link script.Type}.
-	 * The literals are from the enumeration {@link script.Type}.
+	 * Returns the value of the '<em><b>Sorties</b></em>' reference list.
+	 * The list contents are of type {@link script.Port}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Res</em>' attribute list.
-	 * @see script.Type
-	 * @see script.ScriptPackage#getSortie_Res()
-	 * @model dataType="script.Type"
+	 * @return the value of the '<em>Sorties</em>' reference list.
+	 * @see script.ScriptPackage#getSortie_Sorties()
+	 * @model
 	 * @generated
 	 */
-	EList<Type> getRes();
+	EList<Port> getSorties();
 
 } // Sortie

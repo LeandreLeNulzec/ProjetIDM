@@ -11,13 +11,15 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import script.Max;
+
 /**
  * This is the item provider adapter for a {@link script.Max} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MaxItemProvider extends Bloc_BinaireItemProvider {
+public class MaxItemProvider extends Bloc_FonctionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -62,7 +64,10 @@ public class MaxItemProvider extends Bloc_BinaireItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Max_type");
+		String label = ((Max)object).getNom();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Max_type") :
+			getString("_UI_Max_type") + " " + label;
 	}
 
 

@@ -11,8 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import script.Entree;
 import script.ScriptPackage;
@@ -23,7 +21,7 @@ import script.ScriptPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntreeItemProvider extends PortEntreeItemProvider {
+public class EntreeItemProvider extends ScriptElementsItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,29 +43,29 @@ public class EntreeItemProvider extends PortEntreeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addArgPropertyDescriptor(object);
+			addEntreesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Arg feature.
+	 * This adds a property descriptor for the Entrees feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addArgPropertyDescriptor(Object object) {
+	protected void addEntreesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Entree_arg_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entree_arg_feature", "_UI_Entree_type"),
-				 ScriptPackage.Literals.ENTREE__ARG,
+				 getString("_UI_Entree_entrees_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entree_entrees_feature", "_UI_Entree_type"),
+				 ScriptPackage.Literals.ENTREE__ENTREES,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -91,7 +89,10 @@ public class EntreeItemProvider extends PortEntreeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Entree_type");
+		String label = ((Entree)object).getNom();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Entree_type") :
+			getString("_UI_Entree_type") + " " + label;
 	}
 
 
@@ -105,12 +106,6 @@ public class EntreeItemProvider extends PortEntreeItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Entree.class)) {
-			case ScriptPackage.ENTREE__ARG:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

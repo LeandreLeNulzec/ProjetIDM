@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import script.Racine;
+
 /**
  * This is the item provider adapter for a {@link script.Racine} object.
  * <!-- begin-user-doc -->
@@ -62,7 +64,10 @@ public class RacineItemProvider extends Bloc_FonctionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Racine_type");
+		String label = ((Racine)object).getNom();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Racine_type") :
+			getString("_UI_Racine_type") + " " + label;
 	}
 
 

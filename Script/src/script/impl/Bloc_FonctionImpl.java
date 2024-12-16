@@ -7,13 +7,10 @@ import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import script.Bloc_Fonction;
-import script.ScriptElements;
+import script.Port;
 import script.ScriptPackage;
 
 /**
@@ -24,22 +21,21 @@ import script.ScriptPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link script.impl.Bloc_FonctionImpl#getBFtoS <em>BFto S</em>}</li>
+ *   <li>{@link script.impl.Bloc_FonctionImpl#getEntrees <em>Entrees</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class Bloc_FonctionImpl extends MinimalEObjectImpl.Container implements Bloc_Fonction {
+public abstract class Bloc_FonctionImpl extends BlocImpl implements Bloc_Fonction {
 	/**
-	 * The cached value of the '{@link #getBFtoS() <em>BFto S</em>}' reference list.
+	 * The cached value of the '{@link #getEntrees() <em>Entrees</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBFtoS()
+	 * @see #getEntrees()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ScriptElements> bFtoS;
-
+	protected EList<Port> entrees;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,11 +61,11 @@ public class Bloc_FonctionImpl extends MinimalEObjectImpl.Container implements B
 	 * @generated
 	 */
 	@Override
-	public EList<ScriptElements> getBFtoS() {
-		if (bFtoS == null) {
-			bFtoS = new EObjectResolvingEList<ScriptElements>(ScriptElements.class, this, ScriptPackage.BLOC_FONCTION__BFTO_S);
+	public EList<Port> getEntrees() {
+		if (entrees == null) {
+			entrees = new EObjectResolvingEList<Port>(Port.class, this, ScriptPackage.BLOC_FONCTION__ENTREES);
 		}
-		return bFtoS;
+		return entrees;
 	}
 
 	/**
@@ -80,8 +76,8 @@ public class Bloc_FonctionImpl extends MinimalEObjectImpl.Container implements B
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScriptPackage.BLOC_FONCTION__BFTO_S:
-				return getBFtoS();
+			case ScriptPackage.BLOC_FONCTION__ENTREES:
+				return getEntrees();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -95,9 +91,9 @@ public class Bloc_FonctionImpl extends MinimalEObjectImpl.Container implements B
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScriptPackage.BLOC_FONCTION__BFTO_S:
-				getBFtoS().clear();
-				getBFtoS().addAll((Collection<? extends ScriptElements>)newValue);
+			case ScriptPackage.BLOC_FONCTION__ENTREES:
+				getEntrees().clear();
+				getEntrees().addAll((Collection<? extends Port>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -111,8 +107,8 @@ public class Bloc_FonctionImpl extends MinimalEObjectImpl.Container implements B
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.BLOC_FONCTION__BFTO_S:
-				getBFtoS().clear();
+			case ScriptPackage.BLOC_FONCTION__ENTREES:
+				getEntrees().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -126,8 +122,8 @@ public class Bloc_FonctionImpl extends MinimalEObjectImpl.Container implements B
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.BLOC_FONCTION__BFTO_S:
-				return bFtoS != null && !bFtoS.isEmpty();
+			case ScriptPackage.BLOC_FONCTION__ENTREES:
+				return entrees != null && !entrees.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import script.Sin;
+
 /**
  * This is the item provider adapter for a {@link script.Sin} object.
  * <!-- begin-user-doc -->
@@ -62,7 +64,10 @@ public class SinItemProvider extends Bloc_FonctionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Sin_type");
+		String label = ((Sin)object).getNom();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Sin_type") :
+			getString("_UI_Sin_type") + " " + label;
 	}
 
 

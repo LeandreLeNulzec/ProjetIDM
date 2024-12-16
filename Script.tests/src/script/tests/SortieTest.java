@@ -13,7 +13,7 @@ import script.Sortie;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SortieTest extends PortSortieTest {
+public class SortieTest extends ScriptElementsTest {
 
 	/**
 	 * <!-- begin-user-doc -->

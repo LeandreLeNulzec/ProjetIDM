@@ -58,20 +58,16 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ScriptPackage.SCRIPT: return createScript();
-			case ScriptPackage.PORT_ENTREE: return createPortEntree();
-			case ScriptPackage.PORT_SORTIE: return createPortSortie();
+			case ScriptPackage.PORT: return createPort();
 			case ScriptPackage.ENTREE: return createEntree();
 			case ScriptPackage.SORTIE: return createSortie();
-			case ScriptPackage.BLOC_BINAIRE: return createBloc_Binaire();
-			case ScriptPackage.BLOC_UNAIRE: return createBloc_Unaire();
-			case ScriptPackage.BLOC_FONCTION: return createBloc_Fonction();
 			case ScriptPackage.ADDITION: return createAddition();
 			case ScriptPackage.MULTIPLICATION: return createMultiplication();
 			case ScriptPackage.DIVISION: return createDivision();
-			case ScriptPackage.MIN: return createMin();
-			case ScriptPackage.MAX: return createMax();
 			case ScriptPackage.OPPOSE: return createOppose();
 			case ScriptPackage.INVERSE: return createInverse();
+			case ScriptPackage.MIN: return createMin();
+			case ScriptPackage.MAX: return createMax();
 			case ScriptPackage.SIN: return createSin();
 			case ScriptPackage.COS: return createCos();
 			case ScriptPackage.RACINE: return createRacine();
@@ -129,20 +125,9 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * @generated
 	 */
 	@Override
-	public PortEntree createPortEntree() {
-		PortEntreeImpl portEntree = new PortEntreeImpl();
-		return portEntree;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public PortSortie createPortSortie() {
-		PortSortieImpl portSortie = new PortSortieImpl();
-		return portSortie;
+	public Port createPort() {
+		PortImpl port = new PortImpl();
+		return port;
 	}
 
 	/**
@@ -165,39 +150,6 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	public Sortie createSortie() {
 		SortieImpl sortie = new SortieImpl();
 		return sortie;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Bloc_Binaire createBloc_Binaire() {
-		Bloc_BinaireImpl bloc_Binaire = new Bloc_BinaireImpl();
-		return bloc_Binaire;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Bloc_Unaire createBloc_Unaire() {
-		Bloc_UnaireImpl bloc_Unaire = new Bloc_UnaireImpl();
-		return bloc_Unaire;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Bloc_Fonction createBloc_Fonction() {
-		Bloc_FonctionImpl bloc_Fonction = new Bloc_FonctionImpl();
-		return bloc_Fonction;
 	}
 
 	/**

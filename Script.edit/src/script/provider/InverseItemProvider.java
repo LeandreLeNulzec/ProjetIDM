@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import script.Inverse;
+
 /**
  * This is the item provider adapter for a {@link script.Inverse} object.
  * <!-- begin-user-doc -->
@@ -62,7 +64,10 @@ public class InverseItemProvider extends Bloc_UnaireItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Inverse_type");
+		String label = ((Inverse)object).getNom();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Inverse_type") :
+			getString("_UI_Inverse_type") + " " + label;
 	}
 
 

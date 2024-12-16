@@ -79,47 +79,60 @@ public class ScriptSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ScriptPackage.PORT_ENTREE: {
-				PortEntree portEntree = (PortEntree)theEObject;
-				T result = casePortEntree(portEntree);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScriptPackage.PORT_SORTIE: {
-				PortSortie portSortie = (PortSortie)theEObject;
-				T result = casePortSortie(portSortie);
+			case ScriptPackage.PORT: {
+				Port port = (Port)theEObject;
+				T result = casePort(port);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ScriptPackage.ENTREE: {
 				Entree entree = (Entree)theEObject;
 				T result = caseEntree(entree);
-				if (result == null) result = casePortEntree(entree);
+				if (result == null) result = caseScriptElements(entree);
+				if (result == null) result = caseScript(entree);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ScriptPackage.SORTIE: {
 				Sortie sortie = (Sortie)theEObject;
 				T result = caseSortie(sortie);
-				if (result == null) result = casePortSortie(sortie);
+				if (result == null) result = caseScriptElements(sortie);
+				if (result == null) result = caseScript(sortie);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ScriptPackage.BLOC: {
+				Bloc bloc = (Bloc)theEObject;
+				T result = caseBloc(bloc);
+				if (result == null) result = caseScriptElements(bloc);
+				if (result == null) result = caseScript(bloc);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ScriptPackage.BLOC_BINAIRE: {
 				Bloc_Binaire bloc_Binaire = (Bloc_Binaire)theEObject;
 				T result = caseBloc_Binaire(bloc_Binaire);
+				if (result == null) result = caseBloc(bloc_Binaire);
+				if (result == null) result = caseScriptElements(bloc_Binaire);
+				if (result == null) result = caseScript(bloc_Binaire);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ScriptPackage.BLOC_UNAIRE: {
 				Bloc_Unaire bloc_Unaire = (Bloc_Unaire)theEObject;
 				T result = caseBloc_Unaire(bloc_Unaire);
+				if (result == null) result = caseBloc(bloc_Unaire);
+				if (result == null) result = caseScriptElements(bloc_Unaire);
+				if (result == null) result = caseScript(bloc_Unaire);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ScriptPackage.BLOC_FONCTION: {
 				Bloc_Fonction bloc_Fonction = (Bloc_Fonction)theEObject;
 				T result = caseBloc_Fonction(bloc_Fonction);
+				if (result == null) result = caseBloc(bloc_Fonction);
+				if (result == null) result = caseScriptElements(bloc_Fonction);
+				if (result == null) result = caseScript(bloc_Fonction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -127,6 +140,9 @@ public class ScriptSwitch<T> extends Switch<T> {
 				Addition addition = (Addition)theEObject;
 				T result = caseAddition(addition);
 				if (result == null) result = caseBloc_Binaire(addition);
+				if (result == null) result = caseBloc(addition);
+				if (result == null) result = caseScriptElements(addition);
+				if (result == null) result = caseScript(addition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -134,6 +150,9 @@ public class ScriptSwitch<T> extends Switch<T> {
 				Multiplication multiplication = (Multiplication)theEObject;
 				T result = caseMultiplication(multiplication);
 				if (result == null) result = caseBloc_Binaire(multiplication);
+				if (result == null) result = caseBloc(multiplication);
+				if (result == null) result = caseScriptElements(multiplication);
+				if (result == null) result = caseScript(multiplication);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -141,20 +160,9 @@ public class ScriptSwitch<T> extends Switch<T> {
 				Division division = (Division)theEObject;
 				T result = caseDivision(division);
 				if (result == null) result = caseBloc_Binaire(division);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScriptPackage.MIN: {
-				Min min = (Min)theEObject;
-				T result = caseMin(min);
-				if (result == null) result = caseBloc_Binaire(min);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScriptPackage.MAX: {
-				Max max = (Max)theEObject;
-				T result = caseMax(max);
-				if (result == null) result = caseBloc_Binaire(max);
+				if (result == null) result = caseBloc(division);
+				if (result == null) result = caseScriptElements(division);
+				if (result == null) result = caseScript(division);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -162,6 +170,9 @@ public class ScriptSwitch<T> extends Switch<T> {
 				Oppose oppose = (Oppose)theEObject;
 				T result = caseOppose(oppose);
 				if (result == null) result = caseBloc_Unaire(oppose);
+				if (result == null) result = caseBloc(oppose);
+				if (result == null) result = caseScriptElements(oppose);
+				if (result == null) result = caseScript(oppose);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -169,6 +180,29 @@ public class ScriptSwitch<T> extends Switch<T> {
 				Inverse inverse = (Inverse)theEObject;
 				T result = caseInverse(inverse);
 				if (result == null) result = caseBloc_Unaire(inverse);
+				if (result == null) result = caseBloc(inverse);
+				if (result == null) result = caseScriptElements(inverse);
+				if (result == null) result = caseScript(inverse);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ScriptPackage.MIN: {
+				Min min = (Min)theEObject;
+				T result = caseMin(min);
+				if (result == null) result = caseBloc_Fonction(min);
+				if (result == null) result = caseBloc(min);
+				if (result == null) result = caseScriptElements(min);
+				if (result == null) result = caseScript(min);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ScriptPackage.MAX: {
+				Max max = (Max)theEObject;
+				T result = caseMax(max);
+				if (result == null) result = caseBloc_Fonction(max);
+				if (result == null) result = caseBloc(max);
+				if (result == null) result = caseScriptElements(max);
+				if (result == null) result = caseScript(max);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -176,6 +210,9 @@ public class ScriptSwitch<T> extends Switch<T> {
 				Sin sin = (Sin)theEObject;
 				T result = caseSin(sin);
 				if (result == null) result = caseBloc_Fonction(sin);
+				if (result == null) result = caseBloc(sin);
+				if (result == null) result = caseScriptElements(sin);
+				if (result == null) result = caseScript(sin);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -183,6 +220,9 @@ public class ScriptSwitch<T> extends Switch<T> {
 				Cos cos = (Cos)theEObject;
 				T result = caseCos(cos);
 				if (result == null) result = caseBloc_Fonction(cos);
+				if (result == null) result = caseBloc(cos);
+				if (result == null) result = caseScriptElements(cos);
+				if (result == null) result = caseScript(cos);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -190,6 +230,9 @@ public class ScriptSwitch<T> extends Switch<T> {
 				Racine racine = (Racine)theEObject;
 				T result = caseRacine(racine);
 				if (result == null) result = caseBloc_Fonction(racine);
+				if (result == null) result = caseBloc(racine);
+				if (result == null) result = caseScriptElements(racine);
+				if (result == null) result = caseScript(racine);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -197,12 +240,17 @@ public class ScriptSwitch<T> extends Switch<T> {
 				Expo expo = (Expo)theEObject;
 				T result = caseExpo(expo);
 				if (result == null) result = caseBloc_Fonction(expo);
+				if (result == null) result = caseBloc(expo);
+				if (result == null) result = caseScriptElements(expo);
+				if (result == null) result = caseScript(expo);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ScriptPackage.CONSTANTE: {
 				Constante constante = (Constante)theEObject;
 				T result = caseConstante(constante);
+				if (result == null) result = caseScriptElements(constante);
+				if (result == null) result = caseScript(constante);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -241,32 +289,17 @@ public class ScriptSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Port Entree</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Port Entree</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Port</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePortEntree(PortEntree object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Port Sortie</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Port Sortie</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePortSortie(PortSortie object) {
+	public T casePort(Port object) {
 		return null;
 	}
 
@@ -297,6 +330,21 @@ public class ScriptSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSortie(Sortie object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bloc</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bloc</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBloc(Bloc object) {
 		return null;
 	}
 

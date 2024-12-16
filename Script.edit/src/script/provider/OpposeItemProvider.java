@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import script.Oppose;
+
 /**
  * This is the item provider adapter for a {@link script.Oppose} object.
  * <!-- begin-user-doc -->
@@ -62,7 +64,10 @@ public class OpposeItemProvider extends Bloc_UnaireItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Oppose_type");
+		String label = ((Oppose)object).getNom();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Oppose_type") :
+			getString("_UI_Oppose_type") + " " + label;
 	}
 
 

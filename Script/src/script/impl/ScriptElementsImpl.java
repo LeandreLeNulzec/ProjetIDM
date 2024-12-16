@@ -24,7 +24,7 @@ import script.ScriptPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link script.impl.ScriptElementsImpl#getSEtos <em>SEtos</em>}</li>
+ *   <li>{@link script.impl.ScriptElementsImpl#getScript <em>Script</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,8 +55,8 @@ public abstract class ScriptElementsImpl extends ScriptImpl implements ScriptEle
 	 * @generated
 	 */
 	@Override
-	public Script getSEtos() {
-		if (eContainerFeatureID() != ScriptPackage.SCRIPT_ELEMENTS__SETOS) return null;
+	public Script getScript() {
+		if (eContainerFeatureID() != ScriptPackage.SCRIPT_ELEMENTS__SCRIPT) return null;
 		return (Script)eInternalContainer();
 	}
 
@@ -65,8 +65,8 @@ public abstract class ScriptElementsImpl extends ScriptImpl implements ScriptEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSEtos(Script newSEtos, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newSEtos, ScriptPackage.SCRIPT_ELEMENTS__SETOS, msgs);
+	public NotificationChain basicSetScript(Script newScript, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newScript, ScriptPackage.SCRIPT_ELEMENTS__SCRIPT, msgs);
 		return msgs;
 	}
 
@@ -76,20 +76,20 @@ public abstract class ScriptElementsImpl extends ScriptImpl implements ScriptEle
 	 * @generated
 	 */
 	@Override
-	public void setSEtos(Script newSEtos) {
-		if (newSEtos != eInternalContainer() || (eContainerFeatureID() != ScriptPackage.SCRIPT_ELEMENTS__SETOS && newSEtos != null)) {
-			if (EcoreUtil.isAncestor(this, newSEtos))
+	public void setScript(Script newScript) {
+		if (newScript != eInternalContainer() || (eContainerFeatureID() != ScriptPackage.SCRIPT_ELEMENTS__SCRIPT && newScript != null)) {
+			if (EcoreUtil.isAncestor(this, newScript))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newSEtos != null)
-				msgs = ((InternalEObject)newSEtos).eInverseAdd(this, ScriptPackage.SCRIPT__STO_SE, Script.class, msgs);
-			msgs = basicSetSEtos(newSEtos, msgs);
+			if (newScript != null)
+				msgs = ((InternalEObject)newScript).eInverseAdd(this, ScriptPackage.SCRIPT__SCRIPT_ELEMENTS, Script.class, msgs);
+			msgs = basicSetScript(newScript, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.SCRIPT_ELEMENTS__SETOS, newSEtos, newSEtos));
+			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.SCRIPT_ELEMENTS__SCRIPT, newScript, newScript));
 	}
 
 	/**
@@ -100,10 +100,10 @@ public abstract class ScriptElementsImpl extends ScriptImpl implements ScriptEle
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT_ELEMENTS__SETOS:
+			case ScriptPackage.SCRIPT_ELEMENTS__SCRIPT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetSEtos((Script)otherEnd, msgs);
+				return basicSetScript((Script)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -116,8 +116,8 @@ public abstract class ScriptElementsImpl extends ScriptImpl implements ScriptEle
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT_ELEMENTS__SETOS:
-				return basicSetSEtos(null, msgs);
+			case ScriptPackage.SCRIPT_ELEMENTS__SCRIPT:
+				return basicSetScript(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -130,8 +130,8 @@ public abstract class ScriptElementsImpl extends ScriptImpl implements ScriptEle
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case ScriptPackage.SCRIPT_ELEMENTS__SETOS:
-				return eInternalContainer().eInverseRemove(this, ScriptPackage.SCRIPT__STO_SE, Script.class, msgs);
+			case ScriptPackage.SCRIPT_ELEMENTS__SCRIPT:
+				return eInternalContainer().eInverseRemove(this, ScriptPackage.SCRIPT__SCRIPT_ELEMENTS, Script.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -144,8 +144,8 @@ public abstract class ScriptElementsImpl extends ScriptImpl implements ScriptEle
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT_ELEMENTS__SETOS:
-				return getSEtos();
+			case ScriptPackage.SCRIPT_ELEMENTS__SCRIPT:
+				return getScript();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,8 +158,8 @@ public abstract class ScriptElementsImpl extends ScriptImpl implements ScriptEle
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT_ELEMENTS__SETOS:
-				setSEtos((Script)newValue);
+			case ScriptPackage.SCRIPT_ELEMENTS__SCRIPT:
+				setScript((Script)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -173,8 +173,8 @@ public abstract class ScriptElementsImpl extends ScriptImpl implements ScriptEle
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT_ELEMENTS__SETOS:
-				setSEtos((Script)null);
+			case ScriptPackage.SCRIPT_ELEMENTS__SCRIPT:
+				setScript((Script)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -188,8 +188,8 @@ public abstract class ScriptElementsImpl extends ScriptImpl implements ScriptEle
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT_ELEMENTS__SETOS:
-				return getSEtos() != null;
+			case ScriptPackage.SCRIPT_ELEMENTS__SCRIPT:
+				return getScript() != null;
 		}
 		return super.eIsSet(featureID);
 	}

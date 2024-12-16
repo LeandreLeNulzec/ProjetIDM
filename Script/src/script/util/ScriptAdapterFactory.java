@@ -76,12 +76,8 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 				return createScriptElementsAdapter();
 			}
 			@Override
-			public Adapter casePortEntree(PortEntree object) {
-				return createPortEntreeAdapter();
-			}
-			@Override
-			public Adapter casePortSortie(PortSortie object) {
-				return createPortSortieAdapter();
+			public Adapter casePort(Port object) {
+				return createPortAdapter();
 			}
 			@Override
 			public Adapter caseEntree(Entree object) {
@@ -90,6 +86,10 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSortie(Sortie object) {
 				return createSortieAdapter();
+			}
+			@Override
+			public Adapter caseBloc(Bloc object) {
+				return createBlocAdapter();
 			}
 			@Override
 			public Adapter caseBloc_Binaire(Bloc_Binaire object) {
@@ -116,20 +116,20 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 				return createDivisionAdapter();
 			}
 			@Override
-			public Adapter caseMin(Min object) {
-				return createMinAdapter();
-			}
-			@Override
-			public Adapter caseMax(Max object) {
-				return createMaxAdapter();
-			}
-			@Override
 			public Adapter caseOppose(Oppose object) {
 				return createOpposeAdapter();
 			}
 			@Override
 			public Adapter caseInverse(Inverse object) {
 				return createInverseAdapter();
+			}
+			@Override
+			public Adapter caseMin(Min object) {
+				return createMinAdapter();
+			}
+			@Override
+			public Adapter caseMax(Max object) {
+				return createMaxAdapter();
 			}
 			@Override
 			public Adapter caseSin(Sin object) {
@@ -200,30 +200,16 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.PortEntree <em>Port Entree</em>}'.
+	 * Creates a new adapter for an object of class '{@link script.Port <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.PortEntree
+	 * @see script.Port
 	 * @generated
 	 */
-	public Adapter createPortEntreeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link script.PortSortie <em>Port Sortie</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see script.PortSortie
-	 * @generated
-	 */
-	public Adapter createPortSortieAdapter() {
+	public Adapter createPortAdapter() {
 		return null;
 	}
 
@@ -252,6 +238,20 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSortieAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link script.Bloc <em>Bloc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see script.Bloc
+	 * @generated
+	 */
+	public Adapter createBlocAdapter() {
 		return null;
 	}
 

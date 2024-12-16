@@ -18,17 +18,20 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import script.Port;
 import script.ScriptPackage;
 
 /**
- * This is the item provider adapter for a {@link script.PortEntree} object.
+ * This is the item provider adapter for a {@link script.Port} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PortEntreeItemProvider 
+public class PortItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -42,7 +45,7 @@ public class PortEntreeItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortEntreeItemProvider(AdapterFactory adapterFactory) {
+	public PortItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -57,88 +60,42 @@ public class PortEntreeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPEtoBUPropertyDescriptor(object);
-			addPEtoBBPropertyDescriptor(object);
-			addPEtoBFPropertyDescriptor(object);
+			addValeurPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the PEto BU feature.
+	 * This adds a property descriptor for the Valeur feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPEtoBUPropertyDescriptor(Object object) {
+	protected void addValeurPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PortEntree_PEtoBU_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortEntree_PEtoBU_feature", "_UI_PortEntree_type"),
-				 ScriptPackage.Literals.PORT_ENTREE__PETO_BU,
+				 getString("_UI_Port_valeur_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_valeur_feature", "_UI_Port_type"),
+				 ScriptPackage.Literals.PORT__VALEUR,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the PEto BB feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPEtoBBPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PortEntree_PEtoBB_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortEntree_PEtoBB_feature", "_UI_PortEntree_type"),
-				 ScriptPackage.Literals.PORT_ENTREE__PETO_BB,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the PEto BF feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPEtoBFPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PortEntree_PEtoBF_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortEntree_PEtoBF_feature", "_UI_PortEntree_type"),
-				 ScriptPackage.Literals.PORT_ENTREE__PETO_BF,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns PortEntree.gif.
+	 * This returns Port.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PortEntree"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Port"));
 	}
 
 	/**
@@ -149,7 +106,8 @@ public class PortEntreeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_PortEntree_type");
+		Port port = (Port)object;
+		return getString("_UI_Port_type") + " " + port.getValeur();
 	}
 
 
@@ -163,6 +121,12 @@ public class PortEntreeItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Port.class)) {
+			case ScriptPackage.PORT__VALEUR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
