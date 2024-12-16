@@ -8,22 +8,22 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * Classe qui reprÃ©sente un rÃ©sultat de validation, c'est-Ã -dire une liste
- * d'erreurs avec message et objet concernÃ©.
+ * Classe qui représente un résultat de validation, c'est-Ã -dire une liste
+ * d'erreurs avec message et objet concerné.
  */
 public class ValidationResult {
 	/**
-	 * Classe interne qui reprÃ©sente une erreur, avec l'objet source de l'erreur
-	 * et le message associÃ©.
+	 * Classe interne qui représente une erreur, avec l'objet source de l'erreur
+	 * et le message associé.
 	 */
 	public static class ValidationError {
-		/** Source de l'erreur (objet visitÃ© au moment oÃ¹ l'erreur est enregistrÃ©e) */
+		/** Source de l'erreur (objet visité au moment oÃ¹ l'erreur est enregistrée) */
 		public final EObject object;
 		/** Message d'erreur */
 		public final String error;
 		
 		/**
-		 * Construit une erreur avec son objet associÃ© et son message.
+		 * Construit une erreur avec son objet associé et son message.
 		 * @param object objet de l'erreur au moment de l'enregistrement
 		 * @param error message d'erreur
 		 */
@@ -34,7 +34,7 @@ public class ValidationResult {
 		
 		/**
 		 * Transforme l'erreur en chaÃ®ne de caractÃ¨re.
-		 * @return chaÃ®ne reprÃ©sentant l'erreur
+		 * @return chaÃ®ne représentant l'erreur
 		 */
 		@Override
 		public String toString() {
@@ -43,28 +43,28 @@ public class ValidationResult {
 		}
 	}
 	
-	/** Liste des erreurs enregistrÃ©es dans ce rÃ©sultat (prÃ©sumÃ©ment mise Ã  jour par un validateur) */
+	/** Liste des erreurs enregistrées dans ce résultat (présumément mise Ã  jour par un validateur) */
 	private List<ValidationError> recordedErrors = new ArrayList<>();
 	
 	/**
-	 * Construit un rÃ©sultat de validation.
+	 * Construit un résultat de validation.
 	 */
 	public ValidationResult() {}
 	
 	/**
 	 * Enregistre une erreur, avec son objet source et son message d'erreur.
-	 * @param object source de l'erreur (un objet du mÃ©ta-modÃ¨le)
-	 * @param error message d'erreur associÃ©
+	 * @param object source de l'erreur (un objet du méta-modÃ¨le)
+	 * @param error message d'erreur associé
 	 */
 	public void recordError(EObject object, String error) {
 		this.recordedErrors.add(new ValidationError(object, error));
 	}
 	
 	/**
-	 * Enregistre une erreur si et seulement si le test est Ã©chouÃ© (le boolÃ©en est Ã  faux).
-	 * Cette mÃ©thode permet d'Ã©crire les contraintes de maniÃ¨re un peu plus lisibles.
-	 * @param test boolÃ©en qui dÃ©termine si l'erreur est Ã  enregitrer ou non
-	 * @param object objet en cours de visite qui est la source de l'erreur (le cas Ã©chÃ©ant)
+	 * Enregistre une erreur si et seulement si le test est échoué (le booléen est Ã  faux).
+	 * Cette méthode permet d'écrire les contraintes de maniÃ¨re un peu plus lisibles.
+	 * @param test booléen qui détermine si l'erreur est Ã  enregitrer ou non
+	 * @param object objet en cours de visite qui est la source de l'erreur (le cas échéant)
 	 * @param error message d'erreur
 	 */
 	public void recordIfFailed(boolean test, EObject object, String error) {
@@ -74,29 +74,29 @@ public class ValidationResult {
 	}
 	
 	/**
-	 * RÃ©cupÃ¨re la liste (non-modifiable) des erreurs enregistrÃ©es dans le rÃ©sultat.
-	 * @return liste (non-modifiable) des erreurs enregistrÃ©es
+	 * RécupÃ¨re la liste (non-modifiable) des erreurs enregistrées dans le résultat.
+	 * @return liste (non-modifiable) des erreurs enregistrées
 	 */
 	public List<ValidationError> getRecordedErrors() {
 		return Collections.unmodifiableList(this.recordedErrors);
 	}
 	
 	/**
-	 * RÃ©cupÃ¨re la liste des erreurs enregistrÃ©es dans le rÃ©sultat et associÃ©es Ã  une
-	 * classe donnÃ©e.
-	 * @param filter classe spÃ©cifique dont on veut les erreurs
-	 * @return erreurs associÃ©es Ã  la classe (potentiellement vide si pas d'erreur)
+	 * RécupÃ¨re la liste des erreurs enregistrées dans le résultat et associées Ã  une
+	 * classe donnée.
+	 * @param filter classe spécifique dont on veut les erreurs
+	 * @return erreurs associées Ã  la classe (potentiellement vide si pas d'erreur)
 	 */
 	public List<ValidationError> getRecordedErrorsFor(EClass filter) {
 		return this.recordedErrors.stream().filter(v -> v.object.eClass().equals(filter)).toList();
 	}
 	
 	/**
-	 * RÃ©cupÃ¨re la liste des erreurs enregistrÃ©es dans le rÃ©sultat et associÃ©es Ã  une
-	 * classe donnÃ©e, sous la forme d'un identifiant de classe (gÃ©nÃ©ralement dÃ©fini dans le 
-	 * package associÃ© au mÃ©ta-modÃ¨le).
-	 * @param classId identifiant de la classe spÃ©cifique dont on veut les erreurs
-	 * @return erreurs associÃ©es Ã  la classe (potentiellement vide si pas d'erreur)
+	 * RécupÃ¨re la liste des erreurs enregistrées dans le résultat et associées Ã  une
+	 * classe donnée, sous la forme d'un identifiant de classe (généralement défini dans le 
+	 * package associé au méta-modÃ¨le).
+	 * @param classId identifiant de la classe spécifique dont on veut les erreurs
+	 * @return erreurs associées Ã  la classe (potentiellement vide si pas d'erreur)
 	 */
 	public List<ValidationError> getRecordedErrorsFor(int classId) {
 		return this.recordedErrors.stream().filter(v -> v.object.eClass().getClassifierID() == classId).toList();
