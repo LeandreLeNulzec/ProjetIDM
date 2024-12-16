@@ -150,7 +150,7 @@ public interface TablePackage extends EPackage {
 	int COLONNE__ELEMENT_TYPE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Contraintes</b></em>' reference list.
+	 * The feature id for the '<em><b>Contraintes</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -159,13 +159,31 @@ public interface TablePackage extends EPackage {
 	int COLONNE__CONTRAINTES = 3;
 
 	/**
+	 * The feature id for the '<em><b>Nb Lignes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLONNE__NB_LIGNES = 4;
+
+	/**
+	 * The feature id for the '<em><b>Contenu</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLONNE__CONTENU = 5;
+
+	/**
 	 * The number of structural features of the '<em>Colonne</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLONNE_FEATURE_COUNT = 4;
+	int COLONNE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Colonne</em>' class.
@@ -214,7 +232,7 @@ public interface TablePackage extends EPackage {
 	int COLONNE_PROVIENT__ELEMENT_TYPE = COLONNE__ELEMENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Contraintes</b></em>' reference list.
+	 * The feature id for the '<em><b>Contraintes</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -223,13 +241,40 @@ public interface TablePackage extends EPackage {
 	int COLONNE_PROVIENT__CONTRAINTES = COLONNE__CONTRAINTES;
 
 	/**
-	 * The feature id for the '<em><b>Colonne Origine</b></em>' reference.
+	 * The feature id for the '<em><b>Nb Lignes</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLONNE_PROVIENT__COLONNE_ORIGINE = COLONNE_FEATURE_COUNT + 0;
+	int COLONNE_PROVIENT__NB_LIGNES = COLONNE__NB_LIGNES;
+
+	/**
+	 * The feature id for the '<em><b>Contenu</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLONNE_PROVIENT__CONTENU = COLONNE__CONTENU;
+
+	/**
+	 * The feature id for the '<em><b>Table Origine</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLONNE_PROVIENT__TABLE_ORIGINE = COLONNE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Ref Colonne</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLONNE_PROVIENT__REF_COLONNE = COLONNE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Colonne Provient</em>' class.
@@ -238,7 +283,7 @@ public interface TablePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLONNE_PROVIENT_FEATURE_COUNT = COLONNE_FEATURE_COUNT + 1;
+	int COLONNE_PROVIENT_FEATURE_COUNT = COLONNE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Colonne Provient</em>' class.
@@ -287,13 +332,31 @@ public interface TablePackage extends EPackage {
 	int COLONNE_DERIVEE__ELEMENT_TYPE = COLONNE__ELEMENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Contraintes</b></em>' reference list.
+	 * The feature id for the '<em><b>Contraintes</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int COLONNE_DERIVEE__CONTRAINTES = COLONNE__CONTRAINTES;
+
+	/**
+	 * The feature id for the '<em><b>Nb Lignes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLONNE_DERIVEE__NB_LIGNES = COLONNE__NB_LIGNES;
+
+	/**
+	 * The feature id for the '<em><b>Contenu</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLONNE_DERIVEE__CONTENU = COLONNE__CONTENU;
 
 	/**
 	 * The feature id for the '<em><b>Algorithme</b></em>' reference.
@@ -332,6 +395,182 @@ public interface TablePackage extends EPackage {
 	int COLONNE_DERIVEE_OPERATION_COUNT = COLONNE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link table.impl.ContenuImpl <em>Contenu</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see table.impl.ContenuImpl
+	 * @see table.impl.TablePackageImpl#getContenu()
+	 * @generated
+	 */
+	int CONTENU = 4;
+
+	/**
+	 * The number of structural features of the '<em>Contenu</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Contenu</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link table.impl.ContenuFloatImpl <em>Contenu Float</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see table.impl.ContenuFloatImpl
+	 * @see table.impl.TablePackageImpl#getContenuFloat()
+	 * @generated
+	 */
+	int CONTENU_FLOAT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Contenu</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_FLOAT__CONTENU = CONTENU_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Contenu Float</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_FLOAT_FEATURE_COUNT = CONTENU_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Contenu Float</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_FLOAT_OPERATION_COUNT = CONTENU_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link table.impl.ContenuIntImpl <em>Contenu Int</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see table.impl.ContenuIntImpl
+	 * @see table.impl.TablePackageImpl#getContenuInt()
+	 * @generated
+	 */
+	int CONTENU_INT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Contenu</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_INT__CONTENU = CONTENU_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Contenu Int</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_INT_FEATURE_COUNT = CONTENU_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Contenu Int</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_INT_OPERATION_COUNT = CONTENU_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link table.impl.ContenuBoolImpl <em>Contenu Bool</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see table.impl.ContenuBoolImpl
+	 * @see table.impl.TablePackageImpl#getContenuBool()
+	 * @generated
+	 */
+	int CONTENU_BOOL = 7;
+
+	/**
+	 * The feature id for the '<em><b>Contenu</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_BOOL__CONTENU = CONTENU_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Contenu Bool</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_BOOL_FEATURE_COUNT = CONTENU_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Contenu Bool</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_BOOL_OPERATION_COUNT = CONTENU_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link table.impl.ContenuStringImpl <em>Contenu String</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see table.impl.ContenuStringImpl
+	 * @see table.impl.TablePackageImpl#getContenuString()
+	 * @generated
+	 */
+	int CONTENU_STRING = 8;
+
+	/**
+	 * The feature id for the '<em><b>Contenu</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_STRING__CONTENU = CONTENU_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Contenu String</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_STRING_FEATURE_COUNT = CONTENU_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Contenu String</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENU_STRING_OPERATION_COUNT = CONTENU_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link table.impl.ContrainteImpl <em>Contrainte</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -339,16 +578,7 @@ public interface TablePackage extends EPackage {
 	 * @see table.impl.TablePackageImpl#getContrainte()
 	 * @generated
 	 */
-	int CONTRAINTE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Parametre</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTRAINTE__PARAMETRE = 0;
+	int CONTRAINTE = 9;
 
 	/**
 	 * The number of structural features of the '<em>Contrainte</em>' class.
@@ -357,7 +587,7 @@ public interface TablePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTRAINTE_FEATURE_COUNT = 1;
+	int CONTRAINTE_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Contrainte</em>' class.
@@ -369,6 +599,209 @@ public interface TablePackage extends EPackage {
 	int CONTRAINTE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link table.impl.OuImpl <em>Ou</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see table.impl.OuImpl
+	 * @see table.impl.TablePackageImpl#getOu()
+	 * @generated
+	 */
+	int OU = 10;
+
+	/**
+	 * The feature id for the '<em><b>Variables</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OU__VARIABLES = CONTRAINTE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Ou</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OU_FEATURE_COUNT = CONTRAINTE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Ou</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OU_OPERATION_COUNT = CONTRAINTE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link table.impl.EtImpl <em>Et</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see table.impl.EtImpl
+	 * @see table.impl.TablePackageImpl#getEt()
+	 * @generated
+	 */
+	int ET = 11;
+
+	/**
+	 * The feature id for the '<em><b>Variables</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ET__VARIABLES = CONTRAINTE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Et</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ET_FEATURE_COUNT = CONTRAINTE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Et</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ET_OPERATION_COUNT = CONTRAINTE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link table.impl.PredicatImpl <em>Predicat</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see table.impl.PredicatImpl
+	 * @see table.impl.TablePackageImpl#getPredicat()
+	 * @generated
+	 */
+	int PREDICAT = 12;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICAT__CONDITION = CONTRAINTE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Predicat</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICAT_FEATURE_COUNT = CONTRAINTE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Predicat</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICAT_OPERATION_COUNT = CONTRAINTE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link table.impl.PredicatValeurImpl <em>Predicat Valeur</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see table.impl.PredicatValeurImpl
+	 * @see table.impl.TablePackageImpl#getPredicatValeur()
+	 * @generated
+	 */
+	int PREDICAT_VALEUR = 13;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICAT_VALEUR__CONDITION = PREDICAT__CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Comparant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICAT_VALEUR__COMPARANT = PREDICAT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Predicat Valeur</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICAT_VALEUR_FEATURE_COUNT = PREDICAT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Predicat Valeur</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICAT_VALEUR_OPERATION_COUNT = PREDICAT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link table.impl.PredicatColonneImpl <em>Predicat Colonne</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see table.impl.PredicatColonneImpl
+	 * @see table.impl.TablePackageImpl#getPredicatColonne()
+	 * @generated
+	 */
+	int PREDICAT_COLONNE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICAT_COLONNE__CONDITION = PREDICAT__CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Colonne Comparante</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICAT_COLONNE__COLONNE_COMPARANTE = PREDICAT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Predicat Colonne</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICAT_COLONNE_FEATURE_COUNT = PREDICAT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Predicat Colonne</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICAT_COLONNE_OPERATION_COUNT = PREDICAT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link table.ColonnesElementsType <em>Colonnes Elements Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -376,7 +809,18 @@ public interface TablePackage extends EPackage {
 	 * @see table.impl.TablePackageImpl#getColonnesElementsType()
 	 * @generated
 	 */
-	int COLONNES_ELEMENTS_TYPE = 5;
+	int COLONNES_ELEMENTS_TYPE = 15;
+
+
+	/**
+	 * The meta object id for the '{@link table.Condition <em>Condition</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see table.Condition
+	 * @see table.impl.TablePackageImpl#getCondition()
+	 * @generated
+	 */
+	int CONDITION = 16;
 
 
 	/**
@@ -466,15 +910,37 @@ public interface TablePackage extends EPackage {
 	EAttribute getColonne_ElementType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link table.Colonne#getContraintes <em>Contraintes</em>}'.
+	 * Returns the meta object for the reference '{@link table.Colonne#getContraintes <em>Contraintes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Contraintes</em>'.
+	 * @return the meta object for the reference '<em>Contraintes</em>'.
 	 * @see table.Colonne#getContraintes()
 	 * @see #getColonne()
 	 * @generated
 	 */
 	EReference getColonne_Contraintes();
+
+	/**
+	 * Returns the meta object for the attribute '{@link table.Colonne#getNbLignes <em>Nb Lignes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nb Lignes</em>'.
+	 * @see table.Colonne#getNbLignes()
+	 * @see #getColonne()
+	 * @generated
+	 */
+	EAttribute getColonne_NbLignes();
+
+	/**
+	 * Returns the meta object for the reference list '{@link table.Colonne#getContenu <em>Contenu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Contenu</em>'.
+	 * @see table.Colonne#getContenu()
+	 * @see #getColonne()
+	 * @generated
+	 */
+	EReference getColonne_Contenu();
 
 	/**
 	 * Returns the meta object for class '{@link table.ColonneProvient <em>Colonne Provient</em>}'.
@@ -487,15 +953,26 @@ public interface TablePackage extends EPackage {
 	EClass getColonneProvient();
 
 	/**
-	 * Returns the meta object for the reference '{@link table.ColonneProvient#getColonneOrigine <em>Colonne Origine</em>}'.
+	 * Returns the meta object for the reference '{@link table.ColonneProvient#getTableOrigine <em>Table Origine</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Colonne Origine</em>'.
-	 * @see table.ColonneProvient#getColonneOrigine()
+	 * @return the meta object for the reference '<em>Table Origine</em>'.
+	 * @see table.ColonneProvient#getTableOrigine()
 	 * @see #getColonneProvient()
 	 * @generated
 	 */
-	EReference getColonneProvient_ColonneOrigine();
+	EReference getColonneProvient_TableOrigine();
+
+	/**
+	 * Returns the meta object for the attribute '{@link table.ColonneProvient#getRefColonne <em>Ref Colonne</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ref Colonne</em>'.
+	 * @see table.ColonneProvient#getRefColonne()
+	 * @see #getColonneProvient()
+	 * @generated
+	 */
+	EAttribute getColonneProvient_RefColonne();
 
 	/**
 	 * Returns the meta object for class '{@link table.ColonneDerivee <em>Colonne Derivee</em>}'.
@@ -530,6 +1007,100 @@ public interface TablePackage extends EPackage {
 	EReference getColonneDerivee_ColonnesEntree();
 
 	/**
+	 * Returns the meta object for class '{@link table.Contenu <em>Contenu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Contenu</em>'.
+	 * @see table.Contenu
+	 * @generated
+	 */
+	EClass getContenu();
+
+	/**
+	 * Returns the meta object for class '{@link table.ContenuFloat <em>Contenu Float</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Contenu Float</em>'.
+	 * @see table.ContenuFloat
+	 * @generated
+	 */
+	EClass getContenuFloat();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link table.ContenuFloat#getContenu <em>Contenu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Contenu</em>'.
+	 * @see table.ContenuFloat#getContenu()
+	 * @see #getContenuFloat()
+	 * @generated
+	 */
+	EAttribute getContenuFloat_Contenu();
+
+	/**
+	 * Returns the meta object for class '{@link table.ContenuInt <em>Contenu Int</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Contenu Int</em>'.
+	 * @see table.ContenuInt
+	 * @generated
+	 */
+	EClass getContenuInt();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link table.ContenuInt#getContenu <em>Contenu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Contenu</em>'.
+	 * @see table.ContenuInt#getContenu()
+	 * @see #getContenuInt()
+	 * @generated
+	 */
+	EAttribute getContenuInt_Contenu();
+
+	/**
+	 * Returns the meta object for class '{@link table.ContenuBool <em>Contenu Bool</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Contenu Bool</em>'.
+	 * @see table.ContenuBool
+	 * @generated
+	 */
+	EClass getContenuBool();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link table.ContenuBool#getContenu <em>Contenu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Contenu</em>'.
+	 * @see table.ContenuBool#getContenu()
+	 * @see #getContenuBool()
+	 * @generated
+	 */
+	EAttribute getContenuBool_Contenu();
+
+	/**
+	 * Returns the meta object for class '{@link table.ContenuString <em>Contenu String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Contenu String</em>'.
+	 * @see table.ContenuString
+	 * @generated
+	 */
+	EClass getContenuString();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link table.ContenuString#getContenu <em>Contenu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Contenu</em>'.
+	 * @see table.ContenuString#getContenu()
+	 * @see #getContenuString()
+	 * @generated
+	 */
+	EAttribute getContenuString_Contenu();
+
+	/**
 	 * Returns the meta object for class '{@link table.Contrainte <em>Contrainte</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -540,15 +1111,109 @@ public interface TablePackage extends EPackage {
 	EClass getContrainte();
 
 	/**
-	 * Returns the meta object for the attribute '{@link table.Contrainte#getParametre <em>Parametre</em>}'.
+	 * Returns the meta object for class '{@link table.Ou <em>Ou</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Parametre</em>'.
-	 * @see table.Contrainte#getParametre()
-	 * @see #getContrainte()
+	 * @return the meta object for class '<em>Ou</em>'.
+	 * @see table.Ou
 	 * @generated
 	 */
-	EAttribute getContrainte_Parametre();
+	EClass getOu();
+
+	/**
+	 * Returns the meta object for the reference list '{@link table.Ou#getVariables <em>Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Variables</em>'.
+	 * @see table.Ou#getVariables()
+	 * @see #getOu()
+	 * @generated
+	 */
+	EReference getOu_Variables();
+
+	/**
+	 * Returns the meta object for class '{@link table.Et <em>Et</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Et</em>'.
+	 * @see table.Et
+	 * @generated
+	 */
+	EClass getEt();
+
+	/**
+	 * Returns the meta object for the reference list '{@link table.Et#getVariables <em>Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Variables</em>'.
+	 * @see table.Et#getVariables()
+	 * @see #getEt()
+	 * @generated
+	 */
+	EReference getEt_Variables();
+
+	/**
+	 * Returns the meta object for class '{@link table.Predicat <em>Predicat</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Predicat</em>'.
+	 * @see table.Predicat
+	 * @generated
+	 */
+	EClass getPredicat();
+
+	/**
+	 * Returns the meta object for the attribute '{@link table.Predicat#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Condition</em>'.
+	 * @see table.Predicat#getCondition()
+	 * @see #getPredicat()
+	 * @generated
+	 */
+	EAttribute getPredicat_Condition();
+
+	/**
+	 * Returns the meta object for class '{@link table.PredicatValeur <em>Predicat Valeur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Predicat Valeur</em>'.
+	 * @see table.PredicatValeur
+	 * @generated
+	 */
+	EClass getPredicatValeur();
+
+	/**
+	 * Returns the meta object for the attribute '{@link table.PredicatValeur#getComparant <em>Comparant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comparant</em>'.
+	 * @see table.PredicatValeur#getComparant()
+	 * @see #getPredicatValeur()
+	 * @generated
+	 */
+	EAttribute getPredicatValeur_Comparant();
+
+	/**
+	 * Returns the meta object for class '{@link table.PredicatColonne <em>Predicat Colonne</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Predicat Colonne</em>'.
+	 * @see table.PredicatColonne
+	 * @generated
+	 */
+	EClass getPredicatColonne();
+
+	/**
+	 * Returns the meta object for the reference '{@link table.PredicatColonne#getColonneComparante <em>Colonne Comparante</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Colonne Comparante</em>'.
+	 * @see table.PredicatColonne#getColonneComparante()
+	 * @see #getPredicatColonne()
+	 * @generated
+	 */
+	EReference getPredicatColonne_ColonneComparante();
 
 	/**
 	 * Returns the meta object for enum '{@link table.ColonnesElementsType <em>Colonnes Elements Type</em>}'.
@@ -559,6 +1224,16 @@ public interface TablePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getColonnesElementsType();
+
+	/**
+	 * Returns the meta object for enum '{@link table.Condition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Condition</em>'.
+	 * @see table.Condition
+	 * @generated
+	 */
+	EEnum getCondition();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -652,12 +1327,28 @@ public interface TablePackage extends EPackage {
 		EAttribute COLONNE__ELEMENT_TYPE = eINSTANCE.getColonne_ElementType();
 
 		/**
-		 * The meta object literal for the '<em><b>Contraintes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Contraintes</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference COLONNE__CONTRAINTES = eINSTANCE.getColonne_Contraintes();
+
+		/**
+		 * The meta object literal for the '<em><b>Nb Lignes</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COLONNE__NB_LIGNES = eINSTANCE.getColonne_NbLignes();
+
+		/**
+		 * The meta object literal for the '<em><b>Contenu</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COLONNE__CONTENU = eINSTANCE.getColonne_Contenu();
 
 		/**
 		 * The meta object literal for the '{@link table.impl.ColonneProvientImpl <em>Colonne Provient</em>}' class.
@@ -670,12 +1361,20 @@ public interface TablePackage extends EPackage {
 		EClass COLONNE_PROVIENT = eINSTANCE.getColonneProvient();
 
 		/**
-		 * The meta object literal for the '<em><b>Colonne Origine</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Table Origine</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COLONNE_PROVIENT__COLONNE_ORIGINE = eINSTANCE.getColonneProvient_ColonneOrigine();
+		EReference COLONNE_PROVIENT__TABLE_ORIGINE = eINSTANCE.getColonneProvient_TableOrigine();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref Colonne</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COLONNE_PROVIENT__REF_COLONNE = eINSTANCE.getColonneProvient_RefColonne();
 
 		/**
 		 * The meta object literal for the '{@link table.impl.ColonneDeriveeImpl <em>Colonne Derivee</em>}' class.
@@ -704,6 +1403,88 @@ public interface TablePackage extends EPackage {
 		EReference COLONNE_DERIVEE__COLONNES_ENTREE = eINSTANCE.getColonneDerivee_ColonnesEntree();
 
 		/**
+		 * The meta object literal for the '{@link table.impl.ContenuImpl <em>Contenu</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see table.impl.ContenuImpl
+		 * @see table.impl.TablePackageImpl#getContenu()
+		 * @generated
+		 */
+		EClass CONTENU = eINSTANCE.getContenu();
+
+		/**
+		 * The meta object literal for the '{@link table.impl.ContenuFloatImpl <em>Contenu Float</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see table.impl.ContenuFloatImpl
+		 * @see table.impl.TablePackageImpl#getContenuFloat()
+		 * @generated
+		 */
+		EClass CONTENU_FLOAT = eINSTANCE.getContenuFloat();
+
+		/**
+		 * The meta object literal for the '<em><b>Contenu</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTENU_FLOAT__CONTENU = eINSTANCE.getContenuFloat_Contenu();
+
+		/**
+		 * The meta object literal for the '{@link table.impl.ContenuIntImpl <em>Contenu Int</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see table.impl.ContenuIntImpl
+		 * @see table.impl.TablePackageImpl#getContenuInt()
+		 * @generated
+		 */
+		EClass CONTENU_INT = eINSTANCE.getContenuInt();
+
+		/**
+		 * The meta object literal for the '<em><b>Contenu</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTENU_INT__CONTENU = eINSTANCE.getContenuInt_Contenu();
+
+		/**
+		 * The meta object literal for the '{@link table.impl.ContenuBoolImpl <em>Contenu Bool</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see table.impl.ContenuBoolImpl
+		 * @see table.impl.TablePackageImpl#getContenuBool()
+		 * @generated
+		 */
+		EClass CONTENU_BOOL = eINSTANCE.getContenuBool();
+
+		/**
+		 * The meta object literal for the '<em><b>Contenu</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTENU_BOOL__CONTENU = eINSTANCE.getContenuBool_Contenu();
+
+		/**
+		 * The meta object literal for the '{@link table.impl.ContenuStringImpl <em>Contenu String</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see table.impl.ContenuStringImpl
+		 * @see table.impl.TablePackageImpl#getContenuString()
+		 * @generated
+		 */
+		EClass CONTENU_STRING = eINSTANCE.getContenuString();
+
+		/**
+		 * The meta object literal for the '<em><b>Contenu</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTENU_STRING__CONTENU = eINSTANCE.getContenuString_Contenu();
+
+		/**
 		 * The meta object literal for the '{@link table.impl.ContrainteImpl <em>Contrainte</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -714,12 +1495,94 @@ public interface TablePackage extends EPackage {
 		EClass CONTRAINTE = eINSTANCE.getContrainte();
 
 		/**
-		 * The meta object literal for the '<em><b>Parametre</b></em>' attribute feature.
+		 * The meta object literal for the '{@link table.impl.OuImpl <em>Ou</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see table.impl.OuImpl
+		 * @see table.impl.TablePackageImpl#getOu()
+		 * @generated
+		 */
+		EClass OU = eINSTANCE.getOu();
+
+		/**
+		 * The meta object literal for the '<em><b>Variables</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTRAINTE__PARAMETRE = eINSTANCE.getContrainte_Parametre();
+		EReference OU__VARIABLES = eINSTANCE.getOu_Variables();
+
+		/**
+		 * The meta object literal for the '{@link table.impl.EtImpl <em>Et</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see table.impl.EtImpl
+		 * @see table.impl.TablePackageImpl#getEt()
+		 * @generated
+		 */
+		EClass ET = eINSTANCE.getEt();
+
+		/**
+		 * The meta object literal for the '<em><b>Variables</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ET__VARIABLES = eINSTANCE.getEt_Variables();
+
+		/**
+		 * The meta object literal for the '{@link table.impl.PredicatImpl <em>Predicat</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see table.impl.PredicatImpl
+		 * @see table.impl.TablePackageImpl#getPredicat()
+		 * @generated
+		 */
+		EClass PREDICAT = eINSTANCE.getPredicat();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PREDICAT__CONDITION = eINSTANCE.getPredicat_Condition();
+
+		/**
+		 * The meta object literal for the '{@link table.impl.PredicatValeurImpl <em>Predicat Valeur</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see table.impl.PredicatValeurImpl
+		 * @see table.impl.TablePackageImpl#getPredicatValeur()
+		 * @generated
+		 */
+		EClass PREDICAT_VALEUR = eINSTANCE.getPredicatValeur();
+
+		/**
+		 * The meta object literal for the '<em><b>Comparant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PREDICAT_VALEUR__COMPARANT = eINSTANCE.getPredicatValeur_Comparant();
+
+		/**
+		 * The meta object literal for the '{@link table.impl.PredicatColonneImpl <em>Predicat Colonne</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see table.impl.PredicatColonneImpl
+		 * @see table.impl.TablePackageImpl#getPredicatColonne()
+		 * @generated
+		 */
+		EClass PREDICAT_COLONNE = eINSTANCE.getPredicatColonne();
+
+		/**
+		 * The meta object literal for the '<em><b>Colonne Comparante</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PREDICAT_COLONNE__COLONNE_COMPARANTE = eINSTANCE.getPredicatColonne_ColonneComparante();
 
 		/**
 		 * The meta object literal for the '{@link table.ColonnesElementsType <em>Colonnes Elements Type</em>}' enum.
@@ -730,6 +1593,16 @@ public interface TablePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum COLONNES_ELEMENTS_TYPE = eINSTANCE.getColonnesElementsType();
+
+		/**
+		 * The meta object literal for the '{@link table.Condition <em>Condition</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see table.Condition
+		 * @see table.impl.TablePackageImpl#getCondition()
+		 * @generated
+		 */
+		EEnum CONDITION = eINSTANCE.getCondition();
 
 	}
 

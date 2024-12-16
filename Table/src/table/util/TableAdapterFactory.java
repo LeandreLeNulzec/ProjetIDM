@@ -84,8 +84,48 @@ public class TableAdapterFactory extends AdapterFactoryImpl {
 				return createColonneDeriveeAdapter();
 			}
 			@Override
+			public Adapter caseContenu(Contenu object) {
+				return createContenuAdapter();
+			}
+			@Override
+			public Adapter caseContenuFloat(ContenuFloat object) {
+				return createContenuFloatAdapter();
+			}
+			@Override
+			public Adapter caseContenuInt(ContenuInt object) {
+				return createContenuIntAdapter();
+			}
+			@Override
+			public Adapter caseContenuBool(ContenuBool object) {
+				return createContenuBoolAdapter();
+			}
+			@Override
+			public Adapter caseContenuString(ContenuString object) {
+				return createContenuStringAdapter();
+			}
+			@Override
 			public Adapter caseContrainte(Contrainte object) {
 				return createContrainteAdapter();
+			}
+			@Override
+			public Adapter caseOu(Ou object) {
+				return createOuAdapter();
+			}
+			@Override
+			public Adapter caseEt(Et object) {
+				return createEtAdapter();
+			}
+			@Override
+			public Adapter casePredicat(Predicat object) {
+				return createPredicatAdapter();
+			}
+			@Override
+			public Adapter casePredicatValeur(PredicatValeur object) {
+				return createPredicatValeurAdapter();
+			}
+			@Override
+			public Adapter casePredicatColonne(PredicatColonne object) {
+				return createPredicatColonneAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -164,6 +204,76 @@ public class TableAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link table.Contenu <em>Contenu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see table.Contenu
+	 * @generated
+	 */
+	public Adapter createContenuAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link table.ContenuFloat <em>Contenu Float</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see table.ContenuFloat
+	 * @generated
+	 */
+	public Adapter createContenuFloatAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link table.ContenuInt <em>Contenu Int</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see table.ContenuInt
+	 * @generated
+	 */
+	public Adapter createContenuIntAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link table.ContenuBool <em>Contenu Bool</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see table.ContenuBool
+	 * @generated
+	 */
+	public Adapter createContenuBoolAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link table.ContenuString <em>Contenu String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see table.ContenuString
+	 * @generated
+	 */
+	public Adapter createContenuStringAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link table.Contrainte <em>Contrainte</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -174,6 +284,76 @@ public class TableAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createContrainteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link table.Ou <em>Ou</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see table.Ou
+	 * @generated
+	 */
+	public Adapter createOuAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link table.Et <em>Et</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see table.Et
+	 * @generated
+	 */
+	public Adapter createEtAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link table.Predicat <em>Predicat</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see table.Predicat
+	 * @generated
+	 */
+	public Adapter createPredicatAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link table.PredicatValeur <em>Predicat Valeur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see table.PredicatValeur
+	 * @generated
+	 */
+	public Adapter createPredicatValeurAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link table.PredicatColonne <em>Predicat Colonne</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see table.PredicatColonne
+	 * @generated
+	 */
+	public Adapter createPredicatColonneAdapter() {
 		return null;
 	}
 

@@ -19,26 +19,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ColonnesElementsType implements Enumerator {
 	/**
-	 * The '<em><b>String</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #STRING_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	STRING(0, "String", "String"),
-
-	/**
-	 * The '<em><b>Int</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #INT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	INT(1, "Int", "Int"),
-
-	/**
 	 * The '<em><b>Float</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46,7 +26,23 @@ public enum ColonnesElementsType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FLOAT(2, "Float", "Float"),
+	FLOAT(0, "Float", "Float"), /**
+	 * The '<em><b>Int</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #INT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	INT(1, "Int", "Int"), /**
+	 * The '<em><b>String</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #STRING_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	STRING(2, "String", "String"),
 
 	/**
 	 * The '<em><b>Bool</b></em>' literal object.
@@ -59,15 +55,15 @@ public enum ColonnesElementsType implements Enumerator {
 	BOOL(3, "Bool", "Bool");
 
 	/**
-	 * The '<em><b>String</b></em>' literal value.
+	 * The '<em><b>Float</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #STRING
-	 * @model name="String"
+	 * @see #FLOAT
+	 * @model name="Float"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int STRING_VALUE = 0;
+	public static final int FLOAT_VALUE = 0;
 
 	/**
 	 * The '<em><b>Int</b></em>' literal value.
@@ -81,15 +77,15 @@ public enum ColonnesElementsType implements Enumerator {
 	public static final int INT_VALUE = 1;
 
 	/**
-	 * The '<em><b>Float</b></em>' literal value.
+	 * The '<em><b>String</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #FLOAT
-	 * @model name="Float"
+	 * @see #STRING
+	 * @model name="String"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int FLOAT_VALUE = 2;
+	public static final int STRING_VALUE = 2;
 
 	/**
 	 * The '<em><b>Bool</b></em>' literal value.
@@ -110,9 +106,9 @@ public enum ColonnesElementsType implements Enumerator {
 	 */
 	private static final ColonnesElementsType[] VALUES_ARRAY =
 		new ColonnesElementsType[] {
-			STRING,
-			INT,
 			FLOAT,
+			INT,
+			STRING,
 			BOOL,
 		};
 
@@ -170,9 +166,9 @@ public enum ColonnesElementsType implements Enumerator {
 	 */
 	public static ColonnesElementsType get(int value) {
 		switch (value) {
-			case STRING_VALUE: return STRING;
-			case INT_VALUE: return INT;
 			case FLOAT_VALUE: return FLOAT;
+			case INT_VALUE: return INT;
+			case STRING_VALUE: return STRING;
 			case BOOL_VALUE: return BOOL;
 		}
 		return null;

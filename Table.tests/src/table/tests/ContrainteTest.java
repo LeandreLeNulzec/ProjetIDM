@@ -4,10 +4,7 @@ package table.tests;
 
 import junit.framework.TestCase;
 
-import junit.textui.TestRunner;
-
 import table.Contrainte;
-import table.TableFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +12,7 @@ import table.TableFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ContrainteTest extends TestCase {
+public abstract class ContrainteTest extends TestCase {
 
 	/**
 	 * The fixture for this Contrainte test case.
@@ -24,15 +21,6 @@ public class ContrainteTest extends TestCase {
 	 * @generated
 	 */
 	protected Contrainte fixture = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(ContrainteTest.class);
-	}
 
 	/**
 	 * Constructs a new Contrainte test case with the given name.
@@ -62,28 +50,6 @@ public class ContrainteTest extends TestCase {
 	 */
 	protected Contrainte getFixture() {
 		return fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(TableFactory.eINSTANCE.createContrainte());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
 	}
 
 } //ContrainteTest

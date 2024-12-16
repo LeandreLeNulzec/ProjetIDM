@@ -12,7 +12,8 @@ package table;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link table.ColonneProvient#getColonneOrigine <em>Colonne Origine</em>}</li>
+ *   <li>{@link table.ColonneProvient#getTableOrigine <em>Table Origine</em>}</li>
+ *   <li>{@link table.ColonneProvient#getRefColonne <em>Ref Colonne</em>}</li>
  * </ul>
  *
  * @see table.TablePackage#getColonneProvient()
@@ -21,25 +22,47 @@ package table;
  */
 public interface ColonneProvient extends Colonne {
 	/**
-	 * Returns the value of the '<em><b>Colonne Origine</b></em>' reference.
+	 * Returns the value of the '<em><b>Table Origine</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Colonne Origine</em>' reference.
-	 * @see #setColonneOrigine(Colonne)
-	 * @see table.TablePackage#getColonneProvient_ColonneOrigine()
+	 * @return the value of the '<em>Table Origine</em>' reference.
+	 * @see #setTableOrigine(Table)
+	 * @see table.TablePackage#getColonneProvient_TableOrigine()
 	 * @model required="true"
 	 * @generated
 	 */
-	Colonne getColonneOrigine();
+	Table getTableOrigine();
 
 	/**
-	 * Sets the value of the '{@link table.ColonneProvient#getColonneOrigine <em>Colonne Origine</em>}' reference.
+	 * Sets the value of the '{@link table.ColonneProvient#getTableOrigine <em>Table Origine</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Colonne Origine</em>' reference.
-	 * @see #getColonneOrigine()
+	 * @param value the new value of the '<em>Table Origine</em>' reference.
+	 * @see #getTableOrigine()
 	 * @generated
 	 */
-	void setColonneOrigine(Colonne value);
+	void setTableOrigine(Table value);
+
+	/**
+	 * Returns the value of the '<em><b>Ref Colonne</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ref Colonne</em>' attribute.
+	 * @see #setRefColonne(String)
+	 * @see table.TablePackage#getColonneProvient_RefColonne()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getRefColonne();
+
+	/**
+	 * Sets the value of the '{@link table.ColonneProvient#getRefColonne <em>Ref Colonne</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ref Colonne</em>' attribute.
+	 * @see #getRefColonne()
+	 * @generated
+	 */
+	void setRefColonne(String value);
 
 } // ColonneProvient

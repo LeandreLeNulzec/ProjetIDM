@@ -57,7 +57,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>Colonnes</em>' reference list.
 	 * @see table.TablePackage#getTable_Colonnes()
 	 * @see table.Colonne#getTable
-	 * @model opposite="table" required="true"
+	 * @model opposite="table"
 	 * @generated
 	 */
 	EList<Colonne> getColonnes();

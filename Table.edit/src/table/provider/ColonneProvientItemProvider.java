@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import table.ColonneProvient;
 import table.TablePackage;
@@ -43,29 +45,52 @@ public class ColonneProvientItemProvider extends ColonneItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addColonneOriginePropertyDescriptor(object);
+			addTableOriginePropertyDescriptor(object);
+			addRefColonnePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Colonne Origine feature.
+	 * This adds a property descriptor for the Table Origine feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addColonneOriginePropertyDescriptor(Object object) {
+	protected void addTableOriginePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ColonneProvient_colonneOrigine_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ColonneProvient_colonneOrigine_feature", "_UI_ColonneProvient_type"),
-				 TablePackage.Literals.COLONNE_PROVIENT__COLONNE_ORIGINE,
+				 getString("_UI_ColonneProvient_tableOrigine_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ColonneProvient_tableOrigine_feature", "_UI_ColonneProvient_type"),
+				 TablePackage.Literals.COLONNE_PROVIENT__TABLE_ORIGINE,
 				 true,
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Ref Colonne feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRefColonnePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ColonneProvient_refColonne_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ColonneProvient_refColonne_feature", "_UI_ColonneProvient_type"),
+				 TablePackage.Literals.COLONNE_PROVIENT__REF_COLONNE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -106,6 +131,12 @@ public class ColonneProvientItemProvider extends ColonneItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ColonneProvient.class)) {
+			case TablePackage.COLONNE_PROVIENT__REF_COLONNE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

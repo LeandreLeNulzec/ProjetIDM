@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import table.Colonne;
 import table.ColonnesElementsType;
+import table.Contenu;
 import table.Contrainte;
 import table.Table;
 import table.TablePackage;
@@ -35,6 +36,8 @@ import table.TablePackage;
  *   <li>{@link table.impl.ColonneImpl#getTable <em>Table</em>}</li>
  *   <li>{@link table.impl.ColonneImpl#getElementType <em>Element Type</em>}</li>
  *   <li>{@link table.impl.ColonneImpl#getContraintes <em>Contraintes</em>}</li>
+ *   <li>{@link table.impl.ColonneImpl#getNbLignes <em>Nb Lignes</em>}</li>
+ *   <li>{@link table.impl.ColonneImpl#getContenu <em>Contenu</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,7 +51,7 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOM_EDEFAULT = "colonneSansnom";
+	protected static final String NOM_EDEFAULT = "colonneSansNom";
 
 	/**
 	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
@@ -78,7 +81,7 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ColonnesElementsType ELEMENT_TYPE_EDEFAULT = ColonnesElementsType.STRING;
+	protected static final ColonnesElementsType ELEMENT_TYPE_EDEFAULT = ColonnesElementsType.FLOAT;
 
 	/**
 	 * The cached value of the '{@link #getElementType() <em>Element Type</em>}' attribute.
@@ -91,14 +94,44 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 	protected ColonnesElementsType elementType = ELEMENT_TYPE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getContraintes() <em>Contraintes</em>}' reference list.
+	 * The cached value of the '{@link #getContraintes() <em>Contraintes</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContraintes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Contrainte> contraintes;
+	protected Contrainte contraintes;
+
+	/**
+	 * The default value of the '{@link #getNbLignes() <em>Nb Lignes</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbLignes()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NB_LIGNES_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getNbLignes() <em>Nb Lignes</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbLignes()
+	 * @generated
+	 * @ordered
+	 */
+	protected int nbLignes = NB_LIGNES_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContenu() <em>Contenu</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContenu()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Contenu> contenu;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,11 +266,74 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 	 * @generated
 	 */
 	@Override
-	public EList<Contrainte> getContraintes() {
-		if (contraintes == null) {
-			contraintes = new EObjectResolvingEList<Contrainte>(Contrainte.class, this, TablePackage.COLONNE__CONTRAINTES);
+	public Contrainte getContraintes() {
+		if (contraintes != null && contraintes.eIsProxy()) {
+			InternalEObject oldContraintes = (InternalEObject)contraintes;
+			contraintes = (Contrainte)eResolveProxy(oldContraintes);
+			if (contraintes != oldContraintes) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TablePackage.COLONNE__CONTRAINTES, oldContraintes, contraintes));
+			}
 		}
 		return contraintes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Contrainte basicGetContraintes() {
+		return contraintes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setContraintes(Contrainte newContraintes) {
+		Contrainte oldContraintes = contraintes;
+		contraintes = newContraintes;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TablePackage.COLONNE__CONTRAINTES, oldContraintes, contraintes));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getNbLignes() {
+		return nbLignes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setNbLignes(int newNbLignes) {
+		int oldNbLignes = nbLignes;
+		nbLignes = newNbLignes;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TablePackage.COLONNE__NB_LIGNES, oldNbLignes, nbLignes));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Contenu> getContenu() {
+		if (contenu == null) {
+			contenu = new EObjectResolvingEList<Contenu>(Contenu.class, this, TablePackage.COLONNE__CONTENU);
+		}
+		return contenu;
 	}
 
 	/**
@@ -286,7 +382,12 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 			case TablePackage.COLONNE__ELEMENT_TYPE:
 				return getElementType();
 			case TablePackage.COLONNE__CONTRAINTES:
-				return getContraintes();
+				if (resolve) return getContraintes();
+				return basicGetContraintes();
+			case TablePackage.COLONNE__NB_LIGNES:
+				return getNbLignes();
+			case TablePackage.COLONNE__CONTENU:
+				return getContenu();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -310,8 +411,14 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 				setElementType((ColonnesElementsType)newValue);
 				return;
 			case TablePackage.COLONNE__CONTRAINTES:
-				getContraintes().clear();
-				getContraintes().addAll((Collection<? extends Contrainte>)newValue);
+				setContraintes((Contrainte)newValue);
+				return;
+			case TablePackage.COLONNE__NB_LIGNES:
+				setNbLignes((Integer)newValue);
+				return;
+			case TablePackage.COLONNE__CONTENU:
+				getContenu().clear();
+				getContenu().addAll((Collection<? extends Contenu>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -335,7 +442,13 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 				setElementType(ELEMENT_TYPE_EDEFAULT);
 				return;
 			case TablePackage.COLONNE__CONTRAINTES:
-				getContraintes().clear();
+				setContraintes((Contrainte)null);
+				return;
+			case TablePackage.COLONNE__NB_LIGNES:
+				setNbLignes(NB_LIGNES_EDEFAULT);
+				return;
+			case TablePackage.COLONNE__CONTENU:
+				getContenu().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -356,7 +469,11 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 			case TablePackage.COLONNE__ELEMENT_TYPE:
 				return elementType != ELEMENT_TYPE_EDEFAULT;
 			case TablePackage.COLONNE__CONTRAINTES:
-				return contraintes != null && !contraintes.isEmpty();
+				return contraintes != null;
+			case TablePackage.COLONNE__NB_LIGNES:
+				return nbLignes != NB_LIGNES_EDEFAULT;
+			case TablePackage.COLONNE__CONTENU:
+				return contenu != null && !contenu.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -375,6 +492,8 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 		result.append(nom);
 		result.append(", ElementType: ");
 		result.append(elementType);
+		result.append(", nbLignes: ");
+		result.append(nbLignes);
 		result.append(')');
 		return result.toString();
 	}

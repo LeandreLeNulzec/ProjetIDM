@@ -58,13 +58,76 @@ public interface TableFactory extends EFactory {
 	ColonneDerivee createColonneDerivee();
 
 	/**
-	 * Returns a new object of class '<em>Contrainte</em>'.
+	 * Returns a new object of class '<em>Contenu Float</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Contrainte</em>'.
+	 * @return a new object of class '<em>Contenu Float</em>'.
 	 * @generated
 	 */
-	Contrainte createContrainte();
+	ContenuFloat createContenuFloat();
+
+	/**
+	 * Returns a new object of class '<em>Contenu Int</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Contenu Int</em>'.
+	 * @generated
+	 */
+	ContenuInt createContenuInt();
+
+	/**
+	 * Returns a new object of class '<em>Contenu Bool</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Contenu Bool</em>'.
+	 * @generated
+	 */
+	ContenuBool createContenuBool();
+
+	/**
+	 * Returns a new object of class '<em>Contenu String</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Contenu String</em>'.
+	 * @generated
+	 */
+	ContenuString createContenuString();
+
+	/**
+	 * Returns a new object of class '<em>Ou</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ou</em>'.
+	 * @generated
+	 */
+	Ou createOu();
+
+	/**
+	 * Returns a new object of class '<em>Et</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Et</em>'.
+	 * @generated
+	 */
+	Et createEt();
+
+	/**
+	 * Returns a new object of class '<em>Predicat Valeur</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Predicat Valeur</em>'.
+	 * @generated
+	 */
+	PredicatValeur createPredicatValeur();
+
+	/**
+	 * Returns a new object of class '<em>Predicat Colonne</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Predicat Colonne</em>'.
+	 * @generated
+	 */
+	PredicatColonne createPredicatColonne();
 
 	/**
 	 * Returns the package supported by this factory.
