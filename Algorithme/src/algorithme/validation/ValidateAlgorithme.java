@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import algorithme.AlgorithmePackage;
 
 /**
- * RÃ©alise la validation de modÃ¨les conformes Ã  Algorithme Ã  l'aide du validateur et
- * affiche le rÃ©sultat.
+ * Réalise la validation de modèles conformes Ã  Algorithme Ã  l'aide du validateur et
+ * affiche le résultat.
  * 
- * Les modÃ¨les sont donnÃ©s dans les arguments de la ligne de commande, et le rÃ©sultat
- * est affichÃ© dans le terminal.
+ * Les modèles sont donnés dans les arguments de la ligne de commande, et le résultat
+ * est affiché dans le terminal.
  * 
  * @author Guillaume Dupont
  * @version 0.1
@@ -23,11 +23,11 @@ import algorithme.AlgorithmePackage;
 public class ValidateAlgorithme {
 	
 	/**
-	 * Afficher une lsite d'erreur avec un prÃ©fixe.
-	 * Le prÃ©fixe est affichÃ© avec juste "OK" Ã  la suite si la liste est vide, et sinon
-	 * la liste est affichÃ© avec une erreur par ligne, la source de l'erreur et le message
-	 * associÃ©.
-	 * @param prefix prÃ©fixe Ã  afficher avant la liste (potentielle) d'erreurs
+	 * Afficher une lsite d'erreur avec un préfixe.
+	 * Le préfixe est affiché avec juste "OK" Ã  la suite si la liste est vide, et sinon
+	 * la liste est affiché avec une erreur par ligne, la source de l'erreur et le message
+	 * associé.
+	 * @param prefix préfixe Ã  afficher avant la liste (potentielle) d'erreurs
 	 * @param errors erreurs Ã  afficher
 	 */
 	private static void afficherErreurs(String prefix, List<ValidationResult.ValidationError> errors) {
@@ -35,7 +35,7 @@ public class ValidateAlgorithme {
 		if (errors.isEmpty()) {
 			System.out.println(" OK");
 		} else {
-			System.out.println(" " + errors.size() + " erreurs trouvÃ©es");
+			System.out.println(" " + errors.size() + " erreurs trouvées");
 			for (ValidationResult.ValidationError error : errors) {
 				System.out.println("=> " + error.toString());
 			}
@@ -43,27 +43,28 @@ public class ValidateAlgorithme {
 	}
 	
 	/**
-	 * Affiche les erreurs pour les divers Ã©lÃ©ments du mÃ©ta-modÃ¨le : process, activitÃ©s,
-	 * dÃ©pendances, commentaires.
-	 * @param resultat rÃ©sultat de la validation calculÃ© auparavant
+	 * Affiche les erreurs pour les divers éléments du méta-modèle : process, activités,
+	 * dépendances, commentaires.
+	 * @param resultat résultat de la validation calculé auparavant
 	 */
 	private static void afficherResultat(ValidationResult resultat) {
-		afficherErreurs("- Process", resultat.getRecordedErrorsFor(AlgorithmePackage.PROCESS));
-		afficherErreurs("- WorkDefinition", resultat.getRecordedErrorsFor(AlgorithmePackage.WORK_DEFINITION));
-		afficherErreurs("- WorkSequence", resultat.getRecordedErrorsFor(AlgorithmePackage.WORK_SEQUENCE));
+		afficherErreurs("- Algorithme", resultat.getRecordedErrorsFor(AlgorithmePackage.ALGORITHME));
+		afficherErreurs("- Ressources", resultat.getRecordedErrorsFor(AlgorithmePackage.RESSOURCES));
+		afficherErreurs("- PortEntree", resultat.getRecordedErrorsFor(AlgorithmePackage.PORT_ENTREE));
+		afficherErreurs("- PortSortie", resultat.getRecordedErrorsFor(AlgorithmePackage.PORT_SORTIE));
 		afficherErreurs("- Guidance", resultat.getRecordedErrorsFor(AlgorithmePackage.GUIDANCE));
 	}
 
 	/**
-	 * Fonction principale. Charge le mÃ©ta-modÃ¨le et les modÃ¨les passÃ©s en paramÃ¨tre sur
-	 * la ligne de commande, lance la validation pour chaque modÃ¨le et affiche le rÃ©sultat.
+	 * Fonction principale. Charge le méta-modèle et les modèles passés en paramètre sur
+	 * la ligne de commande, lance la validation pour chaque modèle et affiche le résultat.
 	 * @param args arguments de la ligne de commande
 	 */
 	public static void main(String... args) {
-		// On a besoin de rÃ©cupÃ©rer l'eINSTANCE pour qu'elle soit correctement instanciÃ©e.
-		// C'est cette Ã©tape qui "charge le mÃ©ta-modÃ¨le".
-		// Bien sÃ»r, on n'utilise pas directement packageInstance, d'oÃ¹ le warning "unused" qui
-		// est supprimÃ© avec l'annotation.
+		// On a besoin de récupérer l'eINSTANCE pour qu'elle soit correctement instanciée.
+		// C'est cette étape qui "charge le méta-modèle".
+		// Bien sûr, on n'utilise pas directement packageInstance, d'où le warning "unused" qui
+		// est supprimé avec l'annotation.
 		@SuppressWarnings("unused")
 		AlgorithmePackage packageInstance = AlgorithmePackage.eINSTANCE;
 		
@@ -80,7 +81,7 @@ public class ValidateAlgorithme {
 			Resource resource = resSet.getResource(modelURI, true);
 			ValidationResult resultat = validator.validate(resource);
 			
-			System.out.println("RÃ©sultat de validation pour " + model + ":");
+			System.out.println("Résultat de validation pour " + model + ":");
 			afficherResultat(resultat);
 		}
 		
