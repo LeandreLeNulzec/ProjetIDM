@@ -3,17 +3,17 @@
 package algorithme.tests;
 
 import algorithme.AlgorithmeFactory;
-import algorithme.Argument;
+import algorithme.Documentation;
 
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Argument</b></em>'.
+ * A test case for the model object '<em><b>Documentation</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class ArgumentTest extends EntreeTest {
+public class DocumentationTest extends AlgorithmeElementsTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +21,28 @@ public class ArgumentTest extends EntreeTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(ArgumentTest.class);
+		TestRunner.run(DocumentationTest.class);
 	}
 
 	/**
-	 * Constructs a new Argument test case with the given name.
+	 * Constructs a new Documentation test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArgumentTest(String name) {
+	public DocumentationTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Argument test case.
+	 * Returns the fixture for this Documentation test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected Argument getFixture() {
-		return (Argument)fixture;
+	protected Documentation getFixture() {
+		return (Documentation)fixture;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class ArgumentTest extends EntreeTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(AlgorithmeFactory.eINSTANCE.createArgument());
+		setFixture(AlgorithmeFactory.eINSTANCE.createDocumentation());
 	}
 
 	/**
@@ -67,4 +67,4 @@ public class ArgumentTest extends EntreeTest {
 		setFixture(null);
 	}
 
-} //ArgumentTest
+} //DocumentationTest

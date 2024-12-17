@@ -2,9 +2,7 @@
  */
 package algorithme;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import script.PortEntree;
 
 
 /**
@@ -16,11 +14,10 @@ import script.PortEntree;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link algorithme.Sortie#getStoPS <em>Sto PS</em>}</li>
  *   <li>{@link algorithme.Sortie#getNom <em>Nom</em>}</li>
- *   <li>{@link algorithme.Sortie#getStoScr <em>Sto Scr</em>}</li>
- *   <li>{@link algorithme.Sortie#getStoE <em>Sto E</em>}</li>
- *   <li>{@link algorithme.Sortie#getPortEntreeS <em>Port Entree S</em>}</li>
+ *   <li>{@link algorithme.Sortie#getSortieScript <em>Sortie Script</em>}</li>
+ *   <li>{@link algorithme.Sortie#getSortieGlobale <em>Sortie Globale</em>}</li>
+ *   <li>{@link algorithme.Sortie#getValeur <em>Valeur</em>}</li>
  * </ul>
  *
  * @see algorithme.AlgorithmePackage#getSortie()
@@ -28,28 +25,6 @@ import script.PortEntree;
  * @generated
  */
 public interface Sortie extends EObject {
-
-	/**
-	 * Returns the value of the '<em><b>Sto PS</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sto PS</em>' reference.
-	 * @see #setStoPS(PortSortie)
-	 * @see algorithme.AlgorithmePackage#getSortie_StoPS()
-	 * @model required="true"
-	 * @generated
-	 */
-	PortSortie getStoPS();
-
-	/**
-	 * Sets the value of the '{@link algorithme.Sortie#getStoPS <em>Sto PS</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sto PS</em>' reference.
-	 * @see #getStoPS()
-	 * @generated
-	 */
-	void setStoPS(PortSortie value);
 
 	/**
 	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
@@ -74,60 +49,69 @@ public interface Sortie extends EObject {
 	void setNom(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Sto Scr</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link algorithme.Script#getScrtoS <em>Scrto S</em>}'.
+	 * Returns the value of the '<em><b>Sortie Script</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sto Scr</em>' container reference.
-	 * @see #setStoScr(Script)
-	 * @see algorithme.AlgorithmePackage#getSortie_StoScr()
-	 * @see algorithme.Script#getScrtoS
-	 * @model opposite="ScrtoS" transient="false"
-	 * @generated
-	 */
-	Script getStoScr();
-
-	/**
-	 * Sets the value of the '{@link algorithme.Sortie#getStoScr <em>Sto Scr</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sto Scr</em>' container reference.
-	 * @see #getStoScr()
-	 * @generated
-	 */
-	void setStoScr(Script value);
-
-	/**
-	 * Returns the value of the '<em><b>Sto E</b></em>' reference list.
-	 * The list contents are of type {@link algorithme.Entree}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sto E</em>' reference list.
-	 * @see algorithme.AlgorithmePackage#getSortie_StoE()
-	 * @model required="true"
-	 * @generated
-	 */
-	EList<Entree> getStoE();
-
-	/**
-	 * Returns the value of the '<em><b>Port Entree S</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Port Entree S</em>' reference.
-	 * @see #setPortEntreeS(PortEntree)
-	 * @see algorithme.AlgorithmePackage#getSortie_PortEntreeS()
+	 * @return the value of the '<em>Sortie Script</em>' reference.
+	 * @see #setSortieScript(script.Sortie)
+	 * @see algorithme.AlgorithmePackage#getSortie_SortieScript()
 	 * @model
 	 * @generated
 	 */
-	PortEntree getPortEntreeS();
+	script.Sortie getSortieScript();
 
 	/**
-	 * Sets the value of the '{@link algorithme.Sortie#getPortEntreeS <em>Port Entree S</em>}' reference.
+	 * Sets the value of the '{@link algorithme.Sortie#getSortieScript <em>Sortie Script</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Port Entree S</em>' reference.
-	 * @see #getPortEntreeS()
+	 * @param value the new value of the '<em>Sortie Script</em>' reference.
+	 * @see #getSortieScript()
 	 * @generated
 	 */
-	void setPortEntreeS(PortEntree value);
+	void setSortieScript(script.Sortie value);
+
+	/**
+	 * Returns the value of the '<em><b>Sortie Globale</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sortie Globale</em>' reference.
+	 * @see #setSortieGlobale(Algorithme)
+	 * @see algorithme.AlgorithmePackage#getSortie_SortieGlobale()
+	 * @model
+	 * @generated
+	 */
+	Algorithme getSortieGlobale();
+
+	/**
+	 * Sets the value of the '{@link algorithme.Sortie#getSortieGlobale <em>Sortie Globale</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sortie Globale</em>' reference.
+	 * @see #getSortieGlobale()
+	 * @generated
+	 */
+	void setSortieGlobale(Algorithme value);
+
+	/**
+	 * Returns the value of the '<em><b>Valeur</b></em>' attribute.
+	 * The default value is <code>"0.0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Valeur</em>' attribute.
+	 * @see #setValeur(float)
+	 * @see algorithme.AlgorithmePackage#getSortie_Valeur()
+	 * @model default="0.0" required="true"
+	 * @generated
+	 */
+	float getValeur();
+
+	/**
+	 * Sets the value of the '{@link algorithme.Sortie#getValeur <em>Valeur</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Valeur</em>' attribute.
+	 * @see #getValeur()
+	 * @generated
+	 */
+	void setValeur(float value);
 } // Sortie

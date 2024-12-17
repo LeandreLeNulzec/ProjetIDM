@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link algorithme.impl.AlgorithmeElementsImpl#getAEtoA <em>AEto A</em>}</li>
+ *   <li>{@link algorithme.impl.AlgorithmeElementsImpl#getAlgorithme <em>Algorithme</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,8 +55,8 @@ public abstract class AlgorithmeElementsImpl extends AlgorithmeImpl implements A
 	 * @generated
 	 */
 	@Override
-	public Algorithme getAEtoA() {
-		if (eContainerFeatureID() != AlgorithmePackage.ALGORITHME_ELEMENTS__AETO_A) return null;
+	public Algorithme getAlgorithme() {
+		if (eContainerFeatureID() != AlgorithmePackage.ALGORITHME_ELEMENTS__ALGORITHME) return null;
 		return (Algorithme)eInternalContainer();
 	}
 
@@ -65,8 +65,8 @@ public abstract class AlgorithmeElementsImpl extends AlgorithmeImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAEtoA(Algorithme newAEtoA, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newAEtoA, AlgorithmePackage.ALGORITHME_ELEMENTS__AETO_A, msgs);
+	public NotificationChain basicSetAlgorithme(Algorithme newAlgorithme, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newAlgorithme, AlgorithmePackage.ALGORITHME_ELEMENTS__ALGORITHME, msgs);
 		return msgs;
 	}
 
@@ -76,20 +76,20 @@ public abstract class AlgorithmeElementsImpl extends AlgorithmeImpl implements A
 	 * @generated
 	 */
 	@Override
-	public void setAEtoA(Algorithme newAEtoA) {
-		if (newAEtoA != eInternalContainer() || (eContainerFeatureID() != AlgorithmePackage.ALGORITHME_ELEMENTS__AETO_A && newAEtoA != null)) {
-			if (EcoreUtil.isAncestor(this, newAEtoA))
+	public void setAlgorithme(Algorithme newAlgorithme) {
+		if (newAlgorithme != eInternalContainer() || (eContainerFeatureID() != AlgorithmePackage.ALGORITHME_ELEMENTS__ALGORITHME && newAlgorithme != null)) {
+			if (EcoreUtil.isAncestor(this, newAlgorithme))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newAEtoA != null)
-				msgs = ((InternalEObject)newAEtoA).eInverseAdd(this, AlgorithmePackage.ALGORITHME__ATO_AE, Algorithme.class, msgs);
-			msgs = basicSetAEtoA(newAEtoA, msgs);
+			if (newAlgorithme != null)
+				msgs = ((InternalEObject)newAlgorithme).eInverseAdd(this, AlgorithmePackage.ALGORITHME__ALGORITHME_ELEMENTS, Algorithme.class, msgs);
+			msgs = basicSetAlgorithme(newAlgorithme, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.ALGORITHME_ELEMENTS__AETO_A, newAEtoA, newAEtoA));
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.ALGORITHME_ELEMENTS__ALGORITHME, newAlgorithme, newAlgorithme));
 	}
 
 	/**
@@ -100,10 +100,10 @@ public abstract class AlgorithmeElementsImpl extends AlgorithmeImpl implements A
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AlgorithmePackage.ALGORITHME_ELEMENTS__AETO_A:
+			case AlgorithmePackage.ALGORITHME_ELEMENTS__ALGORITHME:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetAEtoA((Algorithme)otherEnd, msgs);
+				return basicSetAlgorithme((Algorithme)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -116,8 +116,8 @@ public abstract class AlgorithmeElementsImpl extends AlgorithmeImpl implements A
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AlgorithmePackage.ALGORITHME_ELEMENTS__AETO_A:
-				return basicSetAEtoA(null, msgs);
+			case AlgorithmePackage.ALGORITHME_ELEMENTS__ALGORITHME:
+				return basicSetAlgorithme(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -130,8 +130,8 @@ public abstract class AlgorithmeElementsImpl extends AlgorithmeImpl implements A
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case AlgorithmePackage.ALGORITHME_ELEMENTS__AETO_A:
-				return eInternalContainer().eInverseRemove(this, AlgorithmePackage.ALGORITHME__ATO_AE, Algorithme.class, msgs);
+			case AlgorithmePackage.ALGORITHME_ELEMENTS__ALGORITHME:
+				return eInternalContainer().eInverseRemove(this, AlgorithmePackage.ALGORITHME__ALGORITHME_ELEMENTS, Algorithme.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -144,8 +144,8 @@ public abstract class AlgorithmeElementsImpl extends AlgorithmeImpl implements A
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AlgorithmePackage.ALGORITHME_ELEMENTS__AETO_A:
-				return getAEtoA();
+			case AlgorithmePackage.ALGORITHME_ELEMENTS__ALGORITHME:
+				return getAlgorithme();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,8 +158,8 @@ public abstract class AlgorithmeElementsImpl extends AlgorithmeImpl implements A
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AlgorithmePackage.ALGORITHME_ELEMENTS__AETO_A:
-				setAEtoA((Algorithme)newValue);
+			case AlgorithmePackage.ALGORITHME_ELEMENTS__ALGORITHME:
+				setAlgorithme((Algorithme)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -173,8 +173,8 @@ public abstract class AlgorithmeElementsImpl extends AlgorithmeImpl implements A
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.ALGORITHME_ELEMENTS__AETO_A:
-				setAEtoA((Algorithme)null);
+			case AlgorithmePackage.ALGORITHME_ELEMENTS__ALGORITHME:
+				setAlgorithme((Algorithme)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -188,8 +188,8 @@ public abstract class AlgorithmeElementsImpl extends AlgorithmeImpl implements A
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.ALGORITHME_ELEMENTS__AETO_A:
-				return getAEtoA() != null;
+			case AlgorithmePackage.ALGORITHME_ELEMENTS__ALGORITHME:
+				return getAlgorithme() != null;
 		}
 		return super.eIsSet(featureID);
 	}

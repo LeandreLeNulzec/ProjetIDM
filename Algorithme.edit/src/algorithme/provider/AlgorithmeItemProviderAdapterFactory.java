@@ -118,49 +118,49 @@ public class AlgorithmeItemProviderAdapterFactory extends AlgorithmeAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link algorithme.Script} instances.
+	 * This keeps track of the one adapter used for all {@link algorithme.Documentation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ScriptItemProvider scriptItemProvider;
+	protected DocumentationItemProvider documentationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link algorithme.Script}.
+	 * This creates an adapter for a {@link algorithme.Documentation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createScriptAdapter() {
-		if (scriptItemProvider == null) {
-			scriptItemProvider = new ScriptItemProvider(this);
+	public Adapter createDocumentationAdapter() {
+		if (documentationItemProvider == null) {
+			documentationItemProvider = new DocumentationItemProvider(this);
 		}
 
-		return scriptItemProvider;
+		return documentationItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link algorithme.Guidance} instances.
+	 * This keeps track of the one adapter used for all {@link algorithme.Entree} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GuidanceItemProvider guidanceItemProvider;
+	protected EntreeItemProvider entreeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link algorithme.Guidance}.
+	 * This creates an adapter for a {@link algorithme.Entree}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createGuidanceAdapter() {
-		if (guidanceItemProvider == null) {
-			guidanceItemProvider = new GuidanceItemProvider(this);
+	public Adapter createEntreeAdapter() {
+		if (entreeItemProvider == null) {
+			entreeItemProvider = new EntreeItemProvider(this);
 		}
 
-		return guidanceItemProvider;
+		return entreeItemProvider;
 	}
 
 	/**
@@ -184,52 +184,6 @@ public class AlgorithmeItemProviderAdapterFactory extends AlgorithmeAdapterFacto
 		}
 
 		return sortieItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link algorithme.Argument} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ArgumentItemProvider argumentItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link algorithme.Argument}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createArgumentAdapter() {
-		if (argumentItemProvider == null) {
-			argumentItemProvider = new ArgumentItemProvider(this);
-		}
-
-		return argumentItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link algorithme.PortEntree} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PortEntreeItemProvider portEntreeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link algorithme.PortEntree}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPortEntreeAdapter() {
-		if (portEntreeItemProvider == null) {
-			portEntreeItemProvider = new PortEntreeItemProvider(this);
-		}
-
-		return portEntreeItemProvider;
 	}
 
 	/**
@@ -339,11 +293,9 @@ public class AlgorithmeItemProviderAdapterFactory extends AlgorithmeAdapterFacto
 	public void dispose() {
 		if (algorithmeItemProvider != null) algorithmeItemProvider.dispose();
 		if (ressourcesItemProvider != null) ressourcesItemProvider.dispose();
-		if (scriptItemProvider != null) scriptItemProvider.dispose();
-		if (guidanceItemProvider != null) guidanceItemProvider.dispose();
+		if (documentationItemProvider != null) documentationItemProvider.dispose();
+		if (entreeItemProvider != null) entreeItemProvider.dispose();
 		if (sortieItemProvider != null) sortieItemProvider.dispose();
-		if (argumentItemProvider != null) argumentItemProvider.dispose();
-		if (portEntreeItemProvider != null) portEntreeItemProvider.dispose();
 	}
 
 }

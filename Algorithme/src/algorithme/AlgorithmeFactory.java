@@ -40,22 +40,22 @@ public interface AlgorithmeFactory extends EFactory {
 	Ressources createRessources();
 
 	/**
-	 * Returns a new object of class '<em>Script</em>'.
+	 * Returns a new object of class '<em>Documentation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Script</em>'.
+	 * @return a new object of class '<em>Documentation</em>'.
 	 * @generated
 	 */
-	Script createScript();
+	Documentation createDocumentation();
 
 	/**
-	 * Returns a new object of class '<em>Guidance</em>'.
+	 * Returns a new object of class '<em>Entree</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Guidance</em>'.
+	 * @return a new object of class '<em>Entree</em>'.
 	 * @generated
 	 */
-	Guidance createGuidance();
+	Entree createEntree();
 
 	/**
 	 * Returns a new object of class '<em>Sortie</em>'.
@@ -65,24 +65,6 @@ public interface AlgorithmeFactory extends EFactory {
 	 * @generated
 	 */
 	Sortie createSortie();
-
-	/**
-	 * Returns a new object of class '<em>Argument</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Argument</em>'.
-	 * @generated
-	 */
-	Argument createArgument();
-
-	/**
-	 * Returns a new object of class '<em>Port Entree</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Port Entree</em>'.
-	 * @generated
-	 */
-	PortEntree createPortEntree();
 
 	/**
 	 * Returns the package supported by this factory.

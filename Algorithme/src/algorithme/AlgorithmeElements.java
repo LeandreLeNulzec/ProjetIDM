@@ -12,7 +12,7 @@ package algorithme;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link algorithme.AlgorithmeElements#getAEtoA <em>AEto A</em>}</li>
+ *   <li>{@link algorithme.AlgorithmeElements#getAlgorithme <em>Algorithme</em>}</li>
  * </ul>
  *
  * @see algorithme.AlgorithmePackage#getAlgorithmeElements()
@@ -21,27 +21,27 @@ package algorithme;
  */
 public interface AlgorithmeElements extends Algorithme {
 	/**
-	 * Returns the value of the '<em><b>AEto A</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link algorithme.Algorithme#getAtoAE <em>Ato AE</em>}'.
+	 * Returns the value of the '<em><b>Algorithme</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link algorithme.Algorithme#getAlgorithmeElements <em>Algorithme Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>AEto A</em>' container reference.
-	 * @see #setAEtoA(Algorithme)
-	 * @see algorithme.AlgorithmePackage#getAlgorithmeElements_AEtoA()
-	 * @see algorithme.Algorithme#getAtoAE
-	 * @model opposite="AtoAE" transient="false"
+	 * @return the value of the '<em>Algorithme</em>' container reference.
+	 * @see #setAlgorithme(Algorithme)
+	 * @see algorithme.AlgorithmePackage#getAlgorithmeElements_Algorithme()
+	 * @see algorithme.Algorithme#getAlgorithmeElements
+	 * @model opposite="algorithmeElements" transient="false"
 	 * @generated
 	 */
-	Algorithme getAEtoA();
+	Algorithme getAlgorithme();
 
 	/**
-	 * Sets the value of the '{@link algorithme.AlgorithmeElements#getAEtoA <em>AEto A</em>}' container reference.
+	 * Sets the value of the '{@link algorithme.AlgorithmeElements#getAlgorithme <em>Algorithme</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>AEto A</em>' container reference.
-	 * @see #getAEtoA()
+	 * @param value the new value of the '<em>Algorithme</em>' container reference.
+	 * @see #getAlgorithme()
 	 * @generated
 	 */
-	void setAEtoA(Algorithme value);
+	void setAlgorithme(Algorithme value);
 
 } // AlgorithmeElements

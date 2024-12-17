@@ -4,7 +4,6 @@ package algorithme;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -77,13 +76,13 @@ public interface AlgorithmePackage extends EPackage {
 	int ALGORITHME__NOM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Ato AE</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Algorithme Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALGORITHME__ATO_AE = 1;
+	int ALGORITHME__ALGORITHME_ELEMENTS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Algorithme</em>' class.
@@ -111,7 +110,7 @@ public interface AlgorithmePackage extends EPackage {
 	 * @see algorithme.impl.AlgorithmePackageImpl#getAlgorithmeElements()
 	 * @generated
 	 */
-	int ALGORITHME_ELEMENTS = 10;
+	int ALGORITHME_ELEMENTS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Nom</b></em>' attribute.
@@ -123,22 +122,22 @@ public interface AlgorithmePackage extends EPackage {
 	int ALGORITHME_ELEMENTS__NOM = ALGORITHME__NOM;
 
 	/**
-	 * The feature id for the '<em><b>Ato AE</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Algorithme Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALGORITHME_ELEMENTS__ATO_AE = ALGORITHME__ATO_AE;
+	int ALGORITHME_ELEMENTS__ALGORITHME_ELEMENTS = ALGORITHME__ALGORITHME_ELEMENTS;
 
 	/**
-	 * The feature id for the '<em><b>AEto A</b></em>' container reference.
+	 * The feature id for the '<em><b>Algorithme</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALGORITHME_ELEMENTS__AETO_A = ALGORITHME_FEATURE_COUNT + 0;
+	int ALGORITHME_ELEMENTS__ALGORITHME = ALGORITHME_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Elements</em>' class.
@@ -166,7 +165,7 @@ public interface AlgorithmePackage extends EPackage {
 	 * @see algorithme.impl.AlgorithmePackageImpl#getRessources()
 	 * @generated
 	 */
-	int RESSOURCES = 1;
+	int RESSOURCES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Nom</b></em>' attribute.
@@ -178,31 +177,22 @@ public interface AlgorithmePackage extends EPackage {
 	int RESSOURCES__NOM = ALGORITHME_ELEMENTS__NOM;
 
 	/**
-	 * The feature id for the '<em><b>Ato AE</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Algorithme Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCES__ATO_AE = ALGORITHME_ELEMENTS__ATO_AE;
+	int RESSOURCES__ALGORITHME_ELEMENTS = ALGORITHME_ELEMENTS__ALGORITHME_ELEMENTS;
 
 	/**
-	 * The feature id for the '<em><b>AEto A</b></em>' container reference.
+	 * The feature id for the '<em><b>Algorithme</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCES__AETO_A = ALGORITHME_ELEMENTS__AETO_A;
-
-	/**
-	 * The feature id for the '<em><b>Rto P</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCES__RTO_P = ALGORITHME_ELEMENTS_FEATURE_COUNT + 0;
+	int RESSOURCES__ALGORITHME = ALGORITHME_ELEMENTS__ALGORITHME;
 
 	/**
 	 * The feature id for the '<em><b>Chemin</b></em>' attribute.
@@ -211,25 +201,16 @@ public interface AlgorithmePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCES__CHEMIN = ALGORITHME_ELEMENTS_FEATURE_COUNT + 1;
+	int RESSOURCES__CHEMIN = ALGORITHME_ELEMENTS_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Type Res</b></em>' attribute.
+	 * The feature id for the '<em><b>Script</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCES__TYPE_RES = ALGORITHME_ELEMENTS_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Rto Scr</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCES__RTO_SCR = ALGORITHME_ELEMENTS_FEATURE_COUNT + 3;
+	int RESSOURCES__SCRIPT = ALGORITHME_ELEMENTS_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Ressources</em>' class.
@@ -238,7 +219,7 @@ public interface AlgorithmePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCES_FEATURE_COUNT = ALGORITHME_ELEMENTS_FEATURE_COUNT + 4;
+	int RESSOURCES_FEATURE_COUNT = ALGORITHME_ELEMENTS_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Ressources</em>' class.
@@ -250,60 +231,14 @@ public interface AlgorithmePackage extends EPackage {
 	int RESSOURCES_OPERATION_COUNT = ALGORITHME_ELEMENTS_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link algorithme.impl.ScriptImpl <em>Script</em>}' class.
+	 * The meta object id for the '{@link algorithme.impl.DocumentationImpl <em>Documentation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see algorithme.impl.ScriptImpl
-	 * @see algorithme.impl.AlgorithmePackageImpl#getScript()
+	 * @see algorithme.impl.DocumentationImpl
+	 * @see algorithme.impl.AlgorithmePackageImpl#getDocumentation()
 	 * @generated
 	 */
-	int SCRIPT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Scrto S</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCRIPT__SCRTO_S = 0;
-
-	/**
-	 * The feature id for the '<em><b>Scrto SE</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCRIPT__SCRTO_SE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Script</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCRIPT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Script</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCRIPT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link algorithme.impl.GuidanceImpl <em>Guidance</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see algorithme.impl.GuidanceImpl
-	 * @see algorithme.impl.AlgorithmePackageImpl#getGuidance()
-	 * @generated
-	 */
-	int GUIDANCE = 3;
+	int DOCUMENTATION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Nom</b></em>' attribute.
@@ -312,25 +247,25 @@ public interface AlgorithmePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUIDANCE__NOM = ALGORITHME_ELEMENTS__NOM;
+	int DOCUMENTATION__NOM = ALGORITHME_ELEMENTS__NOM;
 
 	/**
-	 * The feature id for the '<em><b>Ato AE</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Algorithme Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUIDANCE__ATO_AE = ALGORITHME_ELEMENTS__ATO_AE;
+	int DOCUMENTATION__ALGORITHME_ELEMENTS = ALGORITHME_ELEMENTS__ALGORITHME_ELEMENTS;
 
 	/**
-	 * The feature id for the '<em><b>AEto A</b></em>' container reference.
+	 * The feature id for the '<em><b>Algorithme</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUIDANCE__AETO_A = ALGORITHME_ELEMENTS__AETO_A;
+	int DOCUMENTATION__ALGORITHME = ALGORITHME_ELEMENTS__ALGORITHME;
 
 	/**
 	 * The feature id for the '<em><b>Texte</b></em>' attribute.
@@ -339,80 +274,34 @@ public interface AlgorithmePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUIDANCE__TEXTE = ALGORITHME_ELEMENTS_FEATURE_COUNT + 0;
+	int DOCUMENTATION__TEXTE = ALGORITHME_ELEMENTS_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Gto AE</b></em>' reference list.
+	 * The feature id for the '<em><b>Docu Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUIDANCE__GTO_AE = ALGORITHME_ELEMENTS_FEATURE_COUNT + 1;
+	int DOCUMENTATION__DOCU_ELEMENT = ALGORITHME_ELEMENTS_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Guidance</em>' class.
+	 * The number of structural features of the '<em>Documentation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUIDANCE_FEATURE_COUNT = ALGORITHME_ELEMENTS_FEATURE_COUNT + 2;
+	int DOCUMENTATION_FEATURE_COUNT = ALGORITHME_ELEMENTS_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Guidance</em>' class.
+	 * The number of operations of the '<em>Documentation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUIDANCE_OPERATION_COUNT = ALGORITHME_ELEMENTS_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link algorithme.impl.PortImpl <em>Port</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see algorithme.impl.PortImpl
-	 * @see algorithme.impl.AlgorithmePackageImpl#getPort()
-	 * @generated
-	 */
-	int PORT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Pto R</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__PTO_R = 0;
-
-	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__NOM = 1;
-
-	/**
-	 * The number of structural features of the '<em>Port</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Port</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_OPERATION_COUNT = 0;
+	int DOCUMENTATION_OPERATION_COUNT = ALGORITHME_ELEMENTS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link algorithme.impl.EntreeImpl <em>Entree</em>}' class.
@@ -422,34 +311,43 @@ public interface AlgorithmePackage extends EPackage {
 	 * @see algorithme.impl.AlgorithmePackageImpl#getEntree()
 	 * @generated
 	 */
-	int ENTREE = 5;
+	int ENTREE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Valeur</b></em>' attribute.
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTREE__VALEUR = 0;
+	int ENTREE__NOM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Eto S</b></em>' reference.
+	 * The feature id for the '<em><b>Valeur</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTREE__ETO_S = 1;
+	int ENTREE__VALEUR = 1;
 
 	/**
-	 * The feature id for the '<em><b>Port Sortie S</b></em>' reference.
+	 * The feature id for the '<em><b>Entree Script</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTREE__PORT_SORTIE_S = 2;
+	int ENTREE__ENTREE_SCRIPT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Entree Globale</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTREE__ENTREE_GLOBALE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Entree</em>' class.
@@ -458,7 +356,7 @@ public interface AlgorithmePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTREE_FEATURE_COUNT = 3;
+	int ENTREE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Entree</em>' class.
@@ -477,16 +375,7 @@ public interface AlgorithmePackage extends EPackage {
 	 * @see algorithme.impl.AlgorithmePackageImpl#getSortie()
 	 * @generated
 	 */
-	int SORTIE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Sto PS</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SORTIE__STO_PS = 0;
+	int SORTIE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Nom</b></em>' attribute.
@@ -495,34 +384,34 @@ public interface AlgorithmePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTIE__NOM = 1;
+	int SORTIE__NOM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Sto Scr</b></em>' container reference.
+	 * The feature id for the '<em><b>Sortie Script</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTIE__STO_SCR = 2;
+	int SORTIE__SORTIE_SCRIPT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Sto E</b></em>' reference list.
+	 * The feature id for the '<em><b>Sortie Globale</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTIE__STO_E = 3;
+	int SORTIE__SORTIE_GLOBALE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Port Entree S</b></em>' reference.
+	 * The feature id for the '<em><b>Valeur</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTIE__PORT_ENTREE_S = 4;
+	int SORTIE__VALEUR = 3;
 
 	/**
 	 * The number of structural features of the '<em>Sortie</em>' class.
@@ -531,7 +420,7 @@ public interface AlgorithmePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTIE_FEATURE_COUNT = 5;
+	int SORTIE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Sortie</em>' class.
@@ -541,200 +430,6 @@ public interface AlgorithmePackage extends EPackage {
 	 * @ordered
 	 */
 	int SORTIE_OPERATION_COUNT = 0;
-
-
-	/**
-	 * The meta object id for the '{@link algorithme.impl.ArgumentImpl <em>Argument</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see algorithme.impl.ArgumentImpl
-	 * @see algorithme.impl.AlgorithmePackageImpl#getArgument()
-	 * @generated
-	 */
-	int ARGUMENT = 7;
-
-	/**
-	 * The feature id for the '<em><b>Valeur</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARGUMENT__VALEUR = ENTREE__VALEUR;
-
-	/**
-	 * The feature id for the '<em><b>Eto S</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARGUMENT__ETO_S = ENTREE__ETO_S;
-
-	/**
-	 * The feature id for the '<em><b>Port Sortie S</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARGUMENT__PORT_SORTIE_S = ENTREE__PORT_SORTIE_S;
-
-	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARGUMENT__NOM = ENTREE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Argument</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARGUMENT_FEATURE_COUNT = ENTREE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Argument</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARGUMENT_OPERATION_COUNT = ENTREE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link algorithme.impl.PortEntreeImpl <em>Port Entree</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see algorithme.impl.PortEntreeImpl
-	 * @see algorithme.impl.AlgorithmePackageImpl#getPortEntree()
-	 * @generated
-	 */
-	int PORT_ENTREE = 8;
-
-	/**
-	 * The feature id for the '<em><b>Pto R</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_ENTREE__PTO_R = PORT__PTO_R;
-
-	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_ENTREE__NOM = PORT__NOM;
-
-	/**
-	 * The feature id for the '<em><b>PEto E</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_ENTREE__PETO_E = PORT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>PSto Arg</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_ENTREE__PSTO_ARG = PORT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Port Entree</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_ENTREE_FEATURE_COUNT = PORT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Port Entree</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_ENTREE_OPERATION_COUNT = PORT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link algorithme.impl.PortSortieImpl <em>Port Sortie</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see algorithme.impl.PortSortieImpl
-	 * @see algorithme.impl.AlgorithmePackageImpl#getPortSortie()
-	 * @generated
-	 */
-	int PORT_SORTIE = 9;
-
-	/**
-	 * The feature id for the '<em><b>Pto R</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_SORTIE__PTO_R = PORT__PTO_R;
-
-	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_SORTIE__NOM = PORT__NOM;
-
-	/**
-	 * The feature id for the '<em><b>Valeur</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_SORTIE__VALEUR = PORT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Port Sortie</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_SORTIE_FEATURE_COUNT = PORT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Port Sortie</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_SORTIE_OPERATION_COUNT = PORT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '<em>Calculs</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.Object
-	 * @see algorithme.impl.AlgorithmePackageImpl#getCalculs()
-	 * @generated
-	 */
-	int CALCULS = 11;
 
 
 	/**
@@ -759,15 +454,15 @@ public interface AlgorithmePackage extends EPackage {
 	EAttribute getAlgorithme_Nom();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link algorithme.Algorithme#getAtoAE <em>Ato AE</em>}'.
+	 * Returns the meta object for the containment reference list '{@link algorithme.Algorithme#getAlgorithmeElements <em>Algorithme Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ato AE</em>'.
-	 * @see algorithme.Algorithme#getAtoAE()
+	 * @return the meta object for the containment reference list '<em>Algorithme Elements</em>'.
+	 * @see algorithme.Algorithme#getAlgorithmeElements()
 	 * @see #getAlgorithme()
 	 * @generated
 	 */
-	EReference getAlgorithme_AtoAE();
+	EReference getAlgorithme_AlgorithmeElements();
 
 	/**
 	 * Returns the meta object for class '{@link algorithme.Ressources <em>Ressources</em>}'.
@@ -778,17 +473,6 @@ public interface AlgorithmePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRessources();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link algorithme.Ressources#getRtoP <em>Rto P</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Rto P</em>'.
-	 * @see algorithme.Ressources#getRtoP()
-	 * @see #getRessources()
-	 * @generated
-	 */
-	EReference getRessources_RtoP();
 
 	/**
 	 * Returns the meta object for the attribute '{@link algorithme.Ressources#getChemin <em>Chemin</em>}'.
@@ -802,122 +486,47 @@ public interface AlgorithmePackage extends EPackage {
 	EAttribute getRessources_Chemin();
 
 	/**
-	 * Returns the meta object for the attribute '{@link algorithme.Ressources#getTypeRes <em>Type Res</em>}'.
+	 * Returns the meta object for the reference '{@link algorithme.Ressources#getScript <em>Script</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type Res</em>'.
-	 * @see algorithme.Ressources#getTypeRes()
+	 * @return the meta object for the reference '<em>Script</em>'.
+	 * @see algorithme.Ressources#getScript()
 	 * @see #getRessources()
 	 * @generated
 	 */
-	EAttribute getRessources_TypeRes();
+	EReference getRessources_Script();
 
 	/**
-	 * Returns the meta object for the reference '{@link algorithme.Ressources#getRtoScr <em>Rto Scr</em>}'.
+	 * Returns the meta object for class '{@link algorithme.Documentation <em>Documentation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Rto Scr</em>'.
-	 * @see algorithme.Ressources#getRtoScr()
-	 * @see #getRessources()
+	 * @return the meta object for class '<em>Documentation</em>'.
+	 * @see algorithme.Documentation
 	 * @generated
 	 */
-	EReference getRessources_RtoScr();
+	EClass getDocumentation();
 
 	/**
-	 * Returns the meta object for class '{@link algorithme.Script <em>Script</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Script</em>'.
-	 * @see algorithme.Script
-	 * @generated
-	 */
-	EClass getScript();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link algorithme.Script#getScrtoS <em>Scrto S</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Scrto S</em>'.
-	 * @see algorithme.Script#getScrtoS()
-	 * @see #getScript()
-	 * @generated
-	 */
-	EReference getScript_ScrtoS();
-
-	/**
-	 * Returns the meta object for the reference list '{@link algorithme.Script#getScrtoSE <em>Scrto SE</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Scrto SE</em>'.
-	 * @see algorithme.Script#getScrtoSE()
-	 * @see #getScript()
-	 * @generated
-	 */
-	EReference getScript_ScrtoSE();
-
-	/**
-	 * Returns the meta object for class '{@link algorithme.Guidance <em>Guidance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Guidance</em>'.
-	 * @see algorithme.Guidance
-	 * @generated
-	 */
-	EClass getGuidance();
-
-	/**
-	 * Returns the meta object for the attribute '{@link algorithme.Guidance#getTexte <em>Texte</em>}'.
+	 * Returns the meta object for the attribute '{@link algorithme.Documentation#getTexte <em>Texte</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Texte</em>'.
-	 * @see algorithme.Guidance#getTexte()
-	 * @see #getGuidance()
+	 * @see algorithme.Documentation#getTexte()
+	 * @see #getDocumentation()
 	 * @generated
 	 */
-	EAttribute getGuidance_Texte();
+	EAttribute getDocumentation_Texte();
 
 	/**
-	 * Returns the meta object for the reference list '{@link algorithme.Guidance#getGtoAE <em>Gto AE</em>}'.
+	 * Returns the meta object for the reference '{@link algorithme.Documentation#getDocuElement <em>Docu Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Gto AE</em>'.
-	 * @see algorithme.Guidance#getGtoAE()
-	 * @see #getGuidance()
+	 * @return the meta object for the reference '<em>Docu Element</em>'.
+	 * @see algorithme.Documentation#getDocuElement()
+	 * @see #getDocumentation()
 	 * @generated
 	 */
-	EReference getGuidance_GtoAE();
-
-	/**
-	 * Returns the meta object for class '{@link algorithme.Port <em>Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Port</em>'.
-	 * @see algorithme.Port
-	 * @generated
-	 */
-	EClass getPort();
-
-	/**
-	 * Returns the meta object for the container reference '{@link algorithme.Port#getPtoR <em>Pto R</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Pto R</em>'.
-	 * @see algorithme.Port#getPtoR()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_PtoR();
-
-	/**
-	 * Returns the meta object for the attribute '{@link algorithme.Port#getNom <em>Nom</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see algorithme.Port#getNom()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EAttribute getPort_Nom();
+	EReference getDocumentation_DocuElement();
 
 	/**
 	 * Returns the meta object for class '{@link algorithme.Entree <em>Entree</em>}'.
@@ -930,10 +539,21 @@ public interface AlgorithmePackage extends EPackage {
 	EClass getEntree();
 
 	/**
-	 * Returns the meta object for the attribute '{@link algorithme.Entree#getValeur <em>Valeur</em>}'.
+	 * Returns the meta object for the attribute '{@link algorithme.Entree#getNom <em>Nom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Valeur</em>'.
+	 * @return the meta object for the attribute '<em>Nom</em>'.
+	 * @see algorithme.Entree#getNom()
+	 * @see #getEntree()
+	 * @generated
+	 */
+	EAttribute getEntree_Nom();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link algorithme.Entree#getValeur <em>Valeur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Valeur</em>'.
 	 * @see algorithme.Entree#getValeur()
 	 * @see #getEntree()
 	 * @generated
@@ -941,26 +561,26 @@ public interface AlgorithmePackage extends EPackage {
 	EAttribute getEntree_Valeur();
 
 	/**
-	 * Returns the meta object for the reference '{@link algorithme.Entree#getEtoS <em>Eto S</em>}'.
+	 * Returns the meta object for the reference list '{@link algorithme.Entree#getEntreeScript <em>Entree Script</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Eto S</em>'.
-	 * @see algorithme.Entree#getEtoS()
+	 * @return the meta object for the reference list '<em>Entree Script</em>'.
+	 * @see algorithme.Entree#getEntreeScript()
 	 * @see #getEntree()
 	 * @generated
 	 */
-	EReference getEntree_EtoS();
+	EReference getEntree_EntreeScript();
 
 	/**
-	 * Returns the meta object for the reference '{@link algorithme.Entree#getPortSortieS <em>Port Sortie S</em>}'.
+	 * Returns the meta object for the reference '{@link algorithme.Entree#getEntreeGlobale <em>Entree Globale</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Port Sortie S</em>'.
-	 * @see algorithme.Entree#getPortSortieS()
+	 * @return the meta object for the reference '<em>Entree Globale</em>'.
+	 * @see algorithme.Entree#getEntreeGlobale()
 	 * @see #getEntree()
 	 * @generated
 	 */
-	EReference getEntree_PortSortieS();
+	EReference getEntree_EntreeGlobale();
 
 	/**
 	 * Returns the meta object for class '{@link algorithme.Sortie <em>Sortie</em>}'.
@@ -971,17 +591,6 @@ public interface AlgorithmePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSortie();
-
-	/**
-	 * Returns the meta object for the reference '{@link algorithme.Sortie#getStoPS <em>Sto PS</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Sto PS</em>'.
-	 * @see algorithme.Sortie#getStoPS()
-	 * @see #getSortie()
-	 * @generated
-	 */
-	EReference getSortie_StoPS();
 
 	/**
 	 * Returns the meta object for the attribute '{@link algorithme.Sortie#getNom <em>Nom</em>}'.
@@ -995,111 +604,37 @@ public interface AlgorithmePackage extends EPackage {
 	EAttribute getSortie_Nom();
 
 	/**
-	 * Returns the meta object for the container reference '{@link algorithme.Sortie#getStoScr <em>Sto Scr</em>}'.
+	 * Returns the meta object for the reference '{@link algorithme.Sortie#getSortieScript <em>Sortie Script</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Sto Scr</em>'.
-	 * @see algorithme.Sortie#getStoScr()
+	 * @return the meta object for the reference '<em>Sortie Script</em>'.
+	 * @see algorithme.Sortie#getSortieScript()
 	 * @see #getSortie()
 	 * @generated
 	 */
-	EReference getSortie_StoScr();
+	EReference getSortie_SortieScript();
 
 	/**
-	 * Returns the meta object for the reference list '{@link algorithme.Sortie#getStoE <em>Sto E</em>}'.
+	 * Returns the meta object for the reference '{@link algorithme.Sortie#getSortieGlobale <em>Sortie Globale</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Sto E</em>'.
-	 * @see algorithme.Sortie#getStoE()
+	 * @return the meta object for the reference '<em>Sortie Globale</em>'.
+	 * @see algorithme.Sortie#getSortieGlobale()
 	 * @see #getSortie()
 	 * @generated
 	 */
-	EReference getSortie_StoE();
+	EReference getSortie_SortieGlobale();
 
 	/**
-	 * Returns the meta object for the reference '{@link algorithme.Sortie#getPortEntreeS <em>Port Entree S</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Port Entree S</em>'.
-	 * @see algorithme.Sortie#getPortEntreeS()
-	 * @see #getSortie()
-	 * @generated
-	 */
-	EReference getSortie_PortEntreeS();
-
-	/**
-	 * Returns the meta object for class '{@link algorithme.Argument <em>Argument</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Argument</em>'.
-	 * @see algorithme.Argument
-	 * @generated
-	 */
-	EClass getArgument();
-
-	/**
-	 * Returns the meta object for the attribute '{@link algorithme.Argument#getNom <em>Nom</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see algorithme.Argument#getNom()
-	 * @see #getArgument()
-	 * @generated
-	 */
-	EAttribute getArgument_Nom();
-
-	/**
-	 * Returns the meta object for class '{@link algorithme.PortEntree <em>Port Entree</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Port Entree</em>'.
-	 * @see algorithme.PortEntree
-	 * @generated
-	 */
-	EClass getPortEntree();
-
-	/**
-	 * Returns the meta object for the reference '{@link algorithme.PortEntree#getPEtoE <em>PEto E</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>PEto E</em>'.
-	 * @see algorithme.PortEntree#getPEtoE()
-	 * @see #getPortEntree()
-	 * @generated
-	 */
-	EReference getPortEntree_PEtoE();
-
-	/**
-	 * Returns the meta object for the reference '{@link algorithme.PortEntree#getPStoArg <em>PSto Arg</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>PSto Arg</em>'.
-	 * @see algorithme.PortEntree#getPStoArg()
-	 * @see #getPortEntree()
-	 * @generated
-	 */
-	EReference getPortEntree_PStoArg();
-
-	/**
-	 * Returns the meta object for class '{@link algorithme.PortSortie <em>Port Sortie</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Port Sortie</em>'.
-	 * @see algorithme.PortSortie
-	 * @generated
-	 */
-	EClass getPortSortie();
-
-	/**
-	 * Returns the meta object for the attribute '{@link algorithme.PortSortie#getValeur <em>Valeur</em>}'.
+	 * Returns the meta object for the attribute '{@link algorithme.Sortie#getValeur <em>Valeur</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Valeur</em>'.
-	 * @see algorithme.PortSortie#getValeur()
-	 * @see #getPortSortie()
+	 * @see algorithme.Sortie#getValeur()
+	 * @see #getSortie()
 	 * @generated
 	 */
-	EAttribute getPortSortie_Valeur();
+	EAttribute getSortie_Valeur();
 
 	/**
 	 * Returns the meta object for class '{@link algorithme.AlgorithmeElements <em>Elements</em>}'.
@@ -1112,26 +647,15 @@ public interface AlgorithmePackage extends EPackage {
 	EClass getAlgorithmeElements();
 
 	/**
-	 * Returns the meta object for the container reference '{@link algorithme.AlgorithmeElements#getAEtoA <em>AEto A</em>}'.
+	 * Returns the meta object for the container reference '{@link algorithme.AlgorithmeElements#getAlgorithme <em>Algorithme</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>AEto A</em>'.
-	 * @see algorithme.AlgorithmeElements#getAEtoA()
+	 * @return the meta object for the container reference '<em>Algorithme</em>'.
+	 * @see algorithme.AlgorithmeElements#getAlgorithme()
 	 * @see #getAlgorithmeElements()
 	 * @generated
 	 */
-	EReference getAlgorithmeElements_AEtoA();
-
-	/**
-	 * Returns the meta object for data type '{@link java.lang.Object <em>Calculs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Calculs</em>'.
-	 * @see java.lang.Object
-	 * @model instanceClass="java.lang.Object"
-	 * @generated
-	 */
-	EDataType getCalculs();
+	EReference getAlgorithmeElements_Algorithme();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1175,12 +699,12 @@ public interface AlgorithmePackage extends EPackage {
 		EAttribute ALGORITHME__NOM = eINSTANCE.getAlgorithme_Nom();
 
 		/**
-		 * The meta object literal for the '<em><b>Ato AE</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Algorithme Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ALGORITHME__ATO_AE = eINSTANCE.getAlgorithme_AtoAE();
+		EReference ALGORITHME__ALGORITHME_ELEMENTS = eINSTANCE.getAlgorithme_AlgorithmeElements();
 
 		/**
 		 * The meta object literal for the '{@link algorithme.impl.RessourcesImpl <em>Ressources</em>}' class.
@@ -1193,14 +717,6 @@ public interface AlgorithmePackage extends EPackage {
 		EClass RESSOURCES = eINSTANCE.getRessources();
 
 		/**
-		 * The meta object literal for the '<em><b>Rto P</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESSOURCES__RTO_P = eINSTANCE.getRessources_RtoP();
-
-		/**
 		 * The meta object literal for the '<em><b>Chemin</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1209,56 +725,22 @@ public interface AlgorithmePackage extends EPackage {
 		EAttribute RESSOURCES__CHEMIN = eINSTANCE.getRessources_Chemin();
 
 		/**
-		 * The meta object literal for the '<em><b>Type Res</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Script</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RESSOURCES__TYPE_RES = eINSTANCE.getRessources_TypeRes();
+		EReference RESSOURCES__SCRIPT = eINSTANCE.getRessources_Script();
 
 		/**
-		 * The meta object literal for the '<em><b>Rto Scr</b></em>' reference feature.
+		 * The meta object literal for the '{@link algorithme.impl.DocumentationImpl <em>Documentation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see algorithme.impl.DocumentationImpl
+		 * @see algorithme.impl.AlgorithmePackageImpl#getDocumentation()
 		 * @generated
 		 */
-		EReference RESSOURCES__RTO_SCR = eINSTANCE.getRessources_RtoScr();
-
-		/**
-		 * The meta object literal for the '{@link algorithme.impl.ScriptImpl <em>Script</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see algorithme.impl.ScriptImpl
-		 * @see algorithme.impl.AlgorithmePackageImpl#getScript()
-		 * @generated
-		 */
-		EClass SCRIPT = eINSTANCE.getScript();
-
-		/**
-		 * The meta object literal for the '<em><b>Scrto S</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCRIPT__SCRTO_S = eINSTANCE.getScript_ScrtoS();
-
-		/**
-		 * The meta object literal for the '<em><b>Scrto SE</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCRIPT__SCRTO_SE = eINSTANCE.getScript_ScrtoSE();
-
-		/**
-		 * The meta object literal for the '{@link algorithme.impl.GuidanceImpl <em>Guidance</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see algorithme.impl.GuidanceImpl
-		 * @see algorithme.impl.AlgorithmePackageImpl#getGuidance()
-		 * @generated
-		 */
-		EClass GUIDANCE = eINSTANCE.getGuidance();
+		EClass DOCUMENTATION = eINSTANCE.getDocumentation();
 
 		/**
 		 * The meta object literal for the '<em><b>Texte</b></em>' attribute feature.
@@ -1266,41 +748,15 @@ public interface AlgorithmePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GUIDANCE__TEXTE = eINSTANCE.getGuidance_Texte();
+		EAttribute DOCUMENTATION__TEXTE = eINSTANCE.getDocumentation_Texte();
 
 		/**
-		 * The meta object literal for the '<em><b>Gto AE</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Docu Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GUIDANCE__GTO_AE = eINSTANCE.getGuidance_GtoAE();
-
-		/**
-		 * The meta object literal for the '{@link algorithme.impl.PortImpl <em>Port</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see algorithme.impl.PortImpl
-		 * @see algorithme.impl.AlgorithmePackageImpl#getPort()
-		 * @generated
-		 */
-		EClass PORT = eINSTANCE.getPort();
-
-		/**
-		 * The meta object literal for the '<em><b>Pto R</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__PTO_R = eINSTANCE.getPort_PtoR();
-
-		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PORT__NOM = eINSTANCE.getPort_Nom();
+		EReference DOCUMENTATION__DOCU_ELEMENT = eINSTANCE.getDocumentation_DocuElement();
 
 		/**
 		 * The meta object literal for the '{@link algorithme.impl.EntreeImpl <em>Entree</em>}' class.
@@ -1313,7 +769,15 @@ public interface AlgorithmePackage extends EPackage {
 		EClass ENTREE = eINSTANCE.getEntree();
 
 		/**
-		 * The meta object literal for the '<em><b>Valeur</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTREE__NOM = eINSTANCE.getEntree_Nom();
+
+		/**
+		 * The meta object literal for the '<em><b>Valeur</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1321,20 +785,20 @@ public interface AlgorithmePackage extends EPackage {
 		EAttribute ENTREE__VALEUR = eINSTANCE.getEntree_Valeur();
 
 		/**
-		 * The meta object literal for the '<em><b>Eto S</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Entree Script</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENTREE__ETO_S = eINSTANCE.getEntree_EtoS();
+		EReference ENTREE__ENTREE_SCRIPT = eINSTANCE.getEntree_EntreeScript();
 
 		/**
-		 * The meta object literal for the '<em><b>Port Sortie S</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Entree Globale</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENTREE__PORT_SORTIE_S = eINSTANCE.getEntree_PortSortieS();
+		EReference ENTREE__ENTREE_GLOBALE = eINSTANCE.getEntree_EntreeGlobale();
 
 		/**
 		 * The meta object literal for the '{@link algorithme.impl.SortieImpl <em>Sortie</em>}' class.
@@ -1347,14 +811,6 @@ public interface AlgorithmePackage extends EPackage {
 		EClass SORTIE = eINSTANCE.getSortie();
 
 		/**
-		 * The meta object literal for the '<em><b>Sto PS</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SORTIE__STO_PS = eINSTANCE.getSortie_StoPS();
-
-		/**
 		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1363,82 +819,20 @@ public interface AlgorithmePackage extends EPackage {
 		EAttribute SORTIE__NOM = eINSTANCE.getSortie_Nom();
 
 		/**
-		 * The meta object literal for the '<em><b>Sto Scr</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Sortie Script</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SORTIE__STO_SCR = eINSTANCE.getSortie_StoScr();
+		EReference SORTIE__SORTIE_SCRIPT = eINSTANCE.getSortie_SortieScript();
 
 		/**
-		 * The meta object literal for the '<em><b>Sto E</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Sortie Globale</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SORTIE__STO_E = eINSTANCE.getSortie_StoE();
-
-		/**
-		 * The meta object literal for the '<em><b>Port Entree S</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SORTIE__PORT_ENTREE_S = eINSTANCE.getSortie_PortEntreeS();
-
-		/**
-		 * The meta object literal for the '{@link algorithme.impl.ArgumentImpl <em>Argument</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see algorithme.impl.ArgumentImpl
-		 * @see algorithme.impl.AlgorithmePackageImpl#getArgument()
-		 * @generated
-		 */
-		EClass ARGUMENT = eINSTANCE.getArgument();
-
-		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ARGUMENT__NOM = eINSTANCE.getArgument_Nom();
-
-		/**
-		 * The meta object literal for the '{@link algorithme.impl.PortEntreeImpl <em>Port Entree</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see algorithme.impl.PortEntreeImpl
-		 * @see algorithme.impl.AlgorithmePackageImpl#getPortEntree()
-		 * @generated
-		 */
-		EClass PORT_ENTREE = eINSTANCE.getPortEntree();
-
-		/**
-		 * The meta object literal for the '<em><b>PEto E</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_ENTREE__PETO_E = eINSTANCE.getPortEntree_PEtoE();
-
-		/**
-		 * The meta object literal for the '<em><b>PSto Arg</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_ENTREE__PSTO_ARG = eINSTANCE.getPortEntree_PStoArg();
-
-		/**
-		 * The meta object literal for the '{@link algorithme.impl.PortSortieImpl <em>Port Sortie</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see algorithme.impl.PortSortieImpl
-		 * @see algorithme.impl.AlgorithmePackageImpl#getPortSortie()
-		 * @generated
-		 */
-		EClass PORT_SORTIE = eINSTANCE.getPortSortie();
+		EReference SORTIE__SORTIE_GLOBALE = eINSTANCE.getSortie_SortieGlobale();
 
 		/**
 		 * The meta object literal for the '<em><b>Valeur</b></em>' attribute feature.
@@ -1446,7 +840,7 @@ public interface AlgorithmePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PORT_SORTIE__VALEUR = eINSTANCE.getPortSortie_Valeur();
+		EAttribute SORTIE__VALEUR = eINSTANCE.getSortie_Valeur();
 
 		/**
 		 * The meta object literal for the '{@link algorithme.impl.AlgorithmeElementsImpl <em>Elements</em>}' class.
@@ -1459,22 +853,12 @@ public interface AlgorithmePackage extends EPackage {
 		EClass ALGORITHME_ELEMENTS = eINSTANCE.getAlgorithmeElements();
 
 		/**
-		 * The meta object literal for the '<em><b>AEto A</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Algorithme</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ALGORITHME_ELEMENTS__AETO_A = eINSTANCE.getAlgorithmeElements_AEtoA();
-
-		/**
-		 * The meta object literal for the '<em>Calculs</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.Object
-		 * @see algorithme.impl.AlgorithmePackageImpl#getCalculs()
-		 * @generated
-		 */
-		EDataType CALCULS = eINSTANCE.getCalculs();
+		EReference ALGORITHME_ELEMENTS__ALGORITHME = eINSTANCE.getAlgorithmeElements_Algorithme();
 
 	}
 

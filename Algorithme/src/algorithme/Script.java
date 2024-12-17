@@ -2,11 +2,7 @@
  */
 package algorithme;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
-import script.ScriptElements;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +14,6 @@ import script.ScriptElements;
  * </p>
  * <ul>
  *   <li>{@link algorithme.Script#getScrtoS <em>Scrto S</em>}</li>
- *   <li>{@link algorithme.Script#getScrtoSE <em>Scrto SE</em>}</li>
  * </ul>
  *
  * @see algorithme.AlgorithmePackage#getScript()
@@ -49,17 +44,5 @@ public interface Script extends EObject {
 	 * @generated
 	 */
 	void setScrtoS(Sortie value);
-
-	/**
-	 * Returns the value of the '<em><b>Scrto SE</b></em>' reference list.
-	 * The list contents are of type {@link script.ScriptElements}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scrto SE</em>' reference list.
-	 * @see algorithme.AlgorithmePackage#getScript_ScrtoSE()
-	 * @model
-	 * @generated
-	 */
-	EList<ScriptElements> getScrtoSE();
 
 } // Script

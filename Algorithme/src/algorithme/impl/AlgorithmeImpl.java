@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link algorithme.impl.AlgorithmeImpl#getNom <em>Nom</em>}</li>
- *   <li>{@link algorithme.impl.AlgorithmeImpl#getAtoAE <em>Ato AE</em>}</li>
+ *   <li>{@link algorithme.impl.AlgorithmeImpl#getAlgorithmeElements <em>Algorithme Elements</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,15 +52,14 @@ public class AlgorithmeImpl extends MinimalEObjectImpl.Container implements Algo
 	 */
 	protected String nom = NOM_EDEFAULT;
 	/**
-	 * The cached value of the '{@link #getAtoAE() <em>Ato AE</em>}' containment reference list.
+	 * The cached value of the '{@link #getAlgorithmeElements() <em>Algorithme Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAtoAE()
+	 * @see #getAlgorithmeElements()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AlgorithmeElements> atoAE;
-
+	protected EList<AlgorithmeElements> algorithmeElements;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -109,11 +108,11 @@ public class AlgorithmeImpl extends MinimalEObjectImpl.Container implements Algo
 	 * @generated
 	 */
 	@Override
-	public EList<AlgorithmeElements> getAtoAE() {
-		if (atoAE == null) {
-			atoAE = new EObjectContainmentWithInverseEList<AlgorithmeElements>(AlgorithmeElements.class, this, AlgorithmePackage.ALGORITHME__ATO_AE, AlgorithmePackage.ALGORITHME_ELEMENTS__AETO_A);
+	public EList<AlgorithmeElements> getAlgorithmeElements() {
+		if (algorithmeElements == null) {
+			algorithmeElements = new EObjectContainmentWithInverseEList<AlgorithmeElements>(AlgorithmeElements.class, this, AlgorithmePackage.ALGORITHME__ALGORITHME_ELEMENTS, AlgorithmePackage.ALGORITHME_ELEMENTS__ALGORITHME);
 		}
-		return atoAE;
+		return algorithmeElements;
 	}
 
 	/**
@@ -125,8 +124,8 @@ public class AlgorithmeImpl extends MinimalEObjectImpl.Container implements Algo
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AlgorithmePackage.ALGORITHME__ATO_AE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAtoAE()).basicAdd(otherEnd, msgs);
+			case AlgorithmePackage.ALGORITHME__ALGORITHME_ELEMENTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAlgorithmeElements()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -139,8 +138,8 @@ public class AlgorithmeImpl extends MinimalEObjectImpl.Container implements Algo
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AlgorithmePackage.ALGORITHME__ATO_AE:
-				return ((InternalEList<?>)getAtoAE()).basicRemove(otherEnd, msgs);
+			case AlgorithmePackage.ALGORITHME__ALGORITHME_ELEMENTS:
+				return ((InternalEList<?>)getAlgorithmeElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -155,8 +154,8 @@ public class AlgorithmeImpl extends MinimalEObjectImpl.Container implements Algo
 		switch (featureID) {
 			case AlgorithmePackage.ALGORITHME__NOM:
 				return getNom();
-			case AlgorithmePackage.ALGORITHME__ATO_AE:
-				return getAtoAE();
+			case AlgorithmePackage.ALGORITHME__ALGORITHME_ELEMENTS:
+				return getAlgorithmeElements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -173,9 +172,9 @@ public class AlgorithmeImpl extends MinimalEObjectImpl.Container implements Algo
 			case AlgorithmePackage.ALGORITHME__NOM:
 				setNom((String)newValue);
 				return;
-			case AlgorithmePackage.ALGORITHME__ATO_AE:
-				getAtoAE().clear();
-				getAtoAE().addAll((Collection<? extends AlgorithmeElements>)newValue);
+			case AlgorithmePackage.ALGORITHME__ALGORITHME_ELEMENTS:
+				getAlgorithmeElements().clear();
+				getAlgorithmeElements().addAll((Collection<? extends AlgorithmeElements>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,8 +191,8 @@ public class AlgorithmeImpl extends MinimalEObjectImpl.Container implements Algo
 			case AlgorithmePackage.ALGORITHME__NOM:
 				setNom(NOM_EDEFAULT);
 				return;
-			case AlgorithmePackage.ALGORITHME__ATO_AE:
-				getAtoAE().clear();
+			case AlgorithmePackage.ALGORITHME__ALGORITHME_ELEMENTS:
+				getAlgorithmeElements().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -209,8 +208,8 @@ public class AlgorithmeImpl extends MinimalEObjectImpl.Container implements Algo
 		switch (featureID) {
 			case AlgorithmePackage.ALGORITHME__NOM:
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
-			case AlgorithmePackage.ALGORITHME__ATO_AE:
-				return atoAE != null && !atoAE.isEmpty();
+			case AlgorithmePackage.ALGORITHME__ALGORITHME_ELEMENTS:
+				return algorithmeElements != null && !algorithmeElements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

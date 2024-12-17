@@ -4,35 +4,30 @@ package algorithme.impl;
 
 import algorithme.AlgorithmeElements;
 import algorithme.AlgorithmePackage;
-import algorithme.Guidance;
-
-import java.util.Collection;
+import algorithme.Documentation;
 
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Guidance</b></em>'.
+ * An implementation of the model object '<em><b>Documentation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link algorithme.impl.GuidanceImpl#getTexte <em>Texte</em>}</li>
- *   <li>{@link algorithme.impl.GuidanceImpl#getGtoAE <em>Gto AE</em>}</li>
+ *   <li>{@link algorithme.impl.DocumentationImpl#getTexte <em>Texte</em>}</li>
+ *   <li>{@link algorithme.impl.DocumentationImpl#getDocuElement <em>Docu Element</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GuidanceImpl extends AlgorithmeElementsImpl implements Guidance {
+public class DocumentationImpl extends AlgorithmeElementsImpl implements Documentation {
 	/**
 	 * The default value of the '{@link #getTexte() <em>Texte</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -54,21 +49,21 @@ public class GuidanceImpl extends AlgorithmeElementsImpl implements Guidance {
 	protected String texte = TEXTE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGtoAE() <em>Gto AE</em>}' reference list.
+	 * The cached value of the '{@link #getDocuElement() <em>Docu Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGtoAE()
+	 * @see #getDocuElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AlgorithmeElements> gtoAE;
+	protected AlgorithmeElements docuElement;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GuidanceImpl() {
+	protected DocumentationImpl() {
 		super();
 	}
 
@@ -79,7 +74,7 @@ public class GuidanceImpl extends AlgorithmeElementsImpl implements Guidance {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AlgorithmePackage.Literals.GUIDANCE;
+		return AlgorithmePackage.Literals.DOCUMENTATION;
 	}
 
 	/**
@@ -102,7 +97,7 @@ public class GuidanceImpl extends AlgorithmeElementsImpl implements Guidance {
 		String oldTexte = texte;
 		texte = newTexte;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.GUIDANCE__TEXTE, oldTexte, texte));
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.DOCUMENTATION__TEXTE, oldTexte, texte));
 	}
 
 	/**
@@ -111,11 +106,38 @@ public class GuidanceImpl extends AlgorithmeElementsImpl implements Guidance {
 	 * @generated
 	 */
 	@Override
-	public EList<AlgorithmeElements> getGtoAE() {
-		if (gtoAE == null) {
-			gtoAE = new EObjectResolvingEList<AlgorithmeElements>(AlgorithmeElements.class, this, AlgorithmePackage.GUIDANCE__GTO_AE);
+	public AlgorithmeElements getDocuElement() {
+		if (docuElement != null && docuElement.eIsProxy()) {
+			InternalEObject oldDocuElement = (InternalEObject)docuElement;
+			docuElement = (AlgorithmeElements)eResolveProxy(oldDocuElement);
+			if (docuElement != oldDocuElement) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.DOCUMENTATION__DOCU_ELEMENT, oldDocuElement, docuElement));
+			}
 		}
-		return gtoAE;
+		return docuElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AlgorithmeElements basicGetDocuElement() {
+		return docuElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDocuElement(AlgorithmeElements newDocuElement) {
+		AlgorithmeElements oldDocuElement = docuElement;
+		docuElement = newDocuElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.DOCUMENTATION__DOCU_ELEMENT, oldDocuElement, docuElement));
 	}
 
 	/**
@@ -126,10 +148,11 @@ public class GuidanceImpl extends AlgorithmeElementsImpl implements Guidance {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AlgorithmePackage.GUIDANCE__TEXTE:
+			case AlgorithmePackage.DOCUMENTATION__TEXTE:
 				return getTexte();
-			case AlgorithmePackage.GUIDANCE__GTO_AE:
-				return getGtoAE();
+			case AlgorithmePackage.DOCUMENTATION__DOCU_ELEMENT:
+				if (resolve) return getDocuElement();
+				return basicGetDocuElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -139,16 +162,14 @@ public class GuidanceImpl extends AlgorithmeElementsImpl implements Guidance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AlgorithmePackage.GUIDANCE__TEXTE:
+			case AlgorithmePackage.DOCUMENTATION__TEXTE:
 				setTexte((String)newValue);
 				return;
-			case AlgorithmePackage.GUIDANCE__GTO_AE:
-				getGtoAE().clear();
-				getGtoAE().addAll((Collection<? extends AlgorithmeElements>)newValue);
+			case AlgorithmePackage.DOCUMENTATION__DOCU_ELEMENT:
+				setDocuElement((AlgorithmeElements)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -162,11 +183,11 @@ public class GuidanceImpl extends AlgorithmeElementsImpl implements Guidance {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.GUIDANCE__TEXTE:
+			case AlgorithmePackage.DOCUMENTATION__TEXTE:
 				setTexte(TEXTE_EDEFAULT);
 				return;
-			case AlgorithmePackage.GUIDANCE__GTO_AE:
-				getGtoAE().clear();
+			case AlgorithmePackage.DOCUMENTATION__DOCU_ELEMENT:
+				setDocuElement((AlgorithmeElements)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -180,10 +201,10 @@ public class GuidanceImpl extends AlgorithmeElementsImpl implements Guidance {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.GUIDANCE__TEXTE:
+			case AlgorithmePackage.DOCUMENTATION__TEXTE:
 				return TEXTE_EDEFAULT == null ? texte != null : !TEXTE_EDEFAULT.equals(texte);
-			case AlgorithmePackage.GUIDANCE__GTO_AE:
-				return gtoAE != null && !gtoAE.isEmpty();
+			case AlgorithmePackage.DOCUMENTATION__DOCU_ELEMENT:
+				return docuElement != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -204,4 +225,4 @@ public class GuidanceImpl extends AlgorithmeElementsImpl implements Guidance {
 		return result.toString();
 	}
 
-} //GuidanceImpl
+} //DocumentationImpl

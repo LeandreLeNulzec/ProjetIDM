@@ -4,7 +4,7 @@
     <semanticResources>script.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_ZYTWQLvUEe-QleMxClMsTg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ZpoW0LvUEe-QleMxClMsTg" name="script class diagram" repPath="#_ZpkscLvUEe-QleMxClMsTg" changeId="1734370642132">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ZpoW0LvUEe-QleMxClMsTg" name="script class diagram" repPath="#_ZpkscLvUEe-QleMxClMsTg" changeId="1734430467876">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="script.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -73,7 +73,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_Z413hrvUEe-QleMxClMsTg"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_Z413gbvUEe-QleMxClMsTg" fontName="Ubuntu" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z413grvUEe-QleMxClMsTg" x="552" y="162"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z413grvUEe-QleMxClMsTg" x="828" y="-156"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_Z413h7vUEe-QleMxClMsTg" type="2003" element="_Z4i8k7vUEe-QleMxClMsTg">
           <children xmi:type="notation:Node" xmi:id="_Z413irvUEe-QleMxClMsTg" type="5007"/>
@@ -267,17 +267,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_Z45h5rvUEe-QleMxClMsTg" type="4001" element="_Z4t7trvUEe-QleMxClMsTg" source="_Z413gLvUEe-QleMxClMsTg" target="_Z41QfrvUEe-QleMxClMsTg">
           <children xmi:type="notation:Node" xmi:id="_Z45h6rvUEe-QleMxClMsTg" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z45h67vUEe-QleMxClMsTg" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z45h67vUEe-QleMxClMsTg" x="-31" y="-125"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_Z45h7LvUEe-QleMxClMsTg" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z45h7bvUEe-QleMxClMsTg" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z45h7bvUEe-QleMxClMsTg" x="-6"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_Z45h7rvUEe-QleMxClMsTg" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z45h77vUEe-QleMxClMsTg" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z45h77vUEe-QleMxClMsTg" x="-33" y="10"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_Z45h57vUEe-QleMxClMsTg" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_Z45h6LvUEe-QleMxClMsTg" fontColor="7490599" fontName="Ubuntu" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Z45h6bvUEe-QleMxClMsTg" points="[0, -50, -541, 110]$[541, -110, 0, 50]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Z45h6bvUEe-QleMxClMsTg" points="[15, 49, -246, -107]$[15, 178, -246, 22]$[187, 178, -74, 22]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Z45h8LvUEe-QleMxClMsTg" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Z45h8bvUEe-QleMxClMsTg" id="(0.5,0.5)"/>
         </edges>
@@ -742,6 +742,9 @@
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_Z4i8kLvUEe-QleMxClMsTg" name="Sortie" tooltipText="" outgoingEdges="_Z4t7trvUEe-QleMxClMsTg _Z4wX9rvUEe-QleMxClMsTg" width="12" height="10">
       <target xmi:type="ecore:EClass" href="script.ecore#//Sortie"/>
       <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Sortie"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_Z4i8kbvUEe-QleMxClMsTg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>

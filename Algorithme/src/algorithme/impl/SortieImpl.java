@@ -2,23 +2,14 @@
  */
 package algorithme.impl;
 
+import algorithme.Algorithme;
 import algorithme.AlgorithmePackage;
-import algorithme.Entree;
-import algorithme.PortSortie;
-import algorithme.Script;
 import algorithme.Sortie;
-
-import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import script.PortEntree;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,25 +19,15 @@ import script.PortEntree;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link algorithme.impl.SortieImpl#getStoPS <em>Sto PS</em>}</li>
  *   <li>{@link algorithme.impl.SortieImpl#getNom <em>Nom</em>}</li>
- *   <li>{@link algorithme.impl.SortieImpl#getStoScr <em>Sto Scr</em>}</li>
- *   <li>{@link algorithme.impl.SortieImpl#getStoE <em>Sto E</em>}</li>
- *   <li>{@link algorithme.impl.SortieImpl#getPortEntreeS <em>Port Entree S</em>}</li>
+ *   <li>{@link algorithme.impl.SortieImpl#getSortieScript <em>Sortie Script</em>}</li>
+ *   <li>{@link algorithme.impl.SortieImpl#getSortieGlobale <em>Sortie Globale</em>}</li>
+ *   <li>{@link algorithme.impl.SortieImpl#getValeur <em>Valeur</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
-	/**
-	 * The cached value of the '{@link #getStoPS() <em>Sto PS</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStoPS()
-	 * @generated
-	 * @ordered
-	 */
-	protected PortSortie stoPS;
 	/**
 	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,24 +47,41 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	 */
 	protected String nom = NOM_EDEFAULT;
 	/**
-	 * The cached value of the '{@link #getStoE() <em>Sto E</em>}' reference list.
+	 * The cached value of the '{@link #getSortieScript() <em>Sortie Script</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStoE()
+	 * @see #getSortieScript()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Entree> stoE;
+	protected script.Sortie sortieScript;
 	/**
-	 * The cached value of the '{@link #getPortEntreeS() <em>Port Entree S</em>}' reference.
+	 * The cached value of the '{@link #getSortieGlobale() <em>Sortie Globale</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPortEntreeS()
+	 * @see #getSortieGlobale()
 	 * @generated
 	 * @ordered
 	 */
-	protected PortEntree portEntreeS;
-
+	protected Algorithme sortieGlobale;
+	/**
+	 * The default value of the '{@link #getValeur() <em>Valeur</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValeur()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float VALEUR_EDEFAULT = 0.0F;
+	/**
+	 * The cached value of the '{@link #getValeur() <em>Valeur</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValeur()
+	 * @generated
+	 * @ordered
+	 */
+	protected float valeur = VALEUR_EDEFAULT;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,46 +99,6 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	@Override
 	protected EClass eStaticClass() {
 		return AlgorithmePackage.Literals.SORTIE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public PortSortie getStoPS() {
-		if (stoPS != null && stoPS.eIsProxy()) {
-			InternalEObject oldStoPS = (InternalEObject)stoPS;
-			stoPS = (PortSortie)eResolveProxy(oldStoPS);
-			if (stoPS != oldStoPS) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.SORTIE__STO_PS, oldStoPS, stoPS));
-			}
-		}
-		return stoPS;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PortSortie basicGetStoPS() {
-		return stoPS;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setStoPS(PortSortie newStoPS) {
-		PortSortie oldStoPS = stoPS;
-		stoPS = newStoPS;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.SORTIE__STO_PS, oldStoPS, stoPS));
 	}
 
 	/**
@@ -172,72 +130,16 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	 * @generated
 	 */
 	@Override
-	public Script getStoScr() {
-		if (eContainerFeatureID() != AlgorithmePackage.SORTIE__STO_SCR) return null;
-		return (Script)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetStoScr(Script newStoScr, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newStoScr, AlgorithmePackage.SORTIE__STO_SCR, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setStoScr(Script newStoScr) {
-		if (newStoScr != eInternalContainer() || (eContainerFeatureID() != AlgorithmePackage.SORTIE__STO_SCR && newStoScr != null)) {
-			if (EcoreUtil.isAncestor(this, newStoScr))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newStoScr != null)
-				msgs = ((InternalEObject)newStoScr).eInverseAdd(this, AlgorithmePackage.SCRIPT__SCRTO_S, Script.class, msgs);
-			msgs = basicSetStoScr(newStoScr, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.SORTIE__STO_SCR, newStoScr, newStoScr));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Entree> getStoE() {
-		if (stoE == null) {
-			stoE = new EObjectResolvingEList<Entree>(Entree.class, this, AlgorithmePackage.SORTIE__STO_E);
-		}
-		return stoE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public PortEntree getPortEntreeS() {
-		if (portEntreeS != null && portEntreeS.eIsProxy()) {
-			InternalEObject oldPortEntreeS = (InternalEObject)portEntreeS;
-			portEntreeS = (PortEntree)eResolveProxy(oldPortEntreeS);
-			if (portEntreeS != oldPortEntreeS) {
+	public script.Sortie getSortieScript() {
+		if (sortieScript != null && sortieScript.eIsProxy()) {
+			InternalEObject oldSortieScript = (InternalEObject)sortieScript;
+			sortieScript = (script.Sortie)eResolveProxy(oldSortieScript);
+			if (sortieScript != oldSortieScript) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.SORTIE__PORT_ENTREE_S, oldPortEntreeS, portEntreeS));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.SORTIE__SORTIE_SCRIPT, oldSortieScript, sortieScript));
 			}
 		}
-		return portEntreeS;
+		return sortieScript;
 	}
 
 	/**
@@ -245,8 +147,8 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortEntree basicGetPortEntreeS() {
-		return portEntreeS;
+	public script.Sortie basicGetSortieScript() {
+		return sortieScript;
 	}
 
 	/**
@@ -255,11 +157,11 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	 * @generated
 	 */
 	@Override
-	public void setPortEntreeS(PortEntree newPortEntreeS) {
-		PortEntree oldPortEntreeS = portEntreeS;
-		portEntreeS = newPortEntreeS;
+	public void setSortieScript(script.Sortie newSortieScript) {
+		script.Sortie oldSortieScript = sortieScript;
+		sortieScript = newSortieScript;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.SORTIE__PORT_ENTREE_S, oldPortEntreeS, portEntreeS));
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.SORTIE__SORTIE_SCRIPT, oldSortieScript, sortieScript));
 	}
 
 	/**
@@ -268,14 +170,25 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case AlgorithmePackage.SORTIE__STO_SCR:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetStoScr((Script)otherEnd, msgs);
+	public Algorithme getSortieGlobale() {
+		if (sortieGlobale != null && sortieGlobale.eIsProxy()) {
+			InternalEObject oldSortieGlobale = (InternalEObject)sortieGlobale;
+			sortieGlobale = (Algorithme)eResolveProxy(oldSortieGlobale);
+			if (sortieGlobale != oldSortieGlobale) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.SORTIE__SORTIE_GLOBALE, oldSortieGlobale, sortieGlobale));
+			}
 		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+		return sortieGlobale;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Algorithme basicGetSortieGlobale() {
+		return sortieGlobale;
 	}
 
 	/**
@@ -284,12 +197,11 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case AlgorithmePackage.SORTIE__STO_SCR:
-				return basicSetStoScr(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setSortieGlobale(Algorithme newSortieGlobale) {
+		Algorithme oldSortieGlobale = sortieGlobale;
+		sortieGlobale = newSortieGlobale;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.SORTIE__SORTIE_GLOBALE, oldSortieGlobale, sortieGlobale));
 	}
 
 	/**
@@ -298,12 +210,21 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case AlgorithmePackage.SORTIE__STO_SCR:
-				return eInternalContainer().eInverseRemove(this, AlgorithmePackage.SCRIPT__SCRTO_S, Script.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
+	public float getValeur() {
+		return valeur;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setValeur(float newValeur) {
+		float oldValeur = valeur;
+		valeur = newValeur;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.SORTIE__VALEUR, oldValeur, valeur));
 	}
 
 	/**
@@ -314,18 +235,16 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AlgorithmePackage.SORTIE__STO_PS:
-				if (resolve) return getStoPS();
-				return basicGetStoPS();
 			case AlgorithmePackage.SORTIE__NOM:
 				return getNom();
-			case AlgorithmePackage.SORTIE__STO_SCR:
-				return getStoScr();
-			case AlgorithmePackage.SORTIE__STO_E:
-				return getStoE();
-			case AlgorithmePackage.SORTIE__PORT_ENTREE_S:
-				if (resolve) return getPortEntreeS();
-				return basicGetPortEntreeS();
+			case AlgorithmePackage.SORTIE__SORTIE_SCRIPT:
+				if (resolve) return getSortieScript();
+				return basicGetSortieScript();
+			case AlgorithmePackage.SORTIE__SORTIE_GLOBALE:
+				if (resolve) return getSortieGlobale();
+				return basicGetSortieGlobale();
+			case AlgorithmePackage.SORTIE__VALEUR:
+				return getValeur();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -339,21 +258,17 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AlgorithmePackage.SORTIE__STO_PS:
-				setStoPS((PortSortie)newValue);
-				return;
 			case AlgorithmePackage.SORTIE__NOM:
 				setNom((String)newValue);
 				return;
-			case AlgorithmePackage.SORTIE__STO_SCR:
-				setStoScr((Script)newValue);
+			case AlgorithmePackage.SORTIE__SORTIE_SCRIPT:
+				setSortieScript((script.Sortie)newValue);
 				return;
-			case AlgorithmePackage.SORTIE__STO_E:
-				getStoE().clear();
-				getStoE().addAll((Collection<? extends Entree>)newValue);
+			case AlgorithmePackage.SORTIE__SORTIE_GLOBALE:
+				setSortieGlobale((Algorithme)newValue);
 				return;
-			case AlgorithmePackage.SORTIE__PORT_ENTREE_S:
-				setPortEntreeS((PortEntree)newValue);
+			case AlgorithmePackage.SORTIE__VALEUR:
+				setValeur((Float)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -367,20 +282,17 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.SORTIE__STO_PS:
-				setStoPS((PortSortie)null);
-				return;
 			case AlgorithmePackage.SORTIE__NOM:
 				setNom(NOM_EDEFAULT);
 				return;
-			case AlgorithmePackage.SORTIE__STO_SCR:
-				setStoScr((Script)null);
+			case AlgorithmePackage.SORTIE__SORTIE_SCRIPT:
+				setSortieScript((script.Sortie)null);
 				return;
-			case AlgorithmePackage.SORTIE__STO_E:
-				getStoE().clear();
+			case AlgorithmePackage.SORTIE__SORTIE_GLOBALE:
+				setSortieGlobale((Algorithme)null);
 				return;
-			case AlgorithmePackage.SORTIE__PORT_ENTREE_S:
-				setPortEntreeS((PortEntree)null);
+			case AlgorithmePackage.SORTIE__VALEUR:
+				setValeur(VALEUR_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -394,16 +306,14 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.SORTIE__STO_PS:
-				return stoPS != null;
 			case AlgorithmePackage.SORTIE__NOM:
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
-			case AlgorithmePackage.SORTIE__STO_SCR:
-				return getStoScr() != null;
-			case AlgorithmePackage.SORTIE__STO_E:
-				return stoE != null && !stoE.isEmpty();
-			case AlgorithmePackage.SORTIE__PORT_ENTREE_S:
-				return portEntreeS != null;
+			case AlgorithmePackage.SORTIE__SORTIE_SCRIPT:
+				return sortieScript != null;
+			case AlgorithmePackage.SORTIE__SORTIE_GLOBALE:
+				return sortieGlobale != null;
+			case AlgorithmePackage.SORTIE__VALEUR:
+				return valeur != VALEUR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -420,6 +330,8 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (nom: ");
 		result.append(nom);
+		result.append(", valeur: ");
+		result.append(valeur);
 		result.append(')');
 		return result.toString();
 	}

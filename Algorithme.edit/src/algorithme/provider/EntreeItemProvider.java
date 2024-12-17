@@ -60,11 +60,34 @@ public class EntreeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNomPropertyDescriptor(object);
 			addValeurPropertyDescriptor(object);
-			addEtoSPropertyDescriptor(object);
-			addPortSortieSPropertyDescriptor(object);
+			addEntreeScriptPropertyDescriptor(object);
+			addEntreeGlobalePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Nom feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNomPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entree_nom_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entree_nom_feature", "_UI_Entree_type"),
+				 AlgorithmePackage.Literals.ENTREE__NOM,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -90,19 +113,19 @@ public class EntreeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Eto S feature.
+	 * This adds a property descriptor for the Entree Script feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEtoSPropertyDescriptor(Object object) {
+	protected void addEntreeScriptPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Entree_EtoS_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entree_EtoS_feature", "_UI_Entree_type"),
-				 AlgorithmePackage.Literals.ENTREE__ETO_S,
+				 getString("_UI_Entree_entreeScript_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entree_entreeScript_feature", "_UI_Entree_type"),
+				 AlgorithmePackage.Literals.ENTREE__ENTREE_SCRIPT,
 				 true,
 				 false,
 				 true,
@@ -112,25 +135,36 @@ public class EntreeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Port Sortie S feature.
+	 * This adds a property descriptor for the Entree Globale feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPortSortieSPropertyDescriptor(Object object) {
+	protected void addEntreeGlobalePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Entree_PortSortieS_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entree_PortSortieS_feature", "_UI_Entree_type"),
-				 AlgorithmePackage.Literals.ENTREE__PORT_SORTIE_S,
+				 getString("_UI_Entree_entreeGlobale_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entree_entreeGlobale_feature", "_UI_Entree_type"),
+				 AlgorithmePackage.Literals.ENTREE__ENTREE_GLOBALE,
 				 true,
 				 false,
 				 true,
 				 null,
 				 null,
 				 null));
+	}
+
+	/**
+	 * This returns Entree.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Entree"));
 	}
 
 	/**
@@ -141,8 +175,10 @@ public class EntreeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Entree entree = (Entree)object;
-		return getString("_UI_Entree_type") + " " + entree.getValeur();
+		String label = ((Entree)object).getNom();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Entree_type") :
+			getString("_UI_Entree_type") + " " + label;
 	}
 
 
@@ -158,6 +194,7 @@ public class EntreeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Entree.class)) {
+			case AlgorithmePackage.ENTREE__NOM:
 			case AlgorithmePackage.ENTREE__VALEUR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

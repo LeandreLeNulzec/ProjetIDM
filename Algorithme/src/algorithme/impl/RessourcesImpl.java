@@ -3,22 +3,13 @@
 package algorithme.impl;
 
 import algorithme.AlgorithmePackage;
-import algorithme.Port;
 import algorithme.Ressources;
-
-import algorithme.Script;
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import script.Script;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,25 +19,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link algorithme.impl.RessourcesImpl#getRtoP <em>Rto P</em>}</li>
  *   <li>{@link algorithme.impl.RessourcesImpl#getChemin <em>Chemin</em>}</li>
- *   <li>{@link algorithme.impl.RessourcesImpl#getTypeRes <em>Type Res</em>}</li>
- *   <li>{@link algorithme.impl.RessourcesImpl#getRtoScr <em>Rto Scr</em>}</li>
+ *   <li>{@link algorithme.impl.RessourcesImpl#getScript <em>Script</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RessourcesImpl extends AlgorithmeElementsImpl implements Ressources {
-	/**
-	 * The cached value of the '{@link #getRtoP() <em>Rto P</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRtoP()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Port> rtoP;
-
 	/**
 	 * The default value of the '{@link #getChemin() <em>Chemin</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -68,24 +47,14 @@ public class RessourcesImpl extends AlgorithmeElementsImpl implements Ressources
 	protected String chemin = CHEMIN_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTypeRes() <em>Type Res</em>}' attribute.
+	 * The cached value of the '{@link #getScript() <em>Script</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTypeRes()
+	 * @see #getScript()
 	 * @generated
 	 * @ordered
 	 */
-	protected Object typeRes;
-
-	/**
-	 * The cached value of the '{@link #getRtoScr() <em>Rto Scr</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRtoScr()
-	 * @generated
-	 * @ordered
-	 */
-	protected Script rtoScr;
+	protected Script script;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,19 +73,6 @@ public class RessourcesImpl extends AlgorithmeElementsImpl implements Ressources
 	@Override
 	protected EClass eStaticClass() {
 		return AlgorithmePackage.Literals.RESSOURCES;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Port> getRtoP() {
-		if (rtoP == null) {
-			rtoP = new EObjectContainmentWithInverseEList<Port>(Port.class, this, AlgorithmePackage.RESSOURCES__RTO_P, AlgorithmePackage.PORT__PTO_R);
-		}
-		return rtoP;
 	}
 
 	/**
@@ -148,39 +104,16 @@ public class RessourcesImpl extends AlgorithmeElementsImpl implements Ressources
 	 * @generated
 	 */
 	@Override
-	public Object getTypeRes() {
-		return typeRes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTypeRes(Object newTypeRes) {
-		Object oldTypeRes = typeRes;
-		typeRes = newTypeRes;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.RESSOURCES__TYPE_RES, oldTypeRes, typeRes));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Script getRtoScr() {
-		if (rtoScr != null && rtoScr.eIsProxy()) {
-			InternalEObject oldRtoScr = (InternalEObject)rtoScr;
-			rtoScr = (Script)eResolveProxy(oldRtoScr);
-			if (rtoScr != oldRtoScr) {
+	public Script getScript() {
+		if (script != null && script.eIsProxy()) {
+			InternalEObject oldScript = (InternalEObject)script;
+			script = (Script)eResolveProxy(oldScript);
+			if (script != oldScript) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.RESSOURCES__RTO_SCR, oldRtoScr, rtoScr));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.RESSOURCES__SCRIPT, oldScript, script));
 			}
 		}
-		return rtoScr;
+		return script;
 	}
 
 	/**
@@ -188,8 +121,8 @@ public class RessourcesImpl extends AlgorithmeElementsImpl implements Ressources
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Script basicGetRtoScr() {
-		return rtoScr;
+	public Script basicGetScript() {
+		return script;
 	}
 
 	/**
@@ -198,40 +131,11 @@ public class RessourcesImpl extends AlgorithmeElementsImpl implements Ressources
 	 * @generated
 	 */
 	@Override
-	public void setRtoScr(Script newRtoScr) {
-		Script oldRtoScr = rtoScr;
-		rtoScr = newRtoScr;
+	public void setScript(Script newScript) {
+		Script oldScript = script;
+		script = newScript;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.RESSOURCES__RTO_SCR, oldRtoScr, rtoScr));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case AlgorithmePackage.RESSOURCES__RTO_P:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRtoP()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case AlgorithmePackage.RESSOURCES__RTO_P:
-				return ((InternalEList<?>)getRtoP()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.RESSOURCES__SCRIPT, oldScript, script));
 	}
 
 	/**
@@ -242,15 +146,11 @@ public class RessourcesImpl extends AlgorithmeElementsImpl implements Ressources
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AlgorithmePackage.RESSOURCES__RTO_P:
-				return getRtoP();
 			case AlgorithmePackage.RESSOURCES__CHEMIN:
 				return getChemin();
-			case AlgorithmePackage.RESSOURCES__TYPE_RES:
-				return getTypeRes();
-			case AlgorithmePackage.RESSOURCES__RTO_SCR:
-				if (resolve) return getRtoScr();
-				return basicGetRtoScr();
+			case AlgorithmePackage.RESSOURCES__SCRIPT:
+				if (resolve) return getScript();
+				return basicGetScript();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -264,18 +164,11 @@ public class RessourcesImpl extends AlgorithmeElementsImpl implements Ressources
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AlgorithmePackage.RESSOURCES__RTO_P:
-				getRtoP().clear();
-				getRtoP().addAll((Collection<? extends Port>)newValue);
-				return;
 			case AlgorithmePackage.RESSOURCES__CHEMIN:
 				setChemin((String)newValue);
 				return;
-			case AlgorithmePackage.RESSOURCES__TYPE_RES:
-				setTypeRes(newValue);
-				return;
-			case AlgorithmePackage.RESSOURCES__RTO_SCR:
-				setRtoScr((Script)newValue);
+			case AlgorithmePackage.RESSOURCES__SCRIPT:
+				setScript((Script)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -289,17 +182,11 @@ public class RessourcesImpl extends AlgorithmeElementsImpl implements Ressources
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.RESSOURCES__RTO_P:
-				getRtoP().clear();
-				return;
 			case AlgorithmePackage.RESSOURCES__CHEMIN:
 				setChemin(CHEMIN_EDEFAULT);
 				return;
-			case AlgorithmePackage.RESSOURCES__TYPE_RES:
-				setTypeRes((Object)null);
-				return;
-			case AlgorithmePackage.RESSOURCES__RTO_SCR:
-				setRtoScr((Script)null);
+			case AlgorithmePackage.RESSOURCES__SCRIPT:
+				setScript((Script)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -313,14 +200,10 @@ public class RessourcesImpl extends AlgorithmeElementsImpl implements Ressources
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.RESSOURCES__RTO_P:
-				return rtoP != null && !rtoP.isEmpty();
 			case AlgorithmePackage.RESSOURCES__CHEMIN:
 				return CHEMIN_EDEFAULT == null ? chemin != null : !CHEMIN_EDEFAULT.equals(chemin);
-			case AlgorithmePackage.RESSOURCES__TYPE_RES:
-				return typeRes != null;
-			case AlgorithmePackage.RESSOURCES__RTO_SCR:
-				return rtoScr != null;
+			case AlgorithmePackage.RESSOURCES__SCRIPT:
+				return script != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -337,8 +220,6 @@ public class RessourcesImpl extends AlgorithmeElementsImpl implements Ressources
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (chemin: ");
 		result.append(chemin);
-		result.append(", typeRes: ");
-		result.append(typeRes);
 		result.append(')');
 		return result.toString();
 	}

@@ -51,34 +51,12 @@ public class SortieItemProvider extends ItemProviderAdapter implements IEditingD
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addStoPSPropertyDescriptor(object);
 			addNomPropertyDescriptor(object);
-			addStoEPropertyDescriptor(object);
-			addPortEntreeSPropertyDescriptor(object);
+			addSortieScriptPropertyDescriptor(object);
+			addSortieGlobalePropertyDescriptor(object);
+			addValeurPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Sto PS feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStoPSPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Sortie_StoPS_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Sortie_StoPS_feature", "_UI_Sortie_type"),
-				 AlgorithmePackage.Literals.SORTIE__STO_PS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -104,19 +82,19 @@ public class SortieItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This adds a property descriptor for the Sto E feature.
+	 * This adds a property descriptor for the Sortie Script feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStoEPropertyDescriptor(Object object) {
+	protected void addSortieScriptPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Sortie_StoE_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Sortie_StoE_feature", "_UI_Sortie_type"),
-				 AlgorithmePackage.Literals.SORTIE__STO_E,
+				 getString("_UI_Sortie_sortieScript_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Sortie_sortieScript_feature", "_UI_Sortie_type"),
+				 AlgorithmePackage.Literals.SORTIE__SORTIE_SCRIPT,
 				 true,
 				 false,
 				 true,
@@ -126,23 +104,45 @@ public class SortieItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This adds a property descriptor for the Port Entree S feature.
+	 * This adds a property descriptor for the Sortie Globale feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPortEntreeSPropertyDescriptor(Object object) {
+	protected void addSortieGlobalePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Sortie_PortEntreeS_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Sortie_PortEntreeS_feature", "_UI_Sortie_type"),
-				 AlgorithmePackage.Literals.SORTIE__PORT_ENTREE_S,
+				 getString("_UI_Sortie_sortieGlobale_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Sortie_sortieGlobale_feature", "_UI_Sortie_type"),
+				 AlgorithmePackage.Literals.SORTIE__SORTIE_GLOBALE,
 				 true,
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Valeur feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValeurPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Sortie_valeur_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Sortie_valeur_feature", "_UI_Sortie_type"),
+				 AlgorithmePackage.Literals.SORTIE__VALEUR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -186,6 +186,7 @@ public class SortieItemProvider extends ItemProviderAdapter implements IEditingD
 
 		switch (notification.getFeatureID(Sortie.class)) {
 			case AlgorithmePackage.SORTIE__NOM:
+			case AlgorithmePackage.SORTIE__VALEUR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

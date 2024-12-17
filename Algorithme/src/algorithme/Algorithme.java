@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link algorithme.Algorithme#getNom <em>Nom</em>}</li>
- *   <li>{@link algorithme.Algorithme#getAtoAE <em>Ato AE</em>}</li>
+ *   <li>{@link algorithme.Algorithme#getAlgorithmeElements <em>Algorithme Elements</em>}</li>
  * </ul>
  *
  * @see algorithme.AlgorithmePackage#getAlgorithme()
@@ -47,16 +47,16 @@ public interface Algorithme extends EObject {
 	void setNom(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Ato AE</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Algorithme Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link algorithme.AlgorithmeElements}.
-	 * It is bidirectional and its opposite is '{@link algorithme.AlgorithmeElements#getAEtoA <em>AEto A</em>}'.
+	 * It is bidirectional and its opposite is '{@link algorithme.AlgorithmeElements#getAlgorithme <em>Algorithme</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ato AE</em>' containment reference list.
-	 * @see algorithme.AlgorithmePackage#getAlgorithme_AtoAE()
-	 * @see algorithme.AlgorithmeElements#getAEtoA
-	 * @model opposite="AEtoA" containment="true"
+	 * @return the value of the '<em>Algorithme Elements</em>' containment reference list.
+	 * @see algorithme.AlgorithmePackage#getAlgorithme_AlgorithmeElements()
+	 * @see algorithme.AlgorithmeElements#getAlgorithme
+	 * @model opposite="algorithme" containment="true"
 	 * @generated
 	 */
-	EList<AlgorithmeElements> getAtoAE();
+	EList<AlgorithmeElements> getAlgorithmeElements();
 } // Algorithme

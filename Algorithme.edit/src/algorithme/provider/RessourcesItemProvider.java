@@ -3,7 +3,6 @@
 package algorithme.provider;
 
 
-import algorithme.AlgorithmeFactory;
 import algorithme.AlgorithmePackage;
 
 import algorithme.Ressources;
@@ -12,7 +11,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -48,8 +46,7 @@ public class RessourcesItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCheminPropertyDescriptor(object);
-			addTypeResPropertyDescriptor(object);
-			addRtoScrPropertyDescriptor(object);
+			addScriptPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,77 +74,25 @@ public class RessourcesItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Type Res feature.
+	 * This adds a property descriptor for the Script feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypeResPropertyDescriptor(Object object) {
+	protected void addScriptPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Ressources_typeRes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Ressources_typeRes_feature", "_UI_Ressources_type"),
-				 AlgorithmePackage.Literals.RESSOURCES__TYPE_RES,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Rto Scr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRtoScrPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Ressources_RtoScr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Ressources_RtoScr_feature", "_UI_Ressources_type"),
-				 AlgorithmePackage.Literals.RESSOURCES__RTO_SCR,
+				 getString("_UI_Ressources_script_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Ressources_script_feature", "_UI_Ressources_type"),
+				 AlgorithmePackage.Literals.RESSOURCES__SCRIPT,
 				 true,
 				 false,
 				 true,
 				 null,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(AlgorithmePackage.Literals.RESSOURCES__RTO_P);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -189,11 +134,7 @@ public class RessourcesItemProvider
 
 		switch (notification.getFeatureID(Ressources.class)) {
 			case AlgorithmePackage.RESSOURCES__CHEMIN:
-			case AlgorithmePackage.RESSOURCES__TYPE_RES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case AlgorithmePackage.RESSOURCES__RTO_P:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -209,11 +150,6 @@ public class RessourcesItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AlgorithmePackage.Literals.RESSOURCES__RTO_P,
-				 AlgorithmeFactory.eINSTANCE.createPortEntree()));
 	}
 
 }

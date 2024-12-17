@@ -2,19 +2,20 @@
  */
 package algorithme.impl;
 
+import algorithme.Algorithme;
 import algorithme.AlgorithmePackage;
 import algorithme.Entree;
-import algorithme.Sortie;
-
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import script.PortSortie;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,53 +25,64 @@ import script.PortSortie;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link algorithme.impl.EntreeImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link algorithme.impl.EntreeImpl#getValeur <em>Valeur</em>}</li>
- *   <li>{@link algorithme.impl.EntreeImpl#getEtoS <em>Eto S</em>}</li>
- *   <li>{@link algorithme.impl.EntreeImpl#getPortSortieS <em>Port Sortie S</em>}</li>
+ *   <li>{@link algorithme.impl.EntreeImpl#getEntreeScript <em>Entree Script</em>}</li>
+ *   <li>{@link algorithme.impl.EntreeImpl#getEntreeGlobale <em>Entree Globale</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class EntreeImpl extends MinimalEObjectImpl.Container implements Entree {
+public class EntreeImpl extends MinimalEObjectImpl.Container implements Entree {
 	/**
-	 * The default value of the '{@link #getValeur() <em>Valeur</em>}' attribute.
+	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNom()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NOM_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNom()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nom = NOM_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getValeur() <em>Valeur</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getValeur()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float VALEUR_EDEFAULT = 0.0F;
+	protected EList<Float> valeur;
 
 	/**
-	 * The cached value of the '{@link #getValeur() <em>Valeur</em>}' attribute.
+	 * The cached value of the '{@link #getEntreeScript() <em>Entree Script</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValeur()
+	 * @see #getEntreeScript()
 	 * @generated
 	 * @ordered
 	 */
-	protected float valeur = VALEUR_EDEFAULT;
+	protected EList<script.Entree> entreeScript;
 
 	/**
-	 * The cached value of the '{@link #getEtoS() <em>Eto S</em>}' reference.
+	 * The cached value of the '{@link #getEntreeGlobale() <em>Entree Globale</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEtoS()
+	 * @see #getEntreeGlobale()
 	 * @generated
 	 * @ordered
 	 */
-	protected Sortie etoS;
-
-	/**
-	 * The cached value of the '{@link #getPortSortieS() <em>Port Sortie S</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortSortieS()
-	 * @generated
-	 * @ordered
-	 */
-	protected PortSortie portSortieS;
+	protected Algorithme entreeGlobale;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,7 +109,33 @@ public abstract class EntreeImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public float getValeur() {
+	public String getNom() {
+		return nom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setNom(String newNom) {
+		String oldNom = nom;
+		nom = newNom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.ENTREE__NOM, oldNom, nom));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Float> getValeur() {
+		if (valeur == null) {
+			valeur = new EDataTypeUniqueEList<Float>(Float.class, this, AlgorithmePackage.ENTREE__VALEUR);
+		}
 		return valeur;
 	}
 
@@ -107,11 +145,11 @@ public abstract class EntreeImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public void setValeur(float newValeur) {
-		float oldValeur = valeur;
-		valeur = newValeur;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.ENTREE__VALEUR, oldValeur, valeur));
+	public EList<script.Entree> getEntreeScript() {
+		if (entreeScript == null) {
+			entreeScript = new EObjectResolvingEList<script.Entree>(script.Entree.class, this, AlgorithmePackage.ENTREE__ENTREE_SCRIPT);
+		}
+		return entreeScript;
 	}
 
 	/**
@@ -120,16 +158,16 @@ public abstract class EntreeImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public Sortie getEtoS() {
-		if (etoS != null && etoS.eIsProxy()) {
-			InternalEObject oldEtoS = (InternalEObject)etoS;
-			etoS = (Sortie)eResolveProxy(oldEtoS);
-			if (etoS != oldEtoS) {
+	public Algorithme getEntreeGlobale() {
+		if (entreeGlobale != null && entreeGlobale.eIsProxy()) {
+			InternalEObject oldEntreeGlobale = (InternalEObject)entreeGlobale;
+			entreeGlobale = (Algorithme)eResolveProxy(oldEntreeGlobale);
+			if (entreeGlobale != oldEntreeGlobale) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.ENTREE__ETO_S, oldEtoS, etoS));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.ENTREE__ENTREE_GLOBALE, oldEntreeGlobale, entreeGlobale));
 			}
 		}
-		return etoS;
+		return entreeGlobale;
 	}
 
 	/**
@@ -137,8 +175,8 @@ public abstract class EntreeImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Sortie basicGetEtoS() {
-		return etoS;
+	public Algorithme basicGetEntreeGlobale() {
+		return entreeGlobale;
 	}
 
 	/**
@@ -147,51 +185,11 @@ public abstract class EntreeImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public void setEtoS(Sortie newEtoS) {
-		Sortie oldEtoS = etoS;
-		etoS = newEtoS;
+	public void setEntreeGlobale(Algorithme newEntreeGlobale) {
+		Algorithme oldEntreeGlobale = entreeGlobale;
+		entreeGlobale = newEntreeGlobale;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.ENTREE__ETO_S, oldEtoS, etoS));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public PortSortie getPortSortieS() {
-		if (portSortieS != null && portSortieS.eIsProxy()) {
-			InternalEObject oldPortSortieS = (InternalEObject)portSortieS;
-			portSortieS = (PortSortie)eResolveProxy(oldPortSortieS);
-			if (portSortieS != oldPortSortieS) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.ENTREE__PORT_SORTIE_S, oldPortSortieS, portSortieS));
-			}
-		}
-		return portSortieS;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PortSortie basicGetPortSortieS() {
-		return portSortieS;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setPortSortieS(PortSortie newPortSortieS) {
-		PortSortie oldPortSortieS = portSortieS;
-		portSortieS = newPortSortieS;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.ENTREE__PORT_SORTIE_S, oldPortSortieS, portSortieS));
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.ENTREE__ENTREE_GLOBALE, oldEntreeGlobale, entreeGlobale));
 	}
 
 	/**
@@ -202,14 +200,15 @@ public abstract class EntreeImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AlgorithmePackage.ENTREE__NOM:
+				return getNom();
 			case AlgorithmePackage.ENTREE__VALEUR:
 				return getValeur();
-			case AlgorithmePackage.ENTREE__ETO_S:
-				if (resolve) return getEtoS();
-				return basicGetEtoS();
-			case AlgorithmePackage.ENTREE__PORT_SORTIE_S:
-				if (resolve) return getPortSortieS();
-				return basicGetPortSortieS();
+			case AlgorithmePackage.ENTREE__ENTREE_SCRIPT:
+				return getEntreeScript();
+			case AlgorithmePackage.ENTREE__ENTREE_GLOBALE:
+				if (resolve) return getEntreeGlobale();
+				return basicGetEntreeGlobale();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -219,17 +218,23 @@ public abstract class EntreeImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AlgorithmePackage.ENTREE__NOM:
+				setNom((String)newValue);
+				return;
 			case AlgorithmePackage.ENTREE__VALEUR:
-				setValeur((Float)newValue);
+				getValeur().clear();
+				getValeur().addAll((Collection<? extends Float>)newValue);
 				return;
-			case AlgorithmePackage.ENTREE__ETO_S:
-				setEtoS((Sortie)newValue);
+			case AlgorithmePackage.ENTREE__ENTREE_SCRIPT:
+				getEntreeScript().clear();
+				getEntreeScript().addAll((Collection<? extends script.Entree>)newValue);
 				return;
-			case AlgorithmePackage.ENTREE__PORT_SORTIE_S:
-				setPortSortieS((PortSortie)newValue);
+			case AlgorithmePackage.ENTREE__ENTREE_GLOBALE:
+				setEntreeGlobale((Algorithme)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,14 +248,17 @@ public abstract class EntreeImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AlgorithmePackage.ENTREE__NOM:
+				setNom(NOM_EDEFAULT);
+				return;
 			case AlgorithmePackage.ENTREE__VALEUR:
-				setValeur(VALEUR_EDEFAULT);
+				getValeur().clear();
 				return;
-			case AlgorithmePackage.ENTREE__ETO_S:
-				setEtoS((Sortie)null);
+			case AlgorithmePackage.ENTREE__ENTREE_SCRIPT:
+				getEntreeScript().clear();
 				return;
-			case AlgorithmePackage.ENTREE__PORT_SORTIE_S:
-				setPortSortieS((PortSortie)null);
+			case AlgorithmePackage.ENTREE__ENTREE_GLOBALE:
+				setEntreeGlobale((Algorithme)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -264,12 +272,14 @@ public abstract class EntreeImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AlgorithmePackage.ENTREE__NOM:
+				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case AlgorithmePackage.ENTREE__VALEUR:
-				return valeur != VALEUR_EDEFAULT;
-			case AlgorithmePackage.ENTREE__ETO_S:
-				return etoS != null;
-			case AlgorithmePackage.ENTREE__PORT_SORTIE_S:
-				return portSortieS != null;
+				return valeur != null && !valeur.isEmpty();
+			case AlgorithmePackage.ENTREE__ENTREE_SCRIPT:
+				return entreeScript != null && !entreeScript.isEmpty();
+			case AlgorithmePackage.ENTREE__ENTREE_GLOBALE:
+				return entreeGlobale != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -284,7 +294,9 @@ public abstract class EntreeImpl extends MinimalEObjectImpl.Container implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (valeur: ");
+		result.append(" (nom: ");
+		result.append(nom);
+		result.append(", valeur: ");
 		result.append(valeur);
 		result.append(')');
 		return result.toString();

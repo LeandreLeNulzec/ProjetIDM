@@ -2,9 +2,8 @@
  */
 package algorithme;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-
-import script.PortSortie;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,81 +14,83 @@ import script.PortSortie;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link algorithme.Entree#getNom <em>Nom</em>}</li>
  *   <li>{@link algorithme.Entree#getValeur <em>Valeur</em>}</li>
- *   <li>{@link algorithme.Entree#getEtoS <em>Eto S</em>}</li>
- *   <li>{@link algorithme.Entree#getPortSortieS <em>Port Sortie S</em>}</li>
+ *   <li>{@link algorithme.Entree#getEntreeScript <em>Entree Script</em>}</li>
+ *   <li>{@link algorithme.Entree#getEntreeGlobale <em>Entree Globale</em>}</li>
  * </ul>
  *
  * @see algorithme.AlgorithmePackage#getEntree()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Entree extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Valeur</b></em>' attribute.
-	 * The default value is <code>"0.0"</code>.
+	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Valeur</em>' attribute.
-	 * @see #setValeur(float)
+	 * @return the value of the '<em>Nom</em>' attribute.
+	 * @see #setNom(String)
+	 * @see algorithme.AlgorithmePackage#getEntree_Nom()
+	 * @model
+	 * @generated
+	 */
+	String getNom();
+
+	/**
+	 * Sets the value of the '{@link algorithme.Entree#getNom <em>Nom</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Nom</em>' attribute.
+	 * @see #getNom()
+	 * @generated
+	 */
+	void setNom(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Valeur</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.Float}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Valeur</em>' attribute list.
 	 * @see algorithme.AlgorithmePackage#getEntree_Valeur()
 	 * @model default="0.0"
 	 * @generated
 	 */
-	float getValeur();
+	EList<Float> getValeur();
 
 	/**
-	 * Sets the value of the '{@link algorithme.Entree#getValeur <em>Valeur</em>}' attribute.
+	 * Returns the value of the '<em><b>Entree Script</b></em>' reference list.
+	 * The list contents are of type {@link script.Entree}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Valeur</em>' attribute.
-	 * @see #getValeur()
+	 * @return the value of the '<em>Entree Script</em>' reference list.
+	 * @see algorithme.AlgorithmePackage#getEntree_EntreeScript()
+	 * @model required="true"
 	 * @generated
 	 */
-	void setValeur(float value);
+	EList<script.Entree> getEntreeScript();
 
 	/**
-	 * Returns the value of the '<em><b>Eto S</b></em>' reference.
+	 * Returns the value of the '<em><b>Entree Globale</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Eto S</em>' reference.
-	 * @see #setEtoS(Sortie)
-	 * @see algorithme.AlgorithmePackage#getEntree_EtoS()
+	 * @return the value of the '<em>Entree Globale</em>' reference.
+	 * @see #setEntreeGlobale(Algorithme)
+	 * @see algorithme.AlgorithmePackage#getEntree_EntreeGlobale()
 	 * @model
 	 * @generated
 	 */
-	Sortie getEtoS();
+	Algorithme getEntreeGlobale();
 
 	/**
-	 * Sets the value of the '{@link algorithme.Entree#getEtoS <em>Eto S</em>}' reference.
+	 * Sets the value of the '{@link algorithme.Entree#getEntreeGlobale <em>Entree Globale</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Eto S</em>' reference.
-	 * @see #getEtoS()
+	 * @param value the new value of the '<em>Entree Globale</em>' reference.
+	 * @see #getEntreeGlobale()
 	 * @generated
 	 */
-	void setEtoS(Sortie value);
-
-	/**
-	 * Returns the value of the '<em><b>Port Sortie S</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Port Sortie S</em>' reference.
-	 * @see #setPortSortieS(PortSortie)
-	 * @see algorithme.AlgorithmePackage#getEntree_PortSortieS()
-	 * @model
-	 * @generated
-	 */
-	PortSortie getPortSortieS();
-
-	/**
-	 * Sets the value of the '{@link algorithme.Entree#getPortSortieS <em>Port Sortie S</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Port Sortie S</em>' reference.
-	 * @see #getPortSortieS()
-	 * @generated
-	 */
-	void setPortSortieS(PortSortie value);
+	void setEntreeGlobale(Algorithme value);
 
 } // Entree

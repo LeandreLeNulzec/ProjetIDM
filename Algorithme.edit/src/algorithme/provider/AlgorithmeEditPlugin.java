@@ -5,6 +5,7 @@ package algorithme.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import script.provider.ScriptEditPlugin;
 
 /**
  * This is the central singleton for the Algorithme edit plugin.
@@ -38,6 +39,7 @@ public final class AlgorithmeEditPlugin extends EMFPlugin {
 	public AlgorithmeEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     ScriptEditPlugin.INSTANCE,
 		   });
 	}
 

@@ -100,7 +100,7 @@ public class AlgorithmeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(AlgorithmePackage.Literals.ALGORITHME__ATO_AE);
+			childrenFeatures.add(AlgorithmePackage.Literals.ALGORITHME__ALGORITHME_ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -159,7 +159,7 @@ public class AlgorithmeItemProvider
 			case AlgorithmePackage.ALGORITHME__NOM:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case AlgorithmePackage.ALGORITHME__ATO_AE:
+			case AlgorithmePackage.ALGORITHME__ALGORITHME_ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -179,13 +179,13 @@ public class AlgorithmeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(AlgorithmePackage.Literals.ALGORITHME__ATO_AE,
+				(AlgorithmePackage.Literals.ALGORITHME__ALGORITHME_ELEMENTS,
 				 AlgorithmeFactory.eINSTANCE.createRessources()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(AlgorithmePackage.Literals.ALGORITHME__ATO_AE,
-				 AlgorithmeFactory.eINSTANCE.createGuidance()));
+				(AlgorithmePackage.Literals.ALGORITHME__ALGORITHME_ELEMENTS,
+				 AlgorithmeFactory.eINSTANCE.createDocumentation()));
 	}
 
 	/**
