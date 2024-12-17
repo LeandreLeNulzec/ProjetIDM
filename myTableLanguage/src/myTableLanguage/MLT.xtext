@@ -1,0 +1,62 @@
+grammar myTableLanguage.MLT with org.eclipse.xtext.common.Terminals
+
+generate mLT "http://www.MLT.myTableLanguage"
+
+Table : 'table' nom=ID '{'
+	colonnes+=Colonnes*
+	colonneID=Colonnes
+	'}';
+	
+Colonnes : (Colonne | ColonneProvient | ColonneDerivee);	
+
+Colonne : 'c' nom=ID
+	'type' elementType=ColonneElementType
+	'contrainte' contraintes=Contrainte
+	'nblignes' nbLignes=INT
+	'contenu' ':' '[' contenu=Contenu ']';
+	
+ColonneProvient : 'cp' nom=ID
+	'tableOrigine' tableOrigin=Table
+	'refColonne' refColonne=ID
+	'type' elementType=ColonneElementType
+	'contrainte' contraintes=Contrainte
+	'nblignes' nbLignes=INT
+	'contenu' ':' '[' contenu=Contenu ']';
+	
+ColonneDerivee : 'cd' nom=ID
+	'algo' algorithme=STRING
+	'entrees' colonnesEntrees+=Colonnes*
+	'type' elementType=ColonneElementType
+	'contrainte' contraintes=Contrainte
+	'nblignes' nbLignes=INT
+	'contenu' ':' '[' contenu=Contenu ']';
+	
+enum ColonneElementType :
+	FLOAT='f'
+	|INT='i'
+	|STRING='s'
+	|BOOL='b';
+	
+Contrainte : Et | Ou | Predicat;
+
+Et : 'Et' '(' variables+=Contrainte+ ')';
+
+Ou : 'Ou' '(' variables+=Contrainte+ ')';
+
+Predicat : (PredicatValeur | PredicatColonne);
+
+PredicatColonne : 'condition' condition=Condition 'c' colonne=Colonnes;
+
+PredicatValeur : 'condition' condition=Condition 'v' valeur=FLOAT;
+
+terminal FLOAT: INT '.' INT;
+
+enum Condition :
+	InferieurOuEgal='<='
+	|InferieurStrict='<'
+	|Egal="="
+	|SuperieurStrict='>'
+	|SuperieurOuEgal='>=';
+
+Contenu : FLOAT*;
+
