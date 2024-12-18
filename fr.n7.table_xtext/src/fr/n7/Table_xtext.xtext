@@ -59,8 +59,6 @@ enum Condition :
 	|SuperieurOuEgal='>=';
 
 Contenu : FLOAT*;
-<<<<<<< HEAD:fr.n7.table_xtext/src/fr/n7/Table_xtext.xtext
-=======
 
 Algorithme : 'algorithme' nom = ID '{'
 	algorithmeElements += AlgorithmeElements*
@@ -74,4 +72,3 @@ Chemin : ('/'ID('.'ID)*)+ ;
 
 Documentation : 'commentaire' texte = STRING;
 
->>>>>>> 53672214fcba7e859dbcd1846bc3e021f973e32d:myTableLanguage/src/myTableLanguage/MLT.xtext
