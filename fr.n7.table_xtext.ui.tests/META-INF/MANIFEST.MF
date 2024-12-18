@@ -1,12 +1,12 @@
 Manifest-Version: 1.0
-Automatic-Module-Name: myTableLanguage.ui.tests
+Automatic-Module-Name: fr.n7.table_xtext.ui.tests
 Bundle-ManifestVersion: 2
-Bundle-Name: myTableLanguage.ui.tests
+Bundle-Name: fr.n7.table_xtext.ui.tests
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: myTableLanguage.ui.tests; singleton:=true
+Bundle-SymbolicName: fr.n7.table_xtext.ui.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: myTableLanguage.ui,
+Require-Bundle: fr.n7.table_xtext.ui,
  org.eclipse.xtext.testing,
  org.eclipse.xtext.ui.testing,
  org.eclipse.xtext.xbase.testing,

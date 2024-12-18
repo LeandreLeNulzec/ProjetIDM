@@ -2,12 +2,8 @@
  */
 package table.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -15,11 +11,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import table.Colonne;
 import table.ColonnesElementsType;
-import table.Contenu;
+import table.ContenuFloat;
 import table.Contrainte;
 import table.Table;
 import table.TablePackage;
@@ -124,14 +118,14 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 	protected int nbLignes = NB_LIGNES_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getContenu() <em>Contenu</em>}' reference list.
+	 * The cached value of the '{@link #getContenu() <em>Contenu</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContenu()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Contenu> contenu;
+	protected ContenuFloat contenu;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -329,11 +323,38 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 	 * @generated
 	 */
 	@Override
-	public EList<Contenu> getContenu() {
-		if (contenu == null) {
-			contenu = new EObjectResolvingEList<Contenu>(Contenu.class, this, TablePackage.COLONNE__CONTENU);
+	public ContenuFloat getContenu() {
+		if (contenu != null && contenu.eIsProxy()) {
+			InternalEObject oldContenu = (InternalEObject)contenu;
+			contenu = (ContenuFloat)eResolveProxy(oldContenu);
+			if (contenu != oldContenu) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TablePackage.COLONNE__CONTENU, oldContenu, contenu));
+			}
 		}
 		return contenu;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContenuFloat basicGetContenu() {
+		return contenu;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setContenu(ContenuFloat newContenu) {
+		ContenuFloat oldContenu = contenu;
+		contenu = newContenu;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TablePackage.COLONNE__CONTENU, oldContenu, contenu));
 	}
 
 	/**
@@ -387,7 +408,8 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 			case TablePackage.COLONNE__NB_LIGNES:
 				return getNbLignes();
 			case TablePackage.COLONNE__CONTENU:
-				return getContenu();
+				if (resolve) return getContenu();
+				return basicGetContenu();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -397,7 +419,6 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -417,8 +438,7 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 				setNbLignes((Integer)newValue);
 				return;
 			case TablePackage.COLONNE__CONTENU:
-				getContenu().clear();
-				getContenu().addAll((Collection<? extends Contenu>)newValue);
+				setContenu((ContenuFloat)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -448,7 +468,7 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 				setNbLignes(NB_LIGNES_EDEFAULT);
 				return;
 			case TablePackage.COLONNE__CONTENU:
-				getContenu().clear();
+				setContenu((ContenuFloat)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -473,7 +493,7 @@ public class ColonneImpl extends MinimalEObjectImpl.Container implements Colonne
 			case TablePackage.COLONNE__NB_LIGNES:
 				return nbLignes != NB_LIGNES_EDEFAULT;
 			case TablePackage.COLONNE__CONTENU:
-				return contenu != null && !contenu.isEmpty();
+				return contenu != null;
 		}
 		return super.eIsSet(featureID);
 	}

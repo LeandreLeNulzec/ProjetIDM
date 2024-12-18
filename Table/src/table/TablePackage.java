@@ -168,7 +168,7 @@ public interface TablePackage extends EPackage {
 	int COLONNE__NB_LIGNES = 4;
 
 	/**
-	 * The feature id for the '<em><b>Contenu</b></em>' reference list.
+	 * The feature id for the '<em><b>Contenu</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -250,7 +250,7 @@ public interface TablePackage extends EPackage {
 	int COLONNE_PROVIENT__NB_LIGNES = COLONNE__NB_LIGNES;
 
 	/**
-	 * The feature id for the '<em><b>Contenu</b></em>' reference list.
+	 * The feature id for the '<em><b>Contenu</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -350,7 +350,7 @@ public interface TablePackage extends EPackage {
 	int COLONNE_DERIVEE__NB_LIGNES = COLONNE__NB_LIGNES;
 
 	/**
-	 * The feature id for the '<em><b>Contenu</b></em>' reference list.
+	 * The feature id for the '<em><b>Contenu</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -811,7 +811,6 @@ public interface TablePackage extends EPackage {
 	 */
 	int COLONNES_ELEMENTS_TYPE = 15;
 
-
 	/**
 	 * The meta object id for the '{@link table.Condition <em>Condition</em>}' enum.
 	 * <!-- begin-user-doc -->
@@ -932,10 +931,10 @@ public interface TablePackage extends EPackage {
 	EAttribute getColonne_NbLignes();
 
 	/**
-	 * Returns the meta object for the reference list '{@link table.Colonne#getContenu <em>Contenu</em>}'.
+	 * Returns the meta object for the reference '{@link table.Colonne#getContenu <em>Contenu</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Contenu</em>'.
+	 * @return the meta object for the reference '<em>Contenu</em>'.
 	 * @see table.Colonne#getContenu()
 	 * @see #getColonne()
 	 * @generated
@@ -1343,7 +1342,7 @@ public interface TablePackage extends EPackage {
 		EAttribute COLONNE__NB_LIGNES = eINSTANCE.getColonne_NbLignes();
 
 		/**
-		 * The meta object literal for the '<em><b>Contenu</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Contenu</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

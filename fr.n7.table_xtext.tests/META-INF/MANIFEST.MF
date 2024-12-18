@@ -1,12 +1,12 @@
 Manifest-Version: 1.0
-Automatic-Module-Name: myTableLanguage.tests
+Automatic-Module-Name: fr.n7.table_xtext.tests
 Bundle-ManifestVersion: 2
-Bundle-Name: myTableLanguage.tests
+Bundle-Name: fr.n7.table_xtext.tests
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: myTableLanguage.tests; singleton:=true
+Bundle-SymbolicName: fr.n7.table_xtext.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: myTableLanguage,
+Require-Bundle: fr.n7.table_xtext,
  org.eclipse.xtext.testing,
  org.eclipse.xtext.xbase.testing
 Import-Package: org.junit.jupiter.api;version="[5.1.0,6.0.0)",

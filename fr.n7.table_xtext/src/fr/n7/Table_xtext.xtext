@@ -1,6 +1,6 @@
-grammar myTableLanguage.MLT with org.eclipse.xtext.common.Terminals
+grammar fr.n7.Table_xtext with org.eclipse.xtext.common.Terminals
 
-generate mLT "http://www.MLT.myTableLanguage"
+generate table_xtext "http://www.n7.fr/Table_xtext"
 
 Table : 'table' nom=ID '{'
 	colonnes+=Colonnes*
@@ -59,4 +59,3 @@ enum Condition :
 	|SuperieurOuEgal='>=';
 
 Contenu : FLOAT*;
-

@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
-Automatic-Module-Name: myTableLanguage.ui
+Automatic-Module-Name: fr.n7.table_xtext.ui
 Bundle-ManifestVersion: 2
-Bundle-Name: myTableLanguage.ui
+Bundle-Name: fr.n7.table_xtext.ui
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: myTableLanguage.ui; singleton:=true
+Bundle-SymbolicName: fr.n7.table_xtext.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: myTableLanguage,
- myTableLanguage.ide,
+Require-Bundle: fr.n7.table_xtext,
+ fr.n7.table_xtext.ide,
  org.eclipse.xtext.ui,
  org.eclipse.xtext.ui.shared,
  org.eclipse.xtext.ui.codetemplates.ui,

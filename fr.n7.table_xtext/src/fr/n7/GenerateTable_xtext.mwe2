@@ -1,4 +1,4 @@
-module myTableLanguage.GenerateMLT
+module fr.n7.GenerateTable_xtext
 
 import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
@@ -10,7 +10,7 @@ Workflow {
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {
-				baseName = "myTableLanguage"
+				baseName = "fr.n7.table_xtext"
 				rootPath = rootPath
 				runtimeTest = {
 					enabled = true
@@ -31,8 +31,8 @@ Workflow {
 			}
 		}
 		language = StandardLanguage {
-			name = "myTableLanguage.MLT"
-			fileExtensions = "mytablelanguage"
+			name = "fr.n7.Table_xtext"
+			fileExtensions = "table"
 
 			serializer = {
 				generateStub = false

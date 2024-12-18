@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import script.ScriptPackage;
+
 import table.Colonne;
 import table.ColonneDerivee;
 import table.ColonneProvient;
@@ -206,6 +208,7 @@ public class TablePackageImpl extends EPackageImpl implements TablePackage {
 
 		// Initialize simple dependencies
 		AlgorithmePackage.eINSTANCE.eClass();
+		ScriptPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theTablePackage.createPackageContents();
@@ -752,7 +755,7 @@ public class TablePackageImpl extends EPackageImpl implements TablePackage {
 		initEAttribute(getColonne_ElementType(), this.getColonnesElementsType(), "ElementType", null, 1, 1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getColonne_Contraintes(), this.getContrainte(), null, "contraintes", null, 0, 1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getColonne_NbLignes(), ecorePackage.getEInt(), "nbLignes", null, 1, 1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getColonne_Contenu(), this.getContenu(), null, "contenu", null, 0, -1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getColonne_Contenu(), this.getContenuFloat(), null, "contenu", null, 0, 1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(colonneProvientEClass, ColonneProvient.class, "ColonneProvient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getColonneProvient_TableOrigine(), this.getTable(), null, "tableOrigine", null, 1, 1, ColonneProvient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

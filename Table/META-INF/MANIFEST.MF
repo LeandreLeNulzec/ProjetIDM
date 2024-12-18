@@ -14,6 +14,6 @@ Export-Package: table,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  Algorithme;visibility:=reexport,
+ Script;visibility:=reexport,
  org.eclipse.emf.ecore.xmi
 Bundle-ActivationPolicy: lazy
-Import-Package: table

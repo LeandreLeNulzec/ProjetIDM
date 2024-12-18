@@ -104,14 +104,14 @@ public class TableValidator extends TableSwitch<Boolean> {
 				"Le nom de la colonne (" + object.getNom() + ") n'est pas unique");
 		
 		this.result.recordIfFailed(
-				object.getContenu().size() != object.getNbLignes(),
+				object.getContenu().getContenu().size() != object.getNbLignes(),
 				object,
 				"La colonne (" + object.getNom() + ") n'a pas le nombre d'éléments attendus");
 		
 		if (object.equals(object.getTable().getIdColonne())) {
 			this.result.recordIfFailed(
-					object.getContenu().stream()
-					.noneMatch(c -> object.getContenu().stream()
+					object.getContenu().getContenu().stream()
+					.noneMatch(c -> object.getContenu().getContenu().stream()
 									.filter(c2 -> c.equals(c2))
 									.count()>0),
 					object, 

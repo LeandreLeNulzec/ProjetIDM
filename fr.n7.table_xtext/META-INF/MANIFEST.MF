@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Automatic-Module-Name: myTableLanguage
+Automatic-Module-Name: fr.n7.table_xtext
 Bundle-ManifestVersion: 2
-Bundle-Name: myTableLanguage
+Bundle-Name: fr.n7.table_xtext
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: myTableLanguage; singleton:=true
+Bundle-SymbolicName: fr.n7.table_xtext; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
