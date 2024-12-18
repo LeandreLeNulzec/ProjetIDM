@@ -11,11 +11,9 @@ import org.eclipse.emf.ecore.EObject;
  * Classe utilitaire qui permet surtout de rÃ©cupÃ©rer le nom d'un EObject pour
  * l'afficher de maniÃ¨re <i>user-friendly</i>.
  * 
-<<<<<<< HEAD
  * @author Guillaume Dupont
  * @version 0.1
-=======
->>>>>>> 85930e357d8d27f6770f7dd522f9c3c781e1eb98
+
  */
 public final class Utils {
 	/**

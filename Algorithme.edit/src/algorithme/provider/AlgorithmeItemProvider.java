@@ -62,6 +62,8 @@ public class AlgorithmeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNomPropertyDescriptor(object);
+			addEntreeGlobalePropertyDescriptor(object);
+			addSortieGlobalePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -84,6 +86,50 @@ public class AlgorithmeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Entree Globale feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntreeGlobalePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Algorithme_entreeGlobale_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Algorithme_entreeGlobale_feature", "_UI_Algorithme_type"),
+				 AlgorithmePackage.Literals.ALGORITHME__ENTREE_GLOBALE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sortie Globale feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSortieGlobalePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Algorithme_sortieGlobale_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Algorithme_sortieGlobale_feature", "_UI_Algorithme_type"),
+				 AlgorithmePackage.Literals.ALGORITHME__SORTIE_GLOBALE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

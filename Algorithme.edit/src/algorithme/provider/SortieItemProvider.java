@@ -53,7 +53,6 @@ public class SortieItemProvider extends ItemProviderAdapter implements IEditingD
 
 			addNomPropertyDescriptor(object);
 			addSortieScriptPropertyDescriptor(object);
-			addSortieGlobalePropertyDescriptor(object);
 			addValeurPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -95,28 +94,6 @@ public class SortieItemProvider extends ItemProviderAdapter implements IEditingD
 				 getString("_UI_Sortie_sortieScript_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Sortie_sortieScript_feature", "_UI_Sortie_type"),
 				 AlgorithmePackage.Literals.SORTIE__SORTIE_SCRIPT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Sortie Globale feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSortieGlobalePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Sortie_sortieGlobale_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Sortie_sortieGlobale_feature", "_UI_Sortie_type"),
-				 AlgorithmePackage.Literals.SORTIE__SORTIE_GLOBALE,
 				 true,
 				 false,
 				 true,

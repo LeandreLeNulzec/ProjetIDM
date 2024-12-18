@@ -3,6 +3,10 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="algorithme" nsURI="http://algorithme" nsPrefix="algorithme">
   <eClassifiers xsi:type="ecore:EClass" name="Algorithme">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entreeGlobale" lowerBound="1"
+        upperBound="-1" eType="#//Entree"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sortieGlobale" lowerBound="1"
+        eType="#//Sortie"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="algorithmeElements" upperBound="-1"
         eType="#//AlgorithmeElements" containment="true" eOpposite="#//AlgorithmeElements/algorithme"/>
   </eClassifiers>
@@ -25,12 +29,10 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" defaultValueLiteral="0.0"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entreeScript" lowerBound="1"
         upperBound="-1" eType="ecore:EClass ../Script/script.ecore#//Entree"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entreeGlobale" eType="#//Algorithme"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sortie">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sortieScript" eType="ecore:EClass ../Script/script.ecore#//Sortie"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sortieGlobale" eType="#//Algorithme"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" defaultValueLiteral="0.0"/>
   </eClassifiers>

@@ -157,8 +157,28 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
-	public EReference getAlgorithme_AlgorithmeElements() {
+	public EReference getAlgorithme_EntreeGlobale() {
 		return (EReference)algorithmeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAlgorithme_SortieGlobale() {
+		return (EReference)algorithmeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAlgorithme_AlgorithmeElements() {
+		return (EReference)algorithmeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -267,16 +287,6 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
-	public EReference getEntree_EntreeGlobale() {
-		return (EReference)entreeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getSortie() {
 		return sortieEClass;
 	}
@@ -307,18 +317,8 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
-	public EReference getSortie_SortieGlobale() {
-		return (EReference)sortieEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getSortie_Valeur() {
-		return (EAttribute)sortieEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)sortieEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -372,6 +372,8 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 		// Create classes and their features
 		algorithmeEClass = createEClass(ALGORITHME);
 		createEAttribute(algorithmeEClass, ALGORITHME__NOM);
+		createEReference(algorithmeEClass, ALGORITHME__ENTREE_GLOBALE);
+		createEReference(algorithmeEClass, ALGORITHME__SORTIE_GLOBALE);
 		createEReference(algorithmeEClass, ALGORITHME__ALGORITHME_ELEMENTS);
 
 		algorithmeElementsEClass = createEClass(ALGORITHME_ELEMENTS);
@@ -389,12 +391,10 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 		createEAttribute(entreeEClass, ENTREE__NOM);
 		createEAttribute(entreeEClass, ENTREE__VALEUR);
 		createEReference(entreeEClass, ENTREE__ENTREE_SCRIPT);
-		createEReference(entreeEClass, ENTREE__ENTREE_GLOBALE);
 
 		sortieEClass = createEClass(SORTIE);
 		createEAttribute(sortieEClass, SORTIE__NOM);
 		createEReference(sortieEClass, SORTIE__SORTIE_SCRIPT);
-		createEReference(sortieEClass, SORTIE__SORTIE_GLOBALE);
 		createEAttribute(sortieEClass, SORTIE__VALEUR);
 	}
 
@@ -436,6 +436,8 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 		// Initialize classes, features, and operations; add parameters
 		initEClass(algorithmeEClass, Algorithme.class, "Algorithme", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAlgorithme_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Algorithme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAlgorithme_EntreeGlobale(), this.getEntree(), null, "entreeGlobale", null, 0, 1, Algorithme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAlgorithme_SortieGlobale(), this.getSortie(), null, "sortieGlobale", null, 0, 1, Algorithme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAlgorithme_AlgorithmeElements(), this.getAlgorithmeElements(), this.getAlgorithmeElements_Algorithme(), "algorithmeElements", null, 0, -1, Algorithme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(algorithmeElementsEClass, AlgorithmeElements.class, "AlgorithmeElements", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -453,12 +455,10 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 		initEAttribute(getEntree_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Entree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntree_Valeur(), ecorePackage.getEFloat(), "valeur", "0.0", 0, -1, Entree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntree_EntreeScript(), theScriptPackage.getEntree(), null, "entreeScript", null, 1, -1, Entree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntree_EntreeGlobale(), this.getAlgorithme(), null, "entreeGlobale", null, 0, 1, Entree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sortieEClass, Sortie.class, "Sortie", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSortie_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Sortie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSortie_SortieScript(), theScriptPackage.getSortie(), null, "sortieScript", null, 0, 1, Sortie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSortie_SortieGlobale(), this.getAlgorithme(), null, "sortieGlobale", null, 0, 1, Sortie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSortie_Valeur(), ecorePackage.getEFloat(), "valeur", "0.0", 1, 1, Sortie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

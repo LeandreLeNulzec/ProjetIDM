@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link algorithme.Sortie#getNom <em>Nom</em>}</li>
  *   <li>{@link algorithme.Sortie#getSortieScript <em>Sortie Script</em>}</li>
- *   <li>{@link algorithme.Sortie#getSortieGlobale <em>Sortie Globale</em>}</li>
  *   <li>{@link algorithme.Sortie#getValeur <em>Valeur</em>}</li>
  * </ul>
  *
@@ -69,28 +68,6 @@ public interface Sortie extends EObject {
 	 * @generated
 	 */
 	void setSortieScript(script.Sortie value);
-
-	/**
-	 * Returns the value of the '<em><b>Sortie Globale</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sortie Globale</em>' reference.
-	 * @see #setSortieGlobale(Algorithme)
-	 * @see algorithme.AlgorithmePackage#getSortie_SortieGlobale()
-	 * @model
-	 * @generated
-	 */
-	Algorithme getSortieGlobale();
-
-	/**
-	 * Sets the value of the '{@link algorithme.Sortie#getSortieGlobale <em>Sortie Globale</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sortie Globale</em>' reference.
-	 * @see #getSortieGlobale()
-	 * @generated
-	 */
-	void setSortieGlobale(Algorithme value);
 
 	/**
 	 * Returns the value of the '<em><b>Valeur</b></em>' attribute.
