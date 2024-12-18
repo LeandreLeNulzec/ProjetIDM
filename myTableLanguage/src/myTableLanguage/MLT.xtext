@@ -24,7 +24,7 @@ ColonneProvient : 'cp' nom=ID
 	'contenu' ':' '[' contenu=Contenu ']';
 	
 ColonneDerivee : 'cd' nom=ID
-	'algo' algorithme=STRING
+	'algo' algorithme=Algorithme
 	'entrees' colonnesEntrees+=Colonnes*
 	'type' elementType=ColonneElementType
 	'contrainte' contraintes=Contrainte
@@ -59,4 +59,16 @@ enum Condition :
 	|SuperieurOuEgal='>=';
 
 Contenu : FLOAT*;
+
+Algorithme : 'algorithme' nom = ID '{'
+	algorithmeElements += AlgorithmeElements*
+	'}';
+	
+AlgorithmeElements: Ressources | Documentation;
+
+Ressources : 'Ressources :' chemin=Chemin | script = ID;
+
+Chemin : ('/'ID('.'ID)*)+ ;
+
+Documentation : 'commentaire' texte = STRING;
 

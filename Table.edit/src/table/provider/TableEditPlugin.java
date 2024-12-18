@@ -8,6 +8,8 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import script.provider.ScriptEditPlugin;
+
 /**
  * This is the central singleton for the Table edit plugin.
  * <!-- begin-user-doc -->
@@ -41,6 +43,7 @@ public final class TableEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     AlgorithmeEditPlugin.INSTANCE,
+		     ScriptEditPlugin.INSTANCE,
 		   });
 	}
 

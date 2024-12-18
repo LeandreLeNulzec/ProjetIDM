@@ -161,6 +161,8 @@ import algorithme.provider.AlgorithmeItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
+import script.provider.ScriptItemProviderAdapterFactory;
+
 
 /**
  * This is an example of a Table model editor.
@@ -714,6 +716,7 @@ public class TableEditor
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TableItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AlgorithmeItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ScriptItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
