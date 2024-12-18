@@ -7,10 +7,17 @@
   <foreignModel>Table.ecore</foreignModel>
   <genPackages prefix="Table" disposableProviderFactory="true" ecorePackage="Table.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Table.ecore#//ColonnesElementsType">
-      <genEnumLiterals ecoreEnumLiteral="Table.ecore#//ColonnesElementsType/String"/>
-      <genEnumLiterals ecoreEnumLiteral="Table.ecore#//ColonnesElementsType/Int"/>
       <genEnumLiterals ecoreEnumLiteral="Table.ecore#//ColonnesElementsType/Float"/>
+      <genEnumLiterals ecoreEnumLiteral="Table.ecore#//ColonnesElementsType/Int"/>
+      <genEnumLiterals ecoreEnumLiteral="Table.ecore#//ColonnesElementsType/String"/>
       <genEnumLiterals ecoreEnumLiteral="Table.ecore#//ColonnesElementsType/Bool"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Table.ecore#//Condition">
+      <genEnumLiterals ecoreEnumLiteral="Table.ecore#//Condition/InferieurOuEgal"/>
+      <genEnumLiterals ecoreEnumLiteral="Table.ecore#//Condition/InferieurStrict"/>
+      <genEnumLiterals ecoreEnumLiteral="Table.ecore#//Condition/Egal"/>
+      <genEnumLiterals ecoreEnumLiteral="Table.ecore#//Condition/SuperieurStrict"/>
+      <genEnumLiterals ecoreEnumLiteral="Table.ecore#//Condition/SuperieurOuEgal"/>
     </genEnums>
     <genClasses ecoreClass="Table.ecore#//Table">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table.ecore#//Table/nom"/>
@@ -22,16 +29,45 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Table.ecore#//Colonne/table"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table.ecore#//Colonne/ElementType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Table.ecore#//Colonne/contraintes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table.ecore#//Colonne/nbLignes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Table.ecore#//Colonne/contenu"/>
     </genClasses>
     <genClasses ecoreClass="Table.ecore#//ColonneProvient">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Table.ecore#//ColonneProvient/colonneOrigine"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Table.ecore#//ColonneProvient/tableOrigine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table.ecore#//ColonneProvient/refColonne"/>
     </genClasses>
     <genClasses ecoreClass="Table.ecore#//ColonneDerivee">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Table.ecore#//ColonneDerivee/algorithme"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Table.ecore#//ColonneDerivee/colonnesEntree"/>
     </genClasses>
-    <genClasses ecoreClass="Table.ecore#//Contrainte">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table.ecore#//Contrainte/parametre"/>
+    <genClasses image="false" ecoreClass="Table.ecore#//Contenu"/>
+    <genClasses ecoreClass="Table.ecore#//ContenuFloat">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table.ecore#//ContenuFloat/contenu"/>
+    </genClasses>
+    <genClasses ecoreClass="Table.ecore#//ContenuInt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table.ecore#//ContenuInt/contenu"/>
+    </genClasses>
+    <genClasses ecoreClass="Table.ecore#//ContenuBool">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table.ecore#//ContenuBool/contenu"/>
+    </genClasses>
+    <genClasses ecoreClass="Table.ecore#//ContenuString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table.ecore#//ContenuString/contenu"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Table.ecore#//Contrainte"/>
+    <genClasses ecoreClass="Table.ecore#//Ou">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Table.ecore#//Ou/variables"/>
+    </genClasses>
+    <genClasses ecoreClass="Table.ecore#//Et">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Table.ecore#//Et/variables"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Table.ecore#//Predicat">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table.ecore#//Predicat/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="Table.ecore#//PredicatValeur">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table.ecore#//PredicatValeur/comparant"/>
+    </genClasses>
+    <genClasses ecoreClass="Table.ecore#//PredicatColonne">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Table.ecore#//PredicatColonne/colonneComparante"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

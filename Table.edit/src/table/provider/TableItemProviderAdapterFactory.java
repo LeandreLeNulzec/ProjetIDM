@@ -164,26 +164,187 @@ public class TableItemProviderAdapterFactory extends TableAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link table.Contrainte} instances.
+	 * This keeps track of the one adapter used for all {@link table.ContenuFloat} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContrainteItemProvider contrainteItemProvider;
+	protected ContenuFloatItemProvider contenuFloatItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link table.Contrainte}.
+	 * This creates an adapter for a {@link table.ContenuFloat}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createContrainteAdapter() {
-		if (contrainteItemProvider == null) {
-			contrainteItemProvider = new ContrainteItemProvider(this);
+	public Adapter createContenuFloatAdapter() {
+		if (contenuFloatItemProvider == null) {
+			contenuFloatItemProvider = new ContenuFloatItemProvider(this);
 		}
 
-		return contrainteItemProvider;
+		return contenuFloatItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link table.ContenuInt} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ContenuIntItemProvider contenuIntItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link table.ContenuInt}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createContenuIntAdapter() {
+		if (contenuIntItemProvider == null) {
+			contenuIntItemProvider = new ContenuIntItemProvider(this);
+		}
+
+		return contenuIntItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link table.ContenuBool} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ContenuBoolItemProvider contenuBoolItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link table.ContenuBool}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createContenuBoolAdapter() {
+		if (contenuBoolItemProvider == null) {
+			contenuBoolItemProvider = new ContenuBoolItemProvider(this);
+		}
+
+		return contenuBoolItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link table.ContenuString} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ContenuStringItemProvider contenuStringItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link table.ContenuString}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createContenuStringAdapter() {
+		if (contenuStringItemProvider == null) {
+			contenuStringItemProvider = new ContenuStringItemProvider(this);
+		}
+
+		return contenuStringItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link table.Ou} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OuItemProvider ouItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link table.Ou}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOuAdapter() {
+		if (ouItemProvider == null) {
+			ouItemProvider = new OuItemProvider(this);
+		}
+
+		return ouItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link table.Et} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EtItemProvider etItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link table.Et}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEtAdapter() {
+		if (etItemProvider == null) {
+			etItemProvider = new EtItemProvider(this);
+		}
+
+		return etItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link table.PredicatValeur} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PredicatValeurItemProvider predicatValeurItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link table.PredicatValeur}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPredicatValeurAdapter() {
+		if (predicatValeurItemProvider == null) {
+			predicatValeurItemProvider = new PredicatValeurItemProvider(this);
+		}
+
+		return predicatValeurItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link table.PredicatColonne} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PredicatColonneItemProvider predicatColonneItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link table.PredicatColonne}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPredicatColonneAdapter() {
+		if (predicatColonneItemProvider == null) {
+			predicatColonneItemProvider = new PredicatColonneItemProvider(this);
+		}
+
+		return predicatColonneItemProvider;
 	}
 
 	/**
@@ -295,7 +456,14 @@ public class TableItemProviderAdapterFactory extends TableAdapterFactory impleme
 		if (colonneItemProvider != null) colonneItemProvider.dispose();
 		if (colonneProvientItemProvider != null) colonneProvientItemProvider.dispose();
 		if (colonneDeriveeItemProvider != null) colonneDeriveeItemProvider.dispose();
-		if (contrainteItemProvider != null) contrainteItemProvider.dispose();
+		if (contenuFloatItemProvider != null) contenuFloatItemProvider.dispose();
+		if (contenuIntItemProvider != null) contenuIntItemProvider.dispose();
+		if (contenuBoolItemProvider != null) contenuBoolItemProvider.dispose();
+		if (contenuStringItemProvider != null) contenuStringItemProvider.dispose();
+		if (ouItemProvider != null) ouItemProvider.dispose();
+		if (etItemProvider != null) etItemProvider.dispose();
+		if (predicatValeurItemProvider != null) predicatValeurItemProvider.dispose();
+		if (predicatColonneItemProvider != null) predicatColonneItemProvider.dispose();
 	}
 
 }

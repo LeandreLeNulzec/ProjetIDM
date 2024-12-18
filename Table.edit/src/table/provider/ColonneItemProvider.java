@@ -64,6 +64,8 @@ public class ColonneItemProvider
 			addTablePropertyDescriptor(object);
 			addElementTypePropertyDescriptor(object);
 			addContraintesPropertyDescriptor(object);
+			addNbLignesPropertyDescriptor(object);
+			addContenuPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -157,6 +159,50 @@ public class ColonneItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Nb Lignes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNbLignesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Colonne_nbLignes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Colonne_nbLignes_feature", "_UI_Colonne_type"),
+				 TablePackage.Literals.COLONNE__NB_LIGNES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Contenu feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContenuPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Colonne_contenu_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Colonne_contenu_feature", "_UI_Colonne_type"),
+				 TablePackage.Literals.COLONNE__CONTENU,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Colonne.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,6 +242,7 @@ public class ColonneItemProvider
 		switch (notification.getFeatureID(Colonne.class)) {
 			case TablePackage.COLONNE__NOM:
 			case TablePackage.COLONNE__ELEMENT_TYPE:
+			case TablePackage.COLONNE__NB_LIGNES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

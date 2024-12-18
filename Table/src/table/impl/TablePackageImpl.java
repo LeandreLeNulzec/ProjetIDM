@@ -16,7 +16,18 @@ import table.Colonne;
 import table.ColonneDerivee;
 import table.ColonneProvient;
 import table.ColonnesElementsType;
+import table.Condition;
+import table.Contenu;
+import table.ContenuBool;
+import table.ContenuFloat;
+import table.ContenuInt;
+import table.ContenuString;
 import table.Contrainte;
+import table.Et;
+import table.Ou;
+import table.Predicat;
+import table.PredicatColonne;
+import table.PredicatValeur;
 import table.Table;
 import table.TableFactory;
 import table.TablePackage;
@@ -61,6 +72,41 @@ public class TablePackageImpl extends EPackageImpl implements TablePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass contenuEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass contenuFloatEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass contenuIntEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass contenuBoolEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass contenuStringEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass contrainteEClass = null;
 
 	/**
@@ -68,7 +114,49 @@ public class TablePackageImpl extends EPackageImpl implements TablePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass ouEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass etEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass predicatEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass predicatValeurEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass predicatColonneEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum colonnesElementsTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum conditionEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -229,6 +317,26 @@ public class TablePackageImpl extends EPackageImpl implements TablePackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getColonne_NbLignes() {
+		return (EAttribute)colonneEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getColonne_Contenu() {
+		return (EReference)colonneEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getColonneProvient() {
 		return colonneProvientEClass;
 	}
@@ -239,8 +347,18 @@ public class TablePackageImpl extends EPackageImpl implements TablePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getColonneProvient_ColonneOrigine() {
+	public EReference getColonneProvient_TableOrigine() {
 		return (EReference)colonneProvientEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getColonneProvient_RefColonne() {
+		return (EAttribute)colonneProvientEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -279,6 +397,96 @@ public class TablePackageImpl extends EPackageImpl implements TablePackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getContenu() {
+		return contenuEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getContenuFloat() {
+		return contenuFloatEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContenuFloat_Contenu() {
+		return (EAttribute)contenuFloatEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getContenuInt() {
+		return contenuIntEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContenuInt_Contenu() {
+		return (EAttribute)contenuIntEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getContenuBool() {
+		return contenuBoolEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContenuBool_Contenu() {
+		return (EAttribute)contenuBoolEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getContenuString() {
+		return contenuStringEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContenuString_Contenu() {
+		return (EAttribute)contenuStringEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getContrainte() {
 		return contrainteEClass;
 	}
@@ -289,8 +497,98 @@ public class TablePackageImpl extends EPackageImpl implements TablePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContrainte_Parametre() {
-		return (EAttribute)contrainteEClass.getEStructuralFeatures().get(0);
+	public EClass getOu() {
+		return ouEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getOu_Variables() {
+		return (EReference)ouEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEt() {
+		return etEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEt_Variables() {
+		return (EReference)etEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getPredicat() {
+		return predicatEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPredicat_Condition() {
+		return (EAttribute)predicatEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getPredicatValeur() {
+		return predicatValeurEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPredicatValeur_Comparant() {
+		return (EAttribute)predicatValeurEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getPredicatColonne() {
+		return predicatColonneEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPredicatColonne_ColonneComparante() {
+		return (EReference)predicatColonneEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -301,6 +599,16 @@ public class TablePackageImpl extends EPackageImpl implements TablePackage {
 	@Override
 	public EEnum getColonnesElementsType() {
 		return colonnesElementsTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getCondition() {
+		return conditionEEnum;
 	}
 
 	/**
@@ -342,19 +650,51 @@ public class TablePackageImpl extends EPackageImpl implements TablePackage {
 		createEReference(colonneEClass, COLONNE__TABLE);
 		createEAttribute(colonneEClass, COLONNE__ELEMENT_TYPE);
 		createEReference(colonneEClass, COLONNE__CONTRAINTES);
+		createEAttribute(colonneEClass, COLONNE__NB_LIGNES);
+		createEReference(colonneEClass, COLONNE__CONTENU);
 
 		colonneProvientEClass = createEClass(COLONNE_PROVIENT);
-		createEReference(colonneProvientEClass, COLONNE_PROVIENT__COLONNE_ORIGINE);
+		createEReference(colonneProvientEClass, COLONNE_PROVIENT__TABLE_ORIGINE);
+		createEAttribute(colonneProvientEClass, COLONNE_PROVIENT__REF_COLONNE);
 
 		colonneDeriveeEClass = createEClass(COLONNE_DERIVEE);
 		createEReference(colonneDeriveeEClass, COLONNE_DERIVEE__ALGORITHME);
 		createEReference(colonneDeriveeEClass, COLONNE_DERIVEE__COLONNES_ENTREE);
 
+		contenuEClass = createEClass(CONTENU);
+
+		contenuFloatEClass = createEClass(CONTENU_FLOAT);
+		createEAttribute(contenuFloatEClass, CONTENU_FLOAT__CONTENU);
+
+		contenuIntEClass = createEClass(CONTENU_INT);
+		createEAttribute(contenuIntEClass, CONTENU_INT__CONTENU);
+
+		contenuBoolEClass = createEClass(CONTENU_BOOL);
+		createEAttribute(contenuBoolEClass, CONTENU_BOOL__CONTENU);
+
+		contenuStringEClass = createEClass(CONTENU_STRING);
+		createEAttribute(contenuStringEClass, CONTENU_STRING__CONTENU);
+
 		contrainteEClass = createEClass(CONTRAINTE);
-		createEAttribute(contrainteEClass, CONTRAINTE__PARAMETRE);
+
+		ouEClass = createEClass(OU);
+		createEReference(ouEClass, OU__VARIABLES);
+
+		etEClass = createEClass(ET);
+		createEReference(etEClass, ET__VARIABLES);
+
+		predicatEClass = createEClass(PREDICAT);
+		createEAttribute(predicatEClass, PREDICAT__CONDITION);
+
+		predicatValeurEClass = createEClass(PREDICAT_VALEUR);
+		createEAttribute(predicatValeurEClass, PREDICAT_VALEUR__COMPARANT);
+
+		predicatColonneEClass = createEClass(PREDICAT_COLONNE);
+		createEReference(predicatColonneEClass, PREDICAT_COLONNE__COLONNE_COMPARANTE);
 
 		// Create enums
 		colonnesElementsTypeEEnum = createEEnum(COLONNES_ELEMENTS_TYPE);
+		conditionEEnum = createEEnum(CONDITION);
 	}
 
 	/**
@@ -390,35 +730,82 @@ public class TablePackageImpl extends EPackageImpl implements TablePackage {
 		// Add supertypes to classes
 		colonneProvientEClass.getESuperTypes().add(this.getColonne());
 		colonneDeriveeEClass.getESuperTypes().add(this.getColonne());
+		contenuFloatEClass.getESuperTypes().add(this.getContenu());
+		contenuIntEClass.getESuperTypes().add(this.getContenu());
+		contenuBoolEClass.getESuperTypes().add(this.getContenu());
+		contenuStringEClass.getESuperTypes().add(this.getContenu());
+		ouEClass.getESuperTypes().add(this.getContrainte());
+		etEClass.getESuperTypes().add(this.getContrainte());
+		predicatEClass.getESuperTypes().add(this.getContrainte());
+		predicatValeurEClass.getESuperTypes().add(this.getPredicat());
+		predicatColonneEClass.getESuperTypes().add(this.getPredicat());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTable_Nom(), ecorePackage.getEString(), "nom", "tableSansNom", 1, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTable_Colonnes(), this.getColonne(), this.getColonne_Table(), "colonnes", null, 1, -1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTable_Colonnes(), this.getColonne(), this.getColonne_Table(), "colonnes", null, 0, -1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTable_IdColonne(), this.getColonne(), null, "idColonne", null, 1, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(colonneEClass, Colonne.class, "Colonne", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getColonne_Nom(), ecorePackage.getEString(), "nom", "colonneSansnom", 1, 1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getColonne_Nom(), ecorePackage.getEString(), "nom", "colonneSansNom", 1, 1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getColonne_Table(), this.getTable(), this.getTable_Colonnes(), "table", null, 1, 1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getColonne_ElementType(), this.getColonnesElementsType(), "ElementType", null, 1, 1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getColonne_Contraintes(), this.getContrainte(), null, "contraintes", null, 0, -1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getColonne_Contraintes(), this.getContrainte(), null, "contraintes", null, 0, 1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getColonne_NbLignes(), ecorePackage.getEInt(), "nbLignes", null, 1, 1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getColonne_Contenu(), this.getContenu(), null, "contenu", null, 0, -1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(colonneProvientEClass, ColonneProvient.class, "ColonneProvient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getColonneProvient_ColonneOrigine(), this.getColonne(), null, "colonneOrigine", null, 1, 1, ColonneProvient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getColonneProvient_TableOrigine(), this.getTable(), null, "tableOrigine", null, 1, 1, ColonneProvient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getColonneProvient_RefColonne(), ecorePackage.getEString(), "refColonne", null, 1, 1, ColonneProvient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(colonneDeriveeEClass, ColonneDerivee.class, "ColonneDerivee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getColonneDerivee_Algorithme(), theAlgorithmePackage.getAlgorithme(), null, "algorithme", null, 1, 1, ColonneDerivee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getColonneDerivee_ColonnesEntree(), this.getColonne(), null, "colonnesEntree", null, 0, -1, ColonneDerivee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(contrainteEClass, Contrainte.class, "Contrainte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContrainte_Parametre(), this.getColonnesElementsType(), "parametre", null, 1, 1, Contrainte.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(contenuEClass, Contenu.class, "Contenu", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(contenuFloatEClass, ContenuFloat.class, "ContenuFloat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getContenuFloat_Contenu(), ecorePackage.getEFloat(), "contenu", null, 0, -1, ContenuFloat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(contenuIntEClass, ContenuInt.class, "ContenuInt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getContenuInt_Contenu(), ecorePackage.getEInt(), "contenu", null, 0, -1, ContenuInt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(contenuBoolEClass, ContenuBool.class, "ContenuBool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getContenuBool_Contenu(), ecorePackage.getEBoolean(), "contenu", null, 0, -1, ContenuBool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(contenuStringEClass, ContenuString.class, "ContenuString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getContenuString_Contenu(), ecorePackage.getEString(), "contenu", null, 0, -1, ContenuString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(contrainteEClass, Contrainte.class, "Contrainte", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(ouEClass, Ou.class, "Ou", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOu_Variables(), this.getContrainte(), null, "variables", null, 2, -1, Ou.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(etEClass, Et.class, "Et", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEt_Variables(), this.getContrainte(), null, "variables", null, 2, -1, Et.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(predicatEClass, Predicat.class, "Predicat", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPredicat_Condition(), this.getCondition(), "condition", null, 1, 1, Predicat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(predicatValeurEClass, PredicatValeur.class, "PredicatValeur", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPredicatValeur_Comparant(), ecorePackage.getEFloat(), "comparant", null, 1, 1, PredicatValeur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(predicatColonneEClass, PredicatColonne.class, "PredicatColonne", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPredicatColonne_ColonneComparante(), this.getColonne(), null, "colonneComparante", null, 1, 1, PredicatColonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(colonnesElementsTypeEEnum, ColonnesElementsType.class, "ColonnesElementsType");
-		addEEnumLiteral(colonnesElementsTypeEEnum, ColonnesElementsType.STRING);
-		addEEnumLiteral(colonnesElementsTypeEEnum, ColonnesElementsType.INT);
 		addEEnumLiteral(colonnesElementsTypeEEnum, ColonnesElementsType.FLOAT);
+		addEEnumLiteral(colonnesElementsTypeEEnum, ColonnesElementsType.INT);
+		addEEnumLiteral(colonnesElementsTypeEEnum, ColonnesElementsType.STRING);
 		addEEnumLiteral(colonnesElementsTypeEEnum, ColonnesElementsType.BOOL);
+
+		initEEnum(conditionEEnum, Condition.class, "Condition");
+		addEEnumLiteral(conditionEEnum, Condition.INFERIEUR_OU_EGAL);
+		addEEnumLiteral(conditionEEnum, Condition.INFERIEUR_STRICT);
+		addEEnumLiteral(conditionEEnum, Condition.EGAL);
+		addEEnumLiteral(conditionEEnum, Condition.SUPERIEUR_STRICT);
+		addEEnumLiteral(conditionEEnum, Condition.SUPERIEUR_OU_EGAL);
 
 		// Create resource
 		createResource(eNS_URI);

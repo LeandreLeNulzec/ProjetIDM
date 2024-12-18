@@ -61,7 +61,14 @@ public class TableFactoryImpl extends EFactoryImpl implements TableFactory {
 			case TablePackage.COLONNE: return createColonne();
 			case TablePackage.COLONNE_PROVIENT: return createColonneProvient();
 			case TablePackage.COLONNE_DERIVEE: return createColonneDerivee();
-			case TablePackage.CONTRAINTE: return createContrainte();
+			case TablePackage.CONTENU_FLOAT: return createContenuFloat();
+			case TablePackage.CONTENU_INT: return createContenuInt();
+			case TablePackage.CONTENU_BOOL: return createContenuBool();
+			case TablePackage.CONTENU_STRING: return createContenuString();
+			case TablePackage.OU: return createOu();
+			case TablePackage.ET: return createEt();
+			case TablePackage.PREDICAT_VALEUR: return createPredicatValeur();
+			case TablePackage.PREDICAT_COLONNE: return createPredicatColonne();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -77,6 +84,8 @@ public class TableFactoryImpl extends EFactoryImpl implements TableFactory {
 		switch (eDataType.getClassifierID()) {
 			case TablePackage.COLONNES_ELEMENTS_TYPE:
 				return createColonnesElementsTypeFromString(eDataType, initialValue);
+			case TablePackage.CONDITION:
+				return createConditionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -92,6 +101,8 @@ public class TableFactoryImpl extends EFactoryImpl implements TableFactory {
 		switch (eDataType.getClassifierID()) {
 			case TablePackage.COLONNES_ELEMENTS_TYPE:
 				return convertColonnesElementsTypeToString(eDataType, instanceValue);
+			case TablePackage.CONDITION:
+				return convertConditionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -147,9 +158,86 @@ public class TableFactoryImpl extends EFactoryImpl implements TableFactory {
 	 * @generated
 	 */
 	@Override
-	public Contrainte createContrainte() {
-		ContrainteImpl contrainte = new ContrainteImpl();
-		return contrainte;
+	public ContenuFloat createContenuFloat() {
+		ContenuFloatImpl contenuFloat = new ContenuFloatImpl();
+		return contenuFloat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ContenuInt createContenuInt() {
+		ContenuIntImpl contenuInt = new ContenuIntImpl();
+		return contenuInt;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ContenuBool createContenuBool() {
+		ContenuBoolImpl contenuBool = new ContenuBoolImpl();
+		return contenuBool;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ContenuString createContenuString() {
+		ContenuStringImpl contenuString = new ContenuStringImpl();
+		return contenuString;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Ou createOu() {
+		OuImpl ou = new OuImpl();
+		return ou;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Et createEt() {
+		EtImpl et = new EtImpl();
+		return et;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PredicatValeur createPredicatValeur() {
+		PredicatValeurImpl predicatValeur = new PredicatValeurImpl();
+		return predicatValeur;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PredicatColonne createPredicatColonne() {
+		PredicatColonneImpl predicatColonne = new PredicatColonneImpl();
+		return predicatColonne;
 	}
 
 	/**
@@ -169,6 +257,26 @@ public class TableFactoryImpl extends EFactoryImpl implements TableFactory {
 	 * @generated
 	 */
 	public String convertColonnesElementsTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Condition createConditionFromString(EDataType eDataType, String initialValue) {
+		Condition result = Condition.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertConditionToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

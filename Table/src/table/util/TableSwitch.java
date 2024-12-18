@@ -92,9 +92,80 @@ public class TableSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TablePackage.CONTENU: {
+				Contenu contenu = (Contenu)theEObject;
+				T result = caseContenu(contenu);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TablePackage.CONTENU_FLOAT: {
+				ContenuFloat contenuFloat = (ContenuFloat)theEObject;
+				T result = caseContenuFloat(contenuFloat);
+				if (result == null) result = caseContenu(contenuFloat);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TablePackage.CONTENU_INT: {
+				ContenuInt contenuInt = (ContenuInt)theEObject;
+				T result = caseContenuInt(contenuInt);
+				if (result == null) result = caseContenu(contenuInt);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TablePackage.CONTENU_BOOL: {
+				ContenuBool contenuBool = (ContenuBool)theEObject;
+				T result = caseContenuBool(contenuBool);
+				if (result == null) result = caseContenu(contenuBool);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TablePackage.CONTENU_STRING: {
+				ContenuString contenuString = (ContenuString)theEObject;
+				T result = caseContenuString(contenuString);
+				if (result == null) result = caseContenu(contenuString);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case TablePackage.CONTRAINTE: {
 				Contrainte contrainte = (Contrainte)theEObject;
 				T result = caseContrainte(contrainte);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TablePackage.OU: {
+				Ou ou = (Ou)theEObject;
+				T result = caseOu(ou);
+				if (result == null) result = caseContrainte(ou);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TablePackage.ET: {
+				Et et = (Et)theEObject;
+				T result = caseEt(et);
+				if (result == null) result = caseContrainte(et);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TablePackage.PREDICAT: {
+				Predicat predicat = (Predicat)theEObject;
+				T result = casePredicat(predicat);
+				if (result == null) result = caseContrainte(predicat);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TablePackage.PREDICAT_VALEUR: {
+				PredicatValeur predicatValeur = (PredicatValeur)theEObject;
+				T result = casePredicatValeur(predicatValeur);
+				if (result == null) result = casePredicat(predicatValeur);
+				if (result == null) result = caseContrainte(predicatValeur);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TablePackage.PREDICAT_COLONNE: {
+				PredicatColonne predicatColonne = (PredicatColonne)theEObject;
+				T result = casePredicatColonne(predicatColonne);
+				if (result == null) result = casePredicat(predicatColonne);
+				if (result == null) result = caseContrainte(predicatColonne);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -163,6 +234,81 @@ public class TableSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Contenu</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Contenu</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContenu(Contenu object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Contenu Float</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Contenu Float</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContenuFloat(ContenuFloat object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Contenu Int</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Contenu Int</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContenuInt(ContenuInt object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Contenu Bool</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Contenu Bool</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContenuBool(ContenuBool object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Contenu String</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Contenu String</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContenuString(ContenuString object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Contrainte</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -174,6 +320,81 @@ public class TableSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseContrainte(Contrainte object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ou</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ou</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOu(Ou object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Et</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Et</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEt(Et object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Predicat</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Predicat</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePredicat(Predicat object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Predicat Valeur</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Predicat Valeur</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePredicatValeur(PredicatValeur object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Predicat Colonne</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Predicat Colonne</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePredicatColonne(PredicatColonne object) {
 		return null;
 	}
 

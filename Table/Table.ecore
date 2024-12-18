@@ -4,30 +4,34 @@
   <eClassifiers xsi:type="ecore:EClass" name="Table">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="tableSansNom"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="colonnes" lowerBound="1"
-        upperBound="-1" eType="#//Colonne" eOpposite="#//Colonne/table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonnes" upperBound="-1"
+        eType="#//Colonne" eOpposite="#//Colonne/table"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="idColonne" lowerBound="1"
         eType="#//Colonne"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ColonnesElementsType">
-    <eLiterals name="String"/>
+    <eLiterals name="Float"/>
     <eLiterals name="Int" value="1"/>
-    <eLiterals name="Float" value="2"/>
+    <eLiterals name="String" value="2"/>
     <eLiterals name="Bool" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Colonne">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="colonneSansnom"/>
+        defaultValueLiteral="colonneSansNom" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"
         eOpposite="#//Table/colonnes"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ElementType" lowerBound="1"
         eType="#//ColonnesElementsType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contraintes" upperBound="-1"
-        eType="#//Contrainte"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contraintes" eType="#//Contrainte"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbLignes" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contenu" eType="#//Contenu"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColonneProvient" eSuperTypes="#//Colonne">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="colonneOrigine" lowerBound="1"
-        eType="#//Colonne"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableOrigine" lowerBound="1"
+        eType="#//Table"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refColonne" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColonneDerivee" eSuperTypes="#//Colonne">
     <eStructuralFeatures xsi:type="ecore:EReference" name="algorithme" lowerBound="1"
@@ -35,8 +39,49 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="colonnesEntree" upperBound="-1"
         eType="#//Colonne"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Contrainte">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parametre" lowerBound="1"
-        eType="#//ColonnesElementsType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Contenu" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ContenuFloat" eSuperTypes="#//Contenu">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contenu" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContenuInt" eSuperTypes="#//Contenu">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contenu" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContenuBool" eSuperTypes="#//Contenu">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contenu" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContenuString" eSuperTypes="#//Contenu">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contenu" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Contrainte" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Ou" eSuperTypes="#//Contrainte">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" lowerBound="2"
+        upperBound="-1" eType="#//Contrainte"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Et" eSuperTypes="#//Contrainte">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" lowerBound="2"
+        upperBound="-1" eType="#//Contrainte"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Predicat" abstract="true" eSuperTypes="#//Contrainte">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" lowerBound="1"
+        eType="#//Condition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PredicatValeur" eSuperTypes="#//Predicat">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comparant" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PredicatColonne" eSuperTypes="#//Predicat">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonneComparante" lowerBound="1"
+        eType="#//Colonne"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Condition">
+    <eLiterals name="InferieurOuEgal"/>
+    <eLiterals name="InferieurStrict" value="1"/>
+    <eLiterals name="Egal" value="2"/>
+    <eLiterals name="SuperieurStrict" value="3"/>
+    <eLiterals name="SuperieurOuEgal" value="4"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link table.Colonne#getTable <em>Table</em>}</li>
  *   <li>{@link table.Colonne#getElementType <em>Element Type</em>}</li>
  *   <li>{@link table.Colonne#getContraintes <em>Contraintes</em>}</li>
+ *   <li>{@link table.Colonne#getNbLignes <em>Nb Lignes</em>}</li>
+ *   <li>{@link table.Colonne#getContenu <em>Contenu</em>}</li>
  * </ul>
  *
  * @see table.TablePackage#getColonne()
@@ -28,13 +30,13 @@ import org.eclipse.emf.ecore.EObject;
 public interface Colonne extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
-	 * The default value is <code>"colonneSansnom"</code>.
+	 * The default value is <code>"colonneSansNom"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nom</em>' attribute.
 	 * @see #setNom(String)
 	 * @see table.TablePackage#getColonne_Nom()
-	 * @model default="colonneSansnom" required="true"
+	 * @model default="colonneSansNom" id="true" required="true"
 	 * @generated
 	 */
 	String getNom();
@@ -99,15 +101,59 @@ public interface Colonne extends EObject {
 	void setElementType(ColonnesElementsType value);
 
 	/**
-	 * Returns the value of the '<em><b>Contraintes</b></em>' reference list.
-	 * The list contents are of type {@link table.Contrainte}.
+	 * Returns the value of the '<em><b>Contraintes</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contraintes</em>' reference list.
+	 * @return the value of the '<em>Contraintes</em>' reference.
+	 * @see #setContraintes(Contrainte)
 	 * @see table.TablePackage#getColonne_Contraintes()
 	 * @model
 	 * @generated
 	 */
-	EList<Contrainte> getContraintes();
+	Contrainte getContraintes();
+
+	/**
+	 * Sets the value of the '{@link table.Colonne#getContraintes <em>Contraintes</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Contraintes</em>' reference.
+	 * @see #getContraintes()
+	 * @generated
+	 */
+	void setContraintes(Contrainte value);
+
+	/**
+	 * Returns the value of the '<em><b>Nb Lignes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nb Lignes</em>' attribute.
+	 * @see #setNbLignes(int)
+	 * @see table.TablePackage#getColonne_NbLignes()
+	 * @model required="true"
+	 * @generated
+	 */
+	int getNbLignes();
+
+	/**
+	 * Sets the value of the '{@link table.Colonne#getNbLignes <em>Nb Lignes</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Nb Lignes</em>' attribute.
+	 * @see #getNbLignes()
+	 * @generated
+	 */
+	void setNbLignes(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Contenu</b></em>' reference list.
+	 * The list contents are of type {@link table.Contenu}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contenu</em>' reference list.
+	 * @see table.TablePackage#getColonne_Contenu()
+	 * @model
+	 * @generated
+	 */
+	EList<Contenu> getContenu();
 
 } // Colonne
