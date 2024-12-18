@@ -5,7 +5,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="tableSansNom"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="colonnes" upperBound="-1"
-        eType="#//Colonne" eOpposite="#//Colonne/table"/>
+        eType="#//Colonne" containment="true" eOpposite="#//Colonne/table"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="idColonne" lowerBound="1"
         eType="#//Colonne"/>
   </eClassifiers>
@@ -25,7 +25,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="contraintes" eType="#//Contrainte"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbLignes" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contenu" eType="#//Contenu"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contenu" eType="#//Contenu"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColonneProvient" eSuperTypes="#//Colonne">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tableOrigine" lowerBound="1"
