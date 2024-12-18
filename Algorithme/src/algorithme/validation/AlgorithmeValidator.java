@@ -81,7 +81,7 @@ public class AlgorithmeValidator extends AlgorithmeSwitch<Boolean>{
 	 * vers les classes parentes, le cas échéant)
 	 */
 	@Override
-<<<<<<< HEAD
+
 	public Boolean caseRessources(algorithme.Ressources object) {
 		// Contraintes sur Ressources
 		//il y a soit le chemin du fichier importé soit le lien vers le script voulu
@@ -89,40 +89,30 @@ public class AlgorithmeValidator extends AlgorithmeSwitch<Boolean>{
 				!(object.getChemin() == null && object.getScript() == null),
 				object,
 				"Le chemin de la ressource est nul et il n'y a pas de script.");
-=======
-	public Boolean caseEntree(algorithme.Entree object) {
-		// Contraintes sur entrée
-		this.result.recordIfFailed(
-				object.getNom() != null && object.getNom().matches(IDENT_REGEX), 
-				object, 
-				"Le nom de l'entrée ne respecte pas les conventions Java");
-		
-		this.result.recordIfFailed(
-				object.getEntreeScript() != null && object.getEntreeGlobale() != null, 
-				object, 
-				"L'entrée ne peut pas avoir simultanément une entrée de type entrée et une entrée globale.");
->>>>>>> 85930e357d8d27f6770f7dd522f9c3c781e1eb98
 		return null;
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Méthode appelée lorsque l'objet visité est une entrée.
-=======
 	 * Méthode appelée lorsque l'objet visité est une Sortie.
->>>>>>> 85930e357d8d27f6770f7dd522f9c3c781e1eb98
 	 * @param object élément visité
 	 * @return résultat de validation (null ici, ce qui permet de poursuivre la visite
 	 * vers les classes parentes, le cas échéant)
 	 */
 	@Override
-<<<<<<< HEAD
+
 	public Boolean caseEntree(algorithme.Entree object) {
 		//il y a au moins un port d'entrée
 		this.result.recordIfFailed(
 				object.getValeur() != null,
 				object,
 				"Il y n'y a pas d'entrée");
+		
+		this.result.recordIfFailed(
+				object.getNom() != null && object.getNom().matches(IDENT_REGEX), 
+				object, 
+				"Le nom de l'entrée ne respecte pas les conventions Java");
+		
 		return null;
 	}
 	
@@ -141,7 +131,7 @@ public class AlgorithmeValidator extends AlgorithmeSwitch<Boolean>{
 				"Cette documentation n'as pas de text");
 		return null;
 	}
-=======
+	
 	public Boolean caseSortie(algorithme.Sortie object) {
 		// Contraintes sur entrée
 		this.result.recordIfFailed(
@@ -152,7 +142,6 @@ public class AlgorithmeValidator extends AlgorithmeSwitch<Boolean>{
 		return null;
 	}
 	
->>>>>>> 85930e357d8d27f6770f7dd522f9c3c781e1eb98
 	
 
 	/**
