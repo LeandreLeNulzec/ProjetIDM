@@ -10,12 +10,8 @@ import algorithme.Script;
 import algorithme.Port;
 import algorithme.Entree;
 import algorithme.Sortie;
-import algorithme.Argument;
-import algorithme.PortEntree;
-import algorithme.PortSortie;
 import algorithme.AlgorithmeElements;
 import algorithme.util.AlgorithmeSwitch;
-import simplepdl.ProcessElement;
 
 /**
  * Réalise la validation d'un EObject issu de Algorithme.
@@ -25,7 +21,7 @@ import simplepdl.ProcessElement;
  */
 public class AlgorithmeValidator extends AlgorithmeSwitch<Boolean>{
 	/**
-	 * Expression réguliÃ¨re qui correspond Ã  un identifiant bien formé.
+	 * Expression régulière qui correspond Ã  un identifiant bien formé.
 	 */
 	private static final String IDENT_REGEX = "^[A-Za-z_][A-Za-z0-9_]*$";
 	
@@ -72,7 +68,7 @@ public class AlgorithmeValidator extends AlgorithmeSwitch<Boolean>{
 				"Le nom de l'algorithme ne respecte pas les conventions Java");
 		
 		// Visite
-		for (AlgorithmeElements ae : object.getAtoAE()) {
+		for (AlgorithmeElements ae : object.getAlgorithmeElements()) {
 			this.doSwitch(ae);
 		}
 		
@@ -81,34 +77,44 @@ public class AlgorithmeValidator extends AlgorithmeSwitch<Boolean>{
 	
 	
 	/**
-	 * Méthode appelée lorsque l'objet visité est une Ressource.
+	 * Méthode appelée lorsque l'objet visité est une Entrée.
 	 * @param object élément visité
 	 * @return résultat de validation (null ici, ce qui permet de poursuivre la visite
 	 * vers les classes parentes, le cas échéant)
 	 */
 	@Override
-	public Boolean caseRessources(algorithme.Ressources object) {
-		// Contraintes sur Ressources
-		//le chemin de la ressource est non nul
+	public Boolean caseEntree(algorithme.Entree object) {
+		// Contraintes sur entrée
 		this.result.recordIfFailed(
-				object.getChemin() != null, object,
-				"Le chemin de la ressource est nul.");
+				object.getNom() != null && object.getNom().matches(IDENT_REGEX), 
+				object, 
+				"Le nom de l'entrée ne respecte pas les conventions Java");
+		
+		this.result.recordIfFailed(
+				object.getEntreeScript() != null && object.getEntreeGlobale() != null, 
+				object, 
+				"L'entrée ne peut pas avoir simultanément une entrée de type entrée et une entrée globale.");
 		return null;
 	}
 
-	
 	/**
-	 * Méthode appelée lorsque l'objet visité est un Port d'entrée.
+	 * Méthode appelée lorsque l'objet visité est une Sortie.
 	 * @param object élément visité
 	 * @return résultat de validation (null ici, ce qui permet de poursuivre la visite
 	 * vers les classes parentes, le cas échéant)
 	 */
 	@Override
-	public Boolean casePortEntree(algorithme.PortEntree object) {
-		//il y a au moins un port d'entrée
+	public Boolean caseSortie(algorithme.Sortie object) {
+		// Contraintes sur entrée
+		this.result.recordIfFailed(
+				object.getNom() != null && object.getNom().matches(IDENT_REGEX), 
+				object, 
+				"Le nom de la sortie ne respecte pas les conventions Java");
 		
 		return null;
 	}
+	
+	
 
 	/**
 	 * Cas par défaut, lorsque l'objet visité ne correspond pas Ã  un des autres cas.
