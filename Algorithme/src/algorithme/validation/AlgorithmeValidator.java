@@ -3,19 +3,13 @@ package algorithme.validation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
-import algorithme.Guidance;
 import algorithme.Ressources;
 import algorithme.AlgorithmePackage;
-import algorithme.Script;
 import algorithme.Port;
 import algorithme.Entree;
 import algorithme.Sortie;
-import algorithme.Argument;
-import algorithme.PortEntree;
-import algorithme.PortSortie;
 import algorithme.AlgorithmeElements;
 import algorithme.util.AlgorithmeSwitch;
-import simplepdl.ProcessElement;
 
 /**
  * Réalise la validation d'un EObject issu de Algorithme.
@@ -72,7 +66,7 @@ public class AlgorithmeValidator extends AlgorithmeSwitch<Boolean>{
 				"Le nom de l'algorithme ne respecte pas les conventions Java");
 		
 		// Visite
-		for (AlgorithmeElements ae : object.getAtoAE()) {
+		for (AlgorithmeElements ae : object.getAlgorithmeElements()) {
 			this.doSwitch(ae);
 		}
 		
@@ -89,26 +83,47 @@ public class AlgorithmeValidator extends AlgorithmeSwitch<Boolean>{
 	@Override
 	public Boolean caseRessources(algorithme.Ressources object) {
 		// Contraintes sur Ressources
-		//le chemin de la ressource est non nul
+		//il y a soit le chemin du fichier importé soit le lien vers le script voulu
 		this.result.recordIfFailed(
-				object.getChemin() != null, object,
-				"Le chemin de la ressource est nul.");
+				!(object.getChemin() == null && object.getScript() == null),
+				object,
+				"Le chemin de la ressource est nul et il n'y a pas de script.");
 		return null;
 	}
 
 	
 	/**
-	 * Méthode appelée lorsque l'objet visité est un Port d'entrée.
+	 * Méthode appelée lorsque l'objet visité est une entrée.
 	 * @param object élément visité
 	 * @return résultat de validation (null ici, ce qui permet de poursuivre la visite
 	 * vers les classes parentes, le cas échéant)
 	 */
 	@Override
-	public Boolean casePortEntree(algorithme.PortEntree object) {
+	public Boolean caseEntree(algorithme.Entree object) {
 		//il y a au moins un port d'entrée
-		
+		this.result.recordIfFailed(
+				object.getValeur() != null,
+				object,
+				"Il y n'y a pas d'entrée");
 		return null;
 	}
+	
+	/**
+	 * Méthode appelée lorsque l'objet visité est une Documentation.
+	 * @param object élément visité
+	 * @return résultat de validation (null ici, ce qui permet de poursuivre la visite
+	 * vers les classes parentes, le cas échéant)
+	 */
+	@Override
+	public Boolean caseDocumentation(algorithme.Documentation object) {	
+		// Contraintes sur la Documentation
+		this.result.recordIfFailed(
+				object.getTexte().isEmpty(),
+				object,
+				"Cette documentation n'as pas de text");
+		return null;
+	}
+	
 
 	/**
 	 * Cas par défaut, lorsque l'objet visité ne correspond pas Ã  un des autres cas.
