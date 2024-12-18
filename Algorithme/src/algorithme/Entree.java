@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link algorithme.Entree#getNom <em>Nom</em>}</li>
  *   <li>{@link algorithme.Entree#getValeur <em>Valeur</em>}</li>
  *   <li>{@link algorithme.Entree#getEntreeScript <em>Entree Script</em>}</li>
- *   <li>{@link algorithme.Entree#getEntreeGlobale <em>Entree Globale</em>}</li>
  * </ul>
  *
  * @see algorithme.AlgorithmePackage#getEntree()
@@ -70,27 +69,5 @@ public interface Entree extends EObject {
 	 * @generated
 	 */
 	EList<script.Entree> getEntreeScript();
-
-	/**
-	 * Returns the value of the '<em><b>Entree Globale</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entree Globale</em>' reference.
-	 * @see #setEntreeGlobale(Algorithme)
-	 * @see algorithme.AlgorithmePackage#getEntree_EntreeGlobale()
-	 * @model
-	 * @generated
-	 */
-	Algorithme getEntreeGlobale();
-
-	/**
-	 * Sets the value of the '{@link algorithme.Entree#getEntreeGlobale <em>Entree Globale</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Entree Globale</em>' reference.
-	 * @see #getEntreeGlobale()
-	 * @generated
-	 */
-	void setEntreeGlobale(Algorithme value);
 
 } // Entree

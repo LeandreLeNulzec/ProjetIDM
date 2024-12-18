@@ -63,7 +63,6 @@ public class EntreeItemProvider
 			addNomPropertyDescriptor(object);
 			addValeurPropertyDescriptor(object);
 			addEntreeScriptPropertyDescriptor(object);
-			addEntreeGlobalePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -126,28 +125,6 @@ public class EntreeItemProvider
 				 getString("_UI_Entree_entreeScript_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Entree_entreeScript_feature", "_UI_Entree_type"),
 				 AlgorithmePackage.Literals.ENTREE__ENTREE_SCRIPT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Entree Globale feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEntreeGlobalePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Entree_entreeGlobale_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entree_entreeGlobale_feature", "_UI_Entree_type"),
-				 AlgorithmePackage.Literals.ENTREE__ENTREE_GLOBALE,
 				 true,
 				 false,
 				 true,

@@ -2,7 +2,6 @@
  */
 package algorithme.impl;
 
-import algorithme.Algorithme;
 import algorithme.AlgorithmePackage;
 import algorithme.Entree;
 import java.util.Collection;
@@ -10,8 +9,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
@@ -28,7 +25,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link algorithme.impl.EntreeImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link algorithme.impl.EntreeImpl#getValeur <em>Valeur</em>}</li>
  *   <li>{@link algorithme.impl.EntreeImpl#getEntreeScript <em>Entree Script</em>}</li>
- *   <li>{@link algorithme.impl.EntreeImpl#getEntreeGlobale <em>Entree Globale</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,16 +69,6 @@ public class EntreeImpl extends MinimalEObjectImpl.Container implements Entree {
 	 * @ordered
 	 */
 	protected EList<script.Entree> entreeScript;
-
-	/**
-	 * The cached value of the '{@link #getEntreeGlobale() <em>Entree Globale</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntreeGlobale()
-	 * @generated
-	 * @ordered
-	 */
-	protected Algorithme entreeGlobale;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,46 +144,6 @@ public class EntreeImpl extends MinimalEObjectImpl.Container implements Entree {
 	 * @generated
 	 */
 	@Override
-	public Algorithme getEntreeGlobale() {
-		if (entreeGlobale != null && entreeGlobale.eIsProxy()) {
-			InternalEObject oldEntreeGlobale = (InternalEObject)entreeGlobale;
-			entreeGlobale = (Algorithme)eResolveProxy(oldEntreeGlobale);
-			if (entreeGlobale != oldEntreeGlobale) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.ENTREE__ENTREE_GLOBALE, oldEntreeGlobale, entreeGlobale));
-			}
-		}
-		return entreeGlobale;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Algorithme basicGetEntreeGlobale() {
-		return entreeGlobale;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setEntreeGlobale(Algorithme newEntreeGlobale) {
-		Algorithme oldEntreeGlobale = entreeGlobale;
-		entreeGlobale = newEntreeGlobale;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.ENTREE__ENTREE_GLOBALE, oldEntreeGlobale, entreeGlobale));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AlgorithmePackage.ENTREE__NOM:
@@ -206,9 +152,6 @@ public class EntreeImpl extends MinimalEObjectImpl.Container implements Entree {
 				return getValeur();
 			case AlgorithmePackage.ENTREE__ENTREE_SCRIPT:
 				return getEntreeScript();
-			case AlgorithmePackage.ENTREE__ENTREE_GLOBALE:
-				if (resolve) return getEntreeGlobale();
-				return basicGetEntreeGlobale();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -233,9 +176,6 @@ public class EntreeImpl extends MinimalEObjectImpl.Container implements Entree {
 				getEntreeScript().clear();
 				getEntreeScript().addAll((Collection<? extends script.Entree>)newValue);
 				return;
-			case AlgorithmePackage.ENTREE__ENTREE_GLOBALE:
-				setEntreeGlobale((Algorithme)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -257,9 +197,6 @@ public class EntreeImpl extends MinimalEObjectImpl.Container implements Entree {
 			case AlgorithmePackage.ENTREE__ENTREE_SCRIPT:
 				getEntreeScript().clear();
 				return;
-			case AlgorithmePackage.ENTREE__ENTREE_GLOBALE:
-				setEntreeGlobale((Algorithme)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -278,8 +215,6 @@ public class EntreeImpl extends MinimalEObjectImpl.Container implements Entree {
 				return valeur != null && !valeur.isEmpty();
 			case AlgorithmePackage.ENTREE__ENTREE_SCRIPT:
 				return entreeScript != null && !entreeScript.isEmpty();
-			case AlgorithmePackage.ENTREE__ENTREE_GLOBALE:
-				return entreeGlobale != null;
 		}
 		return super.eIsSet(featureID);
 	}

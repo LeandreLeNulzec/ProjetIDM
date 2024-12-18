@@ -48,6 +48,9 @@ public class ValidateAlgorithme {
 	private static void afficherResultat(ValidationResult resultat) {
 		afficherErreurs("- Algorithme", resultat.getRecordedErrorsFor(AlgorithmePackage.ALGORITHME));
 		afficherErreurs("- Ressources", resultat.getRecordedErrorsFor(AlgorithmePackage.RESSOURCES));
+		afficherErreurs("- Entree", resultat.getRecordedErrorsFor(AlgorithmePackage.ENTREE));
+		afficherErreurs("- Sortie", resultat.getRecordedErrorsFor(AlgorithmePackage.SORTIE));
+		afficherErreurs("- Documentation", resultat.getRecordedErrorsFor(AlgorithmePackage.DOCUMENTATION));
 	}
 
 	/**

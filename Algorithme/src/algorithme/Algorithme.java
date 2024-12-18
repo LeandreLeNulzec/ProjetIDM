@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link algorithme.Algorithme#getNom <em>Nom</em>}</li>
+ *   <li>{@link algorithme.Algorithme#getEntreeGlobale <em>Entree Globale</em>}</li>
+ *   <li>{@link algorithme.Algorithme#getSortieGlobale <em>Sortie Globale</em>}</li>
  *   <li>{@link algorithme.Algorithme#getAlgorithmeElements <em>Algorithme Elements</em>}</li>
  * </ul>
  *
@@ -45,6 +47,50 @@ public interface Algorithme extends EObject {
 	 * @generated
 	 */
 	void setNom(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Entree Globale</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Entree Globale</em>' reference.
+	 * @see #setEntreeGlobale(Entree)
+	 * @see algorithme.AlgorithmePackage#getAlgorithme_EntreeGlobale()
+	 * @model
+	 * @generated
+	 */
+	Entree getEntreeGlobale();
+
+	/**
+	 * Sets the value of the '{@link algorithme.Algorithme#getEntreeGlobale <em>Entree Globale</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Entree Globale</em>' reference.
+	 * @see #getEntreeGlobale()
+	 * @generated
+	 */
+	void setEntreeGlobale(Entree value);
+
+	/**
+	 * Returns the value of the '<em><b>Sortie Globale</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sortie Globale</em>' reference.
+	 * @see #setSortieGlobale(Sortie)
+	 * @see algorithme.AlgorithmePackage#getAlgorithme_SortieGlobale()
+	 * @model
+	 * @generated
+	 */
+	Sortie getSortieGlobale();
+
+	/**
+	 * Sets the value of the '{@link algorithme.Algorithme#getSortieGlobale <em>Sortie Globale</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sortie Globale</em>' reference.
+	 * @see #getSortieGlobale()
+	 * @generated
+	 */
+	void setSortieGlobale(Sortie value);
 
 	/**
 	 * Returns the value of the '<em><b>Algorithme Elements</b></em>' containment reference list.

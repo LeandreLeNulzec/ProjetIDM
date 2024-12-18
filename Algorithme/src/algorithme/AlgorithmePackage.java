@@ -76,13 +76,31 @@ public interface AlgorithmePackage extends EPackage {
 	int ALGORITHME__NOM = 0;
 
 	/**
+	 * The feature id for the '<em><b>Entree Globale</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALGORITHME__ENTREE_GLOBALE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Sortie Globale</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALGORITHME__SORTIE_GLOBALE = 2;
+
+	/**
 	 * The feature id for the '<em><b>Algorithme Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALGORITHME__ALGORITHME_ELEMENTS = 1;
+	int ALGORITHME__ALGORITHME_ELEMENTS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Algorithme</em>' class.
@@ -91,7 +109,7 @@ public interface AlgorithmePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALGORITHME_FEATURE_COUNT = 2;
+	int ALGORITHME_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Algorithme</em>' class.
@@ -120,6 +138,24 @@ public interface AlgorithmePackage extends EPackage {
 	 * @ordered
 	 */
 	int ALGORITHME_ELEMENTS__NOM = ALGORITHME__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Entree Globale</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALGORITHME_ELEMENTS__ENTREE_GLOBALE = ALGORITHME__ENTREE_GLOBALE;
+
+	/**
+	 * The feature id for the '<em><b>Sortie Globale</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALGORITHME_ELEMENTS__SORTIE_GLOBALE = ALGORITHME__SORTIE_GLOBALE;
 
 	/**
 	 * The feature id for the '<em><b>Algorithme Elements</b></em>' containment reference list.
@@ -175,6 +211,24 @@ public interface AlgorithmePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESSOURCES__NOM = ALGORITHME_ELEMENTS__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Entree Globale</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCES__ENTREE_GLOBALE = ALGORITHME_ELEMENTS__ENTREE_GLOBALE;
+
+	/**
+	 * The feature id for the '<em><b>Sortie Globale</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCES__SORTIE_GLOBALE = ALGORITHME_ELEMENTS__SORTIE_GLOBALE;
 
 	/**
 	 * The feature id for the '<em><b>Algorithme Elements</b></em>' containment reference list.
@@ -248,6 +302,24 @@ public interface AlgorithmePackage extends EPackage {
 	 * @ordered
 	 */
 	int DOCUMENTATION__NOM = ALGORITHME_ELEMENTS__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Entree Globale</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENTATION__ENTREE_GLOBALE = ALGORITHME_ELEMENTS__ENTREE_GLOBALE;
+
+	/**
+	 * The feature id for the '<em><b>Sortie Globale</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENTATION__SORTIE_GLOBALE = ALGORITHME_ELEMENTS__SORTIE_GLOBALE;
 
 	/**
 	 * The feature id for the '<em><b>Algorithme Elements</b></em>' containment reference list.
@@ -341,22 +413,13 @@ public interface AlgorithmePackage extends EPackage {
 	int ENTREE__ENTREE_SCRIPT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Entree Globale</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTREE__ENTREE_GLOBALE = 3;
-
-	/**
 	 * The number of structural features of the '<em>Entree</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTREE_FEATURE_COUNT = 4;
+	int ENTREE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Entree</em>' class.
@@ -396,22 +459,13 @@ public interface AlgorithmePackage extends EPackage {
 	int SORTIE__SORTIE_SCRIPT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Sortie Globale</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SORTIE__SORTIE_GLOBALE = 2;
-
-	/**
 	 * The feature id for the '<em><b>Valeur</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SORTIE__VALEUR = 3;
+	int SORTIE__VALEUR = 2;
 
 	/**
 	 * The number of structural features of the '<em>Sortie</em>' class.
@@ -420,7 +474,7 @@ public interface AlgorithmePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SORTIE_FEATURE_COUNT = 4;
+	int SORTIE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Sortie</em>' class.
@@ -452,6 +506,28 @@ public interface AlgorithmePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAlgorithme_Nom();
+
+	/**
+	 * Returns the meta object for the reference '{@link algorithme.Algorithme#getEntreeGlobale <em>Entree Globale</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entree Globale</em>'.
+	 * @see algorithme.Algorithme#getEntreeGlobale()
+	 * @see #getAlgorithme()
+	 * @generated
+	 */
+	EReference getAlgorithme_EntreeGlobale();
+
+	/**
+	 * Returns the meta object for the reference '{@link algorithme.Algorithme#getSortieGlobale <em>Sortie Globale</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sortie Globale</em>'.
+	 * @see algorithme.Algorithme#getSortieGlobale()
+	 * @see #getAlgorithme()
+	 * @generated
+	 */
+	EReference getAlgorithme_SortieGlobale();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link algorithme.Algorithme#getAlgorithmeElements <em>Algorithme Elements</em>}'.
@@ -572,17 +648,6 @@ public interface AlgorithmePackage extends EPackage {
 	EReference getEntree_EntreeScript();
 
 	/**
-	 * Returns the meta object for the reference '{@link algorithme.Entree#getEntreeGlobale <em>Entree Globale</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Entree Globale</em>'.
-	 * @see algorithme.Entree#getEntreeGlobale()
-	 * @see #getEntree()
-	 * @generated
-	 */
-	EReference getEntree_EntreeGlobale();
-
-	/**
 	 * Returns the meta object for class '{@link algorithme.Sortie <em>Sortie</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -613,17 +678,6 @@ public interface AlgorithmePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSortie_SortieScript();
-
-	/**
-	 * Returns the meta object for the reference '{@link algorithme.Sortie#getSortieGlobale <em>Sortie Globale</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Sortie Globale</em>'.
-	 * @see algorithme.Sortie#getSortieGlobale()
-	 * @see #getSortie()
-	 * @generated
-	 */
-	EReference getSortie_SortieGlobale();
 
 	/**
 	 * Returns the meta object for the attribute '{@link algorithme.Sortie#getValeur <em>Valeur</em>}'.
@@ -697,6 +751,22 @@ public interface AlgorithmePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ALGORITHME__NOM = eINSTANCE.getAlgorithme_Nom();
+
+		/**
+		 * The meta object literal for the '<em><b>Entree Globale</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ALGORITHME__ENTREE_GLOBALE = eINSTANCE.getAlgorithme_EntreeGlobale();
+
+		/**
+		 * The meta object literal for the '<em><b>Sortie Globale</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ALGORITHME__SORTIE_GLOBALE = eINSTANCE.getAlgorithme_SortieGlobale();
 
 		/**
 		 * The meta object literal for the '<em><b>Algorithme Elements</b></em>' containment reference list feature.
@@ -793,14 +863,6 @@ public interface AlgorithmePackage extends EPackage {
 		EReference ENTREE__ENTREE_SCRIPT = eINSTANCE.getEntree_EntreeScript();
 
 		/**
-		 * The meta object literal for the '<em><b>Entree Globale</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENTREE__ENTREE_GLOBALE = eINSTANCE.getEntree_EntreeGlobale();
-
-		/**
 		 * The meta object literal for the '{@link algorithme.impl.SortieImpl <em>Sortie</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -825,14 +887,6 @@ public interface AlgorithmePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SORTIE__SORTIE_SCRIPT = eINSTANCE.getSortie_SortieScript();
-
-		/**
-		 * The meta object literal for the '<em><b>Sortie Globale</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SORTIE__SORTIE_GLOBALE = eINSTANCE.getSortie_SortieGlobale();
 
 		/**
 		 * The meta object literal for the '<em><b>Valeur</b></em>' attribute feature.

@@ -2,7 +2,6 @@
  */
 package algorithme.impl;
 
-import algorithme.Algorithme;
 import algorithme.AlgorithmePackage;
 import algorithme.Sortie;
 import org.eclipse.emf.common.notify.Notification;
@@ -21,7 +20,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link algorithme.impl.SortieImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link algorithme.impl.SortieImpl#getSortieScript <em>Sortie Script</em>}</li>
- *   <li>{@link algorithme.impl.SortieImpl#getSortieGlobale <em>Sortie Globale</em>}</li>
  *   <li>{@link algorithme.impl.SortieImpl#getValeur <em>Valeur</em>}</li>
  * </ul>
  *
@@ -55,15 +53,6 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	 * @ordered
 	 */
 	protected script.Sortie sortieScript;
-	/**
-	 * The cached value of the '{@link #getSortieGlobale() <em>Sortie Globale</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSortieGlobale()
-	 * @generated
-	 * @ordered
-	 */
-	protected Algorithme sortieGlobale;
 	/**
 	 * The default value of the '{@link #getValeur() <em>Valeur</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -170,46 +159,6 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 	 * @generated
 	 */
 	@Override
-	public Algorithme getSortieGlobale() {
-		if (sortieGlobale != null && sortieGlobale.eIsProxy()) {
-			InternalEObject oldSortieGlobale = (InternalEObject)sortieGlobale;
-			sortieGlobale = (Algorithme)eResolveProxy(oldSortieGlobale);
-			if (sortieGlobale != oldSortieGlobale) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.SORTIE__SORTIE_GLOBALE, oldSortieGlobale, sortieGlobale));
-			}
-		}
-		return sortieGlobale;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Algorithme basicGetSortieGlobale() {
-		return sortieGlobale;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setSortieGlobale(Algorithme newSortieGlobale) {
-		Algorithme oldSortieGlobale = sortieGlobale;
-		sortieGlobale = newSortieGlobale;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.SORTIE__SORTIE_GLOBALE, oldSortieGlobale, sortieGlobale));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public float getValeur() {
 		return valeur;
 	}
@@ -240,9 +189,6 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 			case AlgorithmePackage.SORTIE__SORTIE_SCRIPT:
 				if (resolve) return getSortieScript();
 				return basicGetSortieScript();
-			case AlgorithmePackage.SORTIE__SORTIE_GLOBALE:
-				if (resolve) return getSortieGlobale();
-				return basicGetSortieGlobale();
 			case AlgorithmePackage.SORTIE__VALEUR:
 				return getValeur();
 		}
@@ -263,9 +209,6 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 				return;
 			case AlgorithmePackage.SORTIE__SORTIE_SCRIPT:
 				setSortieScript((script.Sortie)newValue);
-				return;
-			case AlgorithmePackage.SORTIE__SORTIE_GLOBALE:
-				setSortieGlobale((Algorithme)newValue);
 				return;
 			case AlgorithmePackage.SORTIE__VALEUR:
 				setValeur((Float)newValue);
@@ -288,9 +231,6 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 			case AlgorithmePackage.SORTIE__SORTIE_SCRIPT:
 				setSortieScript((script.Sortie)null);
 				return;
-			case AlgorithmePackage.SORTIE__SORTIE_GLOBALE:
-				setSortieGlobale((Algorithme)null);
-				return;
 			case AlgorithmePackage.SORTIE__VALEUR:
 				setValeur(VALEUR_EDEFAULT);
 				return;
@@ -310,8 +250,6 @@ public class SortieImpl extends MinimalEObjectImpl.Container implements Sortie {
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case AlgorithmePackage.SORTIE__SORTIE_SCRIPT:
 				return sortieScript != null;
-			case AlgorithmePackage.SORTIE__SORTIE_GLOBALE:
-				return sortieGlobale != null;
 			case AlgorithmePackage.SORTIE__VALEUR:
 				return valeur != VALEUR_EDEFAULT;
 		}

@@ -12,6 +12,7 @@ Export-Package: table.tests
 Require-Bundle: org.eclipse.core.runtime,
  Table;visibility:=reexport,
  Algorithme;visibility:=reexport,
+ Script;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

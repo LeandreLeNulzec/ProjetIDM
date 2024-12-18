@@ -8,6 +8,8 @@
   <genPackages prefix="Algorithme" disposableProviderFactory="true" ecorePackage="Algorithme.ecore#/">
     <genClasses ecoreClass="Algorithme.ecore#//Algorithme">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Algorithme.ecore#//Algorithme/nom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Algorithme.ecore#//Algorithme/entreeGlobale"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Algorithme.ecore#//Algorithme/sortieGlobale"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Algorithme.ecore#//Algorithme/algorithmeElements"/>
     </genClasses>
     <genClasses image="false" ecoreClass="Algorithme.ecore#//AlgorithmeElements">
@@ -25,12 +27,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Algorithme.ecore#//Entree/nom"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Algorithme.ecore#//Entree/valeur"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Algorithme.ecore#//Entree/entreeScript"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Algorithme.ecore#//Entree/entreeGlobale"/>
     </genClasses>
     <genClasses ecoreClass="Algorithme.ecore#//Sortie">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Algorithme.ecore#//Sortie/nom"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Algorithme.ecore#//Sortie/sortieScript"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Algorithme.ecore#//Sortie/sortieGlobale"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Algorithme.ecore#//Sortie/valeur"/>
     </genClasses>
   </genPackages>

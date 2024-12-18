@@ -2,8 +2,6 @@
  */
 package table;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -145,15 +143,25 @@ public interface Colonne extends EObject {
 	void setNbLignes(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Contenu</b></em>' reference list.
-	 * The list contents are of type {@link table.Contenu}.
+	 * Returns the value of the '<em><b>Contenu</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contenu</em>' reference list.
+	 * @return the value of the '<em>Contenu</em>' reference.
+	 * @see #setContenu(ContenuFloat)
 	 * @see table.TablePackage#getColonne_Contenu()
 	 * @model
 	 * @generated
 	 */
-	EList<Contenu> getContenu();
+	ContenuFloat getContenu();
+
+	/**
+	 * Sets the value of the '{@link table.Colonne#getContenu <em>Contenu</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Contenu</em>' reference.
+	 * @see #getContenu()
+	 * @generated
+	 */
+	void setContenu(ContenuFloat value);
 
 } // Colonne
