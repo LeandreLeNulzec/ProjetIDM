@@ -1,4 +1,4 @@
-package algorithme.validation;
+package script.validation;
 
 import java.util.List;
 import java.util.Map;
@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import algorithme.AlgorithmePackage;
+import script.ScriptPackage;
 
 /**
  * Réalise la validation de modèles conformes Ã  Algorithme Ã  l'aide du validateur et
@@ -17,8 +17,10 @@ import algorithme.AlgorithmePackage;
  * Les modèles sont donnés dans les arguments de la ligne de commande, et le résultat
  * est affiché dans le terminal.
  * 
+ * @author Guillaume Dupont
+ * @version 0.1
  */
-public class ValidateAlgorithme {
+public class ValidateScript {
 	
 	/**
 	 * Afficher une lsite d'erreur avec un préfixe.
@@ -41,13 +43,11 @@ public class ValidateAlgorithme {
 	}
 	
 	/**
-	 * Affiche les erreurs pour les divers éléments du méta-modèle : process, activités,
-	 * dépendances, commentaires.
+	 * Affiche les erreurs pour les divers éléments du méta-modèle
 	 * @param resultat résultat de la validation calculé auparavant
 	 */
 	private static void afficherResultat(ValidationResult resultat) {
-		afficherErreurs("- Algorithme", resultat.getRecordedErrorsFor(AlgorithmePackage.ALGORITHME));
-		afficherErreurs("- Ressources", resultat.getRecordedErrorsFor(AlgorithmePackage.RESSOURCES));
+		afficherErreurs("- Algorithme", resultat.getRecordedErrorsFor(ScriptPackage.SCRIPT));
 	}
 
 	/**
@@ -61,7 +61,7 @@ public class ValidateAlgorithme {
 		// Bien sûr, on n'utilise pas directement packageInstance, d'où le warning "unused" qui
 		// est supprimé avec l'annotation.
 		@SuppressWarnings("unused")
-		AlgorithmePackage packageInstance = AlgorithmePackage.eINSTANCE;
+		ScriptPackage packageInstance = ScriptPackage.eINSTANCE;
 		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
@@ -69,7 +69,7 @@ public class ValidateAlgorithme {
 		
 		ResourceSet resSet = new ResourceSetImpl();
 		
-		AlgorithmeValidator validator = new AlgorithmeValidator();
+		ScriptValidator validator = new ScriptValidator();
 
 		for (String model : args) {
 			URI modelURI = URI.createURI(model);
