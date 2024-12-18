@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import script.ScriptPackage;
-
 import table.Colonne;
 import table.ColonneDerivee;
 import table.ColonneProvient;

@@ -1,0 +1,102 @@
+[comment encoding = UTF-8 /]
+[module generate('http://table')]
+
+
+[template public TabletoPython(aTable : Table)]
+[comment @main/]
+[file ('demo_table.py', false, 'UTF-8')]
+
+
+
+[/file]
+[/template]
+
+
+
+
+
+['import csv' + '\n' + 'import sys' + '\n' + 'import numpy as np' + '\n' + '\n'/]
+
+[for (calc : Calcul | atuple.Algorithme.calcul)]
+
+['def ' + calc.name + '(data, colonnesIndex):' + '\n'/]
+
+	[if calc.catalogue.operateur->exists(op | op = OpType::sum)]
+
+	['c_res = np.zeros(len(data[:,0]))'/]
+
+	['for i in colonnesIndex:' + '\n' /]
+
+		['c_res += data[:, colonnesIndex[i]]' + '\n'/]
+
+	[elseif calc.catalogue.operateur->exists(op | op = OpType::mult)]
+
+	['c_res = np.ones(len(data[:,0]))'/]
+
+	['for i in colonnesIndex:' + '\n' /]
+
+		['c_res *= data[:, colonnesIndex[i]]' + '\n'/]
+
+	[elseif calc.catalogue.operateur->exists(op | op = OpType::div)]
+
+	['c_res = data[:, colonnesIndex[0]] / data[:, colonnesIndex[1]]'/]
+
+	[elseif calc.catalogue.operateur->exists(op | op = OpType::carre)]
+
+	['c_res = data[:, colonnesIndex[0]] * data[:, colonnesIndex[0]]'/]
+
+	[elseif calc.catalogue.operateur->exists(op | op = OpType::racine)]
+
+	['c_res = np.sqrt(data[:, colonnesIndex[0])'/]
+
+	[/if]
+
+	['return c_res.reshape(-1, 1)' + '\n' + '\n'/]
+
+
+
+['colonnesIndex' + calc.name + ' = ['/]
+
+[for (ce : Colonnes | calc.colonne_entrant)]
+
+	[ce.id  + ' ,'/]
+
+[/for]
+
+[']' + '\n' + '\n'/]
+
+[/for]
+
+
+
+
+
+['try:' + '\n'/]
+
+	['with open(sys.argv[1], mode="r", newline="") as csvfile:' + '\n'/]
+
+		['csvdata = csv.reader(csvfile)' + '\n'/]
+
+		['data = np.array(list(csvdata)[1:], dtype=np.float64)' + '\n' + '\n'/]
+
+['except FileNotFoundError:' + '\n'/]
+
+	['print("Fichier non trouvé...")' + '\n'/]
+
+	['sys.exit(1)' + '\n' + '\n'/]
+
+[for (calc : Calcul | atuple.Algorithme.calcul)]
+
+['column = ' + calc.name + '(data, colonnesIndex' + calc.name + ')' + '\n'/]
+
+['data = np.hstack((data, column))' + '\n'/]
+
+[/for]
+
+['np.savetxt("output.csv", data, delimiter=",", fmt="%f")'/]
+
+
+
+[/file]
+
+[/template]

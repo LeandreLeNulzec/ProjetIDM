@@ -65,7 +65,7 @@ public class TableValidator extends TableSwitch<Boolean> {
 	 */
 	@Override
 	public Boolean caseTable(Table object) {
-		// Contraintes sur process
+		
 		this.result.recordIfFailed(
 				object.getNom() != null && object.getNom().matches(IDENT_REGEX), 
 				object, 
