@@ -3,6 +3,9 @@
 package algorithme.provider;
 
 
+import algorithme.Algorithme;
+import algorithme.AlgorithmeFactory;
+import algorithme.AlgorithmePackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -11,13 +14,17 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link algorithme.Algorithme} object.
@@ -54,8 +61,61 @@ public class AlgorithmeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNomPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Nom feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNomPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Algorithme_nom_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Algorithme_nom_feature", "_UI_Algorithme_type"),
+				 AlgorithmePackage.Literals.ALGORITHME__NOM,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(AlgorithmePackage.Literals.ALGORITHME__ALGORITHME_ELEMENTS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -77,7 +137,10 @@ public class AlgorithmeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Algorithme_type");
+		String label = ((Algorithme)object).getNom();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Algorithme_type") :
+			getString("_UI_Algorithme_type") + " " + label;
 	}
 
 
@@ -91,6 +154,15 @@ public class AlgorithmeItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Algorithme.class)) {
+			case AlgorithmePackage.ALGORITHME__NOM:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case AlgorithmePackage.ALGORITHME__ALGORITHME_ELEMENTS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -104,6 +176,16 @@ public class AlgorithmeItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AlgorithmePackage.Literals.ALGORITHME__ALGORITHME_ELEMENTS,
+				 AlgorithmeFactory.eINSTANCE.createRessources()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AlgorithmePackage.Literals.ALGORITHME__ALGORITHME_ELEMENTS,
+				 AlgorithmeFactory.eINSTANCE.createDocumentation()));
 	}
 
 	/**

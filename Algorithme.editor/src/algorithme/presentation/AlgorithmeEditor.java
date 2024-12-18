@@ -158,6 +158,7 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import algorithme.provider.AlgorithmeItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import script.provider.ScriptItemProviderAdapterFactory;
 
 
 /**
@@ -711,6 +712,7 @@ public class AlgorithmeEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AlgorithmeItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ScriptItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

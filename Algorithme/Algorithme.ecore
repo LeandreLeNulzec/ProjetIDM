@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="algorithme" nsURI="http://algorithme" nsPrefix="algorithme">
-  <eClassifiers xsi:type="ecore:EClass" name="Algorithme"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Ressources">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RtoA" upperBound="-1" eType="#//Algorithme"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RtoE_S" upperBound="-1"
-        eType="#//E_S"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Algorithme">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="algorithmeElements" upperBound="-1"
+        eType="#//AlgorithmeElements" containment="true" eOpposite="#//AlgorithmeElements/algorithme"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Programme" eSuperTypes="#//Ressources"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Fichier" eSuperTypes="#//Ressources"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Guidance" eSuperTypes="#//Algorithme">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//Algorithme"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AlgorithmeElements" abstract="true"
+      eSuperTypes="#//Algorithme">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="algorithme" eType="#//Algorithme"
+        eOpposite="#//Algorithme/algorithmeElements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ressources" eSuperTypes="#//AlgorithmeElements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="chemin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="script" eType="ecore:EClass ../Script/script.ecore#//Script"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Documentation" eSuperTypes="#//AlgorithmeElements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="texte" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="docuElement" eType="#//AlgorithmeElements"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="E_S">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="E_StoA" upperBound="-1"
-        eType="#//Algorithme"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Entree">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entreeScript" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../Script/script.ecore#//Entree"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entreeGlobale" eType="#//Algorithme"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entrée" eSuperTypes="#//E_S">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paramètre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sortie">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sortieScript" eType="ecore:EClass ../Script/script.ecore#//Sortie"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sortieGlobale" eType="#//Algorithme"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" defaultValueLiteral="0.0"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Sortie" eSuperTypes="#//E_S"/>
 </ecore:EPackage>

@@ -3,13 +3,11 @@
 package algorithme.impl;
 
 import algorithme.Algorithme;
+import algorithme.AlgorithmeElements;
 import algorithme.AlgorithmeFactory;
 import algorithme.AlgorithmePackage;
-import algorithme.E_S;
-import algorithme.Entrée;
-import algorithme.Fichier;
-import algorithme.Guidance;
-import algorithme.Programme;
+import algorithme.Documentation;
+import algorithme.Entree;
 import algorithme.Ressources;
 import algorithme.Sortie;
 
@@ -19,6 +17,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import script.ScriptPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,35 +45,14 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass programmeEClass = null;
+	private EClass documentationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass fichierEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass guidanceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass e_SEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass entréeEClass = null;
+	private EClass entreeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,6 +60,13 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	private EClass sortieEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass algorithmeElementsEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -129,6 +114,9 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		ScriptPackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theAlgorithmePackage.createPackageContents();
 
@@ -159,6 +147,26 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
+	public EAttribute getAlgorithme_Nom() {
+		return (EAttribute)algorithmeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAlgorithme_AlgorithmeElements() {
+		return (EReference)algorithmeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getRessources() {
 		return ressourcesEClass;
 	}
@@ -169,8 +177,8 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
-	public EReference getRessources_RtoA() {
-		return (EReference)ressourcesEClass.getEStructuralFeatures().get(0);
+	public EAttribute getRessources_Chemin() {
+		return (EAttribute)ressourcesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -179,7 +187,7 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
-	public EReference getRessources_RtoE_S() {
+	public EReference getRessources_Script() {
 		return (EReference)ressourcesEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -189,8 +197,8 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
-	public EClass getProgramme() {
-		return programmeEClass;
+	public EClass getDocumentation() {
+		return documentationEClass;
 	}
 
 	/**
@@ -199,8 +207,8 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
-	public EClass getFichier() {
-		return fichierEClass;
+	public EAttribute getDocumentation_Texte() {
+		return (EAttribute)documentationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -209,8 +217,8 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
-	public EClass getGuidance() {
-		return guidanceEClass;
+	public EReference getDocumentation_DocuElement() {
+		return (EReference)documentationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -219,8 +227,8 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
-	public EReference getGuidance_Elements() {
-		return (EReference)guidanceEClass.getEStructuralFeatures().get(0);
+	public EClass getEntree() {
+		return entreeEClass;
 	}
 
 	/**
@@ -229,8 +237,8 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGuidance_Texte() {
-		return (EAttribute)guidanceEClass.getEStructuralFeatures().get(1);
+	public EAttribute getEntree_Nom() {
+		return (EAttribute)entreeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -239,8 +247,8 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
-	public EClass getE_S() {
-		return e_SEClass;
+	public EAttribute getEntree_Valeur() {
+		return (EAttribute)entreeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -249,8 +257,8 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
-	public EReference getE_S_E_StoA() {
-		return (EReference)e_SEClass.getEStructuralFeatures().get(0);
+	public EReference getEntree_EntreeScript() {
+		return (EReference)entreeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -259,18 +267,8 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
-	public EClass getEntrée() {
-		return entréeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getEntrée_Paramètre() {
-		return (EAttribute)entréeEClass.getEStructuralFeatures().get(0);
+	public EReference getEntree_EntreeGlobale() {
+		return (EReference)entreeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -281,6 +279,66 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	@Override
 	public EClass getSortie() {
 		return sortieEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSortie_Nom() {
+		return (EAttribute)sortieEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSortie_SortieScript() {
+		return (EReference)sortieEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSortie_SortieGlobale() {
+		return (EReference)sortieEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSortie_Valeur() {
+		return (EAttribute)sortieEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAlgorithmeElements() {
+		return algorithmeElementsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAlgorithmeElements_Algorithme() {
+		return (EReference)algorithmeElementsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -313,26 +371,31 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 
 		// Create classes and their features
 		algorithmeEClass = createEClass(ALGORITHME);
+		createEAttribute(algorithmeEClass, ALGORITHME__NOM);
+		createEReference(algorithmeEClass, ALGORITHME__ALGORITHME_ELEMENTS);
+
+		algorithmeElementsEClass = createEClass(ALGORITHME_ELEMENTS);
+		createEReference(algorithmeElementsEClass, ALGORITHME_ELEMENTS__ALGORITHME);
 
 		ressourcesEClass = createEClass(RESSOURCES);
-		createEReference(ressourcesEClass, RESSOURCES__RTO_A);
-		createEReference(ressourcesEClass, RESSOURCES__RTO_ES);
+		createEAttribute(ressourcesEClass, RESSOURCES__CHEMIN);
+		createEReference(ressourcesEClass, RESSOURCES__SCRIPT);
 
-		programmeEClass = createEClass(PROGRAMME);
+		documentationEClass = createEClass(DOCUMENTATION);
+		createEAttribute(documentationEClass, DOCUMENTATION__TEXTE);
+		createEReference(documentationEClass, DOCUMENTATION__DOCU_ELEMENT);
 
-		fichierEClass = createEClass(FICHIER);
-
-		guidanceEClass = createEClass(GUIDANCE);
-		createEReference(guidanceEClass, GUIDANCE__ELEMENTS);
-		createEAttribute(guidanceEClass, GUIDANCE__TEXTE);
-
-		e_SEClass = createEClass(ES);
-		createEReference(e_SEClass, ES__ESTO_A);
-
-		entréeEClass = createEClass(ENTRÉE);
-		createEAttribute(entréeEClass, ENTRÉE__PARAMÈTRE);
+		entreeEClass = createEClass(ENTREE);
+		createEAttribute(entreeEClass, ENTREE__NOM);
+		createEAttribute(entreeEClass, ENTREE__VALEUR);
+		createEReference(entreeEClass, ENTREE__ENTREE_SCRIPT);
+		createEReference(entreeEClass, ENTREE__ENTREE_GLOBALE);
 
 		sortieEClass = createEClass(SORTIE);
+		createEAttribute(sortieEClass, SORTIE__NOM);
+		createEReference(sortieEClass, SORTIE__SORTIE_SCRIPT);
+		createEReference(sortieEClass, SORTIE__SORTIE_GLOBALE);
+		createEAttribute(sortieEClass, SORTIE__VALEUR);
 	}
 
 	/**
@@ -358,39 +421,45 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		ScriptPackage theScriptPackage = (ScriptPackage)EPackage.Registry.INSTANCE.getEPackage(ScriptPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		programmeEClass.getESuperTypes().add(this.getRessources());
-		fichierEClass.getESuperTypes().add(this.getRessources());
-		guidanceEClass.getESuperTypes().add(this.getAlgorithme());
-		entréeEClass.getESuperTypes().add(this.getE_S());
-		sortieEClass.getESuperTypes().add(this.getE_S());
+		algorithmeElementsEClass.getESuperTypes().add(this.getAlgorithme());
+		ressourcesEClass.getESuperTypes().add(this.getAlgorithmeElements());
+		documentationEClass.getESuperTypes().add(this.getAlgorithmeElements());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(algorithmeEClass, Algorithme.class, "Algorithme", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAlgorithme_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Algorithme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAlgorithme_AlgorithmeElements(), this.getAlgorithmeElements(), this.getAlgorithmeElements_Algorithme(), "algorithmeElements", null, 0, -1, Algorithme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(algorithmeElementsEClass, AlgorithmeElements.class, "AlgorithmeElements", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAlgorithmeElements_Algorithme(), this.getAlgorithme(), this.getAlgorithme_AlgorithmeElements(), "algorithme", null, 0, 1, AlgorithmeElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ressourcesEClass, Ressources.class, "Ressources", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRessources_RtoA(), this.getAlgorithme(), null, "RtoA", null, 0, -1, Ressources.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRessources_RtoE_S(), this.getE_S(), null, "RtoE_S", null, 0, -1, Ressources.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRessources_Chemin(), ecorePackage.getEString(), "chemin", null, 0, 1, Ressources.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRessources_Script(), theScriptPackage.getScript(), null, "script", null, 0, 1, Ressources.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(programmeEClass, Programme.class, "Programme", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(documentationEClass, Documentation.class, "Documentation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDocumentation_Texte(), ecorePackage.getEString(), "texte", null, 0, 1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentation_DocuElement(), this.getAlgorithmeElements(), null, "docuElement", null, 0, 1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(fichierEClass, Fichier.class, "Fichier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(guidanceEClass, Guidance.class, "Guidance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGuidance_Elements(), this.getAlgorithme(), null, "elements", null, 0, -1, Guidance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGuidance_Texte(), ecorePackage.getEString(), "texte", null, 0, 1, Guidance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(e_SEClass, E_S.class, "E_S", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getE_S_E_StoA(), this.getAlgorithme(), null, "E_StoA", null, 0, -1, E_S.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(entréeEClass, Entrée.class, "Entrée", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEntrée_Paramètre(), ecorePackage.getEString(), "paramètre", null, 0, 1, Entrée.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(entreeEClass, Entree.class, "Entree", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEntree_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Entree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntree_Valeur(), ecorePackage.getEFloat(), "valeur", "0.0", 0, -1, Entree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntree_EntreeScript(), theScriptPackage.getEntree(), null, "entreeScript", null, 1, -1, Entree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntree_EntreeGlobale(), this.getAlgorithme(), null, "entreeGlobale", null, 0, 1, Entree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sortieEClass, Sortie.class, "Sortie", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSortie_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Sortie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSortie_SortieScript(), theScriptPackage.getSortie(), null, "sortieScript", null, 0, 1, Sortie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSortie_SortieGlobale(), this.getAlgorithme(), null, "sortieGlobale", null, 0, 1, Sortie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSortie_Valeur(), ecorePackage.getEFloat(), "valeur", "0.0", 1, 1, Sortie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

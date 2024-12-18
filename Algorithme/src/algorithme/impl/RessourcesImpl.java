@@ -2,20 +2,14 @@
  */
 package algorithme.impl;
 
-import algorithme.Algorithme;
 import algorithme.AlgorithmePackage;
-import algorithme.E_S;
 import algorithme.Ressources;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import script.Script;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,32 +19,42 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link algorithme.impl.RessourcesImpl#getRtoA <em>Rto A</em>}</li>
- *   <li>{@link algorithme.impl.RessourcesImpl#getRtoE_S <em>Rto ES</em>}</li>
+ *   <li>{@link algorithme.impl.RessourcesImpl#getChemin <em>Chemin</em>}</li>
+ *   <li>{@link algorithme.impl.RessourcesImpl#getScript <em>Script</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RessourcesImpl extends MinimalEObjectImpl.Container implements Ressources {
+public class RessourcesImpl extends AlgorithmeElementsImpl implements Ressources {
 	/**
-	 * The cached value of the '{@link #getRtoA() <em>Rto A</em>}' reference list.
+	 * The default value of the '{@link #getChemin() <em>Chemin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRtoA()
+	 * @see #getChemin()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Algorithme> rtoA;
+	protected static final String CHEMIN_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getRtoE_S() <em>Rto ES</em>}' reference list.
+	 * The cached value of the '{@link #getChemin() <em>Chemin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRtoE_S()
+	 * @see #getChemin()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<E_S> rtoE_S;
+	protected String chemin = CHEMIN_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getScript() <em>Script</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScript()
+	 * @generated
+	 * @ordered
+	 */
+	protected Script script;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,11 +81,8 @@ public class RessourcesImpl extends MinimalEObjectImpl.Container implements Ress
 	 * @generated
 	 */
 	@Override
-	public EList<Algorithme> getRtoA() {
-		if (rtoA == null) {
-			rtoA = new EObjectResolvingEList<Algorithme>(Algorithme.class, this, AlgorithmePackage.RESSOURCES__RTO_A);
-		}
-		return rtoA;
+	public String getChemin() {
+		return chemin;
 	}
 
 	/**
@@ -90,11 +91,51 @@ public class RessourcesImpl extends MinimalEObjectImpl.Container implements Ress
 	 * @generated
 	 */
 	@Override
-	public EList<E_S> getRtoE_S() {
-		if (rtoE_S == null) {
-			rtoE_S = new EObjectResolvingEList<E_S>(E_S.class, this, AlgorithmePackage.RESSOURCES__RTO_ES);
+	public void setChemin(String newChemin) {
+		String oldChemin = chemin;
+		chemin = newChemin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.RESSOURCES__CHEMIN, oldChemin, chemin));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Script getScript() {
+		if (script != null && script.eIsProxy()) {
+			InternalEObject oldScript = (InternalEObject)script;
+			script = (Script)eResolveProxy(oldScript);
+			if (script != oldScript) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.RESSOURCES__SCRIPT, oldScript, script));
+			}
 		}
-		return rtoE_S;
+		return script;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Script basicGetScript() {
+		return script;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setScript(Script newScript) {
+		Script oldScript = script;
+		script = newScript;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.RESSOURCES__SCRIPT, oldScript, script));
 	}
 
 	/**
@@ -105,10 +146,11 @@ public class RessourcesImpl extends MinimalEObjectImpl.Container implements Ress
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AlgorithmePackage.RESSOURCES__RTO_A:
-				return getRtoA();
-			case AlgorithmePackage.RESSOURCES__RTO_ES:
-				return getRtoE_S();
+			case AlgorithmePackage.RESSOURCES__CHEMIN:
+				return getChemin();
+			case AlgorithmePackage.RESSOURCES__SCRIPT:
+				if (resolve) return getScript();
+				return basicGetScript();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -122,13 +164,11 @@ public class RessourcesImpl extends MinimalEObjectImpl.Container implements Ress
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AlgorithmePackage.RESSOURCES__RTO_A:
-				getRtoA().clear();
-				getRtoA().addAll((Collection<? extends Algorithme>)newValue);
+			case AlgorithmePackage.RESSOURCES__CHEMIN:
+				setChemin((String)newValue);
 				return;
-			case AlgorithmePackage.RESSOURCES__RTO_ES:
-				getRtoE_S().clear();
-				getRtoE_S().addAll((Collection<? extends E_S>)newValue);
+			case AlgorithmePackage.RESSOURCES__SCRIPT:
+				setScript((Script)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -142,11 +182,11 @@ public class RessourcesImpl extends MinimalEObjectImpl.Container implements Ress
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.RESSOURCES__RTO_A:
-				getRtoA().clear();
+			case AlgorithmePackage.RESSOURCES__CHEMIN:
+				setChemin(CHEMIN_EDEFAULT);
 				return;
-			case AlgorithmePackage.RESSOURCES__RTO_ES:
-				getRtoE_S().clear();
+			case AlgorithmePackage.RESSOURCES__SCRIPT:
+				setScript((Script)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -160,12 +200,28 @@ public class RessourcesImpl extends MinimalEObjectImpl.Container implements Ress
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AlgorithmePackage.RESSOURCES__RTO_A:
-				return rtoA != null && !rtoA.isEmpty();
-			case AlgorithmePackage.RESSOURCES__RTO_ES:
-				return rtoE_S != null && !rtoE_S.isEmpty();
+			case AlgorithmePackage.RESSOURCES__CHEMIN:
+				return CHEMIN_EDEFAULT == null ? chemin != null : !CHEMIN_EDEFAULT.equals(chemin);
+			case AlgorithmePackage.RESSOURCES__SCRIPT:
+				return script != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (chemin: ");
+		result.append(chemin);
+		result.append(')');
+		return result.toString();
 	}
 
 } //RessourcesImpl

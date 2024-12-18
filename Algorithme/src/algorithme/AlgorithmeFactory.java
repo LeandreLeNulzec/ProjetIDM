@@ -40,49 +40,22 @@ public interface AlgorithmeFactory extends EFactory {
 	Ressources createRessources();
 
 	/**
-	 * Returns a new object of class '<em>Programme</em>'.
+	 * Returns a new object of class '<em>Documentation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Programme</em>'.
+	 * @return a new object of class '<em>Documentation</em>'.
 	 * @generated
 	 */
-	Programme createProgramme();
+	Documentation createDocumentation();
 
 	/**
-	 * Returns a new object of class '<em>Fichier</em>'.
+	 * Returns a new object of class '<em>Entree</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fichier</em>'.
+	 * @return a new object of class '<em>Entree</em>'.
 	 * @generated
 	 */
-	Fichier createFichier();
-
-	/**
-	 * Returns a new object of class '<em>Guidance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Guidance</em>'.
-	 * @generated
-	 */
-	Guidance createGuidance();
-
-	/**
-	 * Returns a new object of class '<em>ES</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>ES</em>'.
-	 * @generated
-	 */
-	E_S createE_S();
-
-	/**
-	 * Returns a new object of class '<em>Entrée</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entrée</em>'.
-	 * @generated
-	 */
-	Entrée createEntrée();
+	Entree createEntree();
 
 	/**
 	 * Returns a new object of class '<em>Sortie</em>'.

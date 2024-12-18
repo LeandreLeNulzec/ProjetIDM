@@ -118,118 +118,49 @@ public class AlgorithmeItemProviderAdapterFactory extends AlgorithmeAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link algorithme.Programme} instances.
+	 * This keeps track of the one adapter used for all {@link algorithme.Documentation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProgrammeItemProvider programmeItemProvider;
+	protected DocumentationItemProvider documentationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link algorithme.Programme}.
+	 * This creates an adapter for a {@link algorithme.Documentation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createProgrammeAdapter() {
-		if (programmeItemProvider == null) {
-			programmeItemProvider = new ProgrammeItemProvider(this);
+	public Adapter createDocumentationAdapter() {
+		if (documentationItemProvider == null) {
+			documentationItemProvider = new DocumentationItemProvider(this);
 		}
 
-		return programmeItemProvider;
+		return documentationItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link algorithme.Fichier} instances.
+	 * This keeps track of the one adapter used for all {@link algorithme.Entree} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FichierItemProvider fichierItemProvider;
+	protected EntreeItemProvider entreeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link algorithme.Fichier}.
+	 * This creates an adapter for a {@link algorithme.Entree}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFichierAdapter() {
-		if (fichierItemProvider == null) {
-			fichierItemProvider = new FichierItemProvider(this);
+	public Adapter createEntreeAdapter() {
+		if (entreeItemProvider == null) {
+			entreeItemProvider = new EntreeItemProvider(this);
 		}
 
-		return fichierItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link algorithme.Guidance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected GuidanceItemProvider guidanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link algorithme.Guidance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createGuidanceAdapter() {
-		if (guidanceItemProvider == null) {
-			guidanceItemProvider = new GuidanceItemProvider(this);
-		}
-
-		return guidanceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link algorithme.E_S} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected E_SItemProvider e_SItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link algorithme.E_S}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createE_SAdapter() {
-		if (e_SItemProvider == null) {
-			e_SItemProvider = new E_SItemProvider(this);
-		}
-
-		return e_SItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link algorithme.Entrée} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EntréeItemProvider entréeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link algorithme.Entrée}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEntréeAdapter() {
-		if (entréeItemProvider == null) {
-			entréeItemProvider = new EntréeItemProvider(this);
-		}
-
-		return entréeItemProvider;
+		return entreeItemProvider;
 	}
 
 	/**
@@ -362,11 +293,8 @@ public class AlgorithmeItemProviderAdapterFactory extends AlgorithmeAdapterFacto
 	public void dispose() {
 		if (algorithmeItemProvider != null) algorithmeItemProvider.dispose();
 		if (ressourcesItemProvider != null) ressourcesItemProvider.dispose();
-		if (programmeItemProvider != null) programmeItemProvider.dispose();
-		if (fichierItemProvider != null) fichierItemProvider.dispose();
-		if (guidanceItemProvider != null) guidanceItemProvider.dispose();
-		if (e_SItemProvider != null) e_SItemProvider.dispose();
-		if (entréeItemProvider != null) entréeItemProvider.dispose();
+		if (documentationItemProvider != null) documentationItemProvider.dispose();
+		if (entreeItemProvider != null) entreeItemProvider.dispose();
 		if (sortieItemProvider != null) sortieItemProvider.dispose();
 	}
 

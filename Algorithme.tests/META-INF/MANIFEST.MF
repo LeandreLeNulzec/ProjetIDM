@@ -8,9 +8,11 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: algorithme.tests
+Export-Package: algorithme.tests,
+ script.tests
 Require-Bundle: org.eclipse.core.runtime,
  Algorithme;visibility:=reexport,
+ Script;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

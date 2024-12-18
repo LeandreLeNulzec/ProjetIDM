@@ -5,6 +5,7 @@ package algorithme.tests;
 import algorithme.AlgorithmeFactory;
 import algorithme.Sortie;
 
+import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
 /**
@@ -13,7 +14,15 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SortieTest extends E_STest {
+public class SortieTest extends TestCase {
+
+	/**
+	 * The fixture for this Sortie test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Sortie fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -35,14 +44,23 @@ public class SortieTest extends E_STest {
 	}
 
 	/**
+	 * Sets the fixture for this Sortie test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(Sortie fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Sortie test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected Sortie getFixture() {
-		return (Sortie)fixture;
+		return fixture;
 	}
 
 	/**

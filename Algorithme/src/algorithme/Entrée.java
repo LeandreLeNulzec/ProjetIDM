@@ -2,6 +2,9 @@
  */
 package algorithme;
 
+import org.eclipse.emf.ecore.EObject;
+import script.PortSortie;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -12,34 +15,81 @@ package algorithme;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link algorithme.Entrée#getParamètre <em>Paramètre</em>}</li>
+ *   <li>{@link algorithme.Entrée#getValeur <em>Valeur</em>}</li>
+ *   <li>{@link algorithme.Entrée#getEtoS <em>Eto S</em>}</li>
+ *   <li>{@link algorithme.Entrée#getPortSortieS <em>Port Sortie S</em>}</li>
  * </ul>
  *
  * @see algorithme.AlgorithmePackage#getEntrée()
- * @model
+ * @model abstract="true"
  * @generated
  */
-public interface Entrée extends E_S {
+public interface Entrée extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Paramètre</b></em>' attribute.
+	 * Returns the value of the '<em><b>Valeur</b></em>' attribute.
+	 * The default value is <code>"0.0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Paramètre</em>' attribute.
-	 * @see #setParamètre(String)
-	 * @see algorithme.AlgorithmePackage#getEntrée_Paramètre()
+	 * @return the value of the '<em>Valeur</em>' attribute.
+	 * @see #setValeur(float)
+	 * @see algorithme.AlgorithmePackage#getEntrée_Valeur()
+	 * @model default="0.0"
+	 * @generated
+	 */
+	float getValeur();
+
+	/**
+	 * Sets the value of the '{@link algorithme.Entrée#getValeur <em>Valeur</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Valeur</em>' attribute.
+	 * @see #getValeur()
+	 * @generated
+	 */
+	void setValeur(float value);
+
+	/**
+	 * Returns the value of the '<em><b>Eto S</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Eto S</em>' reference.
+	 * @see #setEtoS(Sortie)
+	 * @see algorithme.AlgorithmePackage#getEntrée_EtoS()
 	 * @model
 	 * @generated
 	 */
-	String getParamètre();
+	Sortie getEtoS();
 
 	/**
-	 * Sets the value of the '{@link algorithme.Entrée#getParamètre <em>Paramètre</em>}' attribute.
+	 * Sets the value of the '{@link algorithme.Entrée#getEtoS <em>Eto S</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Paramètre</em>' attribute.
-	 * @see #getParamètre()
+	 * @param value the new value of the '<em>Eto S</em>' reference.
+	 * @see #getEtoS()
 	 * @generated
 	 */
-	void setParamètre(String value);
+	void setEtoS(Sortie value);
+
+	/**
+	 * Returns the value of the '<em><b>Port Sortie S</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Port Sortie S</em>' reference.
+	 * @see #setPortSortieS(PortSortie)
+	 * @see algorithme.AlgorithmePackage#getEntrée_PortSortieS()
+	 * @model
+	 * @generated
+	 */
+	PortSortie getPortSortieS();
+
+	/**
+	 * Sets the value of the '{@link algorithme.Entrée#getPortSortieS <em>Port Sortie S</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Port Sortie S</em>' reference.
+	 * @see #getPortSortieS()
+	 * @generated
+	 */
+	void setPortSortieS(PortSortie value);
 
 } // Entrée

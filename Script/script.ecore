@@ -1,41 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="script" nsURI="http://script" nsPrefix="script">
-  <eClassifiers xsi:type="ecore:EClass" name="Script"/>
-  <eClassifiers xsi:type="ecore:EClass" name="E_S">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="E_StoS" eType="#//Script"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Script">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scriptElements" upperBound="-1"
+        eType="#//ScriptElements" containment="true" eOpposite="#//ScriptElements/script"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entree" eSuperTypes="#//E_S"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Sortie" eSuperTypes="#//E_S"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Bloc_Binaire">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="BBtoS" upperBound="-1"
-        eType="#//Script"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ScriptElements" abstract="true" eSuperTypes="#//Script">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="script" eType="#//Script"
+        eOpposite="#//Script/scriptElements"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Bloc_Unaire">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="BUtoS" upperBound="-1"
-        eType="#//Script"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Port">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Bloc_Fonction">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="BFtoS" upperBound="-1"
-        eType="#//Script"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Entree" eSuperTypes="#//ScriptElements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entrees" upperBound="-1"
+        eType="#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sortie" eSuperTypes="#//ScriptElements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sorties" upperBound="-1"
+        eType="#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bloc" abstract="true" eSuperTypes="#//ScriptElements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sortie" eType="#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bloc_Binaire" abstract="true" eSuperTypes="#//Bloc">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entrees" lowerBound="2"
+        upperBound="2" eType="#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bloc_Unaire" abstract="true" eSuperTypes="#//Bloc">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entrees" lowerBound="1"
+        eType="#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bloc_Fonction" abstract="true" eSuperTypes="#//Bloc">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entrees" lowerBound="1"
+        upperBound="-1" eType="#//Port"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Addition" eSuperTypes="#//Bloc_Binaire"/>
   <eClassifiers xsi:type="ecore:EClass" name="Multiplication" eSuperTypes="#//Bloc_Binaire"/>
   <eClassifiers xsi:type="ecore:EClass" name="Division" eSuperTypes="#//Bloc_Binaire"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Min" eSuperTypes="#//Bloc_Binaire"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Max" eSuperTypes="#//Bloc_Binaire"/>
   <eClassifiers xsi:type="ecore:EClass" name="Oppose" eSuperTypes="#//Bloc_Unaire"/>
   <eClassifiers xsi:type="ecore:EClass" name="Inverse" eSuperTypes="#//Bloc_Unaire"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Min" eSuperTypes="#//Bloc_Fonction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Max" eSuperTypes="#//Bloc_Fonction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sin" eSuperTypes="#//Bloc_Fonction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Cos" eSuperTypes="#//Bloc_Fonction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Racine" eSuperTypes="#//Bloc_Fonction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Expo" eSuperTypes="#//Bloc_Fonction"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Constante">
+  <eClassifiers xsi:type="ecore:EClass" name="Constante" eSuperTypes="#//ScriptElements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CtoS" upperBound="-1" eType="#//Script"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Type" instanceTypeName="Var">
+    <eLiterals name="FLOAT"/>
+    <eLiterals name="INT" value="1"/>
+    <eLiterals name="BOOL" value="2"/>
+    <eLiterals name="STRING" value="3"/>
   </eClassifiers>
 </ecore:EPackage>

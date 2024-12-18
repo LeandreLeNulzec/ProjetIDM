@@ -72,50 +72,38 @@ public class AlgorithmeSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case AlgorithmePackage.ALGORITHME_ELEMENTS: {
+				AlgorithmeElements algorithmeElements = (AlgorithmeElements)theEObject;
+				T result = caseAlgorithmeElements(algorithmeElements);
+				if (result == null) result = caseAlgorithme(algorithmeElements);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case AlgorithmePackage.RESSOURCES: {
 				Ressources ressources = (Ressources)theEObject;
 				T result = caseRessources(ressources);
+				if (result == null) result = caseAlgorithmeElements(ressources);
+				if (result == null) result = caseAlgorithme(ressources);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AlgorithmePackage.PROGRAMME: {
-				Programme programme = (Programme)theEObject;
-				T result = caseProgramme(programme);
-				if (result == null) result = caseRessources(programme);
+			case AlgorithmePackage.DOCUMENTATION: {
+				Documentation documentation = (Documentation)theEObject;
+				T result = caseDocumentation(documentation);
+				if (result == null) result = caseAlgorithmeElements(documentation);
+				if (result == null) result = caseAlgorithme(documentation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AlgorithmePackage.FICHIER: {
-				Fichier fichier = (Fichier)theEObject;
-				T result = caseFichier(fichier);
-				if (result == null) result = caseRessources(fichier);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AlgorithmePackage.GUIDANCE: {
-				Guidance guidance = (Guidance)theEObject;
-				T result = caseGuidance(guidance);
-				if (result == null) result = caseAlgorithme(guidance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AlgorithmePackage.ES: {
-				E_S e_S = (E_S)theEObject;
-				T result = caseE_S(e_S);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AlgorithmePackage.ENTRÉE: {
-				Entrée entrée = (Entrée)theEObject;
-				T result = caseEntrée(entrée);
-				if (result == null) result = caseE_S(entrée);
+			case AlgorithmePackage.ENTREE: {
+				Entree entree = (Entree)theEObject;
+				T result = caseEntree(entree);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AlgorithmePackage.SORTIE: {
 				Sortie sortie = (Sortie)theEObject;
 				T result = caseSortie(sortie);
-				if (result == null) result = caseE_S(sortie);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -154,77 +142,32 @@ public class AlgorithmeSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Programme</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Documentation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Programme</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Documentation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProgramme(Programme object) {
+	public T caseDocumentation(Documentation object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fichier</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Entree</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fichier</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Entree</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFichier(Fichier object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Guidance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Guidance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGuidance(Guidance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>ES</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>ES</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseE_S(E_S object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entrée</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entrée</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEntrée(Entrée object) {
+	public T caseEntree(Entree object) {
 		return null;
 	}
 
@@ -240,6 +183,21 @@ public class AlgorithmeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSortie(Sortie object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Elements</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Elements</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAlgorithmeElements(AlgorithmeElements object) {
 		return null;
 	}
 

@@ -9,8 +9,11 @@ Bundle-Activator: algorithme.provider.AlgorithmeEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: algorithme.provider
+Export-Package: algorithme.provider,
+ script.provider
 Require-Bundle: org.eclipse.core.runtime,
  Algorithme;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport
+ org.eclipse.emf.edit;visibility:=reexport,
+ Script;visibility:=reexport,
+ Script.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

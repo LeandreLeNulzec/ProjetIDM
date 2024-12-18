@@ -2,9 +2,7 @@
  */
 package algorithme;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
+import script.Script;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,37 +13,57 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link algorithme.Ressources#getRtoA <em>Rto A</em>}</li>
- *   <li>{@link algorithme.Ressources#getRtoE_S <em>Rto ES</em>}</li>
+ *   <li>{@link algorithme.Ressources#getChemin <em>Chemin</em>}</li>
+ *   <li>{@link algorithme.Ressources#getScript <em>Script</em>}</li>
  * </ul>
  *
  * @see algorithme.AlgorithmePackage#getRessources()
  * @model
  * @generated
  */
-public interface Ressources extends EObject {
+public interface Ressources extends AlgorithmeElements {
 	/**
-	 * Returns the value of the '<em><b>Rto A</b></em>' reference list.
-	 * The list contents are of type {@link algorithme.Algorithme}.
+	 * Returns the value of the '<em><b>Chemin</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rto A</em>' reference list.
-	 * @see algorithme.AlgorithmePackage#getRessources_RtoA()
+	 * @return the value of the '<em>Chemin</em>' attribute.
+	 * @see #setChemin(String)
+	 * @see algorithme.AlgorithmePackage#getRessources_Chemin()
 	 * @model
 	 * @generated
 	 */
-	EList<Algorithme> getRtoA();
+	String getChemin();
 
 	/**
-	 * Returns the value of the '<em><b>Rto ES</b></em>' reference list.
-	 * The list contents are of type {@link algorithme.E_S}.
+	 * Sets the value of the '{@link algorithme.Ressources#getChemin <em>Chemin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rto ES</em>' reference list.
-	 * @see algorithme.AlgorithmePackage#getRessources_RtoE_S()
+	 * @param value the new value of the '<em>Chemin</em>' attribute.
+	 * @see #getChemin()
+	 * @generated
+	 */
+	void setChemin(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Script</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Script</em>' reference.
+	 * @see #setScript(Script)
+	 * @see algorithme.AlgorithmePackage#getRessources_Script()
 	 * @model
 	 * @generated
 	 */
-	EList<E_S> getRtoE_S();
+	Script getScript();
+
+	/**
+	 * Sets the value of the '{@link algorithme.Ressources#getScript <em>Script</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Script</em>' reference.
+	 * @see #getScript()
+	 * @generated
+	 */
+	void setScript(Script value);
 
 } // Ressources

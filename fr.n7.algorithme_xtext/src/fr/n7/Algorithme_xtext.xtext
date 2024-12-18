@@ -1,0 +1,22 @@
+grammar fr.n7.Algorithme_xtext with org.eclipse.xtext.common.Terminals
+
+generate algorithme_xtext "http://www.n7.fr/Algorithme_xtext"
+
+Algorithme : 'algorithme' nom = ID '{'
+	algorithmeElements += AlgorithmeElements*
+	'}';
+	
+AlgorithmeElements: Ressources | Documentation;
+
+Ressources : 'Ressources :' chemin=Chemin | script = ID;
+
+Chemin : ('/'ID('.'ID)*)+ ;
+
+Documentation : 'commentaire' texte = STRING;
+
+Entree : 'Entrée' nom=ID 'associé à' valeur = ID;
+
+Sortie : 'Sortie' nom=ID 'associé à' valeur = ID;
+
+
+

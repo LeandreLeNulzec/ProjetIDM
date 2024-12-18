@@ -58,11 +58,8 @@ public class AlgorithmeFactoryImpl extends EFactoryImpl implements AlgorithmeFac
 		switch (eClass.getClassifierID()) {
 			case AlgorithmePackage.ALGORITHME: return createAlgorithme();
 			case AlgorithmePackage.RESSOURCES: return createRessources();
-			case AlgorithmePackage.PROGRAMME: return createProgramme();
-			case AlgorithmePackage.FICHIER: return createFichier();
-			case AlgorithmePackage.GUIDANCE: return createGuidance();
-			case AlgorithmePackage.ES: return createE_S();
-			case AlgorithmePackage.ENTRÉE: return createEntrée();
+			case AlgorithmePackage.DOCUMENTATION: return createDocumentation();
+			case AlgorithmePackage.ENTREE: return createEntree();
 			case AlgorithmePackage.SORTIE: return createSortie();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -97,9 +94,9 @@ public class AlgorithmeFactoryImpl extends EFactoryImpl implements AlgorithmeFac
 	 * @generated
 	 */
 	@Override
-	public Programme createProgramme() {
-		ProgrammeImpl programme = new ProgrammeImpl();
-		return programme;
+	public Documentation createDocumentation() {
+		DocumentationImpl documentation = new DocumentationImpl();
+		return documentation;
 	}
 
 	/**
@@ -108,42 +105,9 @@ public class AlgorithmeFactoryImpl extends EFactoryImpl implements AlgorithmeFac
 	 * @generated
 	 */
 	@Override
-	public Fichier createFichier() {
-		FichierImpl fichier = new FichierImpl();
-		return fichier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Guidance createGuidance() {
-		GuidanceImpl guidance = new GuidanceImpl();
-		return guidance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public E_S createE_S() {
-		E_SImpl e_S = new E_SImpl();
-		return e_S;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Entrée createEntrée() {
-		EntréeImpl entrée = new EntréeImpl();
-		return entrée;
+	public Entree createEntree() {
+		EntreeImpl entree = new EntreeImpl();
+		return entree;
 	}
 
 	/**
