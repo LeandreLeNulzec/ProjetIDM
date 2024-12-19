@@ -5,6 +5,7 @@ package fr.n7.serializer;
 
 import com.google.inject.Inject;
 import fr.n7.services.Table_xtextGrammarAccess;
+import fr.n7.table_xtext.Argument;
 import fr.n7.table_xtext.Bloc_Binaire;
 import fr.n7.table_xtext.Bloc_Fonction;
 import fr.n7.table_xtext.Bloc_Unaire;
@@ -44,6 +45,9 @@ public class Table_xtextSemanticSequencer extends AbstractDelegatingSemanticSequ
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == Table_xtextPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case Table_xtextPackage.ARGUMENT:
+				sequence_Argument(context, (Argument) semanticObject); 
+				return; 
 			case Table_xtextPackage.BLOC_BINAIRE:
 				sequence_Bloc_Binaire(context, (Bloc_Binaire) semanticObject); 
 				return; 
@@ -87,6 +91,27 @@ public class Table_xtextSemanticSequencer extends AbstractDelegatingSemanticSequ
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ScriptElements returns Argument
+	 *     Argument returns Argument
+	 *
+	 * Constraint:
+	 *     entree=[Colonne|ID]
+	 * </pre>
+	 */
+	protected void sequence_Argument(ISerializationContext context, Argument semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Table_xtextPackage.Literals.ARGUMENT__ENTREE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Table_xtextPackage.Literals.ARGUMENT__ENTREE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getArgumentAccess().getEntreeColonneIDTerminalRuleCall_1_0_1(), semanticObject.eGet(Table_xtextPackage.Literals.ARGUMENT__ENTREE, false));
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * <pre>
@@ -163,6 +188,7 @@ public class Table_xtextSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 * Constraint:
 	 *     (
 	 *         name=ID 
+	 *         indice=INT 
 	 *         script=[Script|ID] 
 	 *         colonnesEntrees+=[Colonne|ID]* 
 	 *         elementType=ColonneElementType 
@@ -185,6 +211,7 @@ public class Table_xtextSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 * Constraint:
 	 *     (
 	 *         name=ID 
+	 *         indice=INT 
 	 *         tableOrigin=Table 
 	 *         refColonne=ID 
 	 *         elementType=ColonneElementType 
@@ -205,7 +232,7 @@ public class Table_xtextSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Colonne returns Colonne
 	 *
 	 * Constraint:
-	 *     (name=ID elementType=ColonneElementType contraintes=Contrainte? nbLignes=INT)
+	 *     (name=ID indice=INT elementType=ColonneElementType contraintes=Contrainte? nbLignes=INT)
 	 * </pre>
 	 */
 	protected void sequence_Colonne(ISerializationContext context, Colonne semanticObject) {
@@ -320,7 +347,7 @@ public class Table_xtextSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Script returns Script
 	 *
 	 * Constraint:
-	 *     (name=ID scriptElements+=ScriptElements*)
+	 *     (name=ID entrees+=[Colonne|ID]* scriptElements+=ScriptElements*)
 	 * </pre>
 	 */
 	protected void sequence_Script(ISerializationContext context, Script semanticObject) {

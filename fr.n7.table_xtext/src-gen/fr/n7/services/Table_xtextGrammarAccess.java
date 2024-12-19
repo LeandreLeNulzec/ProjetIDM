@@ -123,24 +123,29 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cCKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cTypeKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cElementTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cElementTypeColonneElementTypeEnumRuleCall_3_0 = (RuleCall)cElementTypeAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cContrainteKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cContraintesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cContraintesContrainteParserRuleCall_4_1_0 = (RuleCall)cContraintesAssignment_4_1.eContents().get(0);
-		private final Keyword cNblignesKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cNbLignesAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cNbLignesINTTerminalRuleCall_6_0 = (RuleCall)cNbLignesAssignment_6.eContents().get(0);
+		private final Keyword cIndiceKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cIndiceAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cIndiceINTTerminalRuleCall_3_0 = (RuleCall)cIndiceAssignment_3.eContents().get(0);
+		private final Keyword cTypeKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cElementTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cElementTypeColonneElementTypeEnumRuleCall_5_0 = (RuleCall)cElementTypeAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cContrainteKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cContraintesAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cContraintesContrainteParserRuleCall_6_1_0 = (RuleCall)cContraintesAssignment_6_1.eContents().get(0);
+		private final Keyword cNblignesKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cNbLignesAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cNbLignesINTTerminalRuleCall_8_0 = (RuleCall)cNbLignesAssignment_8.eContents().get(0);
 		
 		//Colonne : 'c' name=ID
+		//    'indice' indice = INT
 		//    'type' elementType=ColonneElementType
 		//    ('contrainte' contraintes=Contrainte)?
 		//    'nblignes' nbLignes=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'c' name=ID
+		//   'indice' indice = INT
 		//   'type' elementType=ColonneElementType
 		//   ('contrainte' contraintes=Contrainte)?
 		//   'nblignes' nbLignes=INT
@@ -155,35 +160,44 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//'type'
-		public Keyword getTypeKeyword_2() { return cTypeKeyword_2; }
+		//'indice'
+		public Keyword getIndiceKeyword_2() { return cIndiceKeyword_2; }
 		
-		//elementType=ColonneElementType
-		public Assignment getElementTypeAssignment_3() { return cElementTypeAssignment_3; }
-		
-		//ColonneElementType
-		public RuleCall getElementTypeColonneElementTypeEnumRuleCall_3_0() { return cElementTypeColonneElementTypeEnumRuleCall_3_0; }
-		
-		//('contrainte' contraintes=Contrainte)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'contrainte'
-		public Keyword getContrainteKeyword_4_0() { return cContrainteKeyword_4_0; }
-		
-		//contraintes=Contrainte
-		public Assignment getContraintesAssignment_4_1() { return cContraintesAssignment_4_1; }
-		
-		//Contrainte
-		public RuleCall getContraintesContrainteParserRuleCall_4_1_0() { return cContraintesContrainteParserRuleCall_4_1_0; }
-		
-		//'nblignes'
-		public Keyword getNblignesKeyword_5() { return cNblignesKeyword_5; }
-		
-		//nbLignes=INT
-		public Assignment getNbLignesAssignment_6() { return cNbLignesAssignment_6; }
+		//indice = INT
+		public Assignment getIndiceAssignment_3() { return cIndiceAssignment_3; }
 		
 		//INT
-		public RuleCall getNbLignesINTTerminalRuleCall_6_0() { return cNbLignesINTTerminalRuleCall_6_0; }
+		public RuleCall getIndiceINTTerminalRuleCall_3_0() { return cIndiceINTTerminalRuleCall_3_0; }
+		
+		//'type'
+		public Keyword getTypeKeyword_4() { return cTypeKeyword_4; }
+		
+		//elementType=ColonneElementType
+		public Assignment getElementTypeAssignment_5() { return cElementTypeAssignment_5; }
+		
+		//ColonneElementType
+		public RuleCall getElementTypeColonneElementTypeEnumRuleCall_5_0() { return cElementTypeColonneElementTypeEnumRuleCall_5_0; }
+		
+		//('contrainte' contraintes=Contrainte)?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'contrainte'
+		public Keyword getContrainteKeyword_6_0() { return cContrainteKeyword_6_0; }
+		
+		//contraintes=Contrainte
+		public Assignment getContraintesAssignment_6_1() { return cContraintesAssignment_6_1; }
+		
+		//Contrainte
+		public RuleCall getContraintesContrainteParserRuleCall_6_1_0() { return cContraintesContrainteParserRuleCall_6_1_0; }
+		
+		//'nblignes'
+		public Keyword getNblignesKeyword_7() { return cNblignesKeyword_7; }
+		
+		//nbLignes=INT
+		public Assignment getNbLignesAssignment_8() { return cNbLignesAssignment_8; }
+		
+		//INT
+		public RuleCall getNbLignesINTTerminalRuleCall_8_0() { return cNbLignesINTTerminalRuleCall_8_0; }
 	}
 	public class ColonneProvientElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.n7.Table_xtext.ColonneProvient");
@@ -191,24 +205,28 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cCpKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cTableOrigineKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTableOriginAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTableOriginTableParserRuleCall_3_0 = (RuleCall)cTableOriginAssignment_3.eContents().get(0);
-		private final Keyword cRefColonneKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cRefColonneAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cRefColonneIDTerminalRuleCall_5_0 = (RuleCall)cRefColonneAssignment_5.eContents().get(0);
-		private final Keyword cTypeKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cElementTypeAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cElementTypeColonneElementTypeEnumRuleCall_7_0 = (RuleCall)cElementTypeAssignment_7.eContents().get(0);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cContrainteKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Assignment cContraintesAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cContraintesContrainteParserRuleCall_8_1_0 = (RuleCall)cContraintesAssignment_8_1.eContents().get(0);
-		private final Keyword cNblignesKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cNbLignesAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cNbLignesINTTerminalRuleCall_10_0 = (RuleCall)cNbLignesAssignment_10.eContents().get(0);
+		private final Keyword cIndiceKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cIndiceAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cIndiceINTTerminalRuleCall_3_0 = (RuleCall)cIndiceAssignment_3.eContents().get(0);
+		private final Keyword cTableOrigineKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cTableOriginAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTableOriginTableParserRuleCall_5_0 = (RuleCall)cTableOriginAssignment_5.eContents().get(0);
+		private final Keyword cRefColonneKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cRefColonneAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cRefColonneIDTerminalRuleCall_7_0 = (RuleCall)cRefColonneAssignment_7.eContents().get(0);
+		private final Keyword cTypeKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cElementTypeAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cElementTypeColonneElementTypeEnumRuleCall_9_0 = (RuleCall)cElementTypeAssignment_9.eContents().get(0);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Keyword cContrainteKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Assignment cContraintesAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
+		private final RuleCall cContraintesContrainteParserRuleCall_10_1_0 = (RuleCall)cContraintesAssignment_10_1.eContents().get(0);
+		private final Keyword cNblignesKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cNbLignesAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cNbLignesINTTerminalRuleCall_12_0 = (RuleCall)cNbLignesAssignment_12.eContents().get(0);
 		
 		//ColonneProvient : 'cp' name=ID
+		//    'indice' indice = INT
 		//    'tableOrigine' tableOrigin=Table
 		//    'refColonne' refColonne=ID
 		//    'type' elementType=ColonneElementType
@@ -217,6 +235,7 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'cp' name=ID
+		//   'indice' indice = INT
 		//   'tableOrigine' tableOrigin=Table
 		//   'refColonne' refColonne=ID
 		//   'type' elementType=ColonneElementType
@@ -233,53 +252,62 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//'tableOrigine'
-		public Keyword getTableOrigineKeyword_2() { return cTableOrigineKeyword_2; }
+		//'indice'
+		public Keyword getIndiceKeyword_2() { return cIndiceKeyword_2; }
 		
-		//tableOrigin=Table
-		public Assignment getTableOriginAssignment_3() { return cTableOriginAssignment_3; }
-		
-		//Table
-		public RuleCall getTableOriginTableParserRuleCall_3_0() { return cTableOriginTableParserRuleCall_3_0; }
-		
-		//'refColonne'
-		public Keyword getRefColonneKeyword_4() { return cRefColonneKeyword_4; }
-		
-		//refColonne=ID
-		public Assignment getRefColonneAssignment_5() { return cRefColonneAssignment_5; }
-		
-		//ID
-		public RuleCall getRefColonneIDTerminalRuleCall_5_0() { return cRefColonneIDTerminalRuleCall_5_0; }
-		
-		//'type'
-		public Keyword getTypeKeyword_6() { return cTypeKeyword_6; }
-		
-		//elementType=ColonneElementType
-		public Assignment getElementTypeAssignment_7() { return cElementTypeAssignment_7; }
-		
-		//ColonneElementType
-		public RuleCall getElementTypeColonneElementTypeEnumRuleCall_7_0() { return cElementTypeColonneElementTypeEnumRuleCall_7_0; }
-		
-		//('contrainte' contraintes=Contrainte)?
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//'contrainte'
-		public Keyword getContrainteKeyword_8_0() { return cContrainteKeyword_8_0; }
-		
-		//contraintes=Contrainte
-		public Assignment getContraintesAssignment_8_1() { return cContraintesAssignment_8_1; }
-		
-		//Contrainte
-		public RuleCall getContraintesContrainteParserRuleCall_8_1_0() { return cContraintesContrainteParserRuleCall_8_1_0; }
-		
-		//'nblignes'
-		public Keyword getNblignesKeyword_9() { return cNblignesKeyword_9; }
-		
-		//nbLignes=INT
-		public Assignment getNbLignesAssignment_10() { return cNbLignesAssignment_10; }
+		//indice = INT
+		public Assignment getIndiceAssignment_3() { return cIndiceAssignment_3; }
 		
 		//INT
-		public RuleCall getNbLignesINTTerminalRuleCall_10_0() { return cNbLignesINTTerminalRuleCall_10_0; }
+		public RuleCall getIndiceINTTerminalRuleCall_3_0() { return cIndiceINTTerminalRuleCall_3_0; }
+		
+		//'tableOrigine'
+		public Keyword getTableOrigineKeyword_4() { return cTableOrigineKeyword_4; }
+		
+		//tableOrigin=Table
+		public Assignment getTableOriginAssignment_5() { return cTableOriginAssignment_5; }
+		
+		//Table
+		public RuleCall getTableOriginTableParserRuleCall_5_0() { return cTableOriginTableParserRuleCall_5_0; }
+		
+		//'refColonne'
+		public Keyword getRefColonneKeyword_6() { return cRefColonneKeyword_6; }
+		
+		//refColonne=ID
+		public Assignment getRefColonneAssignment_7() { return cRefColonneAssignment_7; }
+		
+		//ID
+		public RuleCall getRefColonneIDTerminalRuleCall_7_0() { return cRefColonneIDTerminalRuleCall_7_0; }
+		
+		//'type'
+		public Keyword getTypeKeyword_8() { return cTypeKeyword_8; }
+		
+		//elementType=ColonneElementType
+		public Assignment getElementTypeAssignment_9() { return cElementTypeAssignment_9; }
+		
+		//ColonneElementType
+		public RuleCall getElementTypeColonneElementTypeEnumRuleCall_9_0() { return cElementTypeColonneElementTypeEnumRuleCall_9_0; }
+		
+		//('contrainte' contraintes=Contrainte)?
+		public Group getGroup_10() { return cGroup_10; }
+		
+		//'contrainte'
+		public Keyword getContrainteKeyword_10_0() { return cContrainteKeyword_10_0; }
+		
+		//contraintes=Contrainte
+		public Assignment getContraintesAssignment_10_1() { return cContraintesAssignment_10_1; }
+		
+		//Contrainte
+		public RuleCall getContraintesContrainteParserRuleCall_10_1_0() { return cContraintesContrainteParserRuleCall_10_1_0; }
+		
+		//'nblignes'
+		public Keyword getNblignesKeyword_11() { return cNblignesKeyword_11; }
+		
+		//nbLignes=INT
+		public Assignment getNbLignesAssignment_12() { return cNbLignesAssignment_12; }
+		
+		//INT
+		public RuleCall getNbLignesINTTerminalRuleCall_12_0() { return cNbLignesINTTerminalRuleCall_12_0; }
 	}
 	public class ColonneDeriveeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.n7.Table_xtext.ColonneDerivee");
@@ -287,26 +315,30 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cCdKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cAlgoKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cScriptAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cScriptScriptCrossReference_3_0 = (CrossReference)cScriptAssignment_3.eContents().get(0);
-		private final RuleCall cScriptScriptIDTerminalRuleCall_3_0_1 = (RuleCall)cScriptScriptCrossReference_3_0.eContents().get(1);
-		private final Keyword cEntreesKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cColonnesEntreesAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cColonnesEntreesColonneCrossReference_5_0 = (CrossReference)cColonnesEntreesAssignment_5.eContents().get(0);
-		private final RuleCall cColonnesEntreesColonneIDTerminalRuleCall_5_0_1 = (RuleCall)cColonnesEntreesColonneCrossReference_5_0.eContents().get(1);
-		private final Keyword cTypeKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cElementTypeAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cElementTypeColonneElementTypeEnumRuleCall_7_0 = (RuleCall)cElementTypeAssignment_7.eContents().get(0);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cContrainteKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Assignment cContraintesAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cContraintesContrainteParserRuleCall_8_1_0 = (RuleCall)cContraintesAssignment_8_1.eContents().get(0);
-		private final Keyword cNblignesKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cNbLignesAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cNbLignesINTTerminalRuleCall_10_0 = (RuleCall)cNbLignesAssignment_10.eContents().get(0);
+		private final Keyword cIndiceKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cIndiceAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cIndiceINTTerminalRuleCall_3_0 = (RuleCall)cIndiceAssignment_3.eContents().get(0);
+		private final Keyword cAlgoKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cScriptAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cScriptScriptCrossReference_5_0 = (CrossReference)cScriptAssignment_5.eContents().get(0);
+		private final RuleCall cScriptScriptIDTerminalRuleCall_5_0_1 = (RuleCall)cScriptScriptCrossReference_5_0.eContents().get(1);
+		private final Keyword cEntreesKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cColonnesEntreesAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cColonnesEntreesColonneCrossReference_7_0 = (CrossReference)cColonnesEntreesAssignment_7.eContents().get(0);
+		private final RuleCall cColonnesEntreesColonneIDTerminalRuleCall_7_0_1 = (RuleCall)cColonnesEntreesColonneCrossReference_7_0.eContents().get(1);
+		private final Keyword cTypeKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cElementTypeAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cElementTypeColonneElementTypeEnumRuleCall_9_0 = (RuleCall)cElementTypeAssignment_9.eContents().get(0);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Keyword cContrainteKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Assignment cContraintesAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
+		private final RuleCall cContraintesContrainteParserRuleCall_10_1_0 = (RuleCall)cContraintesAssignment_10_1.eContents().get(0);
+		private final Keyword cNblignesKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cNbLignesAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cNbLignesINTTerminalRuleCall_12_0 = (RuleCall)cNbLignesAssignment_12.eContents().get(0);
 		
 		//ColonneDerivee : 'cd' name=ID
+		//    'indice' indice = INT
 		//    'algo' script=[Script]
 		//    'entrees' colonnesEntrees+=[Colonne]*
 		//    'type' elementType=ColonneElementType
@@ -315,6 +347,7 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'cd' name=ID
+		//   'indice' indice = INT
 		//   'algo' script=[Script]
 		//   'entrees' colonnesEntrees+=[Colonne]*
 		//   'type' elementType=ColonneElementType
@@ -331,59 +364,68 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//'algo'
-		public Keyword getAlgoKeyword_2() { return cAlgoKeyword_2; }
+		//'indice'
+		public Keyword getIndiceKeyword_2() { return cIndiceKeyword_2; }
 		
-		//script=[Script]
-		public Assignment getScriptAssignment_3() { return cScriptAssignment_3; }
-		
-		//[Script]
-		public CrossReference getScriptScriptCrossReference_3_0() { return cScriptScriptCrossReference_3_0; }
-		
-		//ID
-		public RuleCall getScriptScriptIDTerminalRuleCall_3_0_1() { return cScriptScriptIDTerminalRuleCall_3_0_1; }
-		
-		//'entrees'
-		public Keyword getEntreesKeyword_4() { return cEntreesKeyword_4; }
-		
-		//colonnesEntrees+=[Colonne]*
-		public Assignment getColonnesEntreesAssignment_5() { return cColonnesEntreesAssignment_5; }
-		
-		//[Colonne]
-		public CrossReference getColonnesEntreesColonneCrossReference_5_0() { return cColonnesEntreesColonneCrossReference_5_0; }
-		
-		//ID
-		public RuleCall getColonnesEntreesColonneIDTerminalRuleCall_5_0_1() { return cColonnesEntreesColonneIDTerminalRuleCall_5_0_1; }
-		
-		//'type'
-		public Keyword getTypeKeyword_6() { return cTypeKeyword_6; }
-		
-		//elementType=ColonneElementType
-		public Assignment getElementTypeAssignment_7() { return cElementTypeAssignment_7; }
-		
-		//ColonneElementType
-		public RuleCall getElementTypeColonneElementTypeEnumRuleCall_7_0() { return cElementTypeColonneElementTypeEnumRuleCall_7_0; }
-		
-		//('contrainte' contraintes=Contrainte)?
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//'contrainte'
-		public Keyword getContrainteKeyword_8_0() { return cContrainteKeyword_8_0; }
-		
-		//contraintes=Contrainte
-		public Assignment getContraintesAssignment_8_1() { return cContraintesAssignment_8_1; }
-		
-		//Contrainte
-		public RuleCall getContraintesContrainteParserRuleCall_8_1_0() { return cContraintesContrainteParserRuleCall_8_1_0; }
-		
-		//'nblignes'
-		public Keyword getNblignesKeyword_9() { return cNblignesKeyword_9; }
-		
-		//nbLignes=INT
-		public Assignment getNbLignesAssignment_10() { return cNbLignesAssignment_10; }
+		//indice = INT
+		public Assignment getIndiceAssignment_3() { return cIndiceAssignment_3; }
 		
 		//INT
-		public RuleCall getNbLignesINTTerminalRuleCall_10_0() { return cNbLignesINTTerminalRuleCall_10_0; }
+		public RuleCall getIndiceINTTerminalRuleCall_3_0() { return cIndiceINTTerminalRuleCall_3_0; }
+		
+		//'algo'
+		public Keyword getAlgoKeyword_4() { return cAlgoKeyword_4; }
+		
+		//script=[Script]
+		public Assignment getScriptAssignment_5() { return cScriptAssignment_5; }
+		
+		//[Script]
+		public CrossReference getScriptScriptCrossReference_5_0() { return cScriptScriptCrossReference_5_0; }
+		
+		//ID
+		public RuleCall getScriptScriptIDTerminalRuleCall_5_0_1() { return cScriptScriptIDTerminalRuleCall_5_0_1; }
+		
+		//'entrees'
+		public Keyword getEntreesKeyword_6() { return cEntreesKeyword_6; }
+		
+		//colonnesEntrees+=[Colonne]*
+		public Assignment getColonnesEntreesAssignment_7() { return cColonnesEntreesAssignment_7; }
+		
+		//[Colonne]
+		public CrossReference getColonnesEntreesColonneCrossReference_7_0() { return cColonnesEntreesColonneCrossReference_7_0; }
+		
+		//ID
+		public RuleCall getColonnesEntreesColonneIDTerminalRuleCall_7_0_1() { return cColonnesEntreesColonneIDTerminalRuleCall_7_0_1; }
+		
+		//'type'
+		public Keyword getTypeKeyword_8() { return cTypeKeyword_8; }
+		
+		//elementType=ColonneElementType
+		public Assignment getElementTypeAssignment_9() { return cElementTypeAssignment_9; }
+		
+		//ColonneElementType
+		public RuleCall getElementTypeColonneElementTypeEnumRuleCall_9_0() { return cElementTypeColonneElementTypeEnumRuleCall_9_0; }
+		
+		//('contrainte' contraintes=Contrainte)?
+		public Group getGroup_10() { return cGroup_10; }
+		
+		//'contrainte'
+		public Keyword getContrainteKeyword_10_0() { return cContrainteKeyword_10_0; }
+		
+		//contraintes=Contrainte
+		public Assignment getContraintesAssignment_10_1() { return cContraintesAssignment_10_1; }
+		
+		//Contrainte
+		public RuleCall getContraintesContrainteParserRuleCall_10_1_0() { return cContraintesContrainteParserRuleCall_10_1_0; }
+		
+		//'nblignes'
+		public Keyword getNblignesKeyword_11() { return cNblignesKeyword_11; }
+		
+		//nbLignes=INT
+		public Assignment getNbLignesAssignment_12() { return cNbLignesAssignment_12; }
+		
+		//INT
+		public RuleCall getNbLignesINTTerminalRuleCall_12_0() { return cNbLignesINTTerminalRuleCall_12_0; }
 	}
 	public class ContrainteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.n7.Table_xtext.Contrainte");
@@ -574,15 +616,22 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cNameIDTerminalRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
-		private final Keyword cScriptElementsKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cEntreesKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cScriptElementsAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cScriptElementsScriptElementsParserRuleCall_7_0 = (RuleCall)cScriptElementsAssignment_7.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cEntreesAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cEntreesColonneCrossReference_7_0 = (CrossReference)cEntreesAssignment_7.eContents().get(0);
+		private final RuleCall cEntreesColonneIDTerminalRuleCall_7_0_1 = (RuleCall)cEntreesColonneCrossReference_7_0.eContents().get(1);
+		private final Keyword cScriptElementsKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cScriptElementsAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cScriptElementsScriptElementsParserRuleCall_10_0 = (RuleCall)cScriptElementsAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//Script:
 		//    'Script' '{'
 		//        'name' ':' name=ID
+		//        'entrees' ':'
+		//        entrees += [Colonne]*
 		//        'scriptElements' ':'
 		//        scriptElements+=ScriptElements*
 		//    '}';
@@ -590,6 +639,8 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//'Script' '{'
 		//    'name' ':' name=ID
+		//    'entrees' ':'
+		//    entrees += [Colonne]*
 		//    'scriptElements' ':'
 		//    scriptElements+=ScriptElements*
 		//'}'
@@ -613,32 +664,48 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_4_0() { return cNameIDTerminalRuleCall_4_0; }
 		
-		//'scriptElements'
-		public Keyword getScriptElementsKeyword_5() { return cScriptElementsKeyword_5; }
+		//'entrees'
+		public Keyword getEntreesKeyword_5() { return cEntreesKeyword_5; }
 		
 		//':'
 		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
 		
+		//entrees += [Colonne]*
+		public Assignment getEntreesAssignment_7() { return cEntreesAssignment_7; }
+		
+		//[Colonne]
+		public CrossReference getEntreesColonneCrossReference_7_0() { return cEntreesColonneCrossReference_7_0; }
+		
+		//ID
+		public RuleCall getEntreesColonneIDTerminalRuleCall_7_0_1() { return cEntreesColonneIDTerminalRuleCall_7_0_1; }
+		
+		//'scriptElements'
+		public Keyword getScriptElementsKeyword_8() { return cScriptElementsKeyword_8; }
+		
+		//':'
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
+		
 		//scriptElements+=ScriptElements*
-		public Assignment getScriptElementsAssignment_7() { return cScriptElementsAssignment_7; }
+		public Assignment getScriptElementsAssignment_10() { return cScriptElementsAssignment_10; }
 		
 		//ScriptElements
-		public RuleCall getScriptElementsScriptElementsParserRuleCall_7_0() { return cScriptElementsScriptElementsParserRuleCall_7_0; }
+		public RuleCall getScriptElementsScriptElementsParserRuleCall_10_0() { return cScriptElementsScriptElementsParserRuleCall_10_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 	public class ScriptElementsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.n7.Table_xtext.ScriptElements");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cConstanteParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cBlocParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cArgumentParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//ScriptElements:
-		//    Constante | Bloc;
+		//    Constante | Bloc | Argument;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Constante | Bloc
+		//Constante | Bloc | Argument
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Constante
@@ -646,6 +713,37 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//Bloc
 		public RuleCall getBlocParserRuleCall_1() { return cBlocParserRuleCall_1; }
+		
+		//Argument
+		public RuleCall getArgumentParserRuleCall_2() { return cArgumentParserRuleCall_2; }
+	}
+	public class ArgumentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.n7.Table_xtext.Argument");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEntreeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cEntreeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cEntreeColonneCrossReference_1_0 = (CrossReference)cEntreeAssignment_1.eContents().get(0);
+		private final RuleCall cEntreeColonneIDTerminalRuleCall_1_0_1 = (RuleCall)cEntreeColonneCrossReference_1_0.eContents().get(1);
+		
+		//Argument :
+		//    'entree' entree = [Colonne]
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'entree' entree = [Colonne]
+		public Group getGroup() { return cGroup; }
+		
+		//'entree'
+		public Keyword getEntreeKeyword_0() { return cEntreeKeyword_0; }
+		
+		//entree = [Colonne]
+		public Assignment getEntreeAssignment_1() { return cEntreeAssignment_1; }
+		
+		//[Colonne]
+		public CrossReference getEntreeColonneCrossReference_1_0() { return cEntreeColonneCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getEntreeColonneIDTerminalRuleCall_1_0_1() { return cEntreeColonneIDTerminalRuleCall_1_0_1; }
 	}
 	public class ConstanteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.n7.Table_xtext.Constante");
@@ -1038,6 +1136,7 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final ConditionElements eCondition;
 	private final ScriptElements pScript;
 	private final ScriptElementsElements pScriptElements;
+	private final ArgumentElements pArgument;
 	private final ConstanteElements pConstante;
 	private final BlocElements pBloc;
 	private final Bloc_BinaireElements pBloc_Binaire;
@@ -1072,6 +1171,7 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.eCondition = new ConditionElements();
 		this.pScript = new ScriptElements();
 		this.pScriptElements = new ScriptElementsElements();
+		this.pArgument = new ArgumentElements();
 		this.pConstante = new ConstanteElements();
 		this.pBloc = new BlocElements();
 		this.pBloc_Binaire = new Bloc_BinaireElements();
@@ -1132,6 +1232,7 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Colonne : 'c' name=ID
+	//    'indice' indice = INT
 	//    'type' elementType=ColonneElementType
 	//    ('contrainte' contraintes=Contrainte)?
 	//    'nblignes' nbLignes=INT;
@@ -1144,6 +1245,7 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//ColonneProvient : 'cp' name=ID
+	//    'indice' indice = INT
 	//    'tableOrigine' tableOrigin=Table
 	//    'refColonne' refColonne=ID
 	//    'type' elementType=ColonneElementType
@@ -1158,6 +1260,7 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//ColonneDerivee : 'cd' name=ID
+	//    'indice' indice = INT
 	//    'algo' script=[Script]
 	//    'entrees' colonnesEntrees+=[Colonne]*
 	//    'type' elementType=ColonneElementType
@@ -1260,6 +1363,8 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 	//Script:
 	//    'Script' '{'
 	//        'name' ':' name=ID
+	//        'entrees' ':'
+	//        entrees += [Colonne]*
 	//        'scriptElements' ':'
 	//        scriptElements+=ScriptElements*
 	//    '}';
@@ -1272,13 +1377,24 @@ public class Table_xtextGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//ScriptElements:
-	//    Constante | Bloc;
+	//    Constante | Bloc | Argument;
 	public ScriptElementsElements getScriptElementsAccess() {
 		return pScriptElements;
 	}
 	
 	public ParserRule getScriptElementsRule() {
 		return getScriptElementsAccess().getRule();
+	}
+	
+	//Argument :
+	//    'entree' entree = [Colonne]
+	//;
+	public ArgumentElements getArgumentAccess() {
+		return pArgument;
+	}
+	
+	public ParserRule getArgumentRule() {
+		return getArgumentAccess().getRule();
 	}
 	
 	//Constante:

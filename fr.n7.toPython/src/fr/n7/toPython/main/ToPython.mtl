@@ -1,57 +1,84 @@
 [comment encoding = UTF-8 /]
 [module ToPython('http://www.n7.fr/Table_xtext')]
 
-
 [template public TabletoPython(aTable : Table)]
 [comment @main/]
 [file ('demo_table.py', false, 'UTF-8')]
 import csv
 import sys
 import numpy as np
+import pandas as pd
 
-[for (script : Script | aTable.scripts)]
-
-	['def' + script.name + '(args):' + '\n'/]
-	
-		
-	[for (se : ScriptElements | aTable.scripts.scriptElements)]
-
-		[if se.oclIsTypeOf(Bloc_Binaire)]
-		
-
-			['c_res = -data[:, colonnesIndex[0]'/]
-
-			[if se.oclAsType(Bloc_Binaire).operation = 'sum']
-				['c_res = +(data[:, colonnesIndex[0])'/]
-
-			[/if]
-
-		[/if]
-	[/for]
-
-pour vérifier le type de quelqu'un: se.oclIsTypeOf(unType)
-
-pour se comporter comme un certain type: se.oclAsType(unType)
-
-
-	['try:' + '\n'/]
-
-	['with open(sys.argv[1], mode="r", newline="") as csvfile:' + '\n'/]
-
-		['csvdata = csv.reader(csvfile)' + '\n'/]
-
-		['data = np.array(list(csvdata)[1:], dtype=np.float64)' + '\n' + '\n'/]
-
-['except FileNotFoundError:' + '\n'/]
-
-	['print("Fichier non trouvé...")' + '\n'/]
-
-	['sys.exit(1)' + '\n' + '\n'/]
+csv = pd.read_csv('[aTable.name/].csv', sep=',')
+nomsColonnes = ['['/][NomsColonnes(aTable)/]]
+[for (script : Script | aTable.scripts)]	
+def [script.name/]([for (entree : Colonne | aTable.scripts.entrees) separator (',')] [entree.name/] [/for]) :
+	return [fonctions(aTable)/]
 [/for]
 
-['np.savetxt("output.csv", data, delimiter=",", fmt="%f")'/]
+[for (colonne : Colonnes | aTable.colonnes)]
+[if (colonne.oclIsTypeOf(ColonneDerivee))]
+def [colonne.name/] ([for (colonne_aux : Colonne | colonne.oclAsType(ColonneDerivee).colonnesEntrees) separator (', ')]val_[colonne_aux.name/][/for]) :
+    valeur = ['['/]]
+    for [for (colonne_aux : Colonne | colonne.oclAsType(ColonneDerivee).colonnesEntrees) separator (', ')]val_[colonne_aux.indice/][/for] in zip([for (colonne_aux : Colonne | colonne.oclAsType(ColonneDerivee).colonnesEntrees)separator (', ')]val_[colonne_aux.name/][/for]) :
+        valeur.append([colonne.oclAsType(ColonneDerivee).script.name/]([for (colonne_aux : Colonne | colonne.oclAsType(ColonneDerivee).colonnesEntrees)separator (', ')]val_[colonne_aux.indice/]['['/]0] if isinstance(val_[colonne_aux.indice/], tuple) else val_[colonne_aux.indice/][/for]))
+    return valeur
+
+csv['['/]nomsColonnes['['/][colonne.indice/]-1]] = [colonne.name/]([for (colonne_aux : Colonne | colonne.oclAsType(ColonneDerivee).colonnesEntrees) separator (', ')]csv['['/]nomsColonnes['['/][colonne_aux.indice/]-1]][/for])
+[/if]
+[/for]
+
+csv.to_csv('resultat.csv', index=False)
 
 
 [/file]
 [/template]
 
+[template public fonctions(aTable : Table) post(trim())]
+[for (se : ScriptElements | aTable.scripts.scriptElements)][elem(se)/][/for]
+[/template]
+
+[template public elem(se : ScriptElements) post(trim())]
+[if se.oclIsTypeOf(Constante)]
+			[se.oclAsType(Constante).val/]
+
+		[elseif se.oclIsTypeOf(Argument)]
+			[se.oclAsType(Argument).entree.name/]
+
+		[elseif se.oclIsTypeOf(Bloc_Binaire)]
+			[if se.oclAsType(Bloc_Binaire).operation = binaire::Addition]
+				['  + '/]
+			[elseif se.oclAsType(Bloc_Binaire).operation = binaire::Division]
+				[' / '/]
+			[elseif se.oclAsType(Bloc_Binaire).operation = binaire::Soustraction]
+				['  - '/]
+			[elseif se.oclAsType(Bloc_Binaire).operation = binaire::Multiplication]
+				['  * '/]
+			[/if]
+		[elseif se.oclIsTypeOf(Bloc_Unaire)]		
+			[if se.oclAsType(Bloc_Unaire).operation = unaire::Oppose]
+				['-'/]
+			[elseif se.oclAsType(Bloc_Unaire).operation = unaire::Inverse]
+				['1/'/]
+			[/if]
+		[elseif se.oclIsTypeOf(Bloc_Fonction)]
+			[if se.oclAsType(Bloc_Fonction).operation = fonction::Sin]
+				['sin'/]
+			[elseif se.oclAsType(Bloc_Fonction).operation = fonction::Cos]
+				['cos'/]
+			[elseif se.oclAsType(Bloc_Fonction).operation = fonction::Min]
+				['min'/]
+			[elseif se.oclAsType(Bloc_Fonction).operation = fonction::Max]
+				['max'/]
+			[elseif se.oclAsType(Bloc_Fonction).operation = fonction::Exp]
+				['exp'/]
+			[elseif se.oclAsType(Bloc_Fonction).operation = fonction::Racine]
+				['sqrt'/]
+			[/if]
+
+		[/if]
+[/template]
+
+[template public NomsColonnes(aTable : Table) post(trim())]
+[for (colonne : Colonnes | aTable.colonnes) separator (', ')]"[colonne.name/]"[/for]
+[/template]

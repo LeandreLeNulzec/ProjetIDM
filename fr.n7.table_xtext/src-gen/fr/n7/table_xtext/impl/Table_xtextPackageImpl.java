@@ -3,6 +3,7 @@
  */
 package fr.n7.table_xtext.impl;
 
+import fr.n7.table_xtext.Argument;
 import fr.n7.table_xtext.Bloc;
 import fr.n7.table_xtext.Bloc_Binaire;
 import fr.n7.table_xtext.Bloc_Fonction;
@@ -135,6 +136,13 @@ public class Table_xtextPackageImpl extends EPackageImpl implements Table_xtextP
    * @generated
    */
   private EClass scriptElementsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass argumentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -351,7 +359,7 @@ public class Table_xtextPackageImpl extends EPackageImpl implements Table_xtextP
    * @generated
    */
   @Override
-  public EAttribute getColonnes_ElementType()
+  public EAttribute getColonnes_Indice()
   {
     return (EAttribute)colonnesEClass.getEStructuralFeatures().get(1);
   }
@@ -362,9 +370,20 @@ public class Table_xtextPackageImpl extends EPackageImpl implements Table_xtextP
    * @generated
    */
   @Override
+  public EAttribute getColonnes_ElementType()
+  {
+    return (EAttribute)colonnesEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getColonnes_Contraintes()
   {
-    return (EReference)colonnesEClass.getEStructuralFeatures().get(2);
+    return (EReference)colonnesEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -375,7 +394,7 @@ public class Table_xtextPackageImpl extends EPackageImpl implements Table_xtextP
   @Override
   public EAttribute getColonnes_NbLignes()
   {
-    return (EAttribute)colonnesEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)colonnesEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -604,9 +623,20 @@ public class Table_xtextPackageImpl extends EPackageImpl implements Table_xtextP
    * @generated
    */
   @Override
-  public EReference getScript_ScriptElements()
+  public EReference getScript_Entrees()
   {
     return (EReference)scriptEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getScript_ScriptElements()
+  {
+    return (EReference)scriptEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -618,6 +648,28 @@ public class Table_xtextPackageImpl extends EPackageImpl implements Table_xtextP
   public EClass getScriptElements()
   {
     return scriptElementsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getArgument()
+  {
+    return argumentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getArgument_Entree()
+  {
+    return (EReference)argumentEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -813,6 +865,7 @@ public class Table_xtextPackageImpl extends EPackageImpl implements Table_xtextP
 
     colonnesEClass = createEClass(COLONNES);
     createEAttribute(colonnesEClass, COLONNES__NAME);
+    createEAttribute(colonnesEClass, COLONNES__INDICE);
     createEAttribute(colonnesEClass, COLONNES__ELEMENT_TYPE);
     createEReference(colonnesEClass, COLONNES__CONTRAINTES);
     createEAttribute(colonnesEClass, COLONNES__NB_LIGNES);
@@ -846,9 +899,13 @@ public class Table_xtextPackageImpl extends EPackageImpl implements Table_xtextP
 
     scriptEClass = createEClass(SCRIPT);
     createEAttribute(scriptEClass, SCRIPT__NAME);
+    createEReference(scriptEClass, SCRIPT__ENTREES);
     createEReference(scriptEClass, SCRIPT__SCRIPT_ELEMENTS);
 
     scriptElementsEClass = createEClass(SCRIPT_ELEMENTS);
+
+    argumentEClass = createEClass(ARGUMENT);
+    createEReference(argumentEClass, ARGUMENT__ENTREE);
 
     constanteEClass = createEClass(CONSTANTE);
     createEAttribute(constanteEClass, CONSTANTE__VAL);
@@ -909,6 +966,7 @@ public class Table_xtextPackageImpl extends EPackageImpl implements Table_xtextP
     predicatEClass.getESuperTypes().add(this.getContrainte());
     predicatColonneEClass.getESuperTypes().add(this.getPredicat());
     predicatValeurEClass.getESuperTypes().add(this.getPredicat());
+    argumentEClass.getESuperTypes().add(this.getScriptElements());
     constanteEClass.getESuperTypes().add(this.getScriptElements());
     blocEClass.getESuperTypes().add(this.getScriptElements());
     bloc_BinaireEClass.getESuperTypes().add(this.getBloc());
@@ -924,6 +982,7 @@ public class Table_xtextPackageImpl extends EPackageImpl implements Table_xtextP
 
     initEClass(colonnesEClass, Colonnes.class, "Colonnes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getColonnes_Name(), ecorePackage.getEString(), "name", null, 0, 1, Colonnes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getColonnes_Indice(), ecorePackage.getEInt(), "indice", null, 0, 1, Colonnes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getColonnes_ElementType(), this.getColonneElementType(), "elementType", null, 0, 1, Colonnes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getColonnes_Contraintes(), this.getContrainte(), null, "contraintes", null, 0, 1, Colonnes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getColonnes_NbLignes(), ecorePackage.getEInt(), "nbLignes", null, 0, 1, Colonnes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -957,9 +1016,13 @@ public class Table_xtextPackageImpl extends EPackageImpl implements Table_xtextP
 
     initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScript_Name(), ecorePackage.getEString(), "name", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScript_Entrees(), this.getColonne(), null, "entrees", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getScript_ScriptElements(), this.getScriptElements(), null, "scriptElements", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scriptElementsEClass, ScriptElements.class, "ScriptElements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(argumentEClass, Argument.class, "Argument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getArgument_Entree(), this.getColonne(), null, "entree", null, 0, 1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constanteEClass, Constante.class, "Constante", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConstante_Val(), ecorePackage.getEString(), "val", null, 0, 1, Constante.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

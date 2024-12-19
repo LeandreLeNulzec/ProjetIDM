@@ -10,6 +10,7 @@
  *******************************************************************************/
 package fr.n7.toPython.main;
 
+import fr.n7.table_xtext.Table_xtextPackage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -335,7 +336,7 @@ public class ToPython extends AbstractAcceleoGenerator {
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated
+     * 
      */
     @Override
     public void registerPackages(ResourceSet resourceSet) {
@@ -360,12 +361,12 @@ public class ToPython extends AbstractAcceleoGenerator {
          * If the package is located in another plug-in, already installed in Eclipse. The following content should
          * have been generated at the beginning of this method. Do not register the package using this mechanism if
          * the metamodel is located in the workspace.
-         *  
-         * if (!isInWorkspace(UMLPackage.class)) {
-         *     // The normal package registration if your metamodel is in a plugin.
-         *     resourceSet.getPackageRegistry().put(UMLPackage.eNS_URI, UMLPackage.eINSTANCE);
-         * }
-         * 
+         */
+         if (!isInWorkspace(Table_xtextPackage.class)) {
+              // The normal package registration if your metamodel is in a plugin.
+              resourceSet.getPackageRegistry().put(Table_xtextPackage.eNS_URI, Table_xtextPackage.eINSTANCE);
+          }
+         /*
          * If the package is located in another project in your workspace, the plugin containing the package has not
          * been register by EMF and Acceleo should register it automatically. If you want to use the generator in
          * stand alone, the regular registration (seen a couple lines before) is needed.

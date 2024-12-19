@@ -248,16 +248,38 @@ ruleColonne returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='type'
+		otherlv_2='indice'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getColonneAccess().getTypeKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getColonneAccess().getIndiceKeyword_2());
+		}
+		(
+			(
+				lv_indice_3_0=RULE_INT
+				{
+					newLeafNode(lv_indice_3_0, grammarAccess.getColonneAccess().getIndiceINTTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getColonneRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"indice",
+						lv_indice_3_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_4='type'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getColonneAccess().getTypeKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getColonneAccess().getElementTypeColonneElementTypeEnumRuleCall_3_0());
+					newCompositeNode(grammarAccess.getColonneAccess().getElementTypeColonneElementTypeEnumRuleCall_5_0());
 				}
-				lv_elementType_3_0=ruleColonneElementType
+				lv_elementType_5_0=ruleColonneElementType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getColonneRule());
@@ -265,23 +287,23 @@ ruleColonne returns [EObject current=null]
 					set(
 						$current,
 						"elementType",
-						lv_elementType_3_0,
+						lv_elementType_5_0,
 						"fr.n7.Table_xtext.ColonneElementType");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_4='contrainte'
+			otherlv_6='contrainte'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getColonneAccess().getContrainteKeyword_4_0());
+				newLeafNode(otherlv_6, grammarAccess.getColonneAccess().getContrainteKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getColonneAccess().getContraintesContrainteParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getColonneAccess().getContraintesContrainteParserRuleCall_6_1_0());
 					}
-					lv_contraintes_5_0=ruleContrainte
+					lv_contraintes_7_0=ruleContrainte
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getColonneRule());
@@ -289,22 +311,22 @@ ruleColonne returns [EObject current=null]
 						set(
 							$current,
 							"contraintes",
-							lv_contraintes_5_0,
+							lv_contraintes_7_0,
 							"fr.n7.Table_xtext.Contrainte");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_6='nblignes'
+		otherlv_8='nblignes'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getColonneAccess().getNblignesKeyword_5());
+			newLeafNode(otherlv_8, grammarAccess.getColonneAccess().getNblignesKeyword_7());
 		}
 		(
 			(
-				lv_nbLignes_7_0=RULE_INT
+				lv_nbLignes_9_0=RULE_INT
 				{
-					newLeafNode(lv_nbLignes_7_0, grammarAccess.getColonneAccess().getNbLignesINTTerminalRuleCall_6_0());
+					newLeafNode(lv_nbLignes_9_0, grammarAccess.getColonneAccess().getNbLignesINTTerminalRuleCall_8_0());
 				}
 				{
 					if ($current==null) {
@@ -313,7 +335,7 @@ ruleColonne returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"nbLignes",
-						lv_nbLignes_7_0,
+						lv_nbLignes_9_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -359,16 +381,38 @@ ruleColonneProvient returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='tableOrigine'
+		otherlv_2='indice'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getColonneProvientAccess().getTableOrigineKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getColonneProvientAccess().getIndiceKeyword_2());
+		}
+		(
+			(
+				lv_indice_3_0=RULE_INT
+				{
+					newLeafNode(lv_indice_3_0, grammarAccess.getColonneProvientAccess().getIndiceINTTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getColonneProvientRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"indice",
+						lv_indice_3_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_4='tableOrigine'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getColonneProvientAccess().getTableOrigineKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getColonneProvientAccess().getTableOriginTableParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getColonneProvientAccess().getTableOriginTableParserRuleCall_5_0());
 				}
-				lv_tableOrigin_3_0=ruleTable
+				lv_tableOrigin_5_0=ruleTable
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getColonneProvientRule());
@@ -376,21 +420,21 @@ ruleColonneProvient returns [EObject current=null]
 					set(
 						$current,
 						"tableOrigin",
-						lv_tableOrigin_3_0,
+						lv_tableOrigin_5_0,
 						"fr.n7.Table_xtext.Table");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4='refColonne'
+		otherlv_6='refColonne'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getColonneProvientAccess().getRefColonneKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getColonneProvientAccess().getRefColonneKeyword_6());
 		}
 		(
 			(
-				lv_refColonne_5_0=RULE_ID
+				lv_refColonne_7_0=RULE_ID
 				{
-					newLeafNode(lv_refColonne_5_0, grammarAccess.getColonneProvientAccess().getRefColonneIDTerminalRuleCall_5_0());
+					newLeafNode(lv_refColonne_7_0, grammarAccess.getColonneProvientAccess().getRefColonneIDTerminalRuleCall_7_0());
 				}
 				{
 					if ($current==null) {
@@ -399,21 +443,21 @@ ruleColonneProvient returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"refColonne",
-						lv_refColonne_5_0,
+						lv_refColonne_7_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
-		otherlv_6='type'
+		otherlv_8='type'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getColonneProvientAccess().getTypeKeyword_6());
+			newLeafNode(otherlv_8, grammarAccess.getColonneProvientAccess().getTypeKeyword_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getColonneProvientAccess().getElementTypeColonneElementTypeEnumRuleCall_7_0());
+					newCompositeNode(grammarAccess.getColonneProvientAccess().getElementTypeColonneElementTypeEnumRuleCall_9_0());
 				}
-				lv_elementType_7_0=ruleColonneElementType
+				lv_elementType_9_0=ruleColonneElementType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getColonneProvientRule());
@@ -421,23 +465,23 @@ ruleColonneProvient returns [EObject current=null]
 					set(
 						$current,
 						"elementType",
-						lv_elementType_7_0,
+						lv_elementType_9_0,
 						"fr.n7.Table_xtext.ColonneElementType");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_8='contrainte'
+			otherlv_10='contrainte'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getColonneProvientAccess().getContrainteKeyword_8_0());
+				newLeafNode(otherlv_10, grammarAccess.getColonneProvientAccess().getContrainteKeyword_10_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getColonneProvientAccess().getContraintesContrainteParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getColonneProvientAccess().getContraintesContrainteParserRuleCall_10_1_0());
 					}
-					lv_contraintes_9_0=ruleContrainte
+					lv_contraintes_11_0=ruleContrainte
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getColonneProvientRule());
@@ -445,22 +489,22 @@ ruleColonneProvient returns [EObject current=null]
 						set(
 							$current,
 							"contraintes",
-							lv_contraintes_9_0,
+							lv_contraintes_11_0,
 							"fr.n7.Table_xtext.Contrainte");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_10='nblignes'
+		otherlv_12='nblignes'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getColonneProvientAccess().getNblignesKeyword_9());
+			newLeafNode(otherlv_12, grammarAccess.getColonneProvientAccess().getNblignesKeyword_11());
 		}
 		(
 			(
-				lv_nbLignes_11_0=RULE_INT
+				lv_nbLignes_13_0=RULE_INT
 				{
-					newLeafNode(lv_nbLignes_11_0, grammarAccess.getColonneProvientAccess().getNbLignesINTTerminalRuleCall_10_0());
+					newLeafNode(lv_nbLignes_13_0, grammarAccess.getColonneProvientAccess().getNbLignesINTTerminalRuleCall_12_0());
 				}
 				{
 					if ($current==null) {
@@ -469,7 +513,7 @@ ruleColonneProvient returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"nbLignes",
-						lv_nbLignes_11_0,
+						lv_nbLignes_13_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -515,26 +559,31 @@ ruleColonneDerivee returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='algo'
+		otherlv_2='indice'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getColonneDeriveeAccess().getAlgoKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getColonneDeriveeAccess().getIndiceKeyword_2());
 		}
 		(
 			(
+				lv_indice_3_0=RULE_INT
+				{
+					newLeafNode(lv_indice_3_0, grammarAccess.getColonneDeriveeAccess().getIndiceINTTerminalRuleCall_3_0());
+				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getColonneDeriveeRule());
 					}
-				}
-				otherlv_3=RULE_ID
-				{
-					newLeafNode(otherlv_3, grammarAccess.getColonneDeriveeAccess().getScriptScriptCrossReference_3_0());
+					setWithLastConsumed(
+						$current,
+						"indice",
+						lv_indice_3_0,
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_4='entrees'
+		otherlv_4='algo'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getColonneDeriveeAccess().getEntreesKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getColonneDeriveeAccess().getAlgoKeyword_4());
 		}
 		(
 			(
@@ -545,20 +594,37 @@ ruleColonneDerivee returns [EObject current=null]
 				}
 				otherlv_5=RULE_ID
 				{
-					newLeafNode(otherlv_5, grammarAccess.getColonneDeriveeAccess().getColonnesEntreesColonneCrossReference_5_0());
+					newLeafNode(otherlv_5, grammarAccess.getColonneDeriveeAccess().getScriptScriptCrossReference_5_0());
 				}
 			)
-		)*
-		otherlv_6='type'
+		)
+		otherlv_6='entrees'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getColonneDeriveeAccess().getTypeKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getColonneDeriveeAccess().getEntreesKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getColonneDeriveeAccess().getElementTypeColonneElementTypeEnumRuleCall_7_0());
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getColonneDeriveeRule());
+					}
 				}
-				lv_elementType_7_0=ruleColonneElementType
+				otherlv_7=RULE_ID
+				{
+					newLeafNode(otherlv_7, grammarAccess.getColonneDeriveeAccess().getColonnesEntreesColonneCrossReference_7_0());
+				}
+			)
+		)*
+		otherlv_8='type'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getColonneDeriveeAccess().getTypeKeyword_8());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getColonneDeriveeAccess().getElementTypeColonneElementTypeEnumRuleCall_9_0());
+				}
+				lv_elementType_9_0=ruleColonneElementType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getColonneDeriveeRule());
@@ -566,23 +632,23 @@ ruleColonneDerivee returns [EObject current=null]
 					set(
 						$current,
 						"elementType",
-						lv_elementType_7_0,
+						lv_elementType_9_0,
 						"fr.n7.Table_xtext.ColonneElementType");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_8='contrainte'
+			otherlv_10='contrainte'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getColonneDeriveeAccess().getContrainteKeyword_8_0());
+				newLeafNode(otherlv_10, grammarAccess.getColonneDeriveeAccess().getContrainteKeyword_10_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getColonneDeriveeAccess().getContraintesContrainteParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getColonneDeriveeAccess().getContraintesContrainteParserRuleCall_10_1_0());
 					}
-					lv_contraintes_9_0=ruleContrainte
+					lv_contraintes_11_0=ruleContrainte
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getColonneDeriveeRule());
@@ -590,22 +656,22 @@ ruleColonneDerivee returns [EObject current=null]
 						set(
 							$current,
 							"contraintes",
-							lv_contraintes_9_0,
+							lv_contraintes_11_0,
 							"fr.n7.Table_xtext.Contrainte");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_10='nblignes'
+		otherlv_12='nblignes'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getColonneDeriveeAccess().getNblignesKeyword_9());
+			newLeafNode(otherlv_12, grammarAccess.getColonneDeriveeAccess().getNblignesKeyword_11());
 		}
 		(
 			(
-				lv_nbLignes_11_0=RULE_INT
+				lv_nbLignes_13_0=RULE_INT
 				{
-					newLeafNode(lv_nbLignes_11_0, grammarAccess.getColonneDeriveeAccess().getNbLignesINTTerminalRuleCall_10_0());
+					newLeafNode(lv_nbLignes_13_0, grammarAccess.getColonneDeriveeAccess().getNbLignesINTTerminalRuleCall_12_0());
 				}
 				{
 					if ($current==null) {
@@ -614,7 +680,7 @@ ruleColonneDerivee returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"nbLignes",
-						lv_nbLignes_11_0,
+						lv_nbLignes_13_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -964,9 +1030,9 @@ ruleScript returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_5='scriptElements'
+		otherlv_5='entrees'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getScriptAccess().getScriptElementsKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getScriptAccess().getEntreesKeyword_5());
 		}
 		otherlv_6=':'
 		{
@@ -975,9 +1041,30 @@ ruleScript returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getScriptAccess().getScriptElementsScriptElementsParserRuleCall_7_0());
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getScriptRule());
+					}
 				}
-				lv_scriptElements_7_0=ruleScriptElements
+				otherlv_7=RULE_ID
+				{
+					newLeafNode(otherlv_7, grammarAccess.getScriptAccess().getEntreesColonneCrossReference_7_0());
+				}
+			)
+		)*
+		otherlv_8='scriptElements'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getScriptAccess().getScriptElementsKeyword_8());
+		}
+		otherlv_9=':'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getScriptAccess().getColonKeyword_9());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getScriptAccess().getScriptElementsScriptElementsParserRuleCall_10_0());
+				}
+				lv_scriptElements_10_0=ruleScriptElements
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getScriptRule());
@@ -985,15 +1072,15 @@ ruleScript returns [EObject current=null]
 					add(
 						$current,
 						"scriptElements",
-						lv_scriptElements_7_0,
+						lv_scriptElements_10_0,
 						"fr.n7.Table_xtext.ScriptElements");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_8='}'
+		otherlv_11='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getScriptAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_11, grammarAccess.getScriptAccess().getRightCurlyBracketKeyword_11());
 		}
 	)
 ;
@@ -1031,6 +1118,51 @@ ruleScriptElements returns [EObject current=null]
 			$current = $this_Bloc_1.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getScriptElementsAccess().getArgumentParserRuleCall_2());
+		}
+		this_Argument_2=ruleArgument
+		{
+			$current = $this_Argument_2.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleArgument
+entryRuleArgument returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getArgumentRule()); }
+	iv_ruleArgument=ruleArgument
+	{ $current=$iv_ruleArgument.current; }
+	EOF;
+
+// Rule Argument
+ruleArgument returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='entree'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getArgumentAccess().getEntreeKeyword_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getArgumentRule());
+					}
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getArgumentAccess().getEntreeColonneCrossReference_1_0());
+				}
+			)
+		)
 	)
 ;
 

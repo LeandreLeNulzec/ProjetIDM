@@ -141,6 +141,11 @@ public class Table_xtextAdapterFactory extends AdapterFactoryImpl
         return createScriptElementsAdapter();
       }
       @Override
+      public Adapter caseArgument(Argument object)
+      {
+        return createArgumentAdapter();
+      }
+      @Override
       public Adapter caseConstante(Constante object)
       {
         return createConstanteAdapter();
@@ -378,6 +383,21 @@ public class Table_xtextAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createScriptElementsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fr.n7.table_xtext.Argument <em>Argument</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fr.n7.table_xtext.Argument
+   * @generated
+   */
+  public Adapter createArgumentAdapter()
   {
     return null;
   }

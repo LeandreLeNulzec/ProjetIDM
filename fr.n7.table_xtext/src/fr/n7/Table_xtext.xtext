@@ -11,11 +11,13 @@ Table : 'table' name=ID '{'
 Colonnes : (Colonne | ColonneProvient | ColonneDerivee);	
 
 Colonne : 'c' name=ID
+	'indice' indice = INT
 	'type' elementType=ColonneElementType
 	('contrainte' contraintes=Contrainte)?
 	'nblignes' nbLignes=INT;
 	
 ColonneProvient : 'cp' name=ID
+	'indice' indice = INT
 	'tableOrigine' tableOrigin=Table
 	'refColonne' refColonne=ID
 	'type' elementType=ColonneElementType
@@ -23,6 +25,7 @@ ColonneProvient : 'cp' name=ID
 	'nblignes' nbLignes=INT;
 	
 ColonneDerivee : 'cd' name=ID
+	'indice' indice = INT
 	'algo' script=[Script]
 	'entrees' colonnesEntrees+=[Colonne]*
 	'type' elementType=ColonneElementType
@@ -59,13 +62,18 @@ enum Condition :
 Script:
     'Script' '{'
         'name' ':' name=ID
+        'entrees' ':' 
+        entrees += [Colonne]*
         'scriptElements' ':' 
         scriptElements+=ScriptElements*
     '}';
 
 ScriptElements:
-    Constante | Bloc;
+    Constante | Bloc | Argument;
 
+Argument :
+	'entree' entree = [Colonne]
+;
 Constante:
     'Constante' 'val' val=FLOAT;
 

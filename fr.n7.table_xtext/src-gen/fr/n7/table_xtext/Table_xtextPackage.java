@@ -133,13 +133,22 @@ public interface Table_xtextPackage extends EPackage
   int COLONNES__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Indice</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLONNES__INDICE = 1;
+
+  /**
    * The feature id for the '<em><b>Element Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COLONNES__ELEMENT_TYPE = 1;
+  int COLONNES__ELEMENT_TYPE = 2;
 
   /**
    * The feature id for the '<em><b>Contraintes</b></em>' containment reference.
@@ -148,7 +157,7 @@ public interface Table_xtextPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COLONNES__CONTRAINTES = 2;
+  int COLONNES__CONTRAINTES = 3;
 
   /**
    * The feature id for the '<em><b>Nb Lignes</b></em>' attribute.
@@ -157,7 +166,7 @@ public interface Table_xtextPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COLONNES__NB_LIGNES = 3;
+  int COLONNES__NB_LIGNES = 4;
 
   /**
    * The number of structural features of the '<em>Colonnes</em>' class.
@@ -166,7 +175,7 @@ public interface Table_xtextPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COLONNES_FEATURE_COUNT = 4;
+  int COLONNES_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link fr.n7.table_xtext.impl.ColonneImpl <em>Colonne</em>}' class.
@@ -186,6 +195,15 @@ public interface Table_xtextPackage extends EPackage
    * @ordered
    */
   int COLONNE__NAME = COLONNES__NAME;
+
+  /**
+   * The feature id for the '<em><b>Indice</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLONNE__INDICE = COLONNES__INDICE;
 
   /**
    * The feature id for the '<em><b>Element Type</b></em>' attribute.
@@ -241,6 +259,15 @@ public interface Table_xtextPackage extends EPackage
    * @ordered
    */
   int COLONNE_PROVIENT__NAME = COLONNES__NAME;
+
+  /**
+   * The feature id for the '<em><b>Indice</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLONNE_PROVIENT__INDICE = COLONNES__INDICE;
 
   /**
    * The feature id for the '<em><b>Element Type</b></em>' attribute.
@@ -314,6 +341,15 @@ public interface Table_xtextPackage extends EPackage
    * @ordered
    */
   int COLONNE_DERIVEE__NAME = COLONNES__NAME;
+
+  /**
+   * The feature id for the '<em><b>Indice</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLONNE_DERIVEE__INDICE = COLONNES__INDICE;
 
   /**
    * The feature id for the '<em><b>Element Type</b></em>' attribute.
@@ -566,13 +602,22 @@ public interface Table_xtextPackage extends EPackage
   int SCRIPT__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Entrees</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT__ENTREES = 1;
+
+  /**
    * The feature id for the '<em><b>Script Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCRIPT__SCRIPT_ELEMENTS = 1;
+  int SCRIPT__SCRIPT_ELEMENTS = 2;
 
   /**
    * The number of structural features of the '<em>Script</em>' class.
@@ -581,7 +626,7 @@ public interface Table_xtextPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCRIPT_FEATURE_COUNT = 2;
+  int SCRIPT_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link fr.n7.table_xtext.impl.ScriptElementsImpl <em>Script Elements</em>}' class.
@@ -603,6 +648,34 @@ public interface Table_xtextPackage extends EPackage
   int SCRIPT_ELEMENTS_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link fr.n7.table_xtext.impl.ArgumentImpl <em>Argument</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fr.n7.table_xtext.impl.ArgumentImpl
+   * @see fr.n7.table_xtext.impl.Table_xtextPackageImpl#getArgument()
+   * @generated
+   */
+  int ARGUMENT = 13;
+
+  /**
+   * The feature id for the '<em><b>Entree</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__ENTREE = SCRIPT_ELEMENTS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Argument</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT_FEATURE_COUNT = SCRIPT_ELEMENTS_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link fr.n7.table_xtext.impl.ConstanteImpl <em>Constante</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -610,7 +683,7 @@ public interface Table_xtextPackage extends EPackage
    * @see fr.n7.table_xtext.impl.Table_xtextPackageImpl#getConstante()
    * @generated
    */
-  int CONSTANTE = 13;
+  int CONSTANTE = 14;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -638,7 +711,7 @@ public interface Table_xtextPackage extends EPackage
    * @see fr.n7.table_xtext.impl.Table_xtextPackageImpl#getBloc()
    * @generated
    */
-  int BLOC = 14;
+  int BLOC = 15;
 
   /**
    * The number of structural features of the '<em>Bloc</em>' class.
@@ -657,7 +730,7 @@ public interface Table_xtextPackage extends EPackage
    * @see fr.n7.table_xtext.impl.Table_xtextPackageImpl#getBloc_Binaire()
    * @generated
    */
-  int BLOC_BINAIRE = 15;
+  int BLOC_BINAIRE = 16;
 
   /**
    * The feature id for the '<em><b>Operation</b></em>' attribute.
@@ -685,7 +758,7 @@ public interface Table_xtextPackage extends EPackage
    * @see fr.n7.table_xtext.impl.Table_xtextPackageImpl#getBloc_Unaire()
    * @generated
    */
-  int BLOC_UNAIRE = 16;
+  int BLOC_UNAIRE = 17;
 
   /**
    * The feature id for the '<em><b>Operation</b></em>' attribute.
@@ -713,7 +786,7 @@ public interface Table_xtextPackage extends EPackage
    * @see fr.n7.table_xtext.impl.Table_xtextPackageImpl#getBloc_Fonction()
    * @generated
    */
-  int BLOC_FONCTION = 17;
+  int BLOC_FONCTION = 18;
 
   /**
    * The feature id for the '<em><b>Operation</b></em>' attribute.
@@ -741,7 +814,7 @@ public interface Table_xtextPackage extends EPackage
    * @see fr.n7.table_xtext.impl.Table_xtextPackageImpl#getColonneElementType()
    * @generated
    */
-  int COLONNE_ELEMENT_TYPE = 18;
+  int COLONNE_ELEMENT_TYPE = 19;
 
   /**
    * The meta object id for the '{@link fr.n7.table_xtext.Condition <em>Condition</em>}' enum.
@@ -751,7 +824,7 @@ public interface Table_xtextPackage extends EPackage
    * @see fr.n7.table_xtext.impl.Table_xtextPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 19;
+  int CONDITION = 20;
 
   /**
    * The meta object id for the '{@link fr.n7.table_xtext.binaire <em>binaire</em>}' enum.
@@ -761,7 +834,7 @@ public interface Table_xtextPackage extends EPackage
    * @see fr.n7.table_xtext.impl.Table_xtextPackageImpl#getbinaire()
    * @generated
    */
-  int BINAIRE = 20;
+  int BINAIRE = 21;
 
   /**
    * The meta object id for the '{@link fr.n7.table_xtext.unaire <em>unaire</em>}' enum.
@@ -771,7 +844,7 @@ public interface Table_xtextPackage extends EPackage
    * @see fr.n7.table_xtext.impl.Table_xtextPackageImpl#getunaire()
    * @generated
    */
-  int UNAIRE = 21;
+  int UNAIRE = 22;
 
   /**
    * The meta object id for the '{@link fr.n7.table_xtext.fonction <em>fonction</em>}' enum.
@@ -781,7 +854,7 @@ public interface Table_xtextPackage extends EPackage
    * @see fr.n7.table_xtext.impl.Table_xtextPackageImpl#getfonction()
    * @generated
    */
-  int FONCTION = 22;
+  int FONCTION = 23;
 
 
   /**
@@ -858,6 +931,17 @@ public interface Table_xtextPackage extends EPackage
    * @generated
    */
   EAttribute getColonnes_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link fr.n7.table_xtext.Colonnes#getIndice <em>Indice</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Indice</em>'.
+   * @see fr.n7.table_xtext.Colonnes#getIndice()
+   * @see #getColonnes()
+   * @generated
+   */
+  EAttribute getColonnes_Indice();
 
   /**
    * Returns the meta object for the attribute '{@link fr.n7.table_xtext.Colonnes#getElementType <em>Element Type</em>}'.
@@ -1103,6 +1187,17 @@ public interface Table_xtextPackage extends EPackage
   EAttribute getScript_Name();
 
   /**
+   * Returns the meta object for the reference list '{@link fr.n7.table_xtext.Script#getEntrees <em>Entrees</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Entrees</em>'.
+   * @see fr.n7.table_xtext.Script#getEntrees()
+   * @see #getScript()
+   * @generated
+   */
+  EReference getScript_Entrees();
+
+  /**
    * Returns the meta object for the containment reference list '{@link fr.n7.table_xtext.Script#getScriptElements <em>Script Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1122,6 +1217,27 @@ public interface Table_xtextPackage extends EPackage
    * @generated
    */
   EClass getScriptElements();
+
+  /**
+   * Returns the meta object for class '{@link fr.n7.table_xtext.Argument <em>Argument</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Argument</em>'.
+   * @see fr.n7.table_xtext.Argument
+   * @generated
+   */
+  EClass getArgument();
+
+  /**
+   * Returns the meta object for the reference '{@link fr.n7.table_xtext.Argument#getEntree <em>Entree</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Entree</em>'.
+   * @see fr.n7.table_xtext.Argument#getEntree()
+   * @see #getArgument()
+   * @generated
+   */
+  EReference getArgument_Entree();
 
   /**
    * Returns the meta object for class '{@link fr.n7.table_xtext.Constante <em>Constante</em>}'.
@@ -1351,6 +1467,14 @@ public interface Table_xtextPackage extends EPackage
     EAttribute COLONNES__NAME = eINSTANCE.getColonnes_Name();
 
     /**
+     * The meta object literal for the '<em><b>Indice</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COLONNES__INDICE = eINSTANCE.getColonnes_Indice();
+
+    /**
      * The meta object literal for the '<em><b>Element Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1555,6 +1679,14 @@ public interface Table_xtextPackage extends EPackage
     EAttribute SCRIPT__NAME = eINSTANCE.getScript_Name();
 
     /**
+     * The meta object literal for the '<em><b>Entrees</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCRIPT__ENTREES = eINSTANCE.getScript_Entrees();
+
+    /**
      * The meta object literal for the '<em><b>Script Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1571,6 +1703,24 @@ public interface Table_xtextPackage extends EPackage
      * @generated
      */
     EClass SCRIPT_ELEMENTS = eINSTANCE.getScriptElements();
+
+    /**
+     * The meta object literal for the '{@link fr.n7.table_xtext.impl.ArgumentImpl <em>Argument</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.n7.table_xtext.impl.ArgumentImpl
+     * @see fr.n7.table_xtext.impl.Table_xtextPackageImpl#getArgument()
+     * @generated
+     */
+    EClass ARGUMENT = eINSTANCE.getArgument();
+
+    /**
+     * The meta object literal for the '<em><b>Entree</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARGUMENT__ENTREE = eINSTANCE.getArgument_Entree();
 
     /**
      * The meta object literal for the '{@link fr.n7.table_xtext.impl.ConstanteImpl <em>Constante</em>}' class.

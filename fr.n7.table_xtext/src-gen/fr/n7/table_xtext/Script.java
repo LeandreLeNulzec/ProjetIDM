@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fr.n7.table_xtext.Script#getName <em>Name</em>}</li>
+ *   <li>{@link fr.n7.table_xtext.Script#getEntrees <em>Entrees</em>}</li>
  *   <li>{@link fr.n7.table_xtext.Script#getScriptElements <em>Script Elements</em>}</li>
  * </ul>
  *
@@ -47,6 +48,18 @@ public interface Script extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Entrees</b></em>' reference list.
+   * The list contents are of type {@link fr.n7.table_xtext.Colonne}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Entrees</em>' reference list.
+   * @see fr.n7.table_xtext.Table_xtextPackage#getScript_Entrees()
+   * @model
+   * @generated
+   */
+  EList<Colonne> getEntrees();
 
   /**
    * Returns the value of the '<em><b>Script Elements</b></em>' containment reference list.

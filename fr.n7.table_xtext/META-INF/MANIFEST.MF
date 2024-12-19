@@ -17,13 +17,13 @@ Require-Bundle: org.eclipse.xtext,
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: fr.n7.table_xtext.util,
  fr.n7.services,
+ fr.n7.parser.antlr.internal,
  fr.n7.scoping,
  fr.n7.table_xtext.impl,
  fr.n7.validation,
  fr.n7.table_xtext,
  fr.n7,
  fr.n7.serializer,
- fr.n7.generator,
- fr.n7.parser.antlr.internal,
- fr.n7.parser.antlr
+ fr.n7.parser.antlr,
+ fr.n7.generator
 Import-Package: org.apache.log4j

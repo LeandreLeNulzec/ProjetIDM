@@ -3,6 +3,7 @@
  */
 package fr.n7.table_xtext.impl;
 
+import fr.n7.table_xtext.Colonne;
 import fr.n7.table_xtext.Script;
 import fr.n7.table_xtext.ScriptElements;
 import fr.n7.table_xtext.Table_xtextPackage;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -32,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link fr.n7.table_xtext.impl.ScriptImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.n7.table_xtext.impl.ScriptImpl#getEntrees <em>Entrees</em>}</li>
  *   <li>{@link fr.n7.table_xtext.impl.ScriptImpl#getScriptElements <em>Script Elements</em>}</li>
  * </ul>
  *
@@ -58,6 +61,16 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getEntrees() <em>Entrees</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEntrees()
+   * @generated
+   * @ordered
+   */
+  protected EList<Colonne> entrees;
 
   /**
    * The cached value of the '{@link #getScriptElements() <em>Script Elements</em>}' containment reference list.
@@ -121,6 +134,21 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
    * @generated
    */
   @Override
+  public EList<Colonne> getEntrees()
+  {
+    if (entrees == null)
+    {
+      entrees = new EObjectResolvingEList<Colonne>(Colonne.class, this, Table_xtextPackage.SCRIPT__ENTREES);
+    }
+    return entrees;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<ScriptElements> getScriptElements()
   {
     if (scriptElements == null)
@@ -158,6 +186,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
     {
       case Table_xtextPackage.SCRIPT__NAME:
         return getName();
+      case Table_xtextPackage.SCRIPT__ENTREES:
+        return getEntrees();
       case Table_xtextPackage.SCRIPT__SCRIPT_ELEMENTS:
         return getScriptElements();
     }
@@ -177,6 +207,10 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
     {
       case Table_xtextPackage.SCRIPT__NAME:
         setName((String)newValue);
+        return;
+      case Table_xtextPackage.SCRIPT__ENTREES:
+        getEntrees().clear();
+        getEntrees().addAll((Collection<? extends Colonne>)newValue);
         return;
       case Table_xtextPackage.SCRIPT__SCRIPT_ELEMENTS:
         getScriptElements().clear();
@@ -199,6 +233,9 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
       case Table_xtextPackage.SCRIPT__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case Table_xtextPackage.SCRIPT__ENTREES:
+        getEntrees().clear();
+        return;
       case Table_xtextPackage.SCRIPT__SCRIPT_ELEMENTS:
         getScriptElements().clear();
         return;
@@ -218,6 +255,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
     {
       case Table_xtextPackage.SCRIPT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case Table_xtextPackage.SCRIPT__ENTREES:
+        return entrees != null && !entrees.isEmpty();
       case Table_xtextPackage.SCRIPT__SCRIPT_ELEMENTS:
         return scriptElements != null && !scriptElements.isEmpty();
     }

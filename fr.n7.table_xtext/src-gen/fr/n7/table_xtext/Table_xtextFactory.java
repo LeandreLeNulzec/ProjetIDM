@@ -141,6 +141,15 @@ public interface Table_xtextFactory extends EFactory
   ScriptElements createScriptElements();
 
   /**
+   * Returns a new object of class '<em>Argument</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Argument</em>'.
+   * @generated
+   */
+  Argument createArgument();
+
+  /**
    * Returns a new object of class '<em>Constante</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

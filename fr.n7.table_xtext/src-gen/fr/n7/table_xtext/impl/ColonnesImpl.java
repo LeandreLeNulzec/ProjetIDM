@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link fr.n7.table_xtext.impl.ColonnesImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.n7.table_xtext.impl.ColonnesImpl#getIndice <em>Indice</em>}</li>
  *   <li>{@link fr.n7.table_xtext.impl.ColonnesImpl#getElementType <em>Element Type</em>}</li>
  *   <li>{@link fr.n7.table_xtext.impl.ColonnesImpl#getContraintes <em>Contraintes</em>}</li>
  *   <li>{@link fr.n7.table_xtext.impl.ColonnesImpl#getNbLignes <em>Nb Lignes</em>}</li>
@@ -54,6 +55,26 @@ public class ColonnesImpl extends MinimalEObjectImpl.Container implements Colonn
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getIndice() <em>Indice</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIndice()
+   * @generated
+   * @ordered
+   */
+  protected static final int INDICE_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getIndice() <em>Indice</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIndice()
+   * @generated
+   * @ordered
+   */
+  protected int indice = INDICE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getElementType() <em>Element Type</em>}' attribute.
@@ -149,6 +170,31 @@ public class ColonnesImpl extends MinimalEObjectImpl.Container implements Colonn
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, Table_xtextPackage.COLONNES__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int getIndice()
+  {
+    return indice;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIndice(int newIndice)
+  {
+    int oldIndice = indice;
+    indice = newIndice;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Table_xtextPackage.COLONNES__INDICE, oldIndice, indice));
   }
 
   /**
@@ -279,6 +325,8 @@ public class ColonnesImpl extends MinimalEObjectImpl.Container implements Colonn
     {
       case Table_xtextPackage.COLONNES__NAME:
         return getName();
+      case Table_xtextPackage.COLONNES__INDICE:
+        return getIndice();
       case Table_xtextPackage.COLONNES__ELEMENT_TYPE:
         return getElementType();
       case Table_xtextPackage.COLONNES__CONTRAINTES:
@@ -301,6 +349,9 @@ public class ColonnesImpl extends MinimalEObjectImpl.Container implements Colonn
     {
       case Table_xtextPackage.COLONNES__NAME:
         setName((String)newValue);
+        return;
+      case Table_xtextPackage.COLONNES__INDICE:
+        setIndice((Integer)newValue);
         return;
       case Table_xtextPackage.COLONNES__ELEMENT_TYPE:
         setElementType((ColonneElementType)newValue);
@@ -328,6 +379,9 @@ public class ColonnesImpl extends MinimalEObjectImpl.Container implements Colonn
       case Table_xtextPackage.COLONNES__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case Table_xtextPackage.COLONNES__INDICE:
+        setIndice(INDICE_EDEFAULT);
+        return;
       case Table_xtextPackage.COLONNES__ELEMENT_TYPE:
         setElementType(ELEMENT_TYPE_EDEFAULT);
         return;
@@ -353,6 +407,8 @@ public class ColonnesImpl extends MinimalEObjectImpl.Container implements Colonn
     {
       case Table_xtextPackage.COLONNES__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case Table_xtextPackage.COLONNES__INDICE:
+        return indice != INDICE_EDEFAULT;
       case Table_xtextPackage.COLONNES__ELEMENT_TYPE:
         return elementType != ELEMENT_TYPE_EDEFAULT;
       case Table_xtextPackage.COLONNES__CONTRAINTES:
@@ -376,6 +432,8 @@ public class ColonnesImpl extends MinimalEObjectImpl.Container implements Colonn
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", indice: ");
+    result.append(indice);
     result.append(", elementType: ");
     result.append(elementType);
     result.append(", nbLignes: ");

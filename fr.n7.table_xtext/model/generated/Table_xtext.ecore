@@ -11,6 +11,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Colonnes">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="indice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementType" eType="#//ColonneElementType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contraintes" eType="#//Contrainte"
         containment="true"/>
@@ -60,10 +61,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Script">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entrees" unique="false"
+        upperBound="-1" eType="#//Colonne"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scriptElements" upperBound="-1"
         eType="#//ScriptElements" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScriptElements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//ScriptElements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entree" eType="#//Colonne"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constante" eSuperTypes="#//ScriptElements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

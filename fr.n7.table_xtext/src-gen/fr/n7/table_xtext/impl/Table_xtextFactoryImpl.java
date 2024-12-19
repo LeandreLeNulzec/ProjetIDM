@@ -79,6 +79,7 @@ public class Table_xtextFactoryImpl extends EFactoryImpl implements Table_xtextF
       case Table_xtextPackage.PREDICAT_VALEUR: return createPredicatValeur();
       case Table_xtextPackage.SCRIPT: return createScript();
       case Table_xtextPackage.SCRIPT_ELEMENTS: return createScriptElements();
+      case Table_xtextPackage.ARGUMENT: return createArgument();
       case Table_xtextPackage.CONSTANTE: return createConstante();
       case Table_xtextPackage.BLOC: return createBloc();
       case Table_xtextPackage.BLOC_BINAIRE: return createBloc_Binaire();
@@ -293,6 +294,18 @@ public class Table_xtextFactoryImpl extends EFactoryImpl implements Table_xtextF
   {
     ScriptElementsImpl scriptElements = new ScriptElementsImpl();
     return scriptElements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Argument createArgument()
+  {
+    ArgumentImpl argument = new ArgumentImpl();
+    return argument;
   }
 
   /**

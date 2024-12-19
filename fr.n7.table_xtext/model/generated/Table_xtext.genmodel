@@ -45,6 +45,7 @@
     </genClasses>
     <genClasses ecoreClass="Table_xtext.ecore#//Colonnes">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table_xtext.ecore#//Colonnes/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table_xtext.ecore#//Colonnes/indice"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table_xtext.ecore#//Colonnes/elementType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Table_xtext.ecore#//Colonnes/contraintes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table_xtext.ecore#//Colonnes/nbLignes"/>
@@ -76,9 +77,13 @@
     </genClasses>
     <genClasses ecoreClass="Table_xtext.ecore#//Script">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table_xtext.ecore#//Script/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Table_xtext.ecore#//Script/entrees"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Table_xtext.ecore#//Script/scriptElements"/>
     </genClasses>
     <genClasses ecoreClass="Table_xtext.ecore#//ScriptElements"/>
+    <genClasses ecoreClass="Table_xtext.ecore#//Argument">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Table_xtext.ecore#//Argument/entree"/>
+    </genClasses>
     <genClasses ecoreClass="Table_xtext.ecore#//Constante">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Table_xtext.ecore#//Constante/val"/>
     </genClasses>

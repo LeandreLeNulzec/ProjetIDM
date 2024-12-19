@@ -20,4 +20,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: fr.n7.toPython.main
+Import-Package: fr.n7.table_xtext
 

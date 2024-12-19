@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fr.n7.table_xtext.Colonnes#getName <em>Name</em>}</li>
+ *   <li>{@link fr.n7.table_xtext.Colonnes#getIndice <em>Indice</em>}</li>
  *   <li>{@link fr.n7.table_xtext.Colonnes#getElementType <em>Element Type</em>}</li>
  *   <li>{@link fr.n7.table_xtext.Colonnes#getContraintes <em>Contraintes</em>}</li>
  *   <li>{@link fr.n7.table_xtext.Colonnes#getNbLignes <em>Nb Lignes</em>}</li>
@@ -47,6 +48,28 @@ public interface Colonnes extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Indice</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Indice</em>' attribute.
+   * @see #setIndice(int)
+   * @see fr.n7.table_xtext.Table_xtextPackage#getColonnes_Indice()
+   * @model
+   * @generated
+   */
+  int getIndice();
+
+  /**
+   * Sets the value of the '{@link fr.n7.table_xtext.Colonnes#getIndice <em>Indice</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Indice</em>' attribute.
+   * @see #getIndice()
+   * @generated
+   */
+  void setIndice(int value);
 
   /**
    * Returns the value of the '<em><b>Element Type</b></em>' attribute.

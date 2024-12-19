@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://www.n7.fr/Algorithme_xtext"
+			class = "fr.n7.algorithme_xtext.Algorithme_xtextPackage"
+			genModel = "model/generated/Algorithme_xtext.genmodel" />
+	</extension>
+</plugin>
