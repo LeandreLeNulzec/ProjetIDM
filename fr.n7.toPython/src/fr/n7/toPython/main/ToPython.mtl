@@ -1,0 +1,57 @@
+[comment encoding = UTF-8 /]
+[module ToPython('http://www.n7.fr/Table_xtext')]
+
+
+[template public TabletoPython(aTable : Table)]
+[comment @main/]
+[file ('demo_table.py', false, 'UTF-8')]
+import csv
+import sys
+import numpy as np
+
+[for (script : Script | aTable.scripts)]
+
+	['def' + script.name + '(args):' + '\n'/]
+	
+		
+	[for (se : ScriptElements | aTable.scripts.scriptElements)]
+
+		[if se.oclIsTypeOf(Bloc_Binaire)]
+		
+
+			['c_res = -data[:, colonnesIndex[0]'/]
+
+			[if se.oclAsType(Bloc_Binaire).operation = 'sum']
+				['c_res = +(data[:, colonnesIndex[0])'/]
+
+			[/if]
+
+		[/if]
+	[/for]
+
+pour vérifier le type de quelqu'un: se.oclIsTypeOf(unType)
+
+pour se comporter comme un certain type: se.oclAsType(unType)
+
+
+	['try:' + '\n'/]
+
+	['with open(sys.argv[1], mode="r", newline="") as csvfile:' + '\n'/]
+
+		['csvdata = csv.reader(csvfile)' + '\n'/]
+
+		['data = np.array(list(csvdata)[1:], dtype=np.float64)' + '\n' + '\n'/]
+
+['except FileNotFoundError:' + '\n'/]
+
+	['print("Fichier non trouvé...")' + '\n'/]
+
+	['sys.exit(1)' + '\n' + '\n'/]
+[/for]
+
+['np.savetxt("output.csv", data, delimiter=",", fmt="%f")'/]
+
+
+[/file]
+[/template]
+

@@ -2,34 +2,32 @@ grammar fr.n7.Table_xtext with org.eclipse.xtext.common.Terminals
 
 generate table_xtext "http://www.n7.fr/Table_xtext"
 
-Table : 'table' nom=ID '{'
+Table : 'table' name=ID '{'
 	colonnes+=Colonnes*
-	colonneID=Colonnes
+	'speciale'colonneID=[Colonne]
+	scripts += Script*
 	'}';
-	
+
 Colonnes : (Colonne | ColonneProvient | ColonneDerivee);	
 
-Colonne : 'c' nom=ID
+Colonne : 'c' name=ID
 	'type' elementType=ColonneElementType
-	'contrainte' contraintes=Contrainte
-	'nblignes' nbLignes=INT
-	'contenu' ':' '[' contenu=Contenu ']';
+	('contrainte' contraintes=Contrainte)?
+	'nblignes' nbLignes=INT;
 	
-ColonneProvient : 'cp' nom=ID
+ColonneProvient : 'cp' name=ID
 	'tableOrigine' tableOrigin=Table
 	'refColonne' refColonne=ID
 	'type' elementType=ColonneElementType
-	'contrainte' contraintes=Contrainte
-	'nblignes' nbLignes=INT
-	'contenu' ':' '[' contenu=Contenu ']';
+	('contrainte' contraintes=Contrainte)?
+	'nblignes' nbLignes=INT;
 	
-ColonneDerivee : 'cd' nom=ID
-	'algo' algorithme=Algorithme
-	'entrees' colonnesEntrees+=Colonnes*
+ColonneDerivee : 'cd' name=ID
+	'algo' script=[Script]
+	'entrees' colonnesEntrees+=[Colonne]*
 	'type' elementType=ColonneElementType
-	'contrainte' contraintes=Contrainte
-	'nblignes' nbLignes=INT
-	'contenu' ':' '[' contenu=Contenu ']';
+	('contrainte' contraintes=Contrainte)?
+	'nblignes' nbLignes=INT;
 	
 enum ColonneElementType :
 	FLOAT='f'
@@ -39,13 +37,13 @@ enum ColonneElementType :
 	
 Contrainte : Et | Ou | Predicat;
 
-Et : 'Et' '(' variables+=Contrainte+ ')';
+Et : 'Et' '(' variables+=[Contrainte]+ ')';
 
-Ou : 'Ou' '(' variables+=Contrainte+ ')';
+Ou : 'Ou' '(' variables+=[Contrainte]+ ')';
 
 Predicat : (PredicatValeur | PredicatColonne);
 
-PredicatColonne : 'condition' condition=Condition 'c' colonne=Colonnes;
+PredicatColonne : 'condition' condition=Condition 'c' colonne=[Colonnes];
 
 PredicatValeur : 'condition' condition=Condition 'v' valeur=FLOAT;
 
@@ -58,17 +56,43 @@ enum Condition :
 	|SuperieurStrict='>'
 	|SuperieurOuEgal='>=';
 
-Contenu : FLOAT*;
+Script:
+    'Script' '{'
+        'name' ':' name=ID
+        'scriptElements' ':' 
+        scriptElements+=ScriptElements*
+    '}';
 
-Algorithme : 'algorithme' nom = ID '{'
-	algorithmeElements += AlgorithmeElements*
-	'}';
-	
-AlgorithmeElements: Ressources | Documentation;
+ScriptElements:
+    Constante | Bloc;
 
-Ressources : 'Ressources :' chemin=Chemin | script = ID;
+Constante:
+    'Constante' 'val' val=FLOAT;
 
-Chemin : ('/'ID('.'ID)*)+ ;
+Bloc: Bloc_Binaire | Bloc_Unaire | Bloc_Fonction;
 
-Documentation : 'commentaire' texte = STRING;
+Bloc_Binaire:
+    'binaire' operation=binaire;
 
+Bloc_Unaire:
+    'unaire' operation=unaire;
+
+Bloc_Fonction:
+    'fonction' operation=fonction;
+enum binaire :
+	Addition='sum'
+	|Soustraction='sub'
+	|Division="div"
+	|Multiplication='mult';
+
+enum unaire :
+	Oppose='oppose'
+	|Inverse='inverse';
+
+enum fonction :
+	Min='min'
+	|Max='max'
+	|Sin="sin"
+	|Cos='cos'
+	|Exp='exp'
+	|Racine="sqrt";

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="table_xtext" nsURI="http://www.n7.fr/Table_xtext" nsPrefix="table_xtext">
+  <eClassifiers xsi:type="ecore:EClass" name="Table">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonnes" upperBound="-1"
+        eType="#//Colonnes" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonneID" eType="#//Colonne"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scripts" upperBound="-1"
+        eType="#//Script" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Colonnes">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementType" eType="#//ColonneElementType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contraintes" eType="#//Contrainte"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbLignes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Colonne" eSuperTypes="#//Colonnes"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ColonneProvient" eSuperTypes="#//Colonnes">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableOrigin" eType="#//Table"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refColonne" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColonneDerivee" eSuperTypes="#//Colonnes">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="script" eType="#//Script"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonnesEntrees" unique="false"
+        upperBound="-1" eType="#//Colonne"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ColonneElementType">
+    <eLiterals name="FLOAT" literal="f"/>
+    <eLiterals name="INT" value="1" literal="i"/>
+    <eLiterals name="STRING" value="2" literal="s"/>
+    <eLiterals name="BOOL" value="3" literal="b"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Contrainte"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Et" eSuperTypes="#//Contrainte">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" unique="false"
+        upperBound="-1" eType="#//Contrainte"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ou" eSuperTypes="#//Contrainte">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" unique="false"
+        upperBound="-1" eType="#//Contrainte"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Predicat" eSuperTypes="#//Contrainte">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="#//Condition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PredicatColonne" eSuperTypes="#//Predicat">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonne" eType="#//Colonnes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PredicatValeur" eSuperTypes="#//Predicat">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Condition">
+    <eLiterals name="InferieurOuEgal" literal="&lt;="/>
+    <eLiterals name="InferieurStrict" value="1" literal="&lt;"/>
+    <eLiterals name="Egal" value="2" literal="="/>
+    <eLiterals name="SuperieurStrict" value="3" literal=">"/>
+    <eLiterals name="SuperieurOuEgal" value="4" literal=">="/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Script">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scriptElements" upperBound="-1"
+        eType="#//ScriptElements" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScriptElements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Constante" eSuperTypes="#//ScriptElements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bloc" eSuperTypes="#//ScriptElements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bloc_Binaire" eSuperTypes="#//Bloc">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="#//binaire"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bloc_Unaire" eSuperTypes="#//Bloc">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="#//unaire"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bloc_Fonction" eSuperTypes="#//Bloc">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="#//fonction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="binaire">
+    <eLiterals name="Addition" literal="sum"/>
+    <eLiterals name="Soustraction" value="1" literal="sub"/>
+    <eLiterals name="Division" value="2" literal="div"/>
+    <eLiterals name="Multiplication" value="3" literal="mult"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="unaire">
+    <eLiterals name="Oppose" literal="oppose"/>
+    <eLiterals name="Inverse" value="1" literal="inverse"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="fonction">
+    <eLiterals name="Min" literal="min"/>
+    <eLiterals name="Max" value="1" literal="max"/>
+    <eLiterals name="Sin" value="2" literal="sin"/>
+    <eLiterals name="Cos" value="3" literal="cos"/>
+    <eLiterals name="Exp" value="4" literal="exp"/>
+    <eLiterals name="Racine" value="5" literal="sqrt"/>
+  </eClassifiers>
+</ecore:EPackage>
